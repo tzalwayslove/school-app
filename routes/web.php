@@ -46,5 +46,6 @@ Route::group([
     'namespace'=> 'Admin'
 ], function(){
     Route::resource('user', 'UserController');
-    Route::resource('cate', 'UserController');
+    Route::resource('cate', 'CateController');
+    Route::resource('articel', 'ArticelController');
 });

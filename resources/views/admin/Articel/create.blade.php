@@ -17,39 +17,31 @@
                             {{ csrf_field() }}
                             <span class="section">Articel信息</span>
 
-                            ;
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="content">内容</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <textarea id="content" name="content"
-                                              class="form-control col-md-7 col-xs-12"></textarea>
+                                                                                                                                                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="content">内容</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <textarea id="content" name="content" class="form-control col-md-7 col-xs-12"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            ;
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user">用户名</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="user" class="form-control col-md-7 col-xs-12" name="user"
-                                           placeholder="请输入用户名" required="required" value="" type="text">
+                                                                                                                                                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user">用户名</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="user" class="form-control col-md-7 col-xs-12" name="user" placeholder="请输入用户名" required="required" value="" type="text">
+                                    </div>
                                 </div>
-                            </div>
-                            ;
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cate">分类</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="cate" class="form-control col-md-7 col-xs-12" name="cate"
-                                           placeholder="请输入分类" required="required" value="" type="text">
+                                                                                            <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cate">分类</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="cate" class="form-control col-md-7 col-xs-12" name="cate" placeholder="请输入分类" required="required" value="" type="text">
+                                    </div>
                                 </div>
-                            </div>
-                            ;
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="show">是否显示</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="show" class="form-control col-md-7 col-xs-12" name="show"
-                                           placeholder="请输入是否显示" required="required" value="" type="text">
+                                                                                            <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="show">是否显示</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="show" class="form-control col-md-7 col-xs-12" name="show" placeholder="请输入是否显示" required="required" value="" type="text">
+                                    </div>
                                 </div>
-                            </div>
-
+                                                                                                                                                                                                                                        
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
@@ -63,7 +55,7 @@
             </div>
         </div>
     </div>
-@endsection
+    @endsection
 
 @push('addcss')
 @endpush
@@ -78,6 +70,6 @@
     });
     @endforeach
 
-
+    
 </script>
 @endpush
