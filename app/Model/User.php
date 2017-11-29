@@ -32,7 +32,7 @@ class User extends Model
         if(!$ruser){
             throw new userNotFountException();
         }
-        return $open_id;
+        return $ruserInfo;
 
         switch($ruserInfo['step']){
             case 1:
