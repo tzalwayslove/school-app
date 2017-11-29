@@ -32,7 +32,7 @@
                                         <tr>
                                             <th width="35px">id</th>
                                             <th width="35px">标题名</th>
-                                            <th width="35px"></th>
+                                            <th width="35px">是否显示</th>
                                             <th width="35px">创建时间</th>
                                             <th width="75px">操作</th>
                                         </tr>
