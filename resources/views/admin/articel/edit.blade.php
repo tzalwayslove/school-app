@@ -94,9 +94,6 @@
                                 <th class="column-title">评论人</th>
                                 <th class="column-title no-link last"><span class="nobr">操作</span>
                                 </th>
-                                <th class="bulk-actions" colspan="7">
-
-                                </th>
                             </tr>
                             </thead>
 
