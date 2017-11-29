@@ -144,7 +144,7 @@
             data: {
                 comments: [],
             },
-            method: {
+            methods: {
                test: function (item) {
                     console.log(item);
                 },
