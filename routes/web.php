@@ -40,7 +40,6 @@ Route::get('test', function(){
     ]);
 });
 
-
 Route::group([
     'prefix'=>'admin',
     'namespace'=> 'Admin'
@@ -48,4 +47,5 @@ Route::group([
     Route::resource('user', 'UserController');
     Route::resource('cate', 'CateController');
     Route::resource('articel', 'ArticelController');
+    Route::resource('comment', 'CommentController');
 });
