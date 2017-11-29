@@ -33,6 +33,8 @@
                                                                                                                                     <th width="35px">id</th>
                                                                                                                                                                                 <th width="35px">评论内容</th>
                                                                                                                                                                                 <th width="35px">赞</th>
+                                                                                                                                                                                <th width="35px">文章id</th>
+                                                                                                                                                                                <th width="35px">是否显示</th>
                                                                                                                                                                                                                                                                     <th width="35px">创建时间</th>
                                                                                                                                                                                                                 <th width="75px">操作</th>
                                     </tr>
@@ -40,13 +42,21 @@
                                     <tbody>
                                     @foreach($list as $v)
                                     <tr>
-                                                                                                                                    <td>{{ $v->id }}</td>
-                                                                                                                                                                                <td>{{ $v->content }}</td>
-                                                                                                                                                                                <td>{{ $v->zan }}</td>
-                                                                                                                                                                                                                                                                    <td>{{ $v->updated_at }}</td>
+                                                                                                                                    
+                                                <td>{{ $v->id }}</td>
+                                                                                                                                                                                
+                                                <td>{{ $v->content }}</td>
+                                                                                                                                                                                
+                                                <td>{{ $v->zan }}</td>
+                                                                                                                                                                                <td>{{ $v->articel_id->id }}</td>
+                                                                                                                                                                                @php$arr = [];$arr = ['1'=>'0',]@endphp
+                                                <td>{{ $arr[$v->show] }}</td>
+                                                                                                                                                                                                                                                                    
+                                                <td>{{ $v->updated_at }}</td>
                                                                                                                                                                         
                                         <td>
-                                            <a href="{{ url('admin/comment/'.$v->id.'/edit')  }}" class="btn btn-info btn-xs">编辑</a>
+                                            <a href="{{ url('admin/comment/'.$v->id.'/edit')  }}"
+                                               class="btn btn-info btn-xs">编辑</a>
                                             <a href="{{ url('admin/comment', ['id'=>$v->id])  }}"
                                                class="btn btn-danger btn-xs del">删除</a>
                                         </td>
@@ -68,29 +78,29 @@
 
 @push('addcss')
 <!-- Datatables -->
-<link href="http://www.school.dy/public/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+<link href="{{ asset('public/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('public/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('public/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}"
       rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
+<link href="{{ asset('public/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}"
       rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+<link href="{{ asset('public/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
 
 @endpush
 
 @push('addjs')
-<script src="http://www.school.dy/public/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="{{ asset('public/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') }}"></script>
 <script>
     $(function () {
         $('#datatable').DataTable();
@@ -114,7 +124,7 @@
                 }
             });
         });
-        @foreach ($errors -> all() as $e)
+        @foreach ($errors - > all() as $e)
         new PNotify({
             title: 'Oh No!',
             text: '{{ $e }}',

@@ -13,5 +13,9 @@ class Comment extends Model
 
     use SoftDeletes;
 
-                                                                            
+                                                    public function articel_id()
+    {
+        return $this->belongsTo('App\Model\Articel', 'articel', 'id');
+    }
+                                                                
 }

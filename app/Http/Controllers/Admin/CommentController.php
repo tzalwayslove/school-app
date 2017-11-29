@@ -17,9 +17,8 @@ class CommentController extends Controller
     protected $validateRoule = [
         'content' => 'required|max:100',
         'zan' => 'required|max:100',
-        'creatd_at' => 'required|max:100',
-    ];
-
+        'articel' => 'required|exists:articel,id'                                                                'creatd_at'=> 'required|max:100',
+                                                                    ];
     public function index()
     {
         $list = \App\Model\Comment::paginate(100);
@@ -30,7 +29,6 @@ class CommentController extends Controller
     {
         return Comment::whereArticel($id)->paginate(50)->toJson();
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -38,7 +36,8 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('admin.comment.create');
+        $articel_ids = \App\Model\Articel::all();
+        return view('admin.comment.create', compact('articel_ids'));
     }
 
     /**
@@ -78,7 +77,8 @@ class CommentController extends Controller
     public function edit($id)
     {
         $data = \App\Model\Comment::findOrFail($id);
-        return view('admin.comment.edit', compact('data'));
+        $articel_ids = \App\Model\Articel::all();
+        return view('admin.comment.edit', compact('data', 'articel_ids'));
     }
 
     /**
