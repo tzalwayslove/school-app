@@ -14,7 +14,13 @@
 Route::get('/', function () {
     phpinfo();
 });
+Route::get('/s', function(){
+    session(['a'=>10]);
+});
 
+Route::get('/g', function(){
+    dd(session('a'));
+});
 Route::get('admin', 'Admin\AdminController@index');
 
 Route::resource('admin/category', 'Admin\CategoryController');
