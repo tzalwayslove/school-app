@@ -149,8 +149,8 @@
             el: '#comments',
             data: {
                 comments: [],
-                nextUrl : '',
-                preUrl : ''
+                nextUrl : null,
+                preUrl : null
             },
             methods: {
                test: function (item, event) {
