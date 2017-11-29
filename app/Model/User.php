@@ -63,8 +63,8 @@ class User extends Model
 
     public static function createInit($uid)
     {
-        /*Redis::set($uid, json_encode(['step'=>1]));
-        Redis::expire ($uid, 300);*/
+        Redis::set($uid, json_encode(['step'=>1]));
+        Redis::expire ($uid, 300);
     }
     /**
      * 学号

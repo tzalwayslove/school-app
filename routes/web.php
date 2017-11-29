@@ -24,3 +24,7 @@ Route::get('code', 'Admin\CodeController@index');
 Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
+Route::get('test', function(){
+    Redis::set('testkey', json_encode(['step'=>1]));
+    Redis::expire ('testkey', 300);
+});
