@@ -107,6 +107,7 @@
                                 <td class=" ">
                                     <input type="checkbox"
                                            :checked="item.show == 1"
+                                           @change="test(item)"
                                            class="js-switch" data-switchery="true"
                                     >
                                 </td>
@@ -142,6 +143,11 @@
             el: '#comments',
             data: {
                 comments: [],
+            },
+            method: {
+               test: function (item) {
+                    console.log(item);
+                },
             },
             mounted: function () {
                 $this = this;
