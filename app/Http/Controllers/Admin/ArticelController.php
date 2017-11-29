@@ -15,7 +15,6 @@ class ArticelController extends Controller
      * @return  \Illuminate\Http\Response
      */
     protected $validateRoule = [
-        'zan' => 'required|max:100',
         'user' => 'required|exists:user,id',
         'cate'=> 'required|exists:cate,id'
     ];
