@@ -23,6 +23,7 @@ class User extends Model
     public static function bind($open_id, $message)
     {
         $ruser = Redis::get($open_id);
+        return $ruser;
         if(!$ruser){
             throw new userNotFountException();
         }
