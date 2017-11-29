@@ -53,11 +53,11 @@ class User extends Model
                 self::firstOrCreate([
                     'open_id'=>$open_id
                 ], [
-                    'account'=>$ruserInfo['account'],
-                    'password'=>$ruserInfo['password'],
+                    'account'=>$ruserInfo->account,
+                    'password'=>$ruserInfo->password,
                 ]);
 
-                return '账户:'.$ruserInfo['account'].'已保存';
+                return '账户:'.$ruserInfo->account.'已保存';
             default:
                 return 'default';
         }
