@@ -44,8 +44,8 @@
                                                 <td>{{ $v->id }}</td>
 
                                                 <td>{{ $v->name }}</td>
-
-                                                <td>{{ $v->show }}</td>
+                                                @php $arr = ['否', '是'] @endphp
+                                                <td>{{ $arr[$v->show] }}</td>
 
                                                 <td>{{ $v->updated_at }}</td>
 
