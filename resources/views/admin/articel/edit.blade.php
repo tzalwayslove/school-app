@@ -68,7 +68,6 @@
                                 </div>
                             </div>
 
-
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
@@ -77,6 +76,17 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+
+                </div>
+
+                <div class="x_panel">
+                    <div class="x_content">
+                        <table>
+                            <tr>
+                                <td>1</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
