@@ -35,6 +35,7 @@ class User extends Model
         $ruserInfo->step = intval($ruserInfo->step);
         switch($ruserInfo->step){
             case 1:
+                return 'hahaha';
                 //输入了账户
                 $ruserInfo['account'] = $message->Content;
                 $ruserInfo['step'] = 2;
