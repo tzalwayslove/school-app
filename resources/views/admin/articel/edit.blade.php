@@ -152,7 +152,7 @@
             $.get($('#comments').data('url'), function (res) {
 
                 $this.comments = res.data ;
-//                $set(v.comments, res.data);
+                console.log(res.data);
             });
         }
     });
