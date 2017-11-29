@@ -11,10 +11,10 @@ class IndexController extends Controller
     public function index()
     {
         $option = require 'wechatConfig.php';
-        dd($option);
+
         $app = new Application($option);
 
-
+        dd($app);
         $server = $app->server;
 
         $server->setMessageHandler(function ($message) {
