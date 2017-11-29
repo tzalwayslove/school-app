@@ -11,7 +11,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        dd(Log::all());
         try {
 
             $option = require 'wechatConfig.php';
