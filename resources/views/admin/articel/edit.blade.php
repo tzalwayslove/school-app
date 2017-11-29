@@ -108,7 +108,7 @@
                                 <td class=" ">@{{item.created_at}}</td>
                                 <td class=" ">@{{item.content}}</td>
                                 <td class=" ">@{{item.zan ? item.zan : 0}}</td>
-                                <td class=" ">
+                                {{--<td class=" ">
                                     <input type="checkbox"
                                            v-model="item.show == 1"
                                            class="js-switch comment-show" data-switchery="true"
@@ -116,7 +116,7 @@
                                 </td>
                                 <td class="a-right a-right ">@{{item.getUser.account}}</td>
                                 <td class=" last"><a href="#">View</a>
-                                </td>
+                                </td>--}}
                             </tr>
                             </tbody>
                         </table>
