@@ -32,7 +32,10 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
-    \Illuminate\Support\Facades\Redis::set('name', 'test');
-    \Illuminate\Support\Facades\Redis::set('name', 'test2');
-    dd(\Illuminate\Support\Facades\Redis::get('name'));
+    \App\Model\User::createOrUpdate([
+        'open_id'=>'ocDq7wTnH5dh9n09aNxRV0jrc05c'
+    ], [
+        'account'=>'123456',
+        'password'=>'65464',
+    ]);
 });
