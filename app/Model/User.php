@@ -60,7 +60,7 @@ class User extends Model
 
                 break;
             default:
-                throw new \Exception();
+                return 'default';
         }
     }
 
