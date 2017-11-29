@@ -121,8 +121,8 @@
                         </table>
                     </div>
 
-                    {{--<button class="btn btn-dark" v-if="nextUrl">上一页</button>
-                    <button class="btn btn-dark" v-if="preUrl">下一页</button>--}}
+                    <button class="btn btn-dark" v-if="nextUrl">上一页</button>
+                    <button class="btn btn-dark" v-if="preUrl">下一页</button>
 
                 </div>
             </div>
@@ -149,6 +149,8 @@
             el: '#comments',
             data: {
                 comments: [],
+                nextUrl: null,
+                preUrl:null
             },
             methods: {
                test: function (item, event) {
@@ -168,8 +170,8 @@
                 $this = this;
                 $.get($('#comments').data('url'), function (res) {
                     $this.comments = res.data;
-                    /*$this.nextUrl = res.next_page_url;
-                    $this.preUrl = res.prev_page_url;*/
+                    $this.nextUrl = res.next_page_url;
+                    $this.preUrl = res.prev_page_url;
                 });
             }
         });
