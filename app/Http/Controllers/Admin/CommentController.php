@@ -15,14 +15,20 @@ class CommentController extends Controller
      * @return  \Illuminate\Http\Response
      */
     protected $validateRoule = [
-                                                            'content'=> 'required|max:100',
-                                'zan'=> 'required|max:100',
-                                'creatd_at'=> 'required|max:100',
-                                                                    ];
+        'content' => 'required|max:100',
+        'zan' => 'required|max:100',
+        'creatd_at' => 'required|max:100',
+    ];
+
     public function index()
     {
         $list = \App\Model\Comment::paginate(100);
         return view('admin.comment.index', compact('list'));
+    }
+
+    public function comment(Request $request, $id)
+    {
+        return Comment::whereArticel($id)->paginate(50)->toJson();
     }
 
     /**
@@ -32,13 +38,13 @@ class CommentController extends Controller
      */
     public function create()
     {
-                                                                                                                                                        return view('admin.comment.create' );
+        return view('admin.comment.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
+     * @param    \Illuminate\Http\Request $request
      * @return  \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -55,7 +61,7 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function show($id)
@@ -66,20 +72,20 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $data = \App\Model\Comment::findOrFail($id);
-                                                                                                                                                        return view('admin.comment.edit', compact('data'));
+        return view('admin.comment.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
-     * @param    int  $id
+     * @param    \Illuminate\Http\Request $request
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -96,7 +102,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -104,7 +110,7 @@ class CommentController extends Controller
         $cate = \App\Model\Comment::findOrFail($id);
         $cate->delete();
         return response()->json([
-            'status'=>true
+            'status' => true
         ]);
     }
 }

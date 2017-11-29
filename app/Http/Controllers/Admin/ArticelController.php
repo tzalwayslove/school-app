@@ -76,9 +76,7 @@ class ArticelController extends Controller
     public function edit($id)
     {
         $data = \App\Model\Articel::findOrFail($id);
-        if($data){
-            $data->getComment = Comment::whereArticel($id)->paginate(50)->toJson();
-        }
+
         $user_accounts = \App\Model\User::all();
         $cate_names = \App\Model\Cate::all();
         return view('admin.articel.edit', compact('data', 'user_accounts', 'cate_names'));

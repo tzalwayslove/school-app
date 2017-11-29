@@ -82,7 +82,8 @@
 
                 <div class="x_panel">
                     <div class="x_content">
-                        <table class="table table-striped jambo_table bulk_action" id="comments">
+                        <table class="table table-striped jambo_table bulk_action" id="comments"
+                               data-url="{{ url('api/admin/comment', ['id'=>$data->id]) }}">
                             <thead>
                             <tr class="headings">
                                 <th class="column-title">评论id</th>
@@ -102,21 +103,21 @@
 
                             <tbody>
                             {{--<tr class="even pointer">--}}
-                                {{--<td class=" ">{{$comment->id}}</td>--}}
-                                {{--<td class=" ">{{ $comment->create_at }}</td>--}}
-                                {{--<td class=" ">{{ $comment->content }}</td>--}}
-                                {{--<td class=" ">{{ $comment->zan or 0 }}</td>--}}
-                                {{--<td class=" ">--}}
-                                    {{--<input type="checkbox"--}}
-                                           {{--@if($data->show) checked @endif--}}
-                                           {{--class="js-switch comment-show" data-switchery="true"--}}
-                                           {{--value="{{ $comment->show }}"--}}
-                                           {{--data-id="{{ $comment->id }}"--}}
-                                    {{-->--}}
-                                {{--</td>--}}
-                                {{--<td class="a-right a-right ">$7.45</td>--}}
-                                {{--<td class=" last"><a href="#">View</a>--}}
-                                {{--</td>--}}
+                            {{--<td class=" ">{{$comment->id}}</td>--}}
+                            {{--<td class=" ">{{ $comment->create_at }}</td>--}}
+                            {{--<td class=" ">{{ $comment->content }}</td>--}}
+                            {{--<td class=" ">{{ $comment->zan or 0 }}</td>--}}
+                            {{--<td class=" ">--}}
+                            {{--<input type="checkbox"--}}
+                            {{--@if($data->show) checked @endif--}}
+                            {{--class="js-switch comment-show" data-switchery="true"--}}
+                            {{--value="{{ $comment->show }}"--}}
+                            {{--data-id="{{ $comment->id }}"--}}
+                            {{-->--}}
+                            {{--</td>--}}
+                            {{--<td class="a-right a-right ">$7.45</td>--}}
+                            {{--<td class=" last"><a href="#">View</a>--}}
+                            {{--</td>--}}
                             {{--</tr>--}}
                             </tbody>
                         </table>
@@ -147,8 +148,12 @@
             data: {
                 comments: []
             },
-            mounted:function(){
-                console.log(1);
+
+            mounted: function () {
+                var _this = this;
+                $.get($('#comments').data('url'), function (res) {
+                    console.log(res);
+                });
             }
         });
 </script>
