@@ -33,13 +33,13 @@ class User extends Model
             throw new userNotFountException();
         }
         $ruserInfo->step = intval($ruserInfo->step);
-
+        return json_encode($message);
         switch($ruserInfo->step){
             case 1:
                 //输入了账户
                 $ruserInfo['account'] = $message->Content;
                 $ruserInfo['step'] = 2;
-                return $message->Content;
+
                 Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 300);
                 return '请输入密码:';
