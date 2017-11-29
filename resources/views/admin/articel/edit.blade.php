@@ -121,8 +121,8 @@
                         </table>
                     </div>
 
-                    <button class="btn btn-dark" v-if="nextUrl">上一页</button>
-                    <button class="btn btn-dark" v-if="preUrl">下一页</button>
+                    {{--<button class="btn btn-dark" v-if="nextUrl">上一页</button>
+                    <button class="btn btn-dark" v-if="preUrl">下一页</button>--}}
 
                 </div>
             </div>
