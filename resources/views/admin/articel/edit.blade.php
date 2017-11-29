@@ -109,7 +109,7 @@
                                 <td class=" ">
                                     <input type="checkbox"
                                            :checked="item.show == 1"
-                                           @change="test(item)"
+                                           @change="test(item, $event)"
                                            class="js-switch" data-switchery="true"
                                     >
                                 </td>
@@ -147,10 +147,10 @@
                 comments: [],
             },
             methods: {
-               test: function (item) {
+               test: function (item, event) {
                     id = item.id;
-                    show = item.show == 1 ? 0 : 1;
-                    console.log(item.show);
+                    console.log(event);
+                    return;
                     $.post($('#comments').data('show_url'), {
                         id: id,
                         sho: show
