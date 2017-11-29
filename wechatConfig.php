@@ -12,7 +12,6 @@ return [
     'app_id'  => 'wx9d83d5c8064aa174',         // AppID
     'secret'  => 'de822b9492386fe7ade0ce7f11a5cc7c',     // AppSecret
     'token'   => 'songzi',          // Token
-    'aes_key' => '',                    // EncodingAESKey，安全模式下请一定要填写！！！
     /**
      * 日志配置
      *
