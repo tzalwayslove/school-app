@@ -1,59 +1,52 @@
 @extends('layout.admin')
 
 @section('right_col')
-<div class="right_col">
-    <div class="">
-        <div class="page-title">
-            <div class="title_left">
-                <h3>Cate列表</h3>
-            </div>
-            <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">Go!</button>
-                            </span>
-                    </div>
+    <div class="right_col">
+        <div class="">
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>Cate列表</h3>
                 </div>
             </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
 
-                    <div class="x_content">
-                        <div id="table" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                            <div class="col-sm-12">
-                                <table id="datatable" class="table table-striped table-bordered dataTable no-footer"
-                                       style="vertical-align: middle; margin-bottom: 0;">
-                                    <thead>
-                                    <tr>
-                                                                                                                                    <th width="35px">id</th>
-                                                                                                                                                                                <th width="35px">标题名</th>
-                                                                                                                                                                                <th width="35px">是否显示</th>
-                                                                                                                                                                                                                                                                    <th width="35px">创建时间</th>
-                                                                                                                                                                                                                <th width="75px">操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($list as $v)
-                                    <tr>
-                                                                                                                                    <td>{{ $v->id }}</td>
-                                                                                                                                                                                <td>{{ $v->name }}</td>
-                                                                                                                                                                                @php$arr = [];$arr = ['1'=>'0',]@endphp<td>{{ $arr[$v->is_show] }}</td>
-                                                                                                                                                                                                                                                                    <td>{{ $v->updated_at }}</td>
-                                                                                                                                                                        
-                                        <td>
-                                            <a href="{{ url('admin/cate/'.$v->id.'/edit')  }}" class="btn btn-info btn-xs">编辑</a>
-                                            <a href="{{ url('admin/cate', ['id'=>$v->id])  }}"
-                                               class="btn btn-danger btn-xs del">删除</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+                        <div class="x_content">
+                            <div id="table" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                <div class="col-sm-12">
+                                    <table id="datatable" class="table table-striped table-bordered dataTable no-footer"
+                                           style="vertical-align: middle; margin-bottom: 0;">
+                                        <thead>
+                                        <tr>
+                                            <th width="35px">id</th>
+                                            <th width="35px">标题名</th>
+                                            <th width="35px">是否显示</th>
+                                            <th width="35px">创建时间</th>
+                                            <th width="75px">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($list as $v)
+                                            <tr>
+                                                <td>{{ $v->id }}</td>
+                                                <td>{{ $v->name }}</td>
+                                                @php$arrstr = ['是', '否'];@endphp
+                                                <td>{{ $arrstr[$v->show] }}</td>
+                                                <td>{{ $v->updated_at }}</td>
+
+                                                <td>
+                                                    <a href="{{ url('admin/cate/'.$v->id.'/edit')  }}"
+                                                       class="btn btn-info btn-xs">编辑</a>
+                                                    <a href="{{ url('admin/cate', ['id'=>$v->id])  }}"
+                                                       class="btn btn-danger btn-xs del">删除</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -61,7 +54,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
 @endsection
@@ -69,12 +61,14 @@
 @push('addcss')
 <!-- Datatables -->
 <link href="http://www.school.dy/public/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="http://www.school.dy/public/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
+      rel="stylesheet">
 <link href="http://www.school.dy/public/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
       rel="stylesheet">
 <link href="http://www.school.dy/public/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
       rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+<link href="http://www.school.dy/public/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
+      rel="stylesheet">
 
 @endpush
 

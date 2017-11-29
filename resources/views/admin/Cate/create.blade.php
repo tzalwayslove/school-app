@@ -25,11 +25,10 @@
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="is_show">是否显示</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="show">是否显示</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type='hidden' name='is_show' value='0'/>
                                     <input type="checkbox" checked class="js-switch" data-switchery="true"
-                                           name="is_show" id="is_show" value="1">
+                                           name="show" id="show" value="1">
                                 </div>
                             </div>
 

@@ -14,53 +14,60 @@
                     <div class="x_content">
                         <form class="form-horizontal form-label-left" novalidate data-parsley-validate
                               action="{{  url("admin/articel/$data->id") }}" method="post">
-                        {{ csrf_field() }}
-                        {{ method_field('PATCH') }}
-                        <span class="section">Articel信息</span>
-                                                                                                                                            <div class="item form-group">
+                            {{ csrf_field() }}
+                            {{ method_field('PATCH') }}
+                            <span class="section">Articel信息</span>
+                            <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"
                                        for="content">内容</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <textarea id="content" name="content" class="form-control col-md-7 col-xs-12">{{ $data->content }}</textarea>
+                                    <textarea id="content" name="content"
+                                              class="form-control col-md-7 col-xs-12">{{ $data->content }}</textarea>
                                 </div>
                             </div>
-                                                                                                                                            <div class="item form-group">
+                            <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"
                                        for="user">用户名</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="user" class="form-control col-md-7 col-xs-12" name="user" placeholder="请输入用户名" required="required" value="{{ $data->user }}" type="text">
+                                    <input id="user" class="form-control col-md-7 col-xs-12" name="user"
+                                           placeholder="请输入用户名" required="required" value="{{ $data->user }}"
+                                           type="text">
                                 </div>
                             </div>
-                                                                                <div class="item form-group">
+                            <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"
                                        for="cate">分类</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="cate" class="form-control col-md-7 col-xs-12" name="cate" placeholder="请输入分类" required="required" value="{{ $data->cate }}" type="text">
+                                    <input id="cate" class="form-control col-md-7 col-xs-12" name="cate"
+                                           placeholder="请输入分类" required="required" value="{{ $data->cate }}"
+                                           type="text">
                                 </div>
                             </div>
-                                                                                <div class="item form-group">
+                            <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"
                                        for="show">是否显示</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="show" class="form-control col-md-7 col-xs-12" name="show" placeholder="请输入是否显示" required="required" value="{{ $data->show }}" type="text">
+                                    <input id="show" class="form-control col-md-7 col-xs-12" name="show"
+                                           placeholder="请输入是否显示" required="required" value="{{ $data->show }}"
+                                           type="text">
                                 </div>
                             </div>
-                                                                                                                                                                                                            
 
-                        <div class="ln_solid"></div>
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-3">
-                                <button type="reset" class="btn btn-primary">取消</button>
-                                <button id="send" type="submit" class="btn btn-success">确定</button>
+
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-3">
+                                    <button type="reset" class="btn btn-primary">取消</button>
+                                    <button id="send" type="submit" class="btn btn-success">确定</button>
+                                </div>
                             </div>
-                        </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @endsection
+@endsection
 
 @push('addcss')
 @endpush
@@ -75,6 +82,6 @@
     });
     @endforeach
 
-    
+
 </script>
 @endpush
