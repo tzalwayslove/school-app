@@ -11,8 +11,9 @@ class IndexController extends Controller
     public function index()
     {
         $option = require 'wechatConfig.php';
-
+        dd($option);
         $app = new Application($option);
+
 
         $server = $app->server;
 
