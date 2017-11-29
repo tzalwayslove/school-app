@@ -85,7 +85,7 @@
                         <table class="table table-striped jambo_table bulk_action">
                             <thead>
                             <tr class="headings">
-                                <th class="column-title">评论id </th>
+                                <th class="column-title">评论id</th>
                                 <th class="column-title">评论时间</th>
                                 <th class="column-title">内容</th>
                                 <th class="column-title">赞</th>
@@ -94,22 +94,38 @@
                                 <th class="column-title no-link last"><span class="nobr">操作</span>
                                 </th>
                                 <th class="bulk-actions" colspan="7">
-                                    <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                    <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span
+                                                class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                                 </th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <tr class="even pointer">
-                                <td class=" ">121000040</td>
-                                <td class=" ">May 23, 2014 11:47:56 PM </td>
-                                <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                <td class=" ">John Blank L</td>
-                                <td class=" ">Paid</td>
-                                <td class="a-right a-right ">$7.45</td>
-                                <td class=" last"><a href="#">View</a>
-                                </td>
-                            </tr>
+                            @if($data->getComment->isEmpty())
+                                <tr>
+                                    <td>暂无评论</td>
+                                </tr>
+                            @else
+                                @foreach($data->getComment as $comment)
+                                    <tr class="even pointer">
+                                        <td class=" ">{{$comment->id}}</td>
+                                        <td class=" ">{{ $comment->create_at }}</td>
+                                        <td class=" ">{{ $comment->content }}</td>
+                                        <td class=" ">{{ $comment->zan or 0 }}</td>
+                                        <td class=" ">
+                                            <input type="checkbox"
+                                                   @if($data->show) checked @endif
+                                                   class="js-switch comment-show" data-switchery="true"
+                                                   value="{{ $comment->show }}"
+                                                   data-id="{{ $comment->id }}"
+                                            >
+                                        </td>
+                                        <td class="a-right a-right ">$7.45</td>
+                                        <td class=" last"><a href="#">View</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif();
                             </tbody>
                         </table>
                     </div>

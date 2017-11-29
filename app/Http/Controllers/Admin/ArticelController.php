@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Model\Articel;
+use App\Model\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -76,7 +77,7 @@ class ArticelController extends Controller
     {
         $data = \App\Model\Articel::findOrFail($id);
         if($data){
-            $data->load('getComment');
+            $data->getComment = Comment::whereArticel($id)->paginate(50)->toJson();
         }
         $user_accounts = \App\Model\User::all();
         $cate_names = \App\Model\Cate::all();
