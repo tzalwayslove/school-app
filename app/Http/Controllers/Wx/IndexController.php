@@ -18,14 +18,14 @@ class IndexController extends Controller
 
             $server = $app->server;
 
-            $server->setMessageHandler(function ($message) {
+            $server->setMessageHandler(function ($message)use($server) {
                 Log::log($message->MsgType);
                 switch ($message->MsgType) {
                     case 'event':
                         return '收到事件消息';
                         break;
                     case 'text':
-                        return '收到文字消息';
+                        return $server->getMessage();
                         break;
                     case 'image':
                         return '收到图片消息';
