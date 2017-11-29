@@ -53,7 +53,7 @@ class User extends Model
 
                 return $ruserInfo->password;
 
-                self::createOrUpdate([
+                self::firstOrCreate([
                     'open_id'=>$open_id
                 ], [
                     'account'=>$ruserInfo['account'],

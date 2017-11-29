@@ -39,5 +39,4 @@ Route::get('test', function(){
         'password'=>'65464',
     ]);
 
-    dd($res);
 });
