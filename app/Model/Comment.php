@@ -23,4 +23,10 @@ class Comment extends Model
         return $this->belongsTo('App\Model\User', 'user', 'id');
     }
 
+    public function changeShow($show)
+    {
+        $this->show = $show ? 1 : 0;
+        $this->save();
+    }
+
 }

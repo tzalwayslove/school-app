@@ -149,7 +149,15 @@
             methods: {
                test: function (item) {
                     id = item.id;
-                    console.log($(this));
+                    show = item.show == 1 ? 0 : 1;
+                    $.post($('#comments').data('show_url'), {
+                        id: id,
+                        sho: show
+                    }, function(res){
+                        if(res.result){
+                            alert('设置失败');
+                        }
+                    });
                 }
             },
             mounted: function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Lib\Result;
 use App\Model\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,6 +31,12 @@ class CommentController extends Controller
         return response()->json(Comment::whereArticel($id)->with('getUser')->paginate(50));
     }
 
+    public function editShow(Request $request)
+    {
+        $comment = Comment::find($request->input('id'));
+        $comment->changeShow($request->input('show'));
+        return new Result(true);
+    }
     /**
      * Show the form for creating a new resource.
      *

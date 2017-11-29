@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::any('/wechat', 'Wx\IndexController@index');
 
 Route::get('admin/comment/{id}', 'Admin\CommentController@comment');
+Route::post('api/admin/comment/show', 'Admin\CommentController@editShow');
