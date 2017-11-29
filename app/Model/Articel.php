@@ -13,13 +13,19 @@ class Articel extends Model
 
     use SoftDeletes;
 
-                                                    public function user_account()
+    public function user_account()
     {
         return $this->belongsTo('App\Model\User', 'user', 'id');
     }
-                            public function cate_name()
+
+    public function cate_name()
     {
         return $this->belongsTo('App\Model\Cate', 'cate', 'id');
     }
-                                                                
+
+    public function getComment()
+    {
+        return $this->hasMany('App\Model\Comment', 'articel', 'id');
+    }
+
 }
