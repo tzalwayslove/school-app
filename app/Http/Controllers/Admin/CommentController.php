@@ -16,7 +16,6 @@ class CommentController extends Controller
      */
     protected $validateRoule = [
         'content' => 'required|max:100',
-        'zan' => 'required|max:100',
         'articel' => 'required|exists:articel,id',
         'creatd_at' => 'required|max:100',
     ];
