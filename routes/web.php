@@ -24,7 +24,7 @@ Route::get('code', 'Admin\CodeController@index');
 Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
-Route::any('/wx', 'Wx\IndexController@index');
+//Route::any('/wx', 'Wx\IndexController@index');
 
 Route::post('/wx',function (){
     \App\Model\Log::log(1111111111111111);
