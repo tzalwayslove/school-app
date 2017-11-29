@@ -33,7 +33,7 @@ class User extends Model
             throw new userNotFountException();
         }
         $ruserInfo->step = intval($ruserInfo->step);
-        return json_encode($message);
+        return json_encode($message->Content);
         switch($ruserInfo->step){
             case 1:
                 //输入了账户
