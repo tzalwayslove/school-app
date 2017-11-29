@@ -24,4 +24,4 @@ Route::get('code', 'Admin\CodeController@index');
 Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
-Route::any('/wechat', 'WeChatController@serve');
+Route::any('/wechat', 'Wx\IndexController@index');
