@@ -82,7 +82,7 @@
 
                 <div class="x_panel">
                     <div class="x_content">
-                        <table class="table table-striped jambo_table bulk_action">
+                        <table class="table table-striped jambo_table bulk_action" id="comments">
                             <thead>
                             <tr class="headings">
                                 <th class="column-title">评论id</th>
@@ -107,23 +107,23 @@
                                     <td>暂无评论</td>
                                 </tr>
                             @else
-                            <tr class="even pointer">
-                                <td class=" ">{{$comment->id}}</td>
-                                <td class=" ">{{ $comment->create_at }}</td>
-                                <td class=" ">{{ $comment->content }}</td>
-                                <td class=" ">{{ $comment->zan or 0 }}</td>
-                                <td class=" ">
-                                    <input type="checkbox"
-                                           @if($data->show) checked @endif
-                                           class="js-switch comment-show" data-switchery="true"
-                                           value="{{ $comment->show }}"
-                                           data-id="{{ $comment->id }}"
-                                    >
-                                </td>
-                                <td class="a-right a-right ">$7.45</td>
-                                <td class=" last"><a href="#">View</a>
-                                </td>
-                            </tr>
+                                <tr class="even pointer">
+                                    <td class=" ">{{$comment->id}}</td>
+                                    <td class=" ">{{ $comment->create_at }}</td>
+                                    <td class=" ">{{ $comment->content }}</td>
+                                    <td class=" ">{{ $comment->zan or 0 }}</td>
+                                    <td class=" ">
+                                        <input type="checkbox"
+                                               @if($data->show) checked @endif
+                                               class="js-switch comment-show" data-switchery="true"
+                                               value="{{ $comment->show }}"
+                                               data-id="{{ $comment->id }}"
+                                        >
+                                    </td>
+                                    <td class="a-right a-right ">$7.45</td>
+                                    <td class=" last"><a href="#">View</a>
+                                    </td>
+                                </tr>
                             @endif();
                             </tbody>
                         </table>
@@ -149,7 +149,11 @@
         type: 'error'
     });
     @endforeach
-
-
+    var v = new Vue({
+            el: '#comments',
+            data: {
+                comments: []
+            }
+        });
 </script>
 @endpush
