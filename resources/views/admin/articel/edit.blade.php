@@ -120,6 +120,9 @@
                             </tbody>
                         </table>
                     </div>
+                    <button class="btn btn-dark">上一页</button>
+                    <button class="btn btn-dark">下一页</button>
+
                 </div>
             </div>
         </div>
