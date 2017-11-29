@@ -149,12 +149,10 @@
             methods: {
                test: function (item, event) {
                     id = item.id;
-                    console.log($(event.target).is(':checked'));
 
-                    return;
                     $.post($('#comments').data('show_url'), {
                         id: id,
-                        sho: show
+                        show: $(event.target).is(':checked') ? 1: 0
                     }, function(res){
                         if(res.result.code != 1){
                             alert('设置失败');
