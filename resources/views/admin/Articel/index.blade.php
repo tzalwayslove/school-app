@@ -44,9 +44,9 @@
                                     <tr>
                                                                                                                                     <td>{{ $v->id }}</td>
                                                                                                                                                                                                                                                                     <td>{{ $v->zan }}</td>
-                                                                                                                                                                                <td>{{ $v->user }}</td>
-                                                                                                                                                                                <td>{{ $v->cate }}</td>
-                                                                                                                                                                                <td>{{ $v->show }}</td>
+                                                                                                                                                                                <td>{{ $v->user_account->account }}</td>
+                                                                                                                                                                                <td>{{ $v->cate_name->name }}</td>
+                                                                                                                                                                                @php$arr = [];$arr = ['1'=>'0',]@endphp<td>{{ $arr[$v->show] }}</td>
                                                                                                                                                                                                                                                                     <td>{{ $v->updated_at }}</td>
                                                                                                                                                                         
                                         <td>

@@ -15,10 +15,10 @@ class ArticelController extends Controller
      * @return  \Illuminate\Http\Response
      */
     protected $validateRoule = [
-        'user' => 'required|max:100',
-        'cate' => 'required|max:100',
+        'zan' => 'required|max:100',
+        'user' => 'required|exists:user,id',
+        'cate'=> 'required|exists:cate,id'
     ];
-
     public function index()
     {
         $list = \App\Model\Articel::paginate(100);
@@ -32,7 +32,9 @@ class ArticelController extends Controller
      */
     public function create()
     {
-        return view('admin.articel.create');
+        $user_accounts = \App\Model\User::all();
+        $cate_names = \App\Model\Cate::all();
+        return view('admin.articel.create', compact('user_accounts', 'cate_names'));
     }
 
     /**
@@ -47,7 +49,7 @@ class ArticelController extends Controller
         $data = $request->all();
         $this->validate($request, $this->validateRoule);
         unset($data['uploadImg']);
-        $data['show'] = isset($data['show']) ? 1 :0;
+        $data['show'] = isset($data['show']) ? 1 : 0 ;
         \App\Model\Articel::create($data);
         return redirect('admin/articel');
     }
@@ -72,7 +74,9 @@ class ArticelController extends Controller
     public function edit($id)
     {
         $data = \App\Model\Articel::findOrFail($id);
-        return view('admin.articel.edit', compact('data'));
+        $user_accounts = \App\Model\User::all();
+        $cate_names = \App\Model\Cate::all();
+        return view('admin.articel.edit', compact('data', 'user_accounts', 'cate_names'));
     }
 
     /**
@@ -84,10 +88,10 @@ class ArticelController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $this->validate($request, $this->validateRoule);
         $data = $request->all();
-        $data['show'] = isset($data['show']) ? 1 :0;
+
+        $data['show'] = isset($data['show']) ? 1 : 0 ;
         unset($data['uploadImg']);
         \App\Model\Articel::findOrFail($id)->update($data);
         return redirect('admin/articel');

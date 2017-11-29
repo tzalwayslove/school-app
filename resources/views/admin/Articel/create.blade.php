@@ -17,31 +17,41 @@
                             {{ csrf_field() }}
                             <span class="section">Articel信息</span>
 
-                                                                                                                                                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="content">内容</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <textarea id="content" name="content" class="form-control col-md-7 col-xs-12"></textarea>
-                                    </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="content">内容</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <textarea id="content" name="content"
+                                              class="form-control col-md-7 col-xs-12"></textarea>
                                 </div>
-                                                                                                                                                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user">用户名</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="user" class="form-control col-md-7 col-xs-12" name="user" placeholder="请输入用户名" required="required" value="" type="text">
-                                    </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user">用户名</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select name="user" id="user" class="form-control">
+                                        @foreach($user_accounts as $user)
+                                            <option value="{{ $user->id }}">{{ $user->account }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                                                                            <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cate">分类</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="cate" class="form-control col-md-7 col-xs-12" name="cate" placeholder="请输入分类" required="required" value="" type="text">
-                                    </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cate">分类</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select name="cate" id="cate" class="form-control">
+                                        @foreach($cate_names as $cate)
+                                            <option value="{{ $cate->id }}">{{ $cate->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                                                                            <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="show">是否显示</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="show" class="form-control col-md-7 col-xs-12" name="show" placeholder="请输入是否显示" required="required" value="" type="text">
-                                    </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="show">是否显示</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="checkbox" checked class="js-switch" data-switchery="true" name="show"
+                                           id="show" value="1">
                                 </div>
-                                                                                                                                                                                                                                        
+                            </div>
+
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
@@ -55,12 +65,14 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
 
 @push('addcss')
+<link href="{{ asset('public/vendors/switchery/dist/switchery.min.css') }}" rel="stylesheet">
 @endpush
 @push('addjs')
 <script src="{{ asset('public/vendors/validator/validator.js') }}"></script>
+<script src="{{ asset('public/vendors/switchery/dist/switchery.min.js') }}"></script>
 <script>
     @foreach($errors->all() as $e)
         new PNotify({
@@ -70,6 +82,6 @@
     });
     @endforeach
 
-    
+
 </script>
 @endpush
