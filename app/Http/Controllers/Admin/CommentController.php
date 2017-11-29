@@ -17,8 +17,10 @@ class CommentController extends Controller
     protected $validateRoule = [
         'content' => 'required|max:100',
         'zan' => 'required|max:100',
-        'articel' => 'required|exists:articel,id'                                                                'creatd_at'=> 'required|max:100',
-                                                                    ];
+        'articel' => 'required|exists:articel,id',
+        'creatd_at' => 'required|max:100',
+    ];
+
     public function index()
     {
         $list = \App\Model\Comment::paginate(100);
@@ -29,6 +31,7 @@ class CommentController extends Controller
     {
         return Comment::whereArticel($id)->paginate(50)->toJson();
     }
+
     /**
      * Show the form for creating a new resource.
      *
