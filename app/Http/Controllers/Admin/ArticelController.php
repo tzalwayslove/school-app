@@ -76,7 +76,7 @@ class ArticelController extends Controller
     {
         $data = \App\Model\Articel::findOrFail($id);
         if($data){
-            $data->load('getArticel');
+            $data->load('getComment');
         }
         $user_accounts = \App\Model\User::all();
         $cate_names = \App\Model\Cate::all();
