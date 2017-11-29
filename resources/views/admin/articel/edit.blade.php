@@ -110,7 +110,7 @@
                                 <td class=" ">@{{item.zan ? item.zan : 0}}</td>
                                 <td class=" ">
                                     <input type="checkbox"
-                                           v-model="item.show == 1 ? true : false"
+                                           v-model="item.show == 1"
                                            class="js-switch comment-show" data-switchery="true"
                                     >
                                 </td>
@@ -150,9 +150,7 @@
         mounted: function(){
             $this = this;
             $.get($('#comments').data('url'), function (res) {
-
                 $this.comments = res.data ;
-                console.log(res.data);
             });
         }
     });
