@@ -147,13 +147,17 @@
         data: {
             comments: [],
         },
+            mounted: function(){
+            $this = this;
+            $.get($('#comments').data('url'), function (res) {
+                console.log(res.data);
+                console.log(v.comments);
+                $this.$set(v.comments, res.data);
+            });
+        }
     });
     $(function(){
-        $.get($('#comments').data('url'), function (res) {
-            console.log(res.data);
-            console.log(v.comments);
-            v.set(v.comments, res.data);
-        });
+
     })
 </script>
 @endpush
