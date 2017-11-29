@@ -32,10 +32,12 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
-    \App\Model\User::firstOrCreate([
+    $res = \App\Model\User::firstOrCreate([
         'open_id'=>'ocDq7wTnH5dh9n09aNxRV0jrc05c'
     ], [
         'account'=>'123456',
         'password'=>'65464',
     ]);
+
+    dd($res);
 });
