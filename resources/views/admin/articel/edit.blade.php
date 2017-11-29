@@ -101,8 +101,6 @@
                             </thead>
 
                             <tbody>
-
-
                             {{--<tr class="even pointer">--}}
                                 {{--<td class=" ">{{$comment->id}}</td>--}}
                                 {{--<td class=" ">{{ $comment->create_at }}</td>--}}
@@ -148,6 +146,9 @@
             el: '#comments',
             data: {
                 comments: []
+            },
+            mounted:function(){
+                console.log(1);
             }
         });
 </script>
