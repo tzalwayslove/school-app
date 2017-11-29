@@ -122,7 +122,7 @@
                     </div>
 
                     <button class="btn btn-dark" v-if="preUrl" @click="pre">上一页</button>
-                    <button class="btn btn-dark" v-if="nextUrl" @click="next">下一页</button>
+                    <button class="btn btn-danger" v-if="nextUrl" @click="next">下一页</button>
 
                 </div>
             </div>
