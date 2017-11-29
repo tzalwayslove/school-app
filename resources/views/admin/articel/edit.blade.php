@@ -111,8 +111,6 @@
                                     <input type="checkbox"
                                            v-model="item.show == 1"
                                            class="js-switch comment-show" data-switchery="true"
-                                           value="{{ $comment->show }}"
-                                           data-id="{{ $comment->id }}"
                                     >
                                 </td>
                                 <td class="a-right a-right ">@{{item.getUser.account}}</td>
