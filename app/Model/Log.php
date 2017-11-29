@@ -13,7 +13,7 @@ class Log extends Model
 
     use SoftDeletes;
 
-    public static function Log($data)
+    public static function log($data)
     {
         $log = new self();
         $log->data = $data;

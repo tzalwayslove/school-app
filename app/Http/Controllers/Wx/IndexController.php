@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Wx;
 
+use App\Model\Log;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,6 +18,7 @@ class IndexController extends Controller
         $server = $app->server;
 
         $server->setMessageHandler(function ($message) {
+            Log::log($message->MsgType);
             switch ($message->MsgType) {
                 case 'event':
                     return '收到事件消息';
