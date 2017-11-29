@@ -18,7 +18,7 @@ Route::get('/s', function(){
     session(['a'=>10]);
 });
 Route::get('/g', function(){
-    session('a');
+    dd(session('a'));
 });
 Route::get('admin', 'Admin\AdminController@index');
 
