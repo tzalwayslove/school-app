@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Redis;
 
+
 class User extends Model
 {
     protected $table = 'user';
@@ -37,15 +38,14 @@ class User extends Model
                 $ruserInfo['account'] = $message->Content;
                 $ruserInfo['step'] = 2;
 
-                $res = Redis::set($open_id, json_encode($ruserInfo));
+                Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 300);
                 return '请输入密码:';
-                break;
             case 2:
                 //输入了密码
                 $ruserInfo['password'] = $message->Content;
                 $ruserInfo['step'] = 3;
-                Redis::set($open_id, $ruserInfo);
+                Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 300);
 
                 $user = self::createOrUpdate([
