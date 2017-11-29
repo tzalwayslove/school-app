@@ -31,7 +31,7 @@ class User extends Model
         if(!$ruser){
             throw new userNotFountException();
         }
-        return $ruserInfo->step;
+        return json_encode($message);
         switch($ruserInfo->step){
             case 1:
                 //输入了账户
