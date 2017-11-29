@@ -170,8 +170,8 @@
                 $this = this;
                 $.get($('#comments').data('url'), function (res) {
                     $this.comments = res.data;
-                    $this.nextUrl = res.next_page_url;
-                    $this.preUrl = res.prev_page_url;
+                    /*$this.nextUrl = res.next_page_url;
+                    $this.preUrl = res.prev_page_url;*/
                 });
             }
         });
