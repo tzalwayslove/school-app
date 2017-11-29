@@ -17,36 +17,38 @@
                             {{ csrf_field() }}
                             <span class="section">Comment信息</span>
 
-                                                                                                                                                                <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="content">评论内容</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="content" class="form-control col-md-7 col-xs-12" name="content" placeholder="请输入评论内容" required="required" value="" type="text">
-                                    </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="content">评论内容</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="content" class="form-control col-md-7 col-xs-12" name="content"
+                                           placeholder="请输入评论内容" required="required" value="" type="text">
                                 </div>
-                                                                                            <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zan">赞</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="zan" class="form-control col-md-7 col-xs-12" name="zan" placeholder="请输入赞" required="required" value="" type="text">
-                                    </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zan">赞</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input id="zan" class="form-control col-md-7 col-xs-12" name="zan"
+                                           placeholder="请输入赞" required="required" value="" type="text">
                                 </div>
-                                                                                            <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="articel">文章id</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <select name="articel" id="articel" class="form-control">
-                                                @foreach($articel_ids as $articel)
-                                                    <option value="{{ $articel->id }}">{{ $articel->id }}</option>
-                                                @endforeach
-                                            </select>
-                                    </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="articel">文章id</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select name="articel" id="articel" class="form-control">
+                                        @foreach($articel_ids as $articel)
+                                            <option value="{{ $articel->id }}">{{ $articel->id }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                                                                            <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="show">是否显示</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type='hidden' name='show' value='0'/>
-<input type="checkbox" checked class="js-switch" data-switchery="true" name="show" id="show" value="1">
-                                    </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="show">是否显示</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="checkbox" checked class="js-switch" data-switchery="true" name="show"
+                                           id="show" value="1">
                                 </div>
-                                                                                                                                                                                                                                        
+                            </div>
+
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
@@ -60,14 +62,14 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
 
 @push('addcss')
-    <link href="{{ asset('public/vendors/switchery/dist/switchery.min.css') }}" rel="stylesheet">
+<link href="{{ asset('public/vendors/switchery/dist/switchery.min.css') }}" rel="stylesheet">
 @endpush
 @push('addjs')
 <script src="{{ asset('public/vendors/validator/validator.js') }}"></script>
-    <script src="{{ asset('public/vendors/switchery/dist/switchery.min.js') }}"></script>
+<script src="{{ asset('public/vendors/switchery/dist/switchery.min.js') }}"></script>
 <script>
     @foreach($errors->all() as $e)
         new PNotify({
@@ -77,6 +79,6 @@
     });
     @endforeach
 
-    
+
 </script>
 @endpush
