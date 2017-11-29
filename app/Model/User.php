@@ -35,18 +35,18 @@ class User extends Model
         $ruserInfo->step = intval($ruserInfo->step);
         switch($ruserInfo->step){
             case 1:
-                return 'hahaha';
+
                 //输入了账户
-                $ruserInfo['account'] = $message->Content;
-                $ruserInfo['step'] = 2;
+                $ruserInfo->account = $message->Content;
+                $ruserInfo->step = 2;
 
                 Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 300);
                 return '请输入密码:';
             case 2:
                 //输入了密码
-                $ruserInfo['password'] = $message->Content;
-                $ruserInfo['step'] = 3;
+                $ruserInfo->password = $message->Content;
+                $ruserInfo->step = 3;
                 Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 300);
 
