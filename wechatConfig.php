@@ -5,7 +5,7 @@ return [
      *
      * 当值为 false 时，所有的日志都不会记录
      */
-    'debug'  => false,
+    'debug'  => true,
     /**
      * 账号基本信息，请从微信公众平台/开放平台获取
      */
@@ -55,6 +55,6 @@ return [
      */
     'guzzle' => [
         'timeout' => 3.0, // 超时时间（秒）
-        //'verify' => false, // 关掉 SSL 认证（强烈不建议！！！）
+        'verify' => false, // 关掉 SSL 认证（强烈不建议！！！）
     ],
 ];
