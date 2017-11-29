@@ -32,7 +32,7 @@
                                             <tr>
                                                 <td>{{ $v->id }}</td>
                                                 <td>{{ $v->name }}</td>
-                                                @php$arrstr = ['是', '否'];@endphp
+                                                @php$arrstr = ['否', '是'];@endphp
                                                 <td>{{ $arrstr[$v->show] }}</td>
                                                 <td>{{ $v->updated_at }}</td>
 
