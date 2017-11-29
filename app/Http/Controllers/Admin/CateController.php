@@ -15,8 +15,9 @@ class CateController extends Controller
      * @return  \Illuminate\Http\Response
      */
     protected $validateRoule = [
-                                                            'name'=> 'required|max:100',
-                                                                                                                                ];
+        'name' => 'required|max:100',
+    ];
+
     public function index()
     {
         $list = \App\Model\Cate::paginate(100);
@@ -30,13 +31,13 @@ class CateController extends Controller
      */
     public function create()
     {
-                                                                                                                                                        return view('admin.cate.create' );
+        return view('admin.cate.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
+     * @param    \Illuminate\Http\Request $request
      * @return  \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,7 +46,7 @@ class CateController extends Controller
         $data = $request->all();
         $this->validate($request, $this->validateRoule);
         unset($data['uploadImg']);
-
+        $data['show'] = isset($data['show']) ? 1 : 0;
         \App\Model\Cate::create($data);
         return redirect('admin/cate');
     }
@@ -53,7 +54,7 @@ class CateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,20 +65,20 @@ class CateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $data = \App\Model\Cate::findOrFail($id);
-                                                                                                                                                        return view('admin.cate.edit', compact('data'));
+        return view('admin.cate.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
-     * @param    int  $id
+     * @param    \Illuminate\Http\Request $request
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -85,6 +86,7 @@ class CateController extends Controller
 
         $this->validate($request, $this->validateRoule);
         $data = $request->all();
+        $data['show'] = isset($data['show']) ? 1 : 0;
 
         unset($data['uploadImg']);
         \App\Model\Cate::findOrFail($id)->update($data);
@@ -94,7 +96,7 @@ class CateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -102,7 +104,7 @@ class CateController extends Controller
         $cate = \App\Model\Cate::findOrFail($id);
         $cate->delete();
         return response()->json([
-            'status'=>true
+            'status' => true
         ]);
     }
 }
