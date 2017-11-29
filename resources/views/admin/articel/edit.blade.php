@@ -114,7 +114,7 @@
                                            {{--class="js-switch comment-show" data-switchery="true"--}}
                                     {{-->--}}
                                 </td>
-                                <td class="a-right a-right ">@{{item.getUser.account}}</td>
+                                <td class="a-right a-right ">@{{item.get_user.account}}</td>
                                 <td class=" last"><a href="#">View</a>
                                 </td>
                             </tr>
