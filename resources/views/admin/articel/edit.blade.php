@@ -143,17 +143,15 @@
     });
             @endforeach
     var v = new Vue({
-            el: '#comments',
-            data: {
-                comments: [],
-            },
-
-            mounted: function () {
-                var $this = this;
-                $.get($('#comments').data('url'), function (res) {
-                    $this.data = res.data
-                });
-            }
+        el: '#comments',
+        data: {
+            comments: [],
+        },
+    });
+    $(function(){
+        $.get($('#comments').data('url'), function (res) {
+            v.data = res.data
         });
+    })
 </script>
 @endpush
