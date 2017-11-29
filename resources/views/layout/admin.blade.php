@@ -75,7 +75,17 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="menu_section">
+                        <h3>设置</h3>
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="e_commerce.html">E-commerce</a></li>
+                                </ul>
+                            </li>
 
+                        </ul>
+                    </div>
 
                 </div>
                 <!-- /sidebar menu -->
