@@ -35,7 +35,7 @@ class CommentController extends Controller
     {
         $comment = Comment::find($request->input('id'));
         $comment->changeShow($request->input('show'));
-        return new Result(true);
+        return ['result'=>new Result(true)];
     }
     /**
      * Show the form for creating a new resource.
