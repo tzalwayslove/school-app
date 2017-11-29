@@ -149,7 +149,7 @@
             methods: {
                test: function (item, event) {
                     id = item.id;
-                    console.log(event.target);
+                    console.log($(event.target).val());
                     return;
                     $.post($('#comments').data('show_url'), {
                         id: id,
