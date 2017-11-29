@@ -32,5 +32,7 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
-
+    \Illuminate\Support\Facades\Redis::set('name', 'test');
+    \Illuminate\Support\Facades\Redis::set('name', 'test2');
+    \Illuminate\Support\Facades\Redis::get('name');
 });
