@@ -54,7 +54,7 @@ class CommentController extends Controller
         $data = $request->all();
         $this->validate($request, $this->validateRoule);
         unset($data['uploadImg']);
-
+        $data['show'] = isset($data['show']) ? 1 : 0;
         \App\Model\Comment::create($data);
         return redirect('admin/comment');
     }
@@ -96,6 +96,7 @@ class CommentController extends Controller
         $this->validate($request, $this->validateRoule);
         $data = $request->all();
 
+        $data['show'] = isset($data['show']) ? 1 : 0;
         unset($data['uploadImg']);
         \App\Model\Comment::findOrFail($id)->update($data);
         return redirect('admin/comment');
