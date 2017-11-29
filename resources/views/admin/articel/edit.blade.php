@@ -152,7 +152,7 @@
         $.get($('#comments').data('url'), function (res) {
             console.log(res.data);
             console.log(v.comments);
-            v.set(vm.comments, res.data);
+            v.set(v.comments, res.data);
         });
     })
 </script>
