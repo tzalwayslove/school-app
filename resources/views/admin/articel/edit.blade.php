@@ -82,7 +82,7 @@
 
                 <div class="x_panel">
                     <div class="x_content">
-                        <table class="table table-striped jambo_table bulk_action" id="comments"
+                        <table class="table table-hover" id="comments"
                                data-url="{{ url('api/admin/comment', ['id'=>$data->id]) }}">
                             <thead>
                             <tr class="headings">
