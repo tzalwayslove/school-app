@@ -25,7 +25,7 @@ class IndexController extends Controller
                         return '收到事件消息';
                         break;
                     case 'text':
-                        return $server->getMessage();
+                        return json_encode($message, JSON_UNESCAPED_UNICODE);
                         break;
                     case 'image':
                         return '收到图片消息';
