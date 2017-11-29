@@ -28,11 +28,11 @@ class IndexController extends Controller
                         case 'text':
                             switch ($message->Content) {
                                 case "绑定":
-                                    User::createInit($message->FromuserName);
+                                    User::createInit($message->FromUserName);
                                     return '请输入您的学号:';
                                 default:
                                     try {
-                                        $res = User::bind($message->FromuserName, $message);
+                                        $res = User::bind($message->FromUserName, $message);
                                         return $res;
                                     } catch (userNotFountException $e) {
                                         return '输入绑定即可进入绑定流程';

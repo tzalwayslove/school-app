@@ -31,7 +31,6 @@ class User extends Model
         if(!$ruser){
             throw new userNotFountException();
         }
-        return $open_id;
         switch($ruserInfo->step){
             case 1:
                 //输入了账户
