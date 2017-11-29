@@ -15,10 +15,10 @@ class ArticelController extends Controller
      * @return  \Illuminate\Http\Response
      */
     protected $validateRoule = [
-                                                                                            'zan'=> 'required|max:100',
-                                'user'=> 'required|max:100',
-                                'cate'=> 'required|max:100',
-                                                                                                                                ];
+        'user' => 'required|max:100',
+        'cate' => 'required|max:100',
+    ];
+
     public function index()
     {
         $list = \App\Model\Articel::paginate(100);
@@ -32,13 +32,13 @@ class ArticelController extends Controller
      */
     public function create()
     {
-                                                                                                                                                                                                                    return view('admin.articel.create' );
+        return view('admin.articel.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
+     * @param    \Illuminate\Http\Request $request
      * @return  \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,7 +47,7 @@ class ArticelController extends Controller
         $data = $request->all();
         $this->validate($request, $this->validateRoule);
         unset($data['uploadImg']);
-
+        $data['show'] = isset($data['show']) ? 1 :0;
         \App\Model\Articel::create($data);
         return redirect('admin/articel');
     }
@@ -55,7 +55,7 @@ class ArticelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function show($id)
@@ -66,20 +66,20 @@ class ArticelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $data = \App\Model\Articel::findOrFail($id);
-                                                                                                                                                                                                                    return view('admin.articel.edit', compact('data'));
+        return view('admin.articel.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
-     * @param    int  $id
+     * @param    \Illuminate\Http\Request $request
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -87,7 +87,7 @@ class ArticelController extends Controller
 
         $this->validate($request, $this->validateRoule);
         $data = $request->all();
-
+        $data['show'] = isset($data['show']) ? 1 :0;
         unset($data['uploadImg']);
         \App\Model\Articel::findOrFail($id)->update($data);
         return redirect('admin/articel');
@@ -96,7 +96,7 @@ class ArticelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -104,7 +104,7 @@ class ArticelController extends Controller
         $cate = \App\Model\Articel::findOrFail($id);
         $cate->delete();
         return response()->json([
-            'status'=>true
+            'status' => true
         ]);
     }
 }
