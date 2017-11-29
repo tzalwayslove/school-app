@@ -51,6 +51,8 @@ class User extends Model
                 Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 0);
 
+                return $ruserInfo->password;
+
                 self::createOrUpdate([
                     'open_id'=>$open_id
                 ], [
