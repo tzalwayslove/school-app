@@ -23,7 +23,7 @@ class User extends Model
     public static function bind($open_id, $message)
     {
         $ruser = Redis::get($open_id);
-        return $ruser;
+
         if(!$ruser){
             throw new userNotFountException();
         }
@@ -37,6 +37,7 @@ class User extends Model
                 //输入了账户
                 $ruserInfo['account'] = $message->Content;
                 $ruserInfo['step'] = 2;
+                return 2;
                 Redis::set($open_id, $ruserInfo);
                 Redis::expire ($open_id, 300);
                 return '请输入密码:';
