@@ -151,6 +151,7 @@
     $(function(){
         $.get($('#comments').data('url'), function (res) {
             console.log(res.data);
+            console.log(v.comments);
             v.comments = res.data
         });
     })
