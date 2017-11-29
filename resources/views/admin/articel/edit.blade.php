@@ -150,6 +150,7 @@
                test: function (item) {
                     id = item.id;
                     show = item.show == 1 ? 0 : 1;
+                    console.log(item.show);
                     $.post($('#comments').data('show_url'), {
                         id: id,
                         sho: show
