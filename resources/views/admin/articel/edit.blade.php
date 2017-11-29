@@ -154,7 +154,7 @@
                         id: id,
                         sho: show
                     }, function(res){
-                        if(res.result){
+                        if(res.result.code != 1){
                             alert('设置失败');
                         }
                     });
