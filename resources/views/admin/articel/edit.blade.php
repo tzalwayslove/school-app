@@ -86,11 +86,11 @@
                             <thead>
                             <tr class="headings">
                                 <th class="column-title">评论id </th>
-                                <th class="column-title">评论人</th>
-                                <th class="column-title">内容</th>
                                 <th class="column-title">评论时间</th>
+                                <th class="column-title">内容</th>
                                 <th class="column-title">赞</th>
                                 <th class="column-title">是否显示</th>
+                                <th class="column-title">评论人</th>
                                 <th class="column-title no-link last"><span class="nobr">操作</span>
                                 </th>
                                 <th class="bulk-actions" colspan="7">
