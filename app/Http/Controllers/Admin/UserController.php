@@ -15,14 +15,15 @@ class UserController extends Controller
      * @return  \Illuminate\Http\Response
      */
     protected $validateRoule = [
-                                                            'account'=> 'required|max:100',
-                                'password'=> 'required|max:100',
-                                'open_id'=> 'required|max:100',
-                                'wx_name'=> 'required|max:100',
-                                'wx_img'=> 'required',
-                                'sex'=> 'required|max:100',
-                                'status'=> 'required|max:100',
-                                                                                                ];
+        'account' => 'required|max:100',
+        'password' => 'required|max:100',
+        'open_id' => 'required|max:100',
+        'wx_name' => 'required|max:100',
+        'wx_img' => 'required',
+        'sex' => 'required|max:100',
+        'status' => 'required|max:100',
+    ];
+
     public function index()
     {
         $list = \App\Model\User::paginate(100);
@@ -36,13 +37,13 @@ class UserController extends Controller
      */
     public function create()
     {
-                                                                                                                                                                                                                                                            return view('admin.user.create' );
+        return view('admin.user.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
+     * @param    \Illuminate\Http\Request $request
      * @return  \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -59,7 +60,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function show($id)
@@ -70,20 +71,20 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $data = \App\Model\User::findOrFail($id);
-                                                                                                                                                                                                                                                            return view('admin.user.edit', compact('data'));
+        return view('admin.user.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
-     * @param    int  $id
+     * @param    \Illuminate\Http\Request $request
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -100,7 +101,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -108,7 +109,7 @@ class UserController extends Controller
         $cate = \App\Model\User::findOrFail($id);
         $cate->delete();
         return response()->json([
-            'status'=>true
+            'status' => true
         ]);
     }
 }
