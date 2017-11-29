@@ -102,29 +102,24 @@
 
                             <tbody>
 
-                            @if($data->getComment->isEmpty())
-                                <tr>
-                                    <td>暂无评论</td>
-                                </tr>
-                            @else
-                                <tr class="even pointer">
-                                    <td class=" ">{{$comment->id}}</td>
-                                    <td class=" ">{{ $comment->create_at }}</td>
-                                    <td class=" ">{{ $comment->content }}</td>
-                                    <td class=" ">{{ $comment->zan or 0 }}</td>
-                                    <td class=" ">
-                                        <input type="checkbox"
-                                               @if($data->show) checked @endif
-                                               class="js-switch comment-show" data-switchery="true"
-                                               value="{{ $comment->show }}"
-                                               data-id="{{ $comment->id }}"
-                                        >
-                                    </td>
-                                    <td class="a-right a-right ">$7.45</td>
-                                    <td class=" last"><a href="#">View</a>
-                                    </td>
-                                </tr>
-                            @endif();
+
+                            {{--<tr class="even pointer">--}}
+                                {{--<td class=" ">{{$comment->id}}</td>--}}
+                                {{--<td class=" ">{{ $comment->create_at }}</td>--}}
+                                {{--<td class=" ">{{ $comment->content }}</td>--}}
+                                {{--<td class=" ">{{ $comment->zan or 0 }}</td>--}}
+                                {{--<td class=" ">--}}
+                                    {{--<input type="checkbox"--}}
+                                           {{--@if($data->show) checked @endif--}}
+                                           {{--class="js-switch comment-show" data-switchery="true"--}}
+                                           {{--value="{{ $comment->show }}"--}}
+                                           {{--data-id="{{ $comment->id }}"--}}
+                                    {{-->--}}
+                                {{--</td>--}}
+                                {{--<td class="a-right a-right ">$7.45</td>--}}
+                                {{--<td class=" last"><a href="#">View</a>--}}
+                                {{--</td>--}}
+                            {{--</tr>--}}
                             </tbody>
                         </table>
                     </div>
@@ -148,7 +143,7 @@
         text: '{{ $e }}',
         type: 'error'
     });
-    @endforeach
+            @endforeach
     var v = new Vue({
             el: '#comments',
             data: {
