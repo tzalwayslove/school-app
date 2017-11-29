@@ -25,5 +25,5 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('/wx', function(){
-    return $_GET['echo_str'];
+    return $_GET['echostr'];
 });
