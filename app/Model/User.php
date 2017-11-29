@@ -32,7 +32,7 @@ class User extends Model
         if(!$ruser){
             throw new userNotFountException();
         }
-        switch($ruserInfo->step){
+        switch($ruserInfo['step']){
             case 1:
                 //输入了账户
                 $ruserInfo['account'] = $message->Content;
