@@ -106,6 +106,7 @@
                                     <td>暂无评论</td>
                                 </tr>
                             @else
+                                @php(dd($data->getComment))
                                 @foreach($data->getComment as $comment)
                                     <tr class="even pointer">
                                         <td class=" ">{{$comment->id}}</td>
