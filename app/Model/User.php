@@ -32,7 +32,7 @@ class User extends Model
         if(!$ruser){
             throw new userNotFountException();
         }
-        return json_encode($ruserInfo);
+        return json_encode($ruserInfo->step);
 
         switch($ruserInfo->step){
             case 1:
