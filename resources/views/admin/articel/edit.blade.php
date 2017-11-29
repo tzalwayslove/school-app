@@ -102,24 +102,22 @@
                             </thead>
 
                             <tbody>
-                            <tr>
-                                <td>@{{message}}</td>
+
+                            <tr class="even pointer" v-for="item in data">
+                                <td class=" ">@{{item.id}}</td>
+                                <td class=" ">@{{item.created_at}}</td>
+                                <td class=" ">@{{item.content}}</td>
+                                <td class=" ">@{{item.zan ? item.zan : 0}}</td>
+                                <td class=" ">
+                                    <input type="checkbox"
+                                           v-model="item.show == 1"
+                                           class="js-switch comment-show" data-switchery="true"
+                                    >
+                                </td>
+                                <td class="a-right a-right ">@{{item.getUser.account}}</td>
+                                <td class=" last"><a href="#">View</a>
+                                </td>
                             </tr>
-                            {{--<tr class="even pointer" v-for="item in data">--}}
-                                {{--<td class=" ">@{{item.id}}</td>--}}
-                                {{--<td class=" ">@{{item.created_at}}</td>--}}
-                                {{--<td class=" ">@{{item.content}}</td>--}}
-                                {{--<td class=" ">@{{item.zan ? item.zan : 0}}</td>--}}
-                                {{--<td class=" ">--}}
-                                    {{--<input type="checkbox"--}}
-                                           {{--v-model="item.show == 1"--}}
-                                           {{--class="js-switch comment-show" data-switchery="true"--}}
-                                    {{-->--}}
-                                {{--</td>--}}
-                                {{--<td class="a-right a-right ">@{{item.getUser.account}}</td>--}}
-                                {{--<td class=" last"><a href="#">View</a>--}}
-                                {{--</td>--}}
-                            {{--</tr>--}}
                             </tbody>
                         </table>
                     </div>
@@ -148,13 +146,11 @@
             el: '#comments',
             data: {
                 comments: [],
-                message: 1
             },
 
             mounted: function () {
                 var $this = this;
                 $.get($('#comments').data('url'), function (res) {
-                    console.log(res);
                     $this.data = res.data
                 });
             }
