@@ -111,7 +111,7 @@
                                 <td class=" ">
                                     <input type="checkbox"
                                            :checked="item.show == 1"
-                                           class="js-switch comment-show" data-switchery="true"
+                                           class="js-switch" data-switchery="true"
                                     >
                                 </td>
                                 <td class="a-right a-right ">@{{item.get_user.account}}</td>
