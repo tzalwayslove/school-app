@@ -80,12 +80,12 @@
 
                 </div>
 
-                <div class="x_panel" id="comments">
+                <div class="x_panel" id="comments"
+                     data-url="{{ url('api/admin/comment', ['id'=>$data->id]) }}"
+                     data-show_url="{{ url('api/admin/comment/show') }}"
+                >
                     <div class="x_content">
-                        <table class="table table-hover"
-                               data-url="{{ url('api/admin/comment', ['id'=>$data->id]) }}"
-                               data-show_url="{{ url('api/admin/comment/show') }}"
-                        >
+                        <table class="table table-hover">
                             <thead>
                             <tr class="headings">
                                 <th class="column-title">评论id</th>
