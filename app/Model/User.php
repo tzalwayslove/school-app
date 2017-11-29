@@ -48,7 +48,6 @@ class User extends Model
                 $ruserInfo->password = $message->Content;
                 $ruserInfo->step = 3;
 
-                Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 0);
 
                 self::firstOrCreate([
@@ -59,8 +58,6 @@ class User extends Model
                 ]);
 
                 return '账户:'.$ruserInfo['account'].'已保存';
-
-                break;
             default:
                 return 'default';
         }
