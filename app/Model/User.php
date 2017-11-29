@@ -45,8 +45,10 @@ class User extends Model
                 return '请输入密码:';
             case 2:
                 //输入了密码
+                return 2;
                 $ruserInfo->password = $message->Content;
                 $ruserInfo->step = 3;
+
                 Redis::set($open_id, json_encode($ruserInfo));
                 Redis::expire ($open_id, 300);
 
