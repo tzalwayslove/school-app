@@ -33,7 +33,7 @@ return [
 
     'connections' => [
         'redis'=>[
-            'client' => 'phpredis',
+            'client' => 'predis',
 
             'default' => [
                 'host' => env('REDIS_HOST', 'localhost'),
