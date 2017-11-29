@@ -101,32 +101,29 @@
                             </thead>
 
                             <tbody>
-                            @php(dd($data->getComment))
+
                             @if($data->getComment->isEmpty())
                                 <tr>
                                     <td>暂无评论</td>
                                 </tr>
                             @else
-
-                                @foreach($data->getComment as $comment)
-                                    <tr class="even pointer">
-                                        <td class=" ">{{$comment->id}}</td>
-                                        <td class=" ">{{ $comment->create_at }}</td>
-                                        <td class=" ">{{ $comment->content }}</td>
-                                        <td class=" ">{{ $comment->zan or 0 }}</td>
-                                        <td class=" ">
-                                            <input type="checkbox"
-                                                   @if($data->show) checked @endif
-                                                   class="js-switch comment-show" data-switchery="true"
-                                                   value="{{ $comment->show }}"
-                                                   data-id="{{ $comment->id }}"
-                                            >
-                                        </td>
-                                        <td class="a-right a-right ">$7.45</td>
-                                        <td class=" last"><a href="#">View</a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                            <tr class="even pointer">
+                                <td class=" ">{{$comment->id}}</td>
+                                <td class=" ">{{ $comment->create_at }}</td>
+                                <td class=" ">{{ $comment->content }}</td>
+                                <td class=" ">{{ $comment->zan or 0 }}</td>
+                                <td class=" ">
+                                    <input type="checkbox"
+                                           @if($data->show) checked @endif
+                                           class="js-switch comment-show" data-switchery="true"
+                                           value="{{ $comment->show }}"
+                                           data-id="{{ $comment->id }}"
+                                    >
+                                </td>
+                                <td class="a-right a-right ">$7.45</td>
+                                <td class=" last"><a href="#">View</a>
+                                </td>
+                            </tr>
                             @endif();
                             </tbody>
                         </table>
@@ -143,6 +140,7 @@
 @push('addjs')
 <script src="{{ asset('public/vendors/validator/validator.js') }}"></script>
 <script src="{{ asset('public/vendors/switchery/dist/switchery.min.js') }}"></script>
+<script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script>
     @foreach($errors->all() as $e)
         new PNotify({
