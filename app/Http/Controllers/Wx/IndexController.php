@@ -11,8 +11,8 @@ class IndexController extends Controller
 {
     public function index()
     {
+        Log::log(11);
         try {
-
             $option = require 'wechatConfig.php';
 
             $app = new Application($option);
