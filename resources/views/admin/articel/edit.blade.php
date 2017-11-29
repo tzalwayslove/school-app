@@ -103,7 +103,7 @@
 
                             <tbody>
 
-                            <tr class="even pointer" v-for="item in data">
+                            <tr class="even pointer" v-for="item in comments">
                                 <td class=" ">@{{item.id}}</td>
                                 <td class=" ">@{{item.created_at}}</td>
                                 <td class=" ">@{{item.content}}</td>
@@ -147,11 +147,10 @@
         data: {
             comments: [],
         },
-            mounted: function(){
+        mounted: function(){
             $this = this;
             $.get($('#comments').data('url'), function (res) {
-                console.log(res.data);
-                console.log(v.comments);
+
                 $this.comments = res.data ;
 //                $set(v.comments, res.data);
             });
