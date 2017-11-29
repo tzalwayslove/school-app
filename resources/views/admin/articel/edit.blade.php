@@ -150,7 +150,6 @@
     });
     $(function(){
         $.get($('#comments').data('url'), function (res) {
-            console.log(res.current_page);
             v.comments = res.data
         });
     })

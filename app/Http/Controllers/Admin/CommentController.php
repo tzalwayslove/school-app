@@ -27,7 +27,7 @@ class CommentController extends Controller
 
     public function comment(Request $request, $id)
     {
-        return Comment::whereArticel($id)->with('getUser')->paginate(50)->toJson();
+        return response()->json(Comment::whereArticel($id)->with('getUser')->paginate(50)->toJson());
     }
 
     /**
