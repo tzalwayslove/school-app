@@ -14,12 +14,14 @@
 Route::get('/', function () {
     phpinfo();
 });
+
 Route::get('/s', function(){
     session(['a'=>10]);
 });
 Route::get('/g', function(){
     dd(session('a'));
 });
+
 Route::get('admin', 'Admin\AdminController@index');
 
 Route::post('upload', 'UploadController@index');
@@ -32,5 +34,5 @@ Route::put('code', 'Admin\CodeController@settable');
 Route::get('test', function(){
 //    Redis::set('testkey', json_encode(['step'=>1]));
     Illuminate\Support\Facades\Redis::set('name', 'Taylor');
-    Redis::expire ('testkey', 300);
+    Illuminate\Support\Facades\Redis::expire ('testkey', 300);
 });
