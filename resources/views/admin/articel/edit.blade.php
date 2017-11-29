@@ -85,14 +85,13 @@
                         <table class="table table-striped jambo_table bulk_action">
                             <thead>
                             <tr class="headings">
-
-                                <th class="column-title">Invoice </th>
-                                <th class="column-title">Invoice Date </th>
-                                <th class="column-title">Order </th>
-                                <th class="column-title">Bill to Name </th>
-                                <th class="column-title">Status </th>
-                                <th class="column-title">Amount </th>
-                                <th class="column-title no-link last"><span class="nobr">Action</span>
+                                <th class="column-title">评论id </th>
+                                <th class="column-title">评论人</th>
+                                <th class="column-title">内容</th>
+                                <th class="column-title">评论时间</th>
+                                <th class="column-title">赞</th>
+                                <th class="column-title">是否显示</th>
+                                <th class="column-title no-link last"><span class="nobr">操作</span>
                                 </th>
                                 <th class="bulk-actions" colspan="7">
                                     <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
