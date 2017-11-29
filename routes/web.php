@@ -32,9 +32,5 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
-//    Redis::set('testkey', json_encode(['step'=>1]));
-    Illuminate\Support\Facades\Redis::set('name', 'Taylor');
-    Illuminate\Support\Facades\Redis::expire ('testkey', 300);
 
-    dd(Illuminate\Support\Facades\Redis::get('name'));
 });
