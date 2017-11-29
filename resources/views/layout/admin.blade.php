@@ -309,7 +309,7 @@
 <script src="{{ asset('public/build/js/custom.js') }}"></script>
 <script>
     $(function(){
-        alert('次后台为测试后台 线上后台为 http://ouya.sz25.net/admin');
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
