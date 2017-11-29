@@ -45,7 +45,7 @@
 
                                                 <td>{{ $v->id }}</td>
 
-                                                <td>{{ $v->zan }}</td>
+                                                <td>{{ $v->zan or 0 }}</td>
                                                 <td>{{ $v->user_account->account }}</td>
                                                 <td>{{ $v->cate_name->name }}</td>
                                                 @php$arr = [];$arr = ['1'=>'0',]@endphp
