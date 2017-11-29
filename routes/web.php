@@ -38,5 +38,12 @@ Route::get('test', function(){
         'account'=>'123456',
         'password'=>'65464',
     ]);
+});
 
+
+Route::group([
+    'prefix'=>'admin',
+    'namespace'=> 'Admin'
+], function(){
+    Route::resource('user', 'UserController');
 });
