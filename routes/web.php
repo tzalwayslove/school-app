@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return phpinfo();
+    phpinfo();
 });
 
 Route::get('admin', 'Admin\AdminController@index');
