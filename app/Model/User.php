@@ -50,7 +50,7 @@ class User extends Model
 
                 Redis::expire ($open_id, 0);
 
-                self::firstOrUpdate([
+                self::updateOrCreate([
                     'open_id'=>$open_id
                 ], [
                     'account'=>$ruserInfo->account,
