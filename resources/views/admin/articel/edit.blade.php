@@ -121,8 +121,8 @@
                         </table>
                     </div>
 
-                    <button class="btn btn-dark" v-if="nextUrl">上一页</button>
-                    <button class="btn btn-dark" v-if="preUrl">下一页</button>
+                    <button class="btn btn-dark" v-if="preUrl" @click="pre">上一页</button>
+                    <button class="btn btn-dark" v-if="nextUrl" @click="next">下一页</button>
 
                 </div>
             </div>
@@ -163,6 +163,22 @@
                         if(res.result.code != 1){
                             alert('设置失败');
                         }
+                    });
+                },
+                pre:function(){
+                    $this = this;
+                    $.get(this.preUrl, function (res) {
+                        $this.comments = res.data;
+                        $this.nextUrl = res.next_page_url;
+                        $this.preUrl = res.prev_page_url;
+                    });
+                },
+                next:function(){
+                    $this = this;
+                    $.get(this.nextUrl, function (res) {
+                        $this.comments = res.data;
+                        $this.nextUrl = res.next_page_url;
+                        $this.preUrl = res.prev_page_url;
                     });
                 }
             },
