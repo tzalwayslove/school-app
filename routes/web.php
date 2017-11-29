@@ -28,4 +28,5 @@ Route::put('code', 'Admin\CodeController@settable');
 
 Route::any('/wechat',function (){
     \App\Model\Log::log(1111111111111111);
+    return ['a'=>10];
 });
