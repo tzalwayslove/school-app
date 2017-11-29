@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Wx;
 
+use App\Exceptions\userNotFountException;
 use App\Model\Log;
+use App\Model\User;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -27,7 +29,15 @@ class IndexController extends Controller
                     case 'text':
                         switch ($message->Content){
                             case "绑定":
+                                User::createInit($message->FromuserName);
                                 return '请输入您的学号:';
+                            default:
+                                try{
+                                    $res = User::bind($message->FromuserName, $message);
+                                    return $res;
+                                }catch(userNotFountException $e){
+                                    return '输入绑定即可进入绑定流程';
+                                }
                         }
 //                        return json_encode($message, JSON_UNESCAPED_UNICODE);
 
