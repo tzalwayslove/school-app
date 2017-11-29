@@ -83,7 +83,9 @@
                 <div class="x_panel">
                     <div class="x_content">
                         <table class="table table-hover" id="comments"
-                               data-url="{{ url('api/admin/comment', ['id'=>$data->id]) }}">
+                               data-url="{{ url('api/admin/comment', ['id'=>$data->id]) }}"
+                               data-show_url="{{ url('api/admin/comment/show') }}"
+                        >
                             <thead>
                             <tr class="headings">
                                 <th class="column-title">评论id</th>
@@ -146,8 +148,9 @@
             },
             methods: {
                test: function (item) {
-                    console.log(item);
-                },
+                    id = item.id;
+                    console.log($(this));
+                }
             },
             mounted: function () {
                 $this = this;
