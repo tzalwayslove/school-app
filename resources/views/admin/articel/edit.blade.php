@@ -150,7 +150,7 @@
     });
     $(function(){
         $.get($('#comments').data('url'), function (res) {
-            v.data = res.data
+            v.comments = res.data
         });
     })
 </script>
