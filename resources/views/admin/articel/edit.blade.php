@@ -80,9 +80,9 @@
 
                 </div>
 
-                <div class="x_panel">
+                <div class="x_panel" id="comments">
                     <div class="x_content">
-                        <table class="table table-hover" id="comments"
+                        <table class="table table-hover"
                                data-url="{{ url('api/admin/comment', ['id'=>$data->id]) }}"
                                data-show_url="{{ url('api/admin/comment/show') }}"
                         >
@@ -120,8 +120,9 @@
                             </tbody>
                         </table>
                     </div>
-                    <button class="btn btn-dark">上一页</button>
-                    <button class="btn btn-dark">下一页</button>
+
+                    <button class="btn btn-dark" v-if="nextUrl">上一页</button>
+                    <button class="btn btn-dark" v-if="preUrl">下一页</button>
 
                 </div>
             </div>
@@ -148,6 +149,8 @@
             el: '#comments',
             data: {
                 comments: [],
+                nextUrl : '',
+                preUrl : ''
             },
             methods: {
                test: function (item, event) {
@@ -167,6 +170,8 @@
                 $this = this;
                 $.get($('#comments').data('url'), function (res) {
                     $this.comments = res.data;
+                    $this.nextUrl = res.next_page_url;
+                    $this.preUrl = res.prev_page_url;
                 });
             }
         });
