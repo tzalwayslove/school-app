@@ -149,7 +149,8 @@
             methods: {
                test: function (item, event) {
                     id = item.id;
-                    console.log($(event.target).attr('checked'));
+                    console.log($(event.target).is(':checked'));
+
                     return;
                     $.post($('#comments').data('show_url'), {
                         id: id,
