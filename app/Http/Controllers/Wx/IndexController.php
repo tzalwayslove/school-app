@@ -25,7 +25,12 @@ class IndexController extends Controller
                         return '收到事件消息';
                         break;
                     case 'text':
-                        return json_encode($message, JSON_UNESCAPED_UNICODE);
+                        switch ($message->Content){
+                            case "绑定":
+                                return '请输入您的学号:';
+                        }
+//                        return json_encode($message, JSON_UNESCAPED_UNICODE);
+
                         break;
                     case 'image':
                         return '收到图片消息';
