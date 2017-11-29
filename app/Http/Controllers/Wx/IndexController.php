@@ -28,7 +28,6 @@ class IndexController extends Controller
                         case 'text':
                             switch ($message->Content) {
                                 case "绑定":
-                                    return 1;
                                     User::createInit($message->FromuserName);
                                     return '请输入您的学号:';
                                 default:
