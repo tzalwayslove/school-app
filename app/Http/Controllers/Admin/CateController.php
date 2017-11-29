@@ -16,6 +16,7 @@ class CateController extends Controller
      */
     protected $validateRoule = [
         'name' => 'required|max:100',
+        'show' => 'required',
     ];
 
     public function index()

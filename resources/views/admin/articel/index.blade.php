@@ -7,6 +7,16 @@
                 <div class="title_left">
                     <h3>Articel列表</h3>
                 </div>
+                <div class="title_right">
+                    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="clearfix"></div>
             <div class="row">
@@ -32,12 +42,15 @@
                                         <tbody>
                                         @foreach($list as $v)
                                             <tr>
+
                                                 <td>{{ $v->id }}</td>
-                                                <td>{{ $v->zan or 0 }}</td>
+
+                                                <td>{{ $v->zan }}</td>
                                                 <td>{{ $v->user_account->account }}</td>
                                                 <td>{{ $v->cate_name->name }}</td>
                                                 @php$arr = [];$arr = ['1'=>'0',]@endphp
                                                 <td>{{ $arr[$v->show] }}</td>
+
                                                 <td>{{ $v->updated_at }}</td>
 
                                                 <td>
@@ -64,31 +77,29 @@
 
 @push('addcss')
 <!-- Datatables -->
-<link href="http://www.school.dy/public/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
+<link href="{{ asset('public/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('public/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('public/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}"
       rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+<link href="{{ asset('public/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}"
       rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
-      rel="stylesheet">
-<link href="http://www.school.dy/public/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
-      rel="stylesheet">
+<link href="{{ asset('public/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
 
 @endpush
 
 @push('addjs')
-<script src="http://www.school.dy/public/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="http://www.school.dy/public/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="{{ asset('public/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js') }}"></script>
+<script src="{{ asset('public/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') }}"></script>
 <script>
     $(function () {
         $('#datatable').DataTable();
