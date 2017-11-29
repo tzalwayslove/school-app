@@ -21,13 +21,13 @@ class CommentController extends Controller
 
     public function index()
     {
-        $list = \App\Model\Comment::paginate(100);
+        $list = \App\Model\Comment::with('getUser')->paginate(100);
         return view('admin.comment.index', compact('list'));
     }
 
     public function comment(Request $request, $id)
     {
-        return Comment::whereArticel($id)->paginate(50)->toJson();
+        return Comment::whereArticel($id)->with('getUser')->paginate(50)->toJson();
     }
 
     /**
