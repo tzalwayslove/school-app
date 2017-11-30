@@ -75,8 +75,10 @@
         axios.get("/public/tpl/index.html").then(function (res) {
             success({
                 template: res.data,
-                data:{
-                    a:10
+                data(){
+                    return {
+                        a:10
+                    }
                 }
             });
         });
