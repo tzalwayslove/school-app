@@ -5,10 +5,10 @@ pinglun = Vue.component('pinglun', function (success, error) {
     axios.get("/public/tpl/pinglun.html").then(function (res) {
         success({
                 template: res.data,
-                props: ['articel'],
-                create: function () {
+                // props: ['articel'],
+                /*create: function () {
                     console.log(this.articel);
-                }
+                }*/
             }
         );
     });
