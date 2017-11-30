@@ -36,10 +36,11 @@
     ];
 
     const router = new VueRouter({
-        router:routes
+        routes: routes
     });
 
     var vue = new Vue({
+        router: router,
         data:{
 
         },
