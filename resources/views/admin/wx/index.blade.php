@@ -89,7 +89,7 @@
                 },
                 methods:{
                     getData: function(){
-                        axios.get('/wx/articel', {cate:0, page:page}).then(function(res){
+                        axios.get('/wx/articel', {cate:0, page:this.page}).then(function(res){
                             $this.tiezi = res.data.list.data;
                         });
                     }
