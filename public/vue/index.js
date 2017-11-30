@@ -7,34 +7,38 @@ tiezi = Vue.component('tiezi', function (success, error) {
             template: res.data,
             data(){
                 return {
-                    tiezi:[],
+                    tiezi: [],
                     load: true,
-                    lastBottom:9999,
-                    page : 1,
-                    touchStartY: 0
+                    lastBottom: 9999,
+                    page: 1,
+                    touchStartY: 0,
+                    styles: {
+                        transform: 'translateY(0px)'
+                    }
                 }
             },
-            methods:{
-                getData: function(){
+            methods: {
+                getData: function () {
                     $this = this;
-                    axios.get('/wx/articel', {params:{cate:0, page:this.page}}).then(function(res){
+                    axios.get('/wx/articel', {params: {cate: 0, page: this.page}}).then(function (res) {
 
                         $this.tiezi = $this.tiezi.concat(res.data.list.data);
                     });
                 },
-                touchStart: function(e){
+                touchStart: function (e) {
                     this.touchStartY = e.changedTouches[0].clientY;
                 },
-                touchMove:function(e){
+                touchMove: function (e) {
                     console.log(e.changedTouches[0].clientY);
+
                 },
-                touchEnd:function(e){
+                touchEnd: function (e) {
                     console.log('touchend');
                 },
-                onScroll:function(e){
+                onScroll: function (e) {
                     let bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
 
-                    if(this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
+                    if (this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load) {
                         this.page++;
                         this.getData();
                         this.load = false;
