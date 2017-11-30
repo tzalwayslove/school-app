@@ -15,14 +15,7 @@
         <router-view>
 
         </router-view>
-        <div class="page__bd" style="height: 100%;">
-            <div class="weui-tab">
-                <div class="weui-tab__panel">
 
-                </div>
-
-            </div>
-        </div>
     </div>
     <script type="text/javascript">
         $(function(){
