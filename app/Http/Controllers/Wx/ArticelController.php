@@ -41,6 +41,6 @@ class ArticelController extends Controller
         }
         $articel->zan += $request->input('zan');
         $articel->save();
-        return response(['result'=>new Result(true)]);
+        return response(['result'=>new Result(true), 'articel'=>$articel]);
     }
 }
