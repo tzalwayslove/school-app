@@ -25,7 +25,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     console.log('touchStart');
                 },
                 touchMove:function(e){
-                    alert(1);
                     console.log(e.changedTouches[0].clientY);
                 },
                 touchEnd:function(e){
