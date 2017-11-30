@@ -19,7 +19,6 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     axios.get('wx/comment/'+ id).then(function(res){
                         $this.articelData = res.data.data;
                         $this.list = res.data.data.get_comment;
-
                         if($this.list.length == 0){
                             alert('还没有人评论');
                         }
