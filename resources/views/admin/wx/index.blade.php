@@ -79,6 +79,9 @@
                     return {
                         tiezi:[]
                     }
+                },
+                beforeCreate(){
+                    console.log(111111);
                 }
             });
         });
@@ -122,11 +125,8 @@
 
     vue = new Vue({
         router: router,
-
         data: data,
-
         methods: {},
-
     }).$mount('#app');
 </script>
 </body>
