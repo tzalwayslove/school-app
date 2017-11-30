@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="app" class="container">
-    <div class="page">
+    <div class="page tabbar">
         <router-view>
 
         </router-view>
