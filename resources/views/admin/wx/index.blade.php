@@ -132,7 +132,7 @@
     const routes = [
         {path: '/tiezi', component: tiezi, name: 'tiezi'},
         {path: '/fabu', component: fabu, name: 'fabu'},
-        {path: '/wode', component: fabu, name: 'wode'},
+        {path: '/wode', component: wode, name: 'wode'},
     ];
 
     const router = new VueRouter({
