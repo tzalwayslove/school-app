@@ -35,7 +35,10 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.styles.transform = 'translateY('+this.move+'px)';
                 },
                 touchEnd: function (e) {
-                    console.log(this.move);
+                    if(this.move > 75){
+                        this.page = 1;
+                        this.getData();
+                    }
                     this.styles.transition = 'transform 0.5s'
                     this.styles.transform = 'translateY(0px)';
                 },
