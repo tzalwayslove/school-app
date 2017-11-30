@@ -94,7 +94,6 @@
                                 <th class="column-title">赞</th>
                                 <th class="column-title">是否显示</th>
                                 <th class="column-title">评论人</th>
-                                <th class="column-title no-link last"><span class="nobr">操作</span>
                                 </th>
                             </tr>
                             </thead>
@@ -114,8 +113,7 @@
                                     >
                                 </td>
                                 <td class="a-right a-right ">@{{item.get_user.account}}</td>
-                                <td class=" last"><a href="#">View</a>
-                                </td>
+
                             </tr>
                             </tbody>
                         </table>
