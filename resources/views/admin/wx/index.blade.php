@@ -36,7 +36,7 @@
     ];
 
     const router = new VueRouter({
-        routes:routes
+        render:routes
     });
 
     var vue = new Vue({
