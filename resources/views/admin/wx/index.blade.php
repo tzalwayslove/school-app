@@ -51,9 +51,7 @@
             });
         });
     </script>
-    <router-link to="/foo">foo</router-link>
-    <router-link to="/bar">bar</router-link>
-    <router-view></router-view>
+
 </div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
