@@ -44,10 +44,6 @@
             </div>
         </div>
     </div>
-
-
-    <router-link to="/bar">bar</router-link>
-
 </div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
