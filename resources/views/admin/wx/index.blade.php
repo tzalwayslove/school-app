@@ -83,10 +83,10 @@
 
     router.beforeEach((to, from, next) => {
         switch(to){
-            case 'pinglun':
+            case "pinglun":
                 data.nav_active = 'tiezi';
                 break;
-            case 'tiezi':
+            case "tiezi":
                 console.log(1111);
                 data.nav_active = 'tiezi';
                 break;
