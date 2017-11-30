@@ -29,7 +29,7 @@
                 <div class="weui-tabfabu">
                     <router-link to="/tiezi" v-bind:class="['weui-tabfabu__item']">
                     <span style="display: inline-block;position: relative;">
-                        <img src="{{ asset('public/images/icon.tabbar.png') }}" alt="" class="weui-tabbar__icon">
+                        <img src="{{ asset('public/images/icon_tabbar.png') }}" alt="" class="weui-tabbar__icon">
                     </span>
                         <p class="weui-tabbar__label">帖子</p>
                     </router-link>
