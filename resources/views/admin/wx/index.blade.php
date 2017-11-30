@@ -150,7 +150,7 @@
             },
             onScroll:function(e){
                 console.log($('#scrollPanel')[0].offsetHeight);
-                console.log(e);
+//                console.log(e);
             }
         },
     }).$mount('#app');
