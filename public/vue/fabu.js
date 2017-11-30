@@ -13,7 +13,7 @@ fabu = Vue.component('fabu', function (success, error) {
             },
             methods:{
                 send: function(){
-                    axios.post('wx/articel', {
+                    axios.post('/wx/articel', {
                         title: this.title,
                         content: this.content
                     }).then(function(res){
