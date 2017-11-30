@@ -68,7 +68,7 @@
         {path: '/tiezi', component: tiezi, name: 'tiezi'},
         {path: '/fabu', component: fabu, name: 'fabu'},
         {path: '/wode', component: wode, name: 'wode'},
-        {path: '/pinglun/:id', component: pinglun, props:{articel: 0}}
+        {path: '/pinglun/:id', component: pinglun, name:'pinglun', props:{articel: 0}}
     ];
 
     const router = new VueRouter({
@@ -82,7 +82,14 @@
     };
 
     router.beforeEach((to, from, next) => {
-        data.nav_active = to.name;
+        switch(to){
+            case 'pinglun':
+                data.nav_active = 'tiezi'
+                break;
+            default:
+                data.nav_active = to.name;
+        }
+
         next();
     });
 
