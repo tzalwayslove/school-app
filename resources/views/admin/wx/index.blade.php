@@ -91,19 +91,17 @@
     const router = new VueRouter({
         routes: routes
     });
-
+    data = {
+        nav_active: 'foo'
+    };
     router.beforeEach((to, from, next) => {
-        console.log(to);
-        let now = to.name;
-
+        data.nav_active = to.name;
     });
 
     vue = new Vue({
         router: router,
 
-        data: {
-            nav_active: 'foo'
-        },
+        data: data,
 
         methods: {},
 
