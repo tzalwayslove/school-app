@@ -85,7 +85,7 @@
                         console.log('touchStart');
                     },
                     touchMove:function(e){
-                        console.log(e);
+                        console.log(e.changedTouches[0]);
                     },
                     touchEnd:function(e){
                         console.log('touchend');
