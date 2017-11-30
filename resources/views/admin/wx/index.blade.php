@@ -91,7 +91,7 @@
                         });
                     }
                 },
-                afterCreate(){
+                create (){
                     console.log('afterCreate');
                     let $this = this;
                     this.getData();
