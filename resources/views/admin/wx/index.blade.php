@@ -93,7 +93,7 @@
     });
 
     router.beforeEach((to, from, next) => {
-
+        next();
     });
     data ={
         nav_active: 'foo'
