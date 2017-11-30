@@ -25,7 +25,7 @@
             <div class="weui-tab">
 
 
-                <div class="weui-tab__panel"
+                <div class="weui-tab__panel" id="scrollPanel"
                      @touchstart="touchStart($event)"
                      @touchmove="touchMove($event)"
                      @touchend="touchEnd($event)"
@@ -149,6 +149,7 @@
                 console.log('touchend');
             },
             onScroll:function(e){
+                console.log($('#scrollPanel')[0].offsetHeight);
                 console.log(e);
             }
         },
