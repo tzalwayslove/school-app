@@ -85,19 +85,19 @@
                     }
                 },
                 methods:{
-                    getdata: function(){
+                    getData: function(){
                         axios.get('/wx/articel', {cate:0, page:page}).then(function(res){
                             $this.tiezi = res.data.list.data;
                         });
                     }
                 },
-                beforeCreate(){
+                afterCreate(){
                     let $this = this;
-                    this.getdata();
+                    this.getData();
                 },
                 watch:{
                     page:function(){
-                        this.getdata();
+                        this.getData();
                     }
                 }
             });
