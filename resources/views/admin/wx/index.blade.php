@@ -27,7 +27,7 @@
                     <router-view></router-view>
                 </div>
                 <div class="weui-tabbar">
-                    <router-link to="/foo" v-bind:class="[weui-tabbar__item, nav_active == foo ? weui-bar__item_on : '']">
+                    <router-link to="/foo" v-bind:class="[weui-tabbar__item]">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         {{--<span class="weui-badge" style="position: absolute;top: -2px;right: -13px;"></span>--}}
