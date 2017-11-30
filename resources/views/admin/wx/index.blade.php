@@ -127,6 +127,7 @@
     data = {
         nav_active: 'tiezi',
         tiezi:[],
+        load: true,
     };
 
     router.beforeEach((to, from, next) => {
@@ -154,7 +155,8 @@
                 console.log($('#scrollPanel')[0].offsetHeight);
                 console.log($('#scrollPanel')[0].scrollHeight);*/
                 var bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
-                console.log(this);
+
+                console.log(this.load);
                 if(bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
                     console.log('加载');
                     this.load = false;
