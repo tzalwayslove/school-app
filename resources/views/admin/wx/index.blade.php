@@ -93,6 +93,7 @@
                         axios.get('/wx/articel', {cate:0, page:this.page}).then(function(res){
                             $this.tiezi = res.data.list.data;
                         });
+                        vm.$emit('test');
                     }
                 },
                 mounted (){
