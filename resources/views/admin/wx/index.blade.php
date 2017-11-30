@@ -12,7 +12,7 @@
 </head>
 <body>
 <div id="app" class="container">
-    <div class="page tabbar">
+    <div class="page tabbar js_show">
         <router-view>
 
         </router-view>
