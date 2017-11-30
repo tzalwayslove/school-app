@@ -12,7 +12,7 @@
 <body>
 <div id="app">
     <router-link to="/foo">foo</router-link>
-    <router-link to="/bar">foo</router-link>
+    <router-link to="/bar">bar</router-link>
     <router-view></router-view>
 </div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
@@ -23,16 +23,16 @@
 
 <script>
 
-    Vue.component('Foo', {
+    foo = Vue.component('foo', {
         template:'<div>Foo</div>'
     });
 
-    Vue.component('Bar', {
+    bar = Vue.component('bar', {
         template:'<div>Bar</div>'
     });
     const routes = [
-        { path: '/foo', component: Foo },
-        { path: '/bar', component: Bar }
+        { path: '/foo', component: foo },
+        { path: '/bar', component: bar }
     ];
 
     const router = new VueRouter({
