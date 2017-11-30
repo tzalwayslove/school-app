@@ -26,7 +26,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     });
                 },
                 touchStart: function (e) {
-                    this.styles.transition = 'transform 0s'
+                    this.move = 0;
+                    this.styles.transition = 'transform 0s';
                     this.touchStartY = e.changedTouches[0].clientY;
                 },
                 touchMove: function (e) {
@@ -34,6 +35,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.styles.transform = 'translateY('+this.move+'px)';
                 },
                 touchEnd: function (e) {
+                    console.log(move);
                     this.styles.transition = 'transform 0.5s'
                     this.styles.transform = 'translateY(0px)';
                 },
