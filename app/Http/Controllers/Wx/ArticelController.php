@@ -11,7 +11,7 @@ class ArticelController extends Controller
 {
     public function index()
     {
-        $list = Articel::paginate(20);
+        $list = Articel::orderBy('created_at', 'desc')->paginate(20);
         return response(['result'=>new Result(true), 'list'=> $list]);
     }
 
