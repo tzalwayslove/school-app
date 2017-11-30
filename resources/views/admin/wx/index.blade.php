@@ -85,19 +85,23 @@
     });
     const routes = [
         {path: '/foo', component: foo, name:'foo'},
-        {path: '/bar', component: bar}
+        {path: '/bar', component: bar, name:'bar'}
     ];
 
     const router = new VueRouter({
         routes: routes
     });
 
-    router.beforeEach((to, from, next) => {
-        next();
-    });
+
     data ={
         nav_active: 'foo'
     };
+
+    router.beforeEach((to, from, next) => {
+        data.nav_active = to.name;
+        next();
+    });
+
 
     vue = new Vue({
         router: router,
