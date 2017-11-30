@@ -13,6 +13,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     page: 1,
                     touchStartY: 0,
                     styles: {
+                        transition: 'transform 1s',
                         transform: 'translateY(0px)'
                     }
                 }
