@@ -52,11 +52,12 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         this.lastBottom = bottom;
                     }
                 },
-                getComment: function () {
+                getComment: function (item) {
+                    id = item.id;
                     router.push({
                         path: '/pinglun/',
                         params:{
-                            id:10
+                            id
                         }
                     })
                 }
