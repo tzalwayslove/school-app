@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
     <style>
-        .weui-cells{
-            margin-top:0
+        .weui-cells {
+            margin-top: 0
         }
     </style>
 
@@ -23,27 +23,37 @@
 
         <div class="page__bd" style="height: 100%;">
             <div class="weui-tab">
+
+
                 <div class="weui-tab__panel">
                     <router-view></router-view>
                 </div>
-                <div class="weui-tabfabu">
-                    <router-link to="/tiezi" v-bind:class="['weui-tabfabu__item']">
+                <div class="weui-tabbar">
+                    <router-link to="/fabu"
+                                 v-bind:class="['weui-tabbar__item', nav_active == 'fabu' ? 'weui-fabu__item_on' : '']">
                     <span style="display: inline-block;position: relative;">
-                        <img src="{{ asset('public/images/icon_tabbar.png') }}" alt="" class="weui-tabbar__icon">
+                        <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
+                        <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
                     </span>
                         <p class="weui-tabbar__label">帖子</p>
                     </router-link>
-                    <router-link to="/fabu" v-bind:class="['weui-tabfabu__item', nav_active == 'fabu' ? 'weui-fabu__item_on' : '']">
+                    <router-link to="/fabu"
+                                 v-bind:class="['weui-tabbar__item', nav_active == 'fabu' ? 'weui-fabu__item_on' : '']">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
-                        <p class="weui-tabbar__label">发布</p>
+                        <p class="weui-tabbar__label">发帖</p>
                     </router-link>
-                    <router-link to="/wode" v-bind:class="['weui-tabfabu__item', nav_active == 'wode' ? 'weui-fabu__item_on' : '']">
+                    <router-link to="/wode"
+                                 v-bind:class="['weui-tabbar__item', nav_active == 'wode' ? 'weui-fabu__item_on' : '']">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
-                        {{--<span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>--}}
+                        <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
                     </span>
-                        <p class="weui-tabbar__label">我的</p>
+                        <p class="weui-tabbar__label">发现</p>
                     </router-link>
+                    <a href="javascript:;" class="weui-tabbar__item">
+                        <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
+                        <p class="weui-tabbar__label">我</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -56,34 +66,34 @@
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
 <script type="text/javascript">
     /*$(function () {
-        $('.weui-tabfabu__item').on('click', function () {
-            $(this).addClass('weui-fabu__item_on').siblings('.weui-fabu__item_on').removeClass('weui-fabu__item_on');
-        });
-    });*/
-    $(function(){
+     $('.weui-tabfabu__item').on('click', function () {
+     $(this).addClass('weui-fabu__item_on').siblings('.weui-fabu__item_on').removeClass('weui-fabu__item_on');
+     });
+     });*/
+    $(function () {
         axios.defaults.baseURL = 'http://school.sz25.net';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
     });
 </script>
 <script>
 
-    tiezi = Vue.component('tiezi', function(success, error){
-        axios.get("/public/tpl/index.html").then(function(res){
+    tiezi = Vue.component('tiezi', function (success, error) {
+        axios.get("/public/tpl/index.html").then(function (res) {
             success({
-                template:res.data
+                template: res.data
             });
         });
     });
 
-    tiezi = Vue.component('fabu', function(success, error){
-        axios.get("/public/tpl/index.html").then(function(res){
+    tiezi = Vue.component('fabu', function (success, error) {
+        axios.get("/public/tpl/index.html").then(function (res) {
             success({
-                template:res.data
+                template: res.data
             });
         });
     });
 
-    fabu = Vue.component('wode', function(resolve, reject){
+    fabu = Vue.component('wode', function (resolve, reject) {
         axios.get("/public/tpl/pinglun.html").then(function (res) {
             resolve({
                 template: res.data
@@ -91,16 +101,16 @@
         });
     });
     const routes = [
-        {path: '/tiezi', component: tiezi, name:'tiezi'},
-        {path: '/fabu', component: fabu, name:'fabu'},
-        {path: '/wode', component: fabu, name:'wode'},
+        {path: '/tiezi', component: tiezi, name: 'tiezi'},
+        {path: '/fabu', component: fabu, name: 'fabu'},
+        {path: '/wode', component: fabu, name: 'wode'},
     ];
 
     const router = new VueRouter({
         routes: routes
     });
 
-    data ={
+    data = {
         nav_active: 'tiezi'
     };
 
