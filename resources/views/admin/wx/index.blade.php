@@ -156,7 +156,7 @@
 
                 console.log(bottom);
                 console.log($('#scrollPanel')[0].clientHeight);
-                if(bottom < $('#scrollPanel')[0].clientHeight / 2){
+                if(bottom < $('#scrollPanel')[0].clientHeight / 3){
                     console.log('加载');
                 }
             }
