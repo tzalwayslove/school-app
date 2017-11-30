@@ -26,6 +26,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     });
                 },
                 touchStart: function (e) {
+                    this.styles.transition = 'transform 0s'
                     this.touchStartY = e.changedTouches[0].clientY;
                 },
                 touchMove: function (e) {
