@@ -23,15 +23,7 @@
 
         <div class="page__bd" style="height: 100%;">
             <div class="weui-tab">
-
-                <div class="weui-tab__panel" id="scrollPanel"
-                     @touchstart="touchStart($event)"
-                     @touchmove="touchMove($event)"
-                     @touchend="touchEnd($event)"
-                     @scroll="onScroll($event)"
-                >
                     <router-view></router-view>
-                </div>
                 <div class="weui-tabbar">
                     <router-link to="/tiezi"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'tiezi' ? 'weui-bar__item_on' : '']">
@@ -79,9 +71,6 @@
         axios.get("/public/tpl/index.html").then(function (res) {
             success({
                 template: res.data,
-                props: [
-                    'page'
-                ],
                 data(){
                     return {
                         tiezi:[]
@@ -93,18 +82,30 @@
                         axios.get('/wx/articel', {cate:0, page:this.page}).then(function(res){
                             $this.tiezi = res.data.list.data;
                         });
-                        vm.$emit('test');
+                    },
+                    touchStart: function(e){
+                        console.log('touchStart');
+                    },
+                    touchMove:function(e){
+//                console.log(e.changedTouches[0].clientY);
+                    },
+                    touchEnd:function(e){
+                        console.log('touchend');
+                    },
+                    onScroll:function(e){
+                        var bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
+
+                        if(this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
+                            console.log('加载');
+                            this.load = false;
+                            this.lastBottom = bottom;
+                        }
                     }
                 },
                 mounted (){
                     console.log('afterCreate');
                     let $this = this;
                     this.getData();
-                },
-                watch:{
-                    page:function(){
-                        this.getData();
-                    }
                 }
             });
         });
@@ -126,7 +127,7 @@
         });
     });
     const routes = [
-        {path: '/tiezi', component: tiezi, name: 'tiezi', props: { page:1 }},
+        {path: '/tiezi', component: tiezi, name: 'tiezi'},
         {path: '/fabu', component: fabu, name: 'fabu'},
         {path: '/wode', component: fabu, name: 'wode'},
     ];
@@ -152,27 +153,7 @@
         data: data,
         load: true,
         methods: {
-            touchStart: function(e){
-                console.log('touchStart');
-            },
-            touchMove:function(e){
-//                console.log(e.changedTouches[0].clientY);
-            },
-            touchEnd:function(e){
-                console.log('touchend');
-            },
-            onScroll:function(e){
-                /*console.log($('#scrollPanel')[0].scrollTop);
-                console.log($('#scrollPanel')[0].offsetHeight);
-                console.log($('#scrollPanel')[0].scrollHeight);*/
-                var bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
 
-                if(this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
-                    console.log('加载');
-                    this.load = false;
-                    this.lastBottom = bottom;
-                }
-            }
         },
     }).$mount('#app');
 </script>
