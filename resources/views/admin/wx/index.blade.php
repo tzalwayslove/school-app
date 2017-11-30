@@ -20,7 +20,6 @@
 <body>
 <div id="app" class="container">
     <div class="page tabfabu js_show">
-
         <div class="page__bd" style="height: 100%;">
             <div class="weui-tab">
                     <router-view></router-view>
@@ -69,6 +68,7 @@
         {path: '/tiezi', component: tiezi, name: 'tiezi'},
         {path: '/fabu', component: fabu, name: 'fabu'},
         {path: '/wode', component: wode, name: 'wode'},
+        {page: '/pinglun', component: pinglun, props:{articel: 0}}
     ];
 
     const router = new VueRouter({
