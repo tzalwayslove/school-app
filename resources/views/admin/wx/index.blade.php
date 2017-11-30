@@ -102,7 +102,7 @@
         router: router,
 
         data: {
-            nav_active: 'foo'
+            nav_active: ''
         },
 
         methods: {},
