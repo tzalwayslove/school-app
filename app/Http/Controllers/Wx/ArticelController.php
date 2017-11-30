@@ -12,6 +12,6 @@ class ArticelController extends Controller
     public function index()
     {
         $list = Articel::paginate(20);
-        return response(['result'=>new Result(true), 'list', $list]);
+        return response(['result'=>new Result(true), 'list'=> $list]);
     }
 }
