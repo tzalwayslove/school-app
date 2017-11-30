@@ -58,13 +58,15 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         path: '/pinglun/' + id,
                     })
                 },
-                zan:function(item){
+                zan: function (item) {
+                    console.log(item);
+                    return;
                     zan = !item.zanLog ? 1 : -1;
                     id = item.id;
                     axios.post('articel_zan', {
-                        id:id,
-                        zan:zan
-                    }).then(function(res){
+                        id: id,
+                        zan: zan
+                    }).then(function (res) {
                         console.log(res.data);
                         item = res.data.articel
                     });
