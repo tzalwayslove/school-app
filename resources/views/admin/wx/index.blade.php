@@ -154,7 +154,9 @@
                 console.log($('#scrollPanel')[0].scrollHeight);*/
                 var bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
 
-                console.log(bottom);
+                if(bottom < 300){
+                    console.log('加载');
+                }
             }
         },
     }).$mount('#app');
