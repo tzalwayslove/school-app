@@ -94,6 +94,10 @@
 
     router.beforeEach((to, from, next) => {
         console.log(to);
+        let now = to.name;
+        if(vue){
+            vue.nav_active = now;
+        }
     });
 
     vue = new Vue({
