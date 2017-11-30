@@ -83,7 +83,7 @@
                 beforeCreate(){
                     axios.get('/wx/articel', ['cat', 0]).then(function(res){
                         console.log(res);
-                    }).bind(this);
+                    });
                 }
             });
         });
