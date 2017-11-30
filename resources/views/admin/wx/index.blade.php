@@ -56,11 +56,11 @@
 
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
 <script type="text/javascript">
-    $(function () {
+    /*$(function () {
         $('.weui-tabbar__item').on('click', function () {
             $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
         });
-    });
+    });*/
     $(function(){
         axios.defaults.baseURL = 'http://school.sz25.net';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
