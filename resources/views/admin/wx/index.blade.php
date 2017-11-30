@@ -62,7 +62,7 @@
 <script src="{{ asset('public/vue/index.js') }}"></script>
 <script src="{{ asset('public/vue/fabu.js') }}"></script>
 <script src="{{ asset('public/vue/wode.js') }}"></script>
-
+<script src="{{ asset('public/vue/pinglun.js) }}"></script>
 <script>
     const routes = [
         {path: '/tiezi', component: tiezi, name: 'tiezi'},
