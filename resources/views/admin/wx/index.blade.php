@@ -73,7 +73,9 @@
                 template: res.data,
                 data(){
                     return {
-                        tiezi:[]
+                        tiezi:[],
+                        load: true,
+                        lastBottom:9999
                     }
                 },
                 methods:{
@@ -139,8 +141,6 @@
     data = {
         nav_active: 'tiezi',
         tiezi:[],
-        load: true,
-        lastBottom:9999
     };
 
     router.beforeEach((to, from, next) => {
