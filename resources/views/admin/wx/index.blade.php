@@ -70,7 +70,6 @@
 <script src="{{ asset('public/vue/wode.js') }}"></script>
 
 <script>
-
     const routes = [
         {path: '/tiezi', component: tiezi, name: 'tiezi'},
         {path: '/fabu', component: fabu, name: 'fabu'},

@@ -9,7 +9,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 return {
                     tiezi:[],
                     load: true,
-                    lastBottom:9999
+                    lastBottom:9999,
+                    page : 1
                 }
             },
             methods:{
@@ -39,8 +40,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 }
             },
             mounted (){
-                console.log('afterCreate');
-                let $this = this;
                 this.getData();
             }
         });
