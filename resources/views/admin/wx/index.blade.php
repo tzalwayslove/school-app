@@ -79,6 +79,9 @@
         axios.get("/public/tpl/index.html").then(function (res) {
             success({
                 template: res.data,
+                props: [
+                    'page'
+                ],
                 data(){
                     return {
                         tiezi:[]
