@@ -70,6 +70,9 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         console.log(res.data);
                         item = res.data.articel
                     });*/
+                },
+                test: function(){
+                    console.log(111111);
                 }
             },
             mounted (){
