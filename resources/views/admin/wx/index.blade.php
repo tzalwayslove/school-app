@@ -72,7 +72,8 @@
     ];
 
     const router = new VueRouter({
-        routes: routes
+        routes: routes,
+        default: 'tiezi'
     });
 
     data = {
