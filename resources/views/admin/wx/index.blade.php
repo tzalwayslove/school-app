@@ -75,7 +75,7 @@
         axios.get("/public/tpl/index.html").then(function (res) {
             success({
                 template: res.data,
-                data(){
+                data: function(){
                     return {
                         message:10
                     }
