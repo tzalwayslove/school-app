@@ -100,9 +100,9 @@
 
     vue = new Vue({
         router: router,
-
-        data: data,
-
+        data: {
+            nav_active: 'foo'
+        },
         methods: {},
 
     }).$mount('#app');
