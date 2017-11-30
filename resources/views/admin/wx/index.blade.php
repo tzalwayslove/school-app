@@ -84,7 +84,7 @@
         template: '<div class="weui-cells">' +
         '<div class="weui-cell">' +
         '<div class="weui-cell__bd">' +
-            '<p>标题文字</p>' +
+            '<p>评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容</p>' +
         '</div>' +
         '</div>'
     });
