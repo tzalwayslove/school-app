@@ -123,7 +123,6 @@
 
     wode = Vue.component('wode', function (resolve, reject) {
         axios.get("/public/tpl/wode.html").then(function (res) {
-            console.log(res);
             resolve({
                 template: res.data
             });
