@@ -84,18 +84,9 @@
         template: '<div class="weui-cells">' +
         '<div class="weui-cell">' +
         '<div class="weui-cell__bd">' +
-        '<p>标题文字</p>' +
+            '<p>标题文字</p>' +
         '</div>' +
         '<div class="weui-cell__ft">说明文字</div>' +
-        '</div>' +
-        '<div class="weui-cell weui-cell_swiped">' +
-        '<div class="weui-cell__bd" style="transform: translateX(-68px)">' +
-        '<div class="weui-cell">' +
-        '<div class="weui-cell__bd">' +
-        '<p>标题文字</p>' +
-        ' </div>' +
-        '</div>' +
-        '</div>' +
         '</div>' +
         '</div>'
     });
