@@ -92,9 +92,9 @@
         routes: routes
     });
 
-    /*router.beforeEach((to, from, next) => {
+    router.beforeEach((to, from, next) => {
 
-    });*/
+    });
     data ={
         nav_active: 'foo'
     };
