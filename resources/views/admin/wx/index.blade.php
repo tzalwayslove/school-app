@@ -84,7 +84,7 @@
         });
     });
     const routes = [
-        {path: '/foo', component: foo},
+        {path: '/foo', component: foo, name:'foo'},
         {path: '/bar', component: bar}
     ];
 
