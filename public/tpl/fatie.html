@@ -9,7 +9,7 @@
             <div class="weui-cells">
                 <div class="weui-cell">
                     <div class="weui-cell__bd">
-                        <input type="text" class="weui-input" placeholder="请输入标题">
+                        <input type="text" class="weui-input" placeholder="请输入标题" v-model="title">
                     </div>
                 </div>
             </div>
@@ -17,16 +17,13 @@
             <div class="weui-cells">
                 <div class="weui-cell">
                     <div class="weui-cell__bd">
-                        <textarea class="weui-textarea" placeholder="请输入内容">
-
-                        </textarea>
+                        <textarea class="weui-textarea" placeholder="请输入内容" v-model="content"></textarea>
                     </div>
                 </div>
             </div>
             <div class="weui-btn-area">
                 <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
             </div>
-
         </div>
     </div>
 </div>
