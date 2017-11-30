@@ -32,4 +32,15 @@ class ArticelController extends Controller
         return response(['result'=>new Result(true)]);
 
     }
+
+    public function zan(Request $request)
+    {
+        $articel = Articel::find($request->input('id'));
+        if(!$articel){
+            return response(['result'=>new Result(false, '未找到改文章')]);
+        }
+        $articel->zan += $request->input('zan');
+        $articel->save();
+        return response(['result'=>new Result(true)]);
+    }
 }
