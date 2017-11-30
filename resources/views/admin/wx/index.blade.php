@@ -107,6 +107,7 @@
     data = {
         nav_active: 'tiezi',
         tiezi:[],
+        message: '10'
     };
 
     router.beforeEach((to, from, next) => {
