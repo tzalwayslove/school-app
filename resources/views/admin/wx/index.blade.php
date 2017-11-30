@@ -87,7 +87,7 @@
                     touchMove:function(e){
                         console.log(e);
                     },
-                    touchend:function(e){
+                    touchEnd:function(e){
                         console.log('touchend');
                     }
                 },
