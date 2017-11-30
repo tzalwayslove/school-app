@@ -158,7 +158,7 @@
                 var bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
                 this.lastBottom = bottom;
 
-                if(lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
+                if(this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
                     console.log('加载');
                     this.load = false;
                 }
