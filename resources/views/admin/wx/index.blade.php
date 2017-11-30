@@ -143,7 +143,7 @@
                 console.log('touchStart');
             },
             touchMove:function(e){
-                console.log(e.changedTouches[0].clientY);
+//                console.log(e.changedTouches[0].clientY);
             },
             touchEnd:function(e){
                 console.log('touchend');
