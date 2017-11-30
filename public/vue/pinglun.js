@@ -7,6 +7,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                 template: res.data,
                 props: ['articel'],
                 create: function () {
+                    console.log(111);
                     console.log(this.articel);
                 }
             }
