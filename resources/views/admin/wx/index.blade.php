@@ -93,17 +93,16 @@
     });
 
     /*router.beforeEach((to, from, next) => {
-        console.log(to);
-        console.log(from);
-        console.log(next);
+
     });*/
+    data ={
+        nav_active: 'foo'
+    };
 
     vue = new Vue({
         router: router,
 
-        data: {
-            nav_active: 'foo'
-        },
+        data: data,
 
         methods: {},
 
