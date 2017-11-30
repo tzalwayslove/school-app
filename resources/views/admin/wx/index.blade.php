@@ -84,7 +84,7 @@
         });
     });
 
-    tiezi = Vue.component('fabu', function (success, error) {
+    fabu = Vue.component('fabu', function (success, error) {
         axios.get("/public/tpl/index.html").then(function (res) {
             success({
                 template: res.data
@@ -92,7 +92,7 @@
         });
     });
 
-    fabu = Vue.component('wode', function (resolve, reject) {
+    wode = Vue.component('wode', function (resolve, reject) {
         axios.get("/public/tpl/pinglun.html").then(function (res) {
             resolve({
                 template: res.data
