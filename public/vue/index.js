@@ -10,7 +10,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     tiezi:[],
                     load: true,
                     lastBottom:9999,
-                    page : 1
+                    page : 2
                 }
             },
             methods:{
