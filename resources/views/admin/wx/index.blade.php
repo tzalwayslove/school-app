@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
+    <style>
+        .weui-cells{
+            margin-top:0
+        }
+    </style>
+
     <title></title>
 </head>
 <body>
