@@ -10,7 +10,7 @@
     <title></title>
 </head>
 <body>
-<div id="app">
+<div id="app" class="container">
     <div class="page">
         <router-view>
 
