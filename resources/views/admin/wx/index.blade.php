@@ -29,21 +29,20 @@
                 <div class="weui-tabfabu">
                     <router-link to="/tiezi" v-bind:class="['weui-tabfabu__item']">
                     <span style="display: inline-block;position: relative;">
-                        <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
-                        {{--<span class="weui-badge" style="position: absolute;top: -2px;right: -13px;"></span>--}}
+                        <img src="{{ asset('public/images/icon.tabbar.png') }}" alt="" class="weui-tabbar__icon">
                     </span>
-                        <p class="weui-tabfabu__label">帖子</p>
+                        <p class="weui-tabbar__label">帖子</p>
                     </router-link>
                     <router-link to="/fabu" v-bind:class="['weui-tabfabu__item', nav_active == 'fabu' ? 'weui-fabu__item_on' : '']">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
-                        <p class="weui-tabfabu__label">发布</p>
+                        <p class="weui-tabbar__label">发布</p>
                     </router-link>
                     <router-link to="/wode" v-bind:class="['weui-tabfabu__item', nav_active == 'wode' ? 'weui-fabu__item_on' : '']">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         {{--<span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>--}}
                     </span>
-                        <p class="weui-tabfabu__label">我的</p>
+                        <p class="weui-tabbar__label">我的</p>
                     </router-link>
                 </div>
             </div>
