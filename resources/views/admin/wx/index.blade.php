@@ -20,9 +20,7 @@
                 <div class="weui-tab__panel">
 
                 </div>
-                <div class="weui-tabbar">
 
-                </div>
             </div>
         </div>
     </div>
