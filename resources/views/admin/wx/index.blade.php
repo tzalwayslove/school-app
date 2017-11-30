@@ -19,31 +19,31 @@
 </head>
 <body>
 <div id="app" class="container">
-    <div class="page tabbar js_show">
+    <div class="page tabfabu js_show">
 
         <div class="page__bd" style="height: 100%;">
             <div class="weui-tab">
                 <div class="weui-tab__panel">
                     <router-view></router-view>
                 </div>
-                <div class="weui-tabbar">
-                    <router-link to="/foo" v-bind:class="['weui-tabbar__item']">
+                <div class="weui-tabfabu">
+                    <router-link to="/tiezi" v-bind:class="['weui-tabfabu__item']">
                     <span style="display: inline-block;position: relative;">
-                        <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
+                        <img src="{{asset('public/images/icon_tabfabu.png')}}" alt="" class="weui-tabfabu__icon">
                         {{--<span class="weui-badge" style="position: absolute;top: -2px;right: -13px;"></span>--}}
                     </span>
-                        <p class="weui-tabbar__label">帖子</p>
+                        <p class="weui-tabfabu__label">帖子</p>
                     </router-link>
-                    <router-link to="/foo" v-bind:class="['weui-tabbar__item', nav_active == 'foo' ? 'weui-bar__item_on' : '']">
-                        <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
-                        <p class="weui-tabbar__label">发布</p>
+                    <router-link to="/fabu" v-bind:class="['weui-tabfabu__item', nav_active == 'fabu' ? 'weui-fabu__item_on' : '']">
+                        <img src="{{asset('public/images/icon_tabfabu.png')}}" alt="" class="weui-tabfabu__icon">
+                        <p class="weui-tabfabu__label">发布</p>
                     </router-link>
-                    <router-link to="/bar" v-bind:class="['weui-tabbar__item', nav_active == 'bar' ? 'weui-bar__item_on' : '']">
+                    <router-link to="/wode" v-bind:class="['weui-tabfabu__item', nav_active == 'wode' ? 'weui-fabu__item_on' : '']">
                     <span style="display: inline-block;position: relative;">
-                        <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
+                        <img src="{{asset('public/images/icon_tabfabu.png')}}" alt="" class="weui-tabfabu__icon">
                         {{--<span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>--}}
                     </span>
-                        <p class="weui-tabbar__label">我的</p>
+                        <p class="weui-tabfabu__label">我的</p>
                     </router-link>
                 </div>
             </div>
@@ -57,8 +57,8 @@
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
 <script type="text/javascript">
     /*$(function () {
-        $('.weui-tabbar__item').on('click', function () {
-            $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+        $('.weui-tabfabu__item').on('click', function () {
+            $(this).addClass('weui-fabu__item_on').siblings('.weui-fabu__item_on').removeClass('weui-fabu__item_on');
         });
     });*/
     $(function(){
@@ -68,7 +68,7 @@
 </script>
 <script>
 
-    foo = Vue.component('foo', function(success, error){
+    tiezi = Vue.component('tiezi', function(success, error){
         axios.get("/public/tpl/index.html").then(function(res){
             success({
                 template:res.data
@@ -76,7 +76,15 @@
         });
     });
 
-    bar = Vue.component('bar', function(resolve, reject){
+    tiezi = Vue.component('fabu', function(success, error){
+        axios.get("/public/tpl/index.html").then(function(res){
+            success({
+                template:res.data
+            });
+        });
+    });
+
+    fabu = Vue.component('wode', function(resolve, reject){
         axios.get("/public/tpl/pinglun.html").then(function (res) {
             resolve({
                 template: res.data
@@ -84,17 +92,17 @@
         });
     });
     const routes = [
-        {path: '/foo', component: foo, name:'foo'},
-        {path: '/bar', component: bar, name:'bar'}
+        {path: '/tiezi', component: tiezi, name:'tiezi'},
+        {path: '/fabu', component: fabu, name:'fabu'},
+        {path: '/wode', component: fabu, name:'wode'},
     ];
 
     const router = new VueRouter({
         routes: routes
     });
 
-
     data ={
-        nav_active: 'foo'
+        nav_active: 'tiezi'
     };
 
     router.beforeEach((to, from, next) => {
