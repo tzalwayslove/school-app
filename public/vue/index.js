@@ -66,8 +66,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         zan: zan
                     }).then(function (res) {
                         item.zan = res.data.articel.zan ;
-                        item.zanLog = !!!item.zanLog;
                     });
+                    item.zanLog = !!!item.zanLog;
                 },
             },
             mounted (){
