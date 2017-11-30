@@ -110,6 +110,7 @@
 
     router.beforeEach((to, from, next) => {
         data.nav_active = to.name;
+        console.log(data.nav_active);
         next();
     });
 
