@@ -25,7 +25,11 @@
             <div class="weui-tab">
 
 
-                <div class="weui-tab__panel">
+                <div class="weui-tab__panel"
+                     @touchstart="touchStart($event)"
+                     @touchmove="touchMove($event)"
+                     @touchend="touchEnd($event)"
+                >
                     <router-view></router-view>
                 </div>
                 <div class="weui-tabbar">
@@ -81,15 +85,7 @@
                     }
                 },
                 methods:{
-                    touchStart: function(e){
-                        console.log('touchStart');
-                    },
-                    touchMove:function(e){
-                        console.log(e.changedTouches[0].clientY);
-                    },
-                    touchEnd:function(e){
-                        console.log('touchend');
-                    }
+
                 },
                 beforeCreate(){
                     let $this = this;
@@ -141,7 +137,17 @@
     vue = new Vue({
         router: router,
         data: data,
-        methods: {},
+        methods: {
+            touchStart: function(e){
+                console.log('touchStart');
+            },
+            touchMove:function(e){
+                console.log(e.changedTouches[0].clientY);
+            },
+            touchEnd:function(e){
+                console.log('touchend');
+            }
+        },
     }).$mount('#app');
 </script>
 </body>
