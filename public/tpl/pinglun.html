@@ -16,32 +16,33 @@
                 </section>
             </article>
         </div>
+        <div class="weui-form-preview"
+             v-for="item in list"
+             :key="item.id"
+        >
+            <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+
+                </div>
+            </div>
+            <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">评论人</label>
+                    <em class="weui-form-preview__value">xxx</em>
+                </div>
+            </div>
+            <div class="weui-form-preview__bd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">评论：</label>
+                    <span class="weui-form-preview__value">{{item.content}}</span>
+                </div>
+            </div>
+            <div class="weui-form-preview__ft">
+                <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">赞（{{item.zan}}）</a>
+            </div>
+        </div>
     </div>
 
-    <div class="weui-form-preview"
-         v-for="item in list"
-         :key="item.id"
-    >
-        <div class="weui-form-preview__hd">
-            <div class="weui-form-preview__item">
 
-            </div>
-        </div>
-        <div class="weui-form-preview__hd">
-            <div class="weui-form-preview__item">
-                <label class="weui-form-preview__label">评论人</label>
-                <em class="weui-form-preview__value">xxx</em>
-            </div>
-        </div>
-        <div class="weui-form-preview__bd">
-            <div class="weui-form-preview__item">
-                <label class="weui-form-preview__label">评论：</label>
-                <span class="weui-form-preview__value">{{item.content}}</span>
-            </div>
-        </div>
-        <div class="weui-form-preview__ft">
-            <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">赞（{{item.zan}}）</a>
-        </div>
-    </div>
 
 </div>
