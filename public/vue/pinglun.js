@@ -6,8 +6,17 @@ pinglun = Vue.component('pinglun', function (success, error) {
         success({
                 template: res.data,
                 props: ['articel'],
+                data(){
+                    return {
+                        list: []
+                    }
+                },
                 mounted: function () {
-                    console.log(this.$route.params.id);
+                    let id =this.$route.params.id;
+                    axios.get('/comment/'+ id).then(function(res){
+                        console.log(this.data);
+                        this.list = res.data.list;
+                    });
                 }
             }
         );
