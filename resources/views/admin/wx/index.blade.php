@@ -138,6 +138,7 @@
     vue = new Vue({
         router: router,
         data: data,
+        load: true,
         methods: {
             touchStart: function(e){
                 console.log('touchStart');
@@ -154,10 +155,9 @@
                 console.log($('#scrollPanel')[0].scrollHeight);*/
                 var bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
 
-                console.log(bottom);
-                console.log($('#scrollPanel')[0].clientHeight);
-                if(bottom < $('#scrollPanel')[0].clientHeight / 3){
+                if(bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
                     console.log('加载');
+                    this.load = false;
                 }
             }
         },
