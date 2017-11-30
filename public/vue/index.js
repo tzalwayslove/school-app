@@ -33,7 +33,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     let bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
 
                     if(this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
-                        page++;
+                        this.page++;
                         this.getData();
                         this.load = false;
                         this.lastBottom = bottom;
