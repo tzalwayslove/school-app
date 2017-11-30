@@ -98,9 +98,7 @@
                             </tr>
                             </thead>
 
-
                             <tbody>
-
                             <tr class="even pointer" v-for="item in comments">
                                 <td class=" ">@{{item.id}}</td>
                                 <td class=" ">@{{item.created_at}}</td>

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    phpinfo();
+    return view('admin.wx.index');
 });
 
 Route::get('/s', function(){
