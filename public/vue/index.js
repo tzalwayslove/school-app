@@ -30,7 +30,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 },
                 touchMove: function (e) {
                     console.log(e.changedTouches[0].clientY);
-
+                    move = e.changedTouches[0].clientY - this.touchStartY;
+                    this.styles.transform = 'translateY('+move+'px)';
                 },
                 touchEnd: function (e) {
                     console.log('touchend');
