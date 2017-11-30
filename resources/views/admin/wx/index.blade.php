@@ -87,9 +87,10 @@
 
     bar = Vue.component('bar', function(resolve, reject){
         axios.get("/public/tpl/pinglun.html").then(function (res) {
-            resolve({
+            /*resolve({
                 template: res
-            })
+            })*/
+            console.log(res);
         });
     });
     const routes = [
