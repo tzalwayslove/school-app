@@ -29,6 +29,7 @@
                      @touchstart="touchStart($event)"
                      @touchmove="touchMove($event)"
                      @touchend="touchEnd($event)"
+                     @scroll="onScroll($event)"
                 >
                     <router-view></router-view>
                 </div>
@@ -146,6 +147,9 @@
             },
             touchEnd:function(e){
                 console.log('touchend');
+            },
+            onScroll:function(e){
+                console.log(e);
             }
         },
     }).$mount('#app');
