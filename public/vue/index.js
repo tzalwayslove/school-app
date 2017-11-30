@@ -53,7 +53,12 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     }
                 },
                 getComment:function(){
-                    router.push('/pinglun', {props: {articel: 3}})
+                    router.push({
+                        path:'/articel',
+                        prpos:{
+                            articel:3
+                        }
+                    })
                 }
             },
             mounted (){
