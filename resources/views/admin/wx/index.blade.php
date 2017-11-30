@@ -82,7 +82,6 @@
     };
 
     router.beforeEach((to, from, next) => {
-
         switch(to.name){
             case "pinglun":
                 data.nav_active = 'tiezi';
@@ -101,6 +100,11 @@
         methods: {
 
         },
+        mounted:function(){
+            router.push({
+                path: '/tiezi'
+            })
+        }
     }).$mount('#app');
 </script>
 </body>
