@@ -49,3 +49,12 @@ Route::group([
     Route::resource('articel', 'ArticelController');
     Route::resource('comment', 'CommentController');
 });
+
+
+Route::group([
+    'prefix'=>'wx',
+    'namespace'=> 'Wx'
+], function(){
+    Route::get('/articel', 'ArticelController@index');
+});
+
