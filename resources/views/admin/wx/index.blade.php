@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
@@ -60,6 +61,10 @@
             $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
         });
     });
+    $(function(){
+        axios.defaults.baseURL = 'http://school.sz25.net';
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
+    });
 </script>
 <script>
 
@@ -80,13 +85,12 @@
         '</div>'
     });
 
-    bar = Vue.component('bar', {
-        template: '<div class="weui-cells">' +
-        '<div class="weui-cell">' +
-        '<div class="weui-cell__bd">' +
-            '<p>评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容</p>' +
-        '</div>' +
-        '</div>'
+    bar = Vue.component('bar', function(resolve, reject){
+        axios.get("/public/tpl/pinglun.html").then(function (res) {
+            resolve({
+                template: res
+            })
+        });
     });
     const routes = [
         {path: '/foo', component: foo},
