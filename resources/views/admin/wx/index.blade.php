@@ -95,14 +95,15 @@
         nav_active: 'foo'
     };
     router.beforeEach((to, from, next) => {
-        data.nav_active = to.name;
+
+//        data.nav_active = to.name;
     });
 
     vue = new Vue({
         router: router,
-        data: {
-            nav_active: 'foo'
-        },
+
+        data: data,
+
         methods: {},
 
     }).$mount('#app');
