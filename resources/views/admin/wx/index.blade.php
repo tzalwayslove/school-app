@@ -27,18 +27,18 @@
                     <router-view></router-view>
                 </div>
                 <div class="weui-tabbar">
-                    <router-link to="/foo" v:bind="[weui-tabbar__item, nav_active == foo ? weui-bar__item_on : '']">
+                    <router-link to="/foo" v-bind:class="[weui-tabbar__item, nav_active == foo ? weui-bar__item_on : '']">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         {{--<span class="weui-badge" style="position: absolute;top: -2px;right: -13px;"></span>--}}
                     </span>
                         <p class="weui-tabbar__label">帖子</p>
                     </router-link>
-                    <router-link to="/foo"v:bind="[weui-tabbar__item, nav_active == foo ? weui-bar__item_on : '']">
+                    <router-link to="/foo" v-bind:class="[weui-tabbar__item, nav_active == foo ? weui-bar__item_on : '']">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         <p class="weui-tabbar__label">发布</p>
                     </router-link>
-                    <router-link to="/bar" v:bind="[weui-tabbar__item, nav_active == bar ? weui-bar__item_on : '']">
+                    <router-link to="/bar" v-bind:class="[weui-tabbar__item, nav_active == bar ? weui-bar__item_on : '']">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         {{--<span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>--}}
