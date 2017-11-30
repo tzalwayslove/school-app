@@ -10,11 +10,44 @@
     <title></title>
 </head>
 <body>
-
+<div id="app">
+    <router-link to="/foo">foo</router-link>
+    <router-link to="/bar">foo</router-link>
+    <router-view></router-view>
+</div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
+
+<script>
+
+    Vue.component('Foo', {
+        template:'<div>Foo</div>'
+    });
+
+    Vue.component('Bar', {
+        template:'<div>Bar</div>'
+    });
+    const routes = [
+        { path: '/foo', component: Foo },
+        { path: '/bar', component: Bar }
+    ];
+
+    const router = new VueRouter({
+        routes:routes
+    });
+
+    var vue = new Vue({
+        data:{
+
+        },
+        methods:{
+
+        },
+
+    }).$mount('#app');
+</script>
 </body>
 </html>
