@@ -29,13 +29,11 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.touchStartY = e.changedTouches[0].clientY;
                 },
                 touchMove: function (e) {
-                    console.log(e.changedTouches[0].clientY);
                     this.move = e.changedTouches[0].clientY - this.touchStartY;
                     this.styles.transform = 'translateY('+this.move+'px)';
                 },
                 touchEnd: function (e) {
                     this.styles.transform = 'translateY(0px)';
-                    console.log('touchend');
                 },
                 onScroll: function (e) {
                     let bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
