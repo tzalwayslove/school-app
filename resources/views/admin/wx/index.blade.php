@@ -24,7 +24,6 @@
         <div class="page__bd" style="height: 100%;">
             <div class="weui-tab">
 
-
                 <div class="weui-tab__panel" id="scrollPanel"
                      @touchstart="touchStart($event)"
                      @touchmove="touchMove($event)"
@@ -86,14 +85,20 @@
                     }
                 },
                 methods:{
-
+                    getdata: function(){
+                        axios.get('/wx/articel', {cate:0, page:page}).then(function(res){
+                            $this.tiezi = res.data.list.data;
+                        });
+                    }
                 },
                 beforeCreate(){
                     let $this = this;
-                    axios.get('/wx/articel', ['cat', 0]).then(function(res){
-                        console.log(res);
-                        $this.tiezi = res.data.list.data;
-                    });
+                    this.getdata();
+                },
+                watch:{
+                    page:function(){
+                        this.getdata();
+                    }
                 }
             });
         });
@@ -115,7 +120,7 @@
         });
     });
     const routes = [
-        {path: '/tiezi', component: tiezi, name: 'tiezi'},
+        {path: '/tiezi', component: tiezi, name: 'tiezi', props: { page:1 }},
         {path: '/fabu', component: fabu, name: 'fabu'},
         {path: '/wode', component: fabu, name: 'wode'},
     ];
@@ -135,7 +140,6 @@
         data.nav_active = to.name;
         next();
     });
-
 
     vue = new Vue({
         router: router,
