@@ -59,15 +59,13 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     })
                 },
                 setZan: function (item) {
-                    console.log(item);
-                    return;
                     zan = !item.zanLog ? 1 : -1;
                     id = item.id;
                     axios.post('articel_zan', {
                         id: id,
                         zan: zan
                     }).then(function (res) {
-                        console.log(res);
+                        console.log(res.data.articel);
                         item = res.data.articel
                     });
                 },
