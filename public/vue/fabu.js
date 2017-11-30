@@ -14,8 +14,8 @@ fabu = Vue.component('fabu', function (success, error) {
             methods:{
                 send: function(){
                     axios.post('/wx/articel', {
-                        title: this.title,
-                        content: this.content
+                        title: this.title.trim(),
+                        content: this.content.trim()
                     }).then(function(res){
                         if(res.data.result.code == 1){
                             alert('发布成功');
