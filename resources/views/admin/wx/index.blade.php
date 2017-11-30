@@ -95,6 +95,7 @@
     router.beforeEach((to, from, next) => {
         console.log(to);
         let now = to.name;
+
     });
 
     vue = new Vue({
