@@ -13,7 +13,6 @@ fabu = Vue.component('fabu', function (success, error) {
                 send: function(){
                     console.log(this.title);
                     console.log(this.content);
-
                 }
             }
         });
