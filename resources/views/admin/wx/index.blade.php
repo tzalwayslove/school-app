@@ -74,7 +74,12 @@
     tiezi = Vue.component('tiezi', function (success, error) {
         axios.get("/public/tpl/index.html").then(function (res) {
             success({
-                template: res.data
+                template: res.data,
+                data(){
+                    return {
+                        message:10
+                    }
+                }
             });
         });
     });
@@ -107,7 +112,6 @@
     data = {
         nav_active: 'tiezi',
         tiezi:[],
-        message: '10'
     };
 
     router.beforeEach((to, from, next) => {
