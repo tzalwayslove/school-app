@@ -81,8 +81,10 @@
                     }
                 },
                 beforeCreate(){
+                    let $this = this;
                     axios.get('/wx/articel', ['cat', 0]).then(function(res){
                         console.log(res);
+                        $this.tiezi = res.data.list.data;
                     });
                 }
             });
