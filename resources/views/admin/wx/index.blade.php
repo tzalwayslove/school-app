@@ -155,7 +155,7 @@
                 var bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
 
                 console.log();
-                if(bottom < $('#scrollPanel')[0].scrollHeight / 2){
+                if(bottom < $('#scrollPanel')[0].clientHeight / 2){
                     console.log('加载');
                 }
             }
