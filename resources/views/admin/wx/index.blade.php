@@ -102,7 +102,6 @@
         router: router,
 
         data: {
-            nav_active: ''
         },
 
         methods: {},
