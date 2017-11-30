@@ -89,6 +89,7 @@
                 },
                 methods:{
                     getData: function(){
+                        $this = this;
                         axios.get('/wx/articel', {cate:0, page:this.page}).then(function(res){
                             $this.tiezi = res.data.list.data;
                         });
