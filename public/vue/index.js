@@ -14,7 +14,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     touchStartY: 0,
                     styles: {
                         transform: 'translateY(0px)'
-                    }
+                    },
+                    move: 0
                 }
             },
             methods: {
