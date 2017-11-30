@@ -82,12 +82,9 @@
     };
 
     router.beforeEach((to, from, next) => {
+        console.log(to.prototype);
         switch(to){
             case "pinglun":
-                data.nav_active = 'tiezi';
-                break;
-            case "tiezi":
-                console.log(1111);
                 data.nav_active = 'tiezi';
                 break;
             default:
