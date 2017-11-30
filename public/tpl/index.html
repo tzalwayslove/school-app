@@ -8,6 +8,7 @@
          v-for="item in tiezi"
          :key="item.id"
          :style="styles"
+         @click="getComment"
     >
         <div class="weui-panel__hd">{{item.title}}</div>
         <div class="weui-panel__bd">

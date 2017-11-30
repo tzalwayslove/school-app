@@ -51,6 +51,9 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         this.load = false;
                         this.lastBottom = bottom;
                     }
+                },
+                getComment:function(){
+                    router.push('/pinglun', {props: {articel: 3}})
                 }
             },
             mounted (){
