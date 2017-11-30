@@ -33,7 +33,7 @@
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         <p class="weui-tabbar__label">发布</p>
                     </router-link>
-                    <router-link to="/foo" class="weui-tabbar__item">
+                    <router-link to="/bar" class="weui-tabbar__item">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         {{--<span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>--}}
