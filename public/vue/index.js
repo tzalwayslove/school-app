@@ -10,7 +10,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     tiezi:[],
                     load: true,
                     lastBottom:9999,
-                    page : 1
+                    page : 1,
+                    touchStartY: 0
                 }
             },
             methods:{
@@ -22,8 +23,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     });
                 },
                 touchStart: function(e){
-                    console.log(e);
-                    console.log('touchStart');
+                    this.touchStartY = e.changedTouches[0].clientY
+                    console.log( this.touchStartY );
                 },
                 touchMove:function(e){
                     console.log(e.changedTouches[0].clientY);
