@@ -82,6 +82,7 @@
     };
 
     router.beforeEach((to, from, next) => {
+        console.log(to);
         switch(to){
             case 'pinglun':
                 data.nav_active = 'tiezi';
