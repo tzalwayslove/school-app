@@ -84,7 +84,7 @@
     router.beforeEach((to, from, next) => {
         switch(to){
             case 'pinglun':
-                data.nav_active = 'tiezi'
+                data.nav_active = 'tiezi';
                 break;
             default:
                 data.nav_active = to.name;
