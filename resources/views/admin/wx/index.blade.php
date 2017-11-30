@@ -77,7 +77,7 @@
                 template: res.data,
                 data(){
                     return {
-                        a:10
+                        tiezi:[]
                     }
                 }
             });
