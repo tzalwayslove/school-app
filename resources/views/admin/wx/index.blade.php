@@ -65,53 +65,8 @@
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
     });
 </script>
+<script src="{{ asset('public/vue/index.js') }}"></script>
 <script>
-
-    tiezi = Vue.component('tiezi', function (success, error) {
-        axios.get("/public/tpl/index.html").then(function (res) {
-            success({
-                template: res.data,
-                data(){
-                    return {
-                        tiezi:[],
-                        load: true,
-                        lastBottom:9999
-                    }
-                },
-                methods:{
-                    getData: function(){
-                        $this = this;
-                        axios.get('/wx/articel', {cate:0, page:this.page}).then(function(res){
-                            $this.tiezi = res.data.list.data;
-                        });
-                    },
-                    touchStart: function(e){
-                        console.log('touchStart');
-                    },
-                    touchMove:function(e){
-//                console.log(e.changedTouches[0].clientY);
-                    },
-                    touchEnd:function(e){
-                        console.log('touchend');
-                    },
-                    onScroll:function(e){
-                        let bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
-
-                        if(this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load){
-                            console.log('加载');
-                            this.load = false;
-                            this.lastBottom = bottom;
-                        }
-                    }
-                },
-                mounted (){
-                    console.log('afterCreate');
-                    let $this = this;
-                    this.getData();
-                }
-            });
-        });
-    });
 
     fabu = Vue.component('fabu', function (success, error) {
         axios.get("/public/tpl/fatie.html").then(function (res) {
