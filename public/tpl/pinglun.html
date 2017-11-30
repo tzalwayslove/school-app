@@ -1,9 +1,30 @@
 <div class="weui-tab__panel"
      id="scrollPanel"
 >
-    <p>
-        中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-    </p>
+    <div class="page">
+        <div class="page__hd">
+            <h1 class="page__title">Article</h1>
+            <p class="page__desc">文章</p>
+        </div>
+        <div class="page__bd">
+            <article class="weui-article">
+                <h1>大标题</h1>
+                <section>
+                    <h2 class="title">章标题</h2>
+                    <section>
+                        <h3>1.1 节标题</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </p>
+
+                    </section>
+                </section>
+            </article>
+        </div>
+    </div>
     <div class="weui-form-preview"
          v-for="item in list"
          :key="item.id"
