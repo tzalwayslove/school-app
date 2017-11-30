@@ -96,9 +96,6 @@
         ' </div>' +
         '</div>' +
         '</div>' +
-        '<div class="weui-cell__ft">' +
-        '<a class="weui-swiped-btn weui-swiped-btn_warn" href="javascript:">删除</a>' +
-        '</div>' +
         '</div>' +
         '</div>'
     });
