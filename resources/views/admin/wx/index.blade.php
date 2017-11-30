@@ -68,7 +68,7 @@
         {path: '/tiezi', component: tiezi, name: 'tiezi'},
         {path: '/fabu', component: fabu, name: 'fabu'},
         {path: '/wode', component: wode, name: 'wode'},
-        {path: '/pinglun', component: pinglun, props:{articel: 0}}
+        {path: '/pinglun/:id', component: pinglun, props:{articel: 0}}
     ];
 
     const router = new VueRouter({
