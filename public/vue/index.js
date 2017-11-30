@@ -37,6 +37,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 touchEnd: function (e) {
                     if(this.move > 75){
                         this.page = 1;
+                        this.tiezi = [];
                         this.getData();
                     }
                     this.styles.transition = 'transform 0.5s'
