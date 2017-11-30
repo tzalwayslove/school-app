@@ -17,6 +17,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 getData: function(){
                     $this = this;
                     axios.get('/wx/articel', {params:{cate:0, page:this.page}}).then(function(res){
+                        console.log($this.tiezi);
                         $this.tiezi = $this.tiezi + res.data.list.data;
                     });
                 },
