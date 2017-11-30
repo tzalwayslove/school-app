@@ -31,10 +31,10 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 },
                 touchMove: function (e) {
                     this.move = e.changedTouches[0].clientY - this.touchStartY;
-                    this.styles.transform = 'translateY('+this.move+'px)';
+                    this.styles.transform = 'translateY(' + this.move + 'px)';
                 },
                 touchEnd: function (e) {
-                    if(this.move > 75){
+                    if (this.move > 75) {
                         this.page = 1;
                         this.tiezi = [];
                         this.getData();
@@ -52,11 +52,11 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         this.lastBottom = bottom;
                     }
                 },
-                getComment:function(){
+                getComment: function () {
                     router.push({
-                        path:'/pinglun',
-                        props:{
-                            articel:3
+                        path: '/pinglun',
+                        props: {
+                            articel: 3
                         }
                     })
                 }
