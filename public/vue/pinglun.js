@@ -8,7 +8,10 @@ pinglun = Vue.component('pinglun', function (success, error) {
             props: ['articel'],
             create:function(){
                 console.log(this.articel);
+            },
+            onComplete:function(){
+                console.log(1);
             }
-        });
+        );
     });
 });
