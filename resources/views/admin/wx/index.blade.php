@@ -105,7 +105,9 @@
     });
 
     data = {
-        nav_active: 'tiezi'
+        nav_active: 'tiezi',
+        tiezi:[],
+
     };
 
     router.beforeEach((to, from, next) => {
