@@ -20,7 +20,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         $this.articelData = res.data.data;
                         $this.list = res.data.data.get_comment;
                         if($this.list.length == 0){
-                            alert('还没有人评论');
+
                         }
                     });
                 }
