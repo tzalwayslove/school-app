@@ -56,11 +56,11 @@
 
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
 <script type="text/javascript">
-    $(function () {
+    /*$(function () {
         $('.weui-tabbar__item').on('click', function () {
             $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
         });
-    });/**/
+    });*/
     $(function(){
         axios.defaults.baseURL = 'http://school.sz25.net';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
@@ -84,21 +84,19 @@
         });
     });
     const routes = [
-        {path: '/foo', component: foo/*, name:'foo'*/},
-        {path: '/bar', component: bar/*, name:'bar'*/}
+        {path: '/foo', component: foo, name:'foo'},
+        {path: '/bar', component: bar}
     ];
 
     const router = new VueRouter({
         routes: routes
     });
 
-    /*data = {
-        nav_active: 'foo'
-    };*/
-
-    router.beforeEach((to, from, next) => {
-//        data.nav_active = to.name
-    });
+    /*router.beforeEach((to, from, next) => {
+        console.log(to);
+        console.log(from);
+        console.log(next);
+    });*/
 
     vue = new Vue({
         router: router,
