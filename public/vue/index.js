@@ -30,10 +30,11 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 },
                 touchMove: function (e) {
                     console.log(e.changedTouches[0].clientY);
-                    move = e.changedTouches[0].clientY - this.touchStartY;
-                    this.styles.transform = 'translateY('+move+'px)';
+                    this.move = e.changedTouches[0].clientY - this.touchStartY;
+                    this.styles.transform = 'translateY('+this.move+'px)';
                 },
                 touchEnd: function (e) {
+                    this.styles.transform = 'translateY(0px)';
                     console.log('touchend');
                 },
                 onScroll: function (e) {
