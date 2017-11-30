@@ -40,6 +40,7 @@ class ArticelController extends Controller
             return response(['result'=>new Result(false, '未找到改文章')]);
         }
         $articel->zan += $request->input('zan');
+        $articel->zan  = $articel->zan < 0 ? 0 : $articel->zan;
         $articel->save();
         return response(['result'=>new Result(true), 'articel'=>$articel]);
     }
