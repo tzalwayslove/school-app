@@ -151,6 +151,7 @@
             onScroll:function(e){
                 console.log($('#scrollPanel')[0].offsetHeight);
                 console.log($('#scrollPanel')[0].scrollTop);
+                console.log($('#scrollPanel')[0].scrollHeight);
 //                console.log(e);
             }
         },
