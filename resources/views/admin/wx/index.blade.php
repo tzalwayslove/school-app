@@ -86,11 +86,11 @@
         switch(to){
             case 'pinglun':
                 data.nav_active = 'tiezi';
+                console.log(1);
                 break;
             default:
                 data.nav_active = to.name;
         }
-
         next();
     });
 
