@@ -71,7 +71,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         item = res.data.articel
                     });*/
                 },
-                test: function(){
+                test: function(item){
                     console.log(111111);
                 }
             },

@@ -12,7 +12,7 @@
                 <p class="weui-media-box__desc"  @click="getComment(item)">{{item.content}}{{item.id}}</p>
                 <ul class="weui-media-box__info">
                     <li class="weui-media-box__info__meta">{{item.created_at}}</li>
-                    <li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="test()">
+                    <li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="test(item)">
                         赞({{item.zan || 0}})
                     </li>
                 </ul>
