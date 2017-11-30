@@ -57,8 +57,6 @@ Route::group([
 ], function(){
     Route::get('/articel', 'ArticelController@index');
     Route::get('/comment/{id}', 'CommentController@index');
-    Route::post('/articel', function(){
-       echo  'ArticelController@store';
-    });
+    Route::post('/articel', 'ArticelController@store');
 });
 
