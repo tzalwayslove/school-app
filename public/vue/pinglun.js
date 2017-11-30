@@ -13,7 +13,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                 },
                 mounted: function () {
                     let id =this.$route.params.id;
-                    axios.get('/comment/'+ id).then(function(res){
+                    axios.get('wx/comment/'+ id).then(function(res){
                         console.log(this.data);
                         this.list = res.data.list;
                     });
