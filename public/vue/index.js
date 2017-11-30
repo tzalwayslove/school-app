@@ -23,7 +23,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     });
                 },
                 touchStart: function(e){
-                    this.touchStartY = e.changedTouches[0].clientY
+                    this.touchStartY = e.changedTouches[0];
                     console.log( this.touchStartY );
                 },
                 touchMove:function(e){
