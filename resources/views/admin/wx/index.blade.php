@@ -48,10 +48,6 @@
                     </span>
                         <p class="weui-tabbar__label">发现</p>
                     </router-link>
-                    <a href="javascript:;" class="weui-tabbar__item">
-                        <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
-                        <p class="weui-tabbar__label">我</p>
-                    </a>
                 </div>
             </div>
         </div>
