@@ -13,13 +13,13 @@
 <body>
 <div id="app" class="container">
     <div class="page tabbar js_show">
-        <router-view>
 
-        </router-view>
         <div class="page__bd" style="height: 100%;">
             <div class="weui-tab">
                 <div class="weui-tab__panel">
+                    <router-view>
 
+                    </router-view>
                 </div>
                 <div class="weui-tabbar">
                     <router-link to="/foo" class="weui-tabbar__item weui-bar__item_on">
