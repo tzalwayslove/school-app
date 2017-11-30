@@ -98,6 +98,7 @@
                             </tr>
                             </thead>
 
+
                             <tbody>
 
                             <tr class="even pointer" v-for="item in comments">
