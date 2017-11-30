@@ -15,15 +15,35 @@
         <router-view>
 
         </router-view>
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab">
+                <div class="weui-tab__panel">
 
+                </div>
+                <div class="weui-tabbar">
+                    <router-link to="/foo" class="weui-tabbar__item weui-bar__item_on">
+                    <span style="display: inline-block;position: relative;">
+                        <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                        <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+                    </span>
+                        <p class="weui-tabbar__label">微信</p>
+                    </router-link>
+                    <router-link to="/foo" class="weui-tabbar__item">
+                        <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                        <p class="weui-tabbar__label">通讯录</p>
+                    </router-link>
+                    <router-link to="/foo" class="weui-tabbar__item">
+                    <span style="display: inline-block;position: relative;">
+                        <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+                        <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+                    </span>
+                        <p class="weui-tabbar__label">发现</p>
+                    </router-link>
+                </div>
+            </div>
+        </div>
     </div>
-    <script type="text/javascript">
-        $(function(){
-            $('.weui-tabbar__item').on('click', function () {
-                $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
-            });
-        });
-    </script>
+
 
     <router-link to="/bar">bar</router-link>
 
@@ -33,19 +53,25 @@
 <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
 
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
-
+<script type="text/javascript">
+    $(function () {
+        $('.weui-tabbar__item').on('click', function () {
+            $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+        });
+    });
+</script>
 <script>
 
     foo = Vue.component('foo', {
-        template:'<div>Foo</div>'
+        template: '<div>Foo</div>'
     });
 
     bar = Vue.component('bar', {
-        template:'<div>Bar</div>'
+        template: '<div>Bar</div>'
     });
     const routes = [
-        { path: '/foo', component: foo },
-        { path: '/bar', component: bar }
+        {path: '/foo', component: foo},
+        {path: '/bar', component: bar}
     ];
 
     const router = new VueRouter({
@@ -55,13 +81,9 @@
     vue = new Vue({
         router: router,
 
-        data:{
+        data: {},
 
-        },
-
-        methods:{
-
-        },
+        methods: {},
 
     }).$mount('#app');
 </script>
