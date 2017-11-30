@@ -56,5 +56,6 @@ Route::group([
     'namespace'=> 'Wx'
 ], function(){
     Route::get('/articel', 'ArticelController@index');
+    Route::get('/comment/{id}', 'CommentController@index');
 });
 
