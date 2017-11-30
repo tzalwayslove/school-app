@@ -13,8 +13,16 @@ fabu = Vue.component('fabu', function (success, error) {
             },
             methods:{
                 send: function(){
-                    console.log(this.title);
-                    console.log(this.content);
+                    axios.post('wx/articel', {
+                        title: this.title,
+                        content: this.content
+                    }).then(function(res){
+                        if(res.data.result.code == 1){
+                            alert('发布成功');
+                        }else{
+                            alert(res.data.result.msg || '发布失败');
+                        }
+                    });
                 }
             }
         });
