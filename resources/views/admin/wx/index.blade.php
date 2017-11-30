@@ -30,19 +30,19 @@
                 </div>
                 <div class="weui-tabbar">
                     <router-link to="/tiezi"
-                                 v-bind:class="['weui-tabbar__item', 'weui-bar__item_on', nav_active == 'tiezi' ? 'weui-fabu__item_on' : '']">
+                                 v-bind:class="['weui-tabbar__item', nav_active == 'tiezi' ? 'weui-bar__item_on' : '']">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                     </span>
                         <p class="weui-tabbar__label">帖子</p>
                     </router-link>
                     <router-link to="/fabu"
-                                 v-bind:class="['weui-tabbar__item', nav_active == 'fabu' ? 'weui-fabu__item_on' : '']">
+                                 v-bind:class="['weui-tabbar__item', nav_active == 'fabu' ? 'weui-bar__item_on' : '']">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                         <p class="weui-tabbar__label">发帖</p>
                     </router-link>
                     <router-link to="/wode"
-                                 v-bind:class="['weui-tabbar__item', nav_active == 'wode' ? 'weui-fabu__item_on' : '']">
+                                 v-bind:class="['weui-tabbar__item', nav_active == 'wode' ? 'weui-bar__item_on' : '']">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon_tabbar.png')}}" alt="" class="weui-tabbar__icon">
                     </span>
