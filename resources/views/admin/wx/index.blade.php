@@ -77,7 +77,7 @@
                 template: res.data,
                 data: function(){
                     return {
-                        message:10
+                        a:10
                     }
                 }
             });
