@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
     <title></title>
 </head>
