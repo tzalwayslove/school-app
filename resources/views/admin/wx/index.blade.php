@@ -84,8 +84,8 @@
         });
     });
     const routes = [
-        {path: '/foo', component: foo, name:'foo'},
-        {path: '/bar', component: bar, name:'bar'}
+        {path: '/foo', component: foo},
+        {path: '/bar', component: bar}
     ];
 
     const router = new VueRouter({
@@ -94,8 +94,8 @@
 
     router.beforeEach((to, from, next) => {
         console.log(to);
-        let now = to.name;
-
+        console.log(from);
+        console.log(next);
     });
 
     vue = new Vue({
