@@ -80,6 +80,17 @@
                         tiezi:[]
                     }
                 },
+                methods:{
+                    touchStart: function(e){
+                        console.log('touchStart');
+                    },
+                    touchMove:function(e){
+                        console.log(e);
+                    },
+                    touchend:function(e){
+                        console.log('touchend');
+                    }
+                },
                 beforeCreate(){
                     let $this = this;
                     axios.get('/wx/articel', ['cat', 0]).then(function(res){
