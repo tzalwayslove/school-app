@@ -10,8 +10,21 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     return {
                         data : {},
                         list: [],
-                        articelData : {}
+                        articelData : {},
+                        jiahao: true,
+                        pinglun_input: false,
+                        comment: ''
                     }
+                },
+                methods:{
+                    addpinglun: function(){
+                        console.log('addpinglun run');
+                        this.jiahao = !this.jiahao;
+                        this.pinglun_input = !this.pinglun_input;
+                    },
+                    send: function(){
+                        console.log(this.comment);
+                    },
                 },
                 mounted: function () {
                     let id =this.$route.params.id;

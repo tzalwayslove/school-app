@@ -43,11 +43,11 @@
         </div>
         <div style="height: 50px;"></div>
     </div>
-    <div id="add_pinglun_show">
+    <div id="add_pinglun_show" @click="addpinglun" v-show="jiahao">
         +
     </div>
-    <div id="add_pinglun" style="display: none;">
-        <input type="text" placeholder="请输入评论内容">
-        <button>↑发送</button>
+    <div id="add_pinglun" style="display: none;" v-show="pinglun_input">
+        <input type="text" placeholder="请输入评论内容" v-model="comment">
+        <button @click="send">↑发送</button>
     </div>
 </div>
