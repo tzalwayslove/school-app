@@ -53,7 +53,6 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         item.zanLog = !!!item.zanLog;
                     },
                     hide_input(){
-                        console.log('hide run');
                         this.jiahao = true;
                         this.pinglun_input = false;
                     }
