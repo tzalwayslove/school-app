@@ -29,4 +29,15 @@ class Comment extends Model
         $this->save();
     }
 
+    public static function addComment(Articel $articel, $content, $user = null)
+    {
+        $comment = new self();
+        $comment->articel = $articel->id;
+        $comment->content = $content;
+        $comment->user = $user;
+        $comment->show = 1;
+        $comment->zan = 0;
+        $comment->save();
+    }
+
 }

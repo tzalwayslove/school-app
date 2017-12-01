@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Wx;
 
+use App\Lib\Result;
 use App\Model\Articel;
 use App\Model\Comment;
 use Illuminate\Http\Request;
@@ -18,10 +19,31 @@ class CommentController extends Controller
             $query->where('show', 1)->orderBy('created_at', 'desc');
         }]);
 
-
         return response([
             'result',
             'data'=>$data
+        ]);
+    }
+
+    public function addComment(Request $request)
+    {
+        $articel = Articel::find($request->input('id'));
+        if(!$articel){
+            return response([
+                'result'=> new Result(false, '未找到该文章')
+            ]);
+        }
+
+        $content = $request->input('comment', false);
+        if(!$content){
+            return response([
+                'result'=> new Result(false, '评论内容不能为空!')
+            ]);
+        }
+
+        Comment::addComment($articel, $content);
+        return response([
+            'result'=> new Result(true)
         ]);
     }
 }
