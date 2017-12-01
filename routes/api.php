@@ -21,3 +21,7 @@ Route::any('/wechat', 'Wx\IndexController@index');
 
 Route::get('admin/comment/{id}', 'Admin\CommentController@comment');
 Route::post('admin/comment/show', 'Admin\CommentController@editShow');
+
+Route::get('minganci', function(){
+    \App\Model\Articel::minganci('使用假、币 再加上我的自定义词汇');
+});

@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -30,11 +31,20 @@ class Articel extends Model
 
     public static function newArticel($title, $content, $cate = 0)
     {
+
+
         $articel = new Articel();
         $articel->title = $title;
         $articel->content = $content;
         $articel->cate = $cate;
         $articel->save();
+    }
+
+    public static function minganci($str)
+    {
+        $client = new Client();
+        $res = $client->request('GET', 'http://www.hoapi.com/index.php/Home/Api/check?str='.$str);
+        dd($res->getBody);
     }
 
 }
