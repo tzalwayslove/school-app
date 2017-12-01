@@ -49,6 +49,7 @@
                                                 <td>{{ isset($v->user_account)? $v->user_account->account : '匿名' }}</td>
                                                 <td>{{ isset($v->cate_name)? $v->cate_name->name : '无' }}</td>
                                                 @php$arr = [];$arr = ['1'=>'0',]@endphp
+                                                <td>{{ $arr[$v->show] }}</td>
 
                                             </tr>
                                         @endforeach
