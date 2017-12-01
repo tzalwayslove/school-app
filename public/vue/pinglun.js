@@ -18,7 +18,6 @@ pinglun = Vue.component('pinglun', function (success, error) {
                 },
                 methods:{
                     addpinglun(){
-                        console.log('addpinglun run');
                         this.showConvert();
                     },
                     showConvert(){
