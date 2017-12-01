@@ -15,7 +15,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     styles: {
                         transform: 'translateY(0px)'
                     },
-                    order: '热门',
+                    order: '最新',
                     remen: {
                         'background': 'rgba(255, 80, 80, 0.8)',
                         'color': '#fff'
