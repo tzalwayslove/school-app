@@ -86,6 +86,10 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     });
                     item.zanLog = !!!item.zanLog;
                 },
+                orderConvert(){
+                    this.order = this.order == '热门' ? '最新' : '热门';
+                    this.getData();
+                }
             },
             mounted (){
                 this.getData();
