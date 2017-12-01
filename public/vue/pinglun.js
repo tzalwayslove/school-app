@@ -17,13 +17,17 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     }
                 },
                 methods:{
-                    addpinglun: function(){
+                    addpinglun(){
                         console.log('addpinglun run');
+                        this.showConvert();
+                    },
+                    showConvert(){
                         this.jiahao = !this.jiahao;
                         this.pinglun_input = !this.pinglun_input;
                     },
-                    send: function(){
+                    send(){
                         console.log(this.comment);
+                        this.showConvert();
                     },
                 },
                 mounted: function () {
