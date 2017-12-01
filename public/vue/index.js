@@ -35,7 +35,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         params: {
                             cate: 0,
                             page: this.page,
-                            click_count: this.order == '热门' ? 1 : 0
+                            click_count: this.order == '热门' ? 0 : 1
                         }
                     }).then(function (res) {
                         if(type == 1){
