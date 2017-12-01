@@ -38,6 +38,7 @@ class Comment extends Model
         $comment->show = 1;
         $comment->zan = 0;
         $comment->save();
+        return $comment;
     }
 
 }

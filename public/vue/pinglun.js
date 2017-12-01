@@ -25,7 +25,17 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         this.pinglun_input = !this.pinglun_input;
                     },
                     send(){
-                        console.log(this.comment);
+                        let articel_id = this.articelData.id;
+                        axios.post('wx/addComment', {
+                            id: articel_id,
+                            content: this.comment
+                        }).then(function(res){
+                            if(res){
+                                this.list.push(res.data.comment)
+                            }else{
+                                alert('评论失败');
+                            }
+                        });
                         this.showConvert();
                     },
                 },

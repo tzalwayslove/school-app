@@ -41,9 +41,10 @@ class CommentController extends Controller
             ]);
         }
 
-        Comment::addComment($articel, $content);
+        $comment = Comment::addComment($articel, $content);
         return response([
-            'result'=> new Result(true)
+            'result'=> new Result(true),
+            'comment' => $comment
         ]);
     }
 }
