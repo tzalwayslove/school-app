@@ -46,6 +46,7 @@
                                                 <td>{{ $v->id }}</td>
                                                 <td>{{ $v->content }}</td>
                                                 <td>{{ $v->zan or 0 }}</td>
+                                                <td>{{ isset($v->user_account)? $v->user_account->account : '匿名' }}</td>
 
                                             </tr>
                                         @endforeach
