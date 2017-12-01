@@ -48,9 +48,17 @@
                                                 <td>{{ $v->zan or 0 }}</td>
                                                 <td>{{ isset($v->user_account)? $v->user_account->account : '匿名' }}</td>
                                                 <td>{{ isset($v->cate_name)? $v->cate_name->name : '无' }}</td>
-                                                @php$arr = [];$arr = ['1'=>'0',]@endphp
+                                                @php$arr = ['否', '是'];@endphp
                                                 <td>{{ $arr[$v->show] }}</td>
 
+                                                <td>{{ $v->updated_at }}</td>
+
+                                                <td>
+                                                    <a href="{{ url('admin/articel/'.$v->id.'/edit')  }}"
+                                                       class="btn btn-info btn-xs">编辑</a>
+                                                    <a href="{{ url('admin/articel', ['id'=>$v->id])  }}"
+                                                       class="btn btn-danger btn-xs del">删除</a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
