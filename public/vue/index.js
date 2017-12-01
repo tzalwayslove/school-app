@@ -41,6 +41,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         if(type == 1){
                             $this.tiezi = $this.tiezi.concat(res.data.list.data);
                         }else{
+                            $this.page = 1;
                             $this.tiezi = res.data.list.data;
                         }
 
