@@ -112,7 +112,7 @@
                                     >
                                 </td>
                                 {{--<td class="a-right a-right ">@{{item.get_user.account}}</td>--}}
-                                <td class="a-right a-right ">匿名</td>
+                                <td class="a-right a-right ">@{{item.get_user.account || '匿名'}}</td>
 
                             </tr>
                             </tbody>
