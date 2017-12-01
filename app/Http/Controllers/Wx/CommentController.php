@@ -34,7 +34,7 @@ class CommentController extends Controller
             ]);
         }
 
-        $content = $request->input('comment', false);
+        $content = $request->input('content', false);
         if(!$content){
             return response([
                 'result'=> new Result(false, '评论内容不能为空!')
