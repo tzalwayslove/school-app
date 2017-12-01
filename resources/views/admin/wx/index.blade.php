@@ -43,6 +43,17 @@
             font-size: 66px;
             color: #FFF;
         }
+        #remen{
+            position: fixed;
+            right: 20px;
+            bottom: 70px;
+            height: 75px;
+            width: 75px;
+            text-align: center;
+            line-height: 75px;
+            background: #ccc;
+            border-radius: 50%;
+        }
     </style>
 
     <title></title>
