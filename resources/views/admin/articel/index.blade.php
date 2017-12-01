@@ -31,6 +31,7 @@
                                         <thead>
                                         <tr>
                                             <th width="35px">id</th>
+                                            <th>内容</th>
                                             <th width="35px">赞</th>
                                             <th width="35px">用户名</th>
                                             <th width="35px">分类</th>
