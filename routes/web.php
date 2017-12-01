@@ -59,4 +59,5 @@ Route::group([
     Route::get('/comment/{id}', 'CommentController@index');
     Route::post('/articel', 'ArticelController@store');
     Route::post('/articel_zan', 'ArticelController@zan');
+    Route::post('/addComment', 'CommentController@addComment');
 });
