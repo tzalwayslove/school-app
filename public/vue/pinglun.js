@@ -52,6 +52,10 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         });
                         item.zanLog = !!!item.zanLog;
                     },
+                    hide_input(){
+                        this.jiahao = true;
+                        this.pinglun_input = false;
+                    }
                 },
                 mounted: function () {
                     let id =this.$route.params.id;
