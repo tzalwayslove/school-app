@@ -1,6 +1,6 @@
 <div class="weui-tab__panel"
      id="scrollPanel"
-     @click.capture="hide_input"
+
 >
     <div class="page js_show">
         <div class="page__hd">
@@ -20,6 +20,7 @@
         <div class="weui-form-preview"
              v-for="(item, index) in list"
              :key="item.id"
+             @click.capture="hide_input"
         >
             <div class="weui-form-preview__hd">
                 <div class="weui-form-preview__item">
