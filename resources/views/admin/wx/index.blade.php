@@ -23,6 +23,9 @@
             z-index: 100;
             background: #eee;
         }
+        #add_pinglun input{
+            width:100%;
+        }
     </style>
 
     <title></title>
