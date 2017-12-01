@@ -35,7 +35,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                             if(res.data.result.code == 1){
                                 $this.list.push(res.data.comment)
                             }else{
-                                alert('评论失败');
+                                alert(res.data.result.message || '评论失败');
                             }
                         });
                         this.showConvert();
