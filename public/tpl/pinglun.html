@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="weui-form-preview__ft">
-                <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">赞（{{item.zan}}）</a>
+                <a class="weui-form-preview__btn weui-form-preview__btn_primary" @click.prevent="setZan(item)">赞（{{item.zan}}）</a>
             </div>
         </div>
         <div style="height: 50px;"></div>
@@ -42,6 +42,6 @@
     </div>
     <div id="add_pinglun" style="display: none;" v-show="pinglun_input">
         <input type="text" placeholder="请输入评论内容" v-model="comment">
-        <button @click="send">↑发送</button>
+        <button @click="send">发送↑</button>
     </div>
 </div>

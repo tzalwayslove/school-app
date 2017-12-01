@@ -41,6 +41,17 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         });
                         this.showConvert();
                     },
+                    setZan: function (item) {
+                        zan = !!!item.zanLog ? 1 : -1;
+                        id = item.id;
+                        axios.post('wx/comment_zan', {
+                            id: id,
+                            zan: zan
+                        }).then(function (res) {
+                            item.zan = res.data.articel.zan ;
+                        });
+                        item.zanLog = !!!item.zanLog;
+                    },
                 },
                 mounted: function () {
                     let id =this.$route.params.id;
