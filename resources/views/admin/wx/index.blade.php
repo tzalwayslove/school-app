@@ -13,6 +13,9 @@
         .weui-cells {
             margin-top: 0
         }
+        .weui-article section{
+            margin-bottom:2.5em;
+        }
     </style>
 
     <title></title>
