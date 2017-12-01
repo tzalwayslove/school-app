@@ -48,7 +48,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                             id: id,
                             zan: zan
                         }).then(function (res) {
-                            item.zan = res.data.articel.zan ;
+                            item.zan = res.data.comment.zan ;
                         });
                         item.zanLog = !!!item.zanLog;
                     },
