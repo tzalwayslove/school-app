@@ -33,7 +33,8 @@ pinglun = Vue.component('pinglun', function (success, error) {
                             content: this.comment
                         }).then(function(res){
                             if(res.data.result.code == 1){
-                                $this.list.push(res.data.comment)
+                                $this.list.push(res.data.comment);
+                                $this.comment = '';
                             }else{
                                 alert(res.data.result.message || '评论失败');
                             }
