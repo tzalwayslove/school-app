@@ -17,7 +17,7 @@
             </article>
         </div>
         <div class="weui-form-preview"
-             v-for="item in list"
+             v-for="(item, index) in list"
              :key="item.id"
         >
             <div class="weui-form-preview__hd">
@@ -27,7 +27,7 @@
             </div>
             <div class="weui-form-preview__bd">
                 <div class="weui-form-preview__item">
-                    <label class="weui-form-preview__label">评论：</label>
+                    <label class="weui-form-preview__label">{{index}}楼：</label>
                     <span class="weui-form-preview__value">{{item.content}}</span>
                 </div>
             </div>
