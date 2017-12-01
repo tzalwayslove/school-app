@@ -27,7 +27,7 @@
             width:80%;
         }
         #add_pinglun button{
-            width: 18%;
+            width: 15%;
         }
     </style>
 
