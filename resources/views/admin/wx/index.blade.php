@@ -13,6 +13,16 @@
         .weui-cells {
             margin-top: 0
         }
+        #add_pinglun {
+            position: fixed;
+            padding: 20px;
+            bottom: 70px;
+            width: 100%;
+            box-sizing: border-box;
+            right: 0;
+            z-index: 100;
+            background: #eee;
+        }
     </style>
 
     <title></title>
