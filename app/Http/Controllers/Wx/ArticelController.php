@@ -9,9 +9,15 @@ use App\Http\Controllers\Controller;
 
 class ArticelController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $list = Articel::orderBy('created_at', 'desc')->paginate(20);
+
+//        orderBy('click_count', 'desc')->orderBy('created_at', 'desc')
+        if($request->input('click_count', false)){
+            $list = Articel::orderBy('client_count', 'desc')->paginate(20);
+        }else{
+            $list = Articel::orderBy('created_at', 'desc')->paginate(20);
+        }
         return response(['result'=>new Result(true), 'list'=> $list]);
     }
 
