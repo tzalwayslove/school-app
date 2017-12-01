@@ -15,7 +15,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     styles: {
                         transform: 'translateY(0px)'
                     },
-                    order: '热门'
+                    order: '最新'
                 }
             },
             methods: {
