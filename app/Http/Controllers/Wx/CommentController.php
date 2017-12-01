@@ -15,7 +15,7 @@ class CommentController extends Controller
 //        $comments = Comment::whereArticel($id)->where('show', 1)->get();
         $data = Articel::find($id);
         $data->load(['getComment'=> function($query){
-            $query->where('show', 1);
+            $query->where('show', 1)->orderBy('created_at', 'desc');
         }]);
 
 
