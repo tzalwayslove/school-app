@@ -13,7 +13,7 @@ class ArticelController extends Controller
     {
 //      orderBy('click_count', 'desc')->orderBy('created_at', 'desc')
         if($request->input('click_count', false)){
-            $list = Articel::orderBy('client_count', 'desc')->paginate(20);
+            $list = Articel::orderBy('click_count', 'desc')->paginate(20);
         }else{
             $list = Articel::orderBy('created_at', 'desc')->paginate(20);
         }

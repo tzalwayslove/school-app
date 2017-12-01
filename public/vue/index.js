@@ -15,12 +15,19 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     styles: {
                         transform: 'translateY(0px)'
                     },
+                    order: '热门'
                 }
             },
             methods: {
                 getData: function () {
                     $this = this;
-                    axios.get('/wx/articel', {params: {cate: 0, page: this.page}}).then(function (res) {
+                    axios.get('/wx/articel', {
+                        params: {
+                            cate: 0,
+                            page: this.page,
+                            click_count: this.order == '热门' ? 1 : 0
+                        }
+                    }).then(function (res) {
                         $this.tiezi = $this.tiezi.concat(res.data.list.data);
                     });
                 },
@@ -65,7 +72,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         id: id,
                         zan: zan
                     }).then(function (res) {
-                        item.zan = res.data.articel.zan ;
+                        item.zan = res.data.articel.zan;
                     });
                     item.zanLog = !!!item.zanLog;
                 },
