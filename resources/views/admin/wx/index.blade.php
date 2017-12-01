@@ -24,7 +24,10 @@
             background: #eee;
         }
         #add_pinglun input{
-            width:100%;
+            width:80%;
+        }
+        #add_pinglun button{
+            width: 18%;
         }
     </style>
 
