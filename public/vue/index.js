@@ -29,7 +29,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 }
             },
             methods: {
-                getData: function () {
+                getData: function (type = 1) {
                     $this = this;
                     axios.get('/wx/articel', {
                         params: {
@@ -38,7 +38,12 @@ tiezi = Vue.component('tiezi', function (success, error) {
                             click_count: this.order == '热门' ? 1 : 0
                         }
                     }).then(function (res) {
-                        $this.tiezi = $this.tiezi.concat(res.data.list.data);
+                        if(type == 1){
+                            $this.tiezi = $this.tiezi.concat(res.data.list.data);
+                        }else{
+                            $this.tiezi = res.data.list.data;
+                        }
+
                     });
                 },
                 touchStart: function (e) {
@@ -88,7 +93,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 },
                 orderConvert(){
                     this.order = this.order == '热门' ? '最新' : '热门';
-                    this.getData();
+                    this.getData(0);
                 }
             },
             mounted (){
