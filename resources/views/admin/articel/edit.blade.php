@@ -111,7 +111,7 @@
                                            class="js-switch" data-switchery="true"
                                     >
                                 </td>
-                                <td class="a-right a-right ">@{{item.get_user.account}}</td>
+                                <td class="a-right a-right ">@{{item.get_user.account || '匿名'}}</td>
 
                             </tr>
                             </tbody>
