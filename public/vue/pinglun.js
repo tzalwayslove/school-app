@@ -26,12 +26,15 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     },
                     send(){
                         let articel_id = this.articelData.id;
+                        let $this = this;
+
                         axios.post('wx/addComment', {
                             id: articel_id,
                             content: this.comment
                         }).then(function(res){
                             if(res){
-                                this.list.push(res.data.comment)
+
+                                $this.list.push(res.data.comment)
                             }else{
                                 alert('评论失败');
                             }
