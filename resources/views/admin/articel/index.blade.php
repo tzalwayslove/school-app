@@ -45,7 +45,7 @@
                                                 <td>{{ $v->id }}</td>
                                                 <td>{{ $v->zan or 0 }}</td>
                                                 <td>{{ isset($v->user_account)? $v->user_account->account : '匿名' }}</td>
-                                                <td>{{ $v->cate_name->name }}</td>
+                                                <td>{{ $v->cate_name->name or '无' }}</td>
                                                 @php$arr = [];$arr = ['1'=>'0',]@endphp
                                                 <td>{{ $arr[$v->show] }}</td>
 
