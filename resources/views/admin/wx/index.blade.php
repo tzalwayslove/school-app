@@ -29,6 +29,20 @@
         #add_pinglun button{
             width: 15%;
         }
+        #add_pinglun_show{
+            position: fixed;
+            right: 20px;
+            bottom: 70px;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: rgba(51, 103, 214, 0.8);
+            z-index: 100;
+            line-height: 75px;
+            text-align: center;
+            font-size: 66px;
+            color: #FFF;
+        }
     </style>
 
     <title></title>
