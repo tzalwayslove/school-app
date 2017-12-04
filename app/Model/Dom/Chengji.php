@@ -80,7 +80,6 @@ class Chengji extends Login
     {
 
         $res = $tableNode->filterXPath('//tr')->each(function (Crawler $tr, $index) {
-            echo $index;
 
             if ($index == 0) {
                 return ;
@@ -102,12 +101,10 @@ class Chengji extends Login
             return $chengji;
         });
 
-        dd($res);
-
         if(isset($res[0]) || !$res[0]){
             unset($res[0]);
         }
-
+        dd($res);
         return collect($res);
     }
 }
