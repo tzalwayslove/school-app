@@ -26,9 +26,7 @@ class IndexController extends Controller
                         case 'event':
                             switch($message->EventKey){
                                 case 'chengji':
-                                    return $message->FromUserName;
                                     try{
-
                                         $user = User::whereOpenId($message->FromUserName)->find();
                                     }catch(\Exception $e){
                                         return $e->getMessage();
