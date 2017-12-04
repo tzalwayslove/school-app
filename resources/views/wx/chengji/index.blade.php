@@ -60,6 +60,7 @@
 </head>
 <body>
 <div id="app" class="container">
+    <h2>加载完成</h2>
     <Chengji user="{{$user}}"/>
 </div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>

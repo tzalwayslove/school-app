@@ -34,7 +34,6 @@ class IndexController extends Controller
                                         return '<a href="'.url('/wx/chengji?user='.$user->id).'">最新成绩</a>';
                                     }
                                     break;
-
                             }
 
                             break;
