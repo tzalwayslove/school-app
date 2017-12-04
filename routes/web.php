@@ -11,8 +11,10 @@
 |
 */
 
+use EasyWeChat\Foundation\Application;
+
 Route::get('/', function () {
-    return view('admin.wx.index');
+    return view('wx.index');
 });
 
 Route::get('/s', function(){
@@ -61,4 +63,43 @@ Route::group([
     Route::post('/articel_zan', 'ArticelController@zan');
     Route::post('/comment_zan', 'CommentController@zan');
     Route::post('/addComment', 'CommentController@addComment');
+
+    Route::get('/chengji', function () {
+        return view('wx.chengji.index');
+    });
+});
+Route::get('wx_menu', function(){
+    $option = require 'wechatConfig.php';
+
+    $app = new Application($option);
+    $menu = $app->menu;
+    $buttons = [
+        [
+            "type" => "click",
+            "name" => "考试成绩",
+            "key"  => "chengji"
+        ],
+        /*[
+            "name"       => "菜单",
+            "sub_button" => [
+                [
+                    "type" => "view",
+                    "name" => "搜索",
+                    "url"  => "http://www.soso.com/"
+                ],
+                [
+                    "type" => "view",
+                    "name" => "视频",
+                    "url"  => "http://v.qq.com/"
+                ],
+                [
+                    "type" => "click",
+                    "name" => "赞一下我们",
+                    "key" => "V1001_GOOD"
+                ],
+            ],
+        ],*/
+    ];
+    $menu->add($buttons);
+
 });

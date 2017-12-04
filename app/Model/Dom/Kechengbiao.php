@@ -2,14 +2,10 @@
 
 namespace App\Model\Dom;
 
-use App\Model\User;
-use Illuminate\Database\Eloquent\Model;
 
-class Kechengbiao extends Model
+class Kechengbiao extends Login
 {
-    /**
-     * @param User $user
-     */
+
     public function getTable(User $user)
     {
         
