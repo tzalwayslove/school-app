@@ -76,12 +76,13 @@ class Chengji extends Login
 
     public function getData(Crawler $tableNode)
     {
-        dd($tableNode->filterXPath('//tr')->text());
+        dd($tableNode->filterXPath('tr')->text());
 
-        $res = $tableNode->filterXPath('//tr')->each(function (Crawler $tr, $index) {
+        $res = $tableNode->filterXPath('tr')->each(function (Crawler $tr, $index) {
             if ($index == 0) {
                 return ;
             }
+
             $chengji = new \App\Lib\Chengji();
             $chengji->kaikeshijian = $tr->filterXPath('//td[2]')->text();
             $chengji->kechengbianhao = $tr->filterXPath('//td[3]')->text();
