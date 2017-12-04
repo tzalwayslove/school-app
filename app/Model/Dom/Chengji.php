@@ -70,6 +70,7 @@ class Chengji extends Login
 
         $res = $this->postData($this->search_url, $query);
         $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
+
         return $data;
     }
 
@@ -95,7 +96,7 @@ class Chengji extends Login
             $chengji->lurushijian = $tr->filterXPath('//td[12]')->text();
             return $chengji;
         });
-
+        dd($res);
         if(isset($res[0]) || !$res[0]){
             unset($res[0]);
         }
