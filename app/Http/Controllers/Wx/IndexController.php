@@ -28,7 +28,7 @@ class IndexController extends Controller
                                 case 'chengji':
                                     $user = User::whereOpenId($message->FromUserName)->find();
 
-
+                                    return $user ? 1: 0;
                                     if(!$user){
                                         return '您还没有绑定过账号!请输入‘绑定’进行绑定操作。';
                                     }else{
