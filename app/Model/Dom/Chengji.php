@@ -104,7 +104,7 @@ class Chengji extends Login
         if(isset($res[0]) || !$res[0]){
             unset($res[0]);
         }
-        dd($res);
+
         return collect($res);
     }
 }
