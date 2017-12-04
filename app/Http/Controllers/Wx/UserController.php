@@ -31,7 +31,7 @@ class UserController extends Controller
             ]);
         }catch(\Exception $e){
             return response([
-                'result'=>new Result(false, $e->getMessage())
+                'result'=>new Result(false, $e->getMessage(). $e->getFile(). $e->getLine())
             ]);
         }
 
