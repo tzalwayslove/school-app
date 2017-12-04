@@ -40,7 +40,8 @@ class Chengji extends Login
             $res = $this->postData($this->search_url, [
                 'kksj' => $xueqi
             ]);
-
+            echo $res;
+            die();
             $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
 
             if($data->isNotEmpty()){
@@ -69,6 +70,7 @@ class Chengji extends Login
         ];
 
         $res = $this->postData($this->search_url, $query);
+
         $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
 
         return $data;
@@ -78,6 +80,7 @@ class Chengji extends Login
     {
         echo $tableNode->html();
         die(11111);
+
         $tableNode->filterXPath('.//tr')->each(function(Crawler $tr, $index){
             echo $tr->text();
         });
