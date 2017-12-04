@@ -26,6 +26,7 @@ class IndexController extends Controller
                         case 'event':
                             switch($message->EventKey){
                                 case 'cengji':
+                                    return 1111;
                                     $user = User::whereOpenId($message->FromUserName)->find();
                                     return json_encode($user);
 
