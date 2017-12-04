@@ -11,5 +11,8 @@ namespace App\Lib;
 
 class Chengji
 {
-
+    public function getNowChengji($fromUser)
+    {
+        
+    }
 }

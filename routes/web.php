@@ -64,8 +64,8 @@ Route::group([
     Route::post('/comment_zan', 'CommentController@zan');
     Route::post('/addComment', 'CommentController@addComment');
 
-    Route::get('/chengji', function () {
-        return view('wx.chengji.index');
+    Route::get('/chengji', function (\Illuminate\Http\Request $request) {
+        return view('wx.chengji.index')->withUserId($request->input('user_id'));
     });
 });
 Route::get('wx_menu', function(){

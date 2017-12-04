@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Wx;
 
 use App\Exceptions\userNotFountException;
+use App\Lib\Chengji;
 use App\Model\Log;
 use App\Model\User;
 use EasyWeChat\Foundation\Application;
@@ -23,8 +24,18 @@ class IndexController extends Controller
                 $server->setMessageHandler(function ($message) use ($server) {
                     switch ($message->MsgType) {
                         case 'event':
-                            return $message->EventKey;
-                            return '收到事件消息';
+                            switch($message->EventKey){
+                                case 'cengji':
+                                    $user = User::whereOpenId($message->FromUserName)->find();
+                                    if(!$user){
+                                        return '您还没有绑定过账号!请输入‘绑定’进行绑定操作。';
+                                    }else{
+                                        return '<a href="'.url('/wx/chengji?user_id='.$user->id).'">最新成绩</a>';
+                                    }
+                                    break;
+
+                            }
+
                             break;
                         case 'text':
                             switch ($message->Content) {

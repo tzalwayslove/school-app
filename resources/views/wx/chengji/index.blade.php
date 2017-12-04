@@ -60,11 +60,7 @@
 </head>
 <body>
 <div id="app" class="container">
-    <div class="page tabfabu js_show">
-        <div class="page__bd" style="height: 100%;">
-
-        </div>
-    </div>
+    <Chengji user_id="{{$userId}}"/>
 </div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
@@ -79,8 +75,6 @@
 </script>
 
 <script>
-
-
 
     data = {
         nav_active: 'tiezi',
