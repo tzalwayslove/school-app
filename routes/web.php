@@ -62,6 +62,10 @@ Route::group([
     Route::get('/chengji', function (\Illuminate\Http\Request $request) {
         return view('wx.chengji.index')->withUser($request->input('user'));
     });
+
+    Route::get('/chengji_all', function (\Illuminate\Http\Request $request) {
+        return view('wx.chengji_all.index')->withUser($request->input('user'));
+    });
 });
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';

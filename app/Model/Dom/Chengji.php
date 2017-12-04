@@ -62,6 +62,17 @@ class Chengji extends Login
         }
     }
 
+    public function all()
+    {
+        $query = [
+            'xsfs'=> 'all'
+        ];
+
+        $res = $this->postData($this->search_url, $query);
+        $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
+        return $data;
+    }
+
     public function getData(Crawler $tableNode)
     {
         $chengji = new \App\Lib\Chengji();

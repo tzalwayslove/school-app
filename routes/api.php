@@ -35,12 +35,12 @@ Route::get('loginTest', function(){
     echo $str;
 });
 
-Route::get('chengji', function(){
+/*Route::get('chengji', function(){
     $chengji = new \App\Model\Dom\Chengji('201637025002', 'liuxuemin1234');
     $list = $chengji->getChengji();
 
     dd($list);
-});
+});*/
 Route::any('api/test', function(){
     echo file_get_contents('php://input');
     echo '<pre>';
@@ -57,3 +57,4 @@ Route::any('api/test', function(){
 });
 
 Route::get('chengji', 'Wx\UserController@nowChengji');
+Route::get('chengji_all', 'Wx\UserController@nowChengji');
