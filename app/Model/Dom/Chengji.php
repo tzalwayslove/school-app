@@ -70,18 +70,14 @@ class Chengji extends Login
 
         $res = $this->postData($this->search_url, $query);
 
-        echo (new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]')->html();
-        die();
-
-        $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
+        $html = (new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]');
+        $data = $this->getData($html);
 
         return $data;
     }
 
     public function getData(Crawler $tableNode)
     {
-        echo $tableNode->html();
-        die(11111);
 
         $tableNode->filterXPath('.//tr')->each(function(Crawler $tr, $index){
             echo $tr->text();
