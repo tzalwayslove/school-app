@@ -30,6 +30,7 @@ class UserController extends Controller
                 'chengji'=>$res
             ]);
         }catch(\Exception $e){
+            $e->getTraceAsString();
             return response([
                 'result'=>new Result(false, $e->getMessage(). $e->getFile(). $e->getLine())
             ]);
