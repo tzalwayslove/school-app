@@ -95,6 +95,7 @@ class Chengji extends Login
             $chengji->kaoshixingzhi = $tr->filterXPath('//td[11]')->text();
             $chengji->lurushijian = $tr->filterXPath('//td[12]')->text();
 
+            dd($chengji);
             return $chengji;
         });
 
