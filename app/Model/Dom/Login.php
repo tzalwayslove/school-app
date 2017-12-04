@@ -24,6 +24,7 @@ class Login
     public $info_url = '/xsd/grxx/xsxx?Ves632DSdyV=NEW_XSD_XJCJ'; //我的卡片地址
     public $faculty;    //院系
     public $_class;     //课程
+    public $infoPage;
     protected $pre = 'http://1900mx9281.51mypc.cn';
     protected $client;
 
@@ -87,8 +88,10 @@ class Login
     public function getInfo()
     {
         $res = $this->getPage($this->info_url);
-        echo $res;
-        $info = new Crawler($res->__toString());
+        $this->infoPage = new Crawler($res->__toString());
+
+        $this->faculty = $this->infoPage->filterXPath('//tr[3]/td[2]')->text();
+        $this->_class = trim($this->infoPage->filterXPath('//tr[3]/td[4]')->text(), '班级：');
 
     }
 }
