@@ -60,7 +60,7 @@
 </head>
 <body>
 <div id="app" class="container">
-    <Chengji user_id="{{$userId}}"/>
+    <Chengji user="{{$user}}"/>
 </div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
@@ -73,7 +73,7 @@
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
     });
 </script>
-
+<script src="{{ asset('public/vue/chengji.js') }}"></script>
 <script>
 
     data = {

@@ -30,7 +30,7 @@ class IndexController extends Controller
                                     if(!$user){
                                         return '您还没有绑定过账号!请输入‘绑定’进行绑定操作。';
                                     }else{
-                                        return '<a href="'.url('/wx/chengji?user_id='.$user->id).'">最新成绩</a>';
+                                        return '<a href="'.url('/wx/chengji?user='.$user->id).'">最新成绩</a>';
                                     }
                                     break;
 

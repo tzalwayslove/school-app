@@ -5,6 +5,7 @@ fabu = Vue.component('chengji', function (success, error) {
     axios.get("/public/tpl/chengji.html").then(function (res) {
         success({
             template: res.data,
+            props: ['user'],
             data(){
                 return {
 
@@ -14,7 +15,9 @@ fabu = Vue.component('chengji', function (success, error) {
 
             },
             mounted:function(){
-                console.log(this.userId);
+                axios.get("/api/chengji?user=".this.user).then(function(res){
+                    console.log(res);
+                });
             }
         });
     });

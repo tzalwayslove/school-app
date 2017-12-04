@@ -55,3 +55,5 @@ Route::any('api/test', function(){
     print_r($headers);
     dd($_POST);
 });
+
+Route::get('chengji', 'Wx\UserController@nowChengji');
