@@ -15,7 +15,7 @@ class Kechengbiao extends Login
         parent::__construct($user_name, $password);
 
         $start_school = new Carbon(Setting::getOne('start_school'));
-        $now = new Carbon(time());
+        $now = new Carbon(date('Y-m-d'));
 
         $this->diffDays = $now->diffInDays($start_school);
         dd($this->diffDays);
