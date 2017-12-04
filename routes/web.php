@@ -34,7 +34,7 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
-    dd(\App\Model\User::whereOpinId('ocDq7wTnH5dh9n09aNxRV0jrc05c')->first());
+    dd(\App\Model\User::whereOpenId('ocDq7wTnH5dh9n09aNxRV0jrc05c')->first());
 });
 
 Route::group([
