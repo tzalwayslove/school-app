@@ -8,6 +8,7 @@ fabu = Vue.component('chengji', function (success, error) {
             props: ['user'],
             data(){
                 return {
+                    jiazai:true,
                     chengji:{}
                 }
             },
@@ -18,6 +19,7 @@ fabu = Vue.component('chengji', function (success, error) {
                 console.log('加载完成');
                 $this = this;
                 axios.get("/api/chengji?user="+this.user).then(function(res){
+                    $this.jiazai = false;
                     if(res.data.result.code == 0){
                         alert(res.data.result.message || '获取失败!');
                     }else{
