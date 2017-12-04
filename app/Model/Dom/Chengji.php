@@ -78,7 +78,7 @@ class Chengji extends Login
     {
 
 
-        $res = $tableNode->filterXPath('//tr')->each(function (Crawler $tr, $index) use ($chengji) {
+        $res = $tableNode->filterXPath('//tr')->each(function (Crawler $tr, $index) {
             if ($index == 0) {
                 return ;
             }
