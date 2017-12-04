@@ -50,7 +50,7 @@ class Login
 
         $this->login_res = $res->getBody();
 
-        $errorDom = new Crawler(iconv('gbk', 'utf-8',$this->login_res->__toString()));
+        $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
         $error = trim($errorDom->filterXPath('//font[@color="red"]')->text());
 
         if($error){
