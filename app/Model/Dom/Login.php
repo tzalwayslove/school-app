@@ -87,7 +87,7 @@ class Login
     public function getInfo()
     {
         $res = $this->getPage($this->info_url);
-        echo iconv('gbk', 'utf-8//IGNORE', $res);
+        echo $res;
         $info = new Crawler($res->__toString());
 
     }
