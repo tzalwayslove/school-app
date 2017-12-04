@@ -38,4 +38,33 @@ class UserController extends Controller
         }
 
     }
+
+    public function all(Request $request)
+    {
+
+        $user = User::find($request->input('user'));
+        if(!$user){
+            return response([
+                'result'=>new Result(false, '未找到该用户@'.$request->input('user'))
+            ]);
+        }
+        $login_name = $user->account;
+        $password = $user->password;
+
+        try{
+            $chengji = new Chengji($login_name, $password);
+            $res = $chengji->all();
+
+            return response([
+                'result'=>new Result($res),
+                'chengji'=>$res
+            ]);
+
+        }catch(\Exception $e){
+            return response([
+                'result'=>new Result(false, $e->getMessage(). $e->getFile(). $e->getLine())
+            ]);
+        }
+
+    }
 }
