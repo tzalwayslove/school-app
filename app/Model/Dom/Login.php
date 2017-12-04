@@ -35,34 +35,37 @@ class Login
         $this->jar = new CookieJar;
         $this->client = new Client();
 
-        $url = $this->pre. '/xsd/xk/LoginToXk';
+        $url = $this->pre . '/xsd/xk/LoginToXk';
 
         $res = $this->client->request('post', $url, [
-            'form_params'=>[
+            'form_params' => [
 //                'USERNAME'=> '201637025002',
 //                'PASSWORD'=> 'liuxuemin123'
-                'USERNAME'=> $user_name,
-                'PASSWORD'=> $password
+                'USERNAME' => $user_name,
+                'PASSWORD' => $password
             ],
-            'cookies'=>$this->jar,
-            'char_set'=> 'gbk'
+            'cookies' => $this->jar,
+            'char_set' => 'gbk'
         ]);
 
         $this->login_res = $res->getBody();
 
         $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
-        $error = trim($errorDom->filterXPath('//font[@color="red"]')->text());
+        $filter = $errorDom->filterXPath('//font[@color="red"]');
 
-        if($error){
-            throw new LoginErrorException($error);
+        if($filter->count() != 0){
+            $error = trim($filter->text());
+            if ($error) {
+                throw new LoginErrorException($error);
+            }
         }
     }
 
     public function getPage($url)
     {
         $res = $this->client->request('get', $this->pre . $url, [
-            'cookies'=>$this->jar,
-            'char_set'=> 'gbk'
+            'cookies' => $this->jar,
+            'char_set' => 'gbk'
         ]);
         return $res->getBody();
     }
@@ -70,9 +73,9 @@ class Login
     public function postData($url, $data)
     {
         $res = $this->client->request('post', $this->pre . $url, [
-            'cookies'=>$this->jar,
-            'char_set'=> 'gbk',
-            'form_params'=> $data
+            'cookies' => $this->jar,
+            'char_set' => 'gbk',
+            'form_params' => $data
         ]);
 
         return $res->getBody();

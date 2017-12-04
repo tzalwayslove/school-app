@@ -12,6 +12,7 @@ class UserController extends Controller
 {
     public function nowChengji(Request $request)
     {
+
         $user = User::find($request->input('user'));
         if(!$user){
             return response([
