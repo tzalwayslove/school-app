@@ -8,7 +8,7 @@ use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserCotnroller extends Controller
+class UserController extends Controller
 {
     public function nowChengji(Request $request)
     {
