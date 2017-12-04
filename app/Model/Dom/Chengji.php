@@ -70,9 +70,7 @@ class Chengji extends Login
 
         $res = $this->postData($this->search_url, $query);
 
-        echo $res;
-        die();
-        echo (new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]');
+        echo (new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]')->html();
         die();
 
         $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
