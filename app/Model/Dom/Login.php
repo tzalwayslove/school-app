@@ -90,7 +90,14 @@ class Login
         $res = $this->getPage($this->info_url);
         $this->infoPage = new Crawler($res->__toString());
 
-        $this->faculty = $this->infoPage->filterXPath('//tr[3]/td[2]')->text();
+
+
+        $this->faculty = $this->infoPage->filterXPath('//tr[3]')->html();
+
+        dd($this->faculty);
+        echo $res;
+        die();
+
         $this->_class = trim($this->infoPage->filterXPath('//tr[3]/td[4]')->text(), '班级：');
 
     }
