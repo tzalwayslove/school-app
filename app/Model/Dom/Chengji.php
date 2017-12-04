@@ -76,7 +76,7 @@ class Chengji extends Login
 
     public function getData(Crawler $tableNode)
     {
-        dd($tableNode->count());
+        dd($tableNode->filterXPath('//tr')->count());
         $res = $tableNode->filterXPath('//tr')->each(function (Crawler $tr, $index) {
 
             if ($index == 0) {
