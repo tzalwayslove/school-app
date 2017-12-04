@@ -23,6 +23,7 @@ class IndexController extends Controller
                 $server->setMessageHandler(function ($message) use ($server) {
                     switch ($message->MsgType) {
                         case 'event':
+                            return $message->EventKey;
                             return '收到事件消息';
                             break;
                         case 'text':
