@@ -29,6 +29,7 @@ class UserController extends Controller
                 'result'=>new Result($res),
                 'chengji'=>$res
             ]);
+
         try{}catch(\Exception $e){
             $e->getTraceAsString();
             /*return response([
