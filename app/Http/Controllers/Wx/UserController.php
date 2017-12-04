@@ -18,11 +18,10 @@ class UserController extends Controller
                 'result'=>new Result(false, '未找到该用户@'.$request->input('user'))
             ]);
         }
-        dd($user);
         $login_name = $user->account;
-        $password = $user->passwrod;
+        $password = $user->password;
 
-
+        dd($login_name, $password);
         try{
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->getChengji();
