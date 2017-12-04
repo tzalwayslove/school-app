@@ -82,7 +82,7 @@ class Chengji extends Login
             if ($index == 0) {
                 return ;
             }
-            dd($tr);
+            dd(1);
             $chengji = new \App\Lib\Chengji();
             $chengji->kaikeshijian = $tr->filterXPath('//td[2]')->text();
             $chengji->kechengbianhao = $tr->filterXPath('//td[3]')->text();
