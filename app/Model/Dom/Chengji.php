@@ -79,7 +79,7 @@ class Chengji extends Login
         $tableNode->filterXPath('table//tr')->each(function(Crawler $tr, $index){
             echo $tr->text();
         });
-
+        echo '...';
         die();
         $res = $tableNode->filterXPath('tr')->each(function (Crawler $tr, $index) {
             if ($index == 0) {
