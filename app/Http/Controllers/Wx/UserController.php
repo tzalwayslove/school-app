@@ -21,10 +21,10 @@ class UserController extends Controller
         $login_name = $user->account;
         $password = $user->password;
 
-        dd($login_name, $password);
         try{
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->getChengji();
+
             return response([
                 'result'=>new Result($res),
                 'chengji'=>$res
