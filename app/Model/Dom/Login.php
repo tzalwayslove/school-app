@@ -21,6 +21,9 @@ class Login
     protected $jar;
     protected $login = false;
     public $login_res;
+    public $info_url = '/xsd/grxx/xsxx?Ves632DSdyV=NEW_XSD_XJCJ'; //我的卡片地址
+    public $faculty;    //院系
+    public $_class;     //课程
     protected $pre = 'http://1900mx9281.51mypc.cn';
     protected $client;
 
@@ -79,5 +82,13 @@ class Login
         ]);
 
         return $res->getBody();
+    }
+
+    public function getInfo()
+    {
+        $res = $this->getPage($this->info_url);
+        echo iconv('gbk', 'utf-8//IGNORE', $res);
+        $info = new Crawler($res->__toString());
+
     }
 }

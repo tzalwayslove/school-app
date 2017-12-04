@@ -9,6 +9,7 @@ use Carbon\Carbon;
 class Kechengbiao extends Login
 {
     public $weekNum;
+
     public function __construct($user_name, $password)
     {
         parent::__construct($user_name, $password);
@@ -18,5 +19,8 @@ class Kechengbiao extends Login
 
         $diffDays = $now->diffInDays($start_school);
         $this->weekNum = intval($diffDays / 7);
+
     }
+
+
 }
