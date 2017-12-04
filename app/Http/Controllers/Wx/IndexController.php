@@ -24,12 +24,10 @@ class IndexController extends Controller
                 $server->setMessageHandler(function ($message) use ($server) {
                     switch ($message->MsgType) {
                         case 'event':
-                            return $message->EventKey;
                             switch($message->EventKey){
-                                case 'cengji':
-                                    return 1111;
+                                case 'chengji':
                                     $user = User::whereOpenId($message->FromUserName)->find();
-                                    return json_encode($user);
+
 
                                     if(!$user){
                                         return '您还没有绑定过账号!请输入‘绑定’进行绑定操作。';
