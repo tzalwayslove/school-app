@@ -59,7 +59,7 @@
     <title></title>
 </head>
 <body>
-<h2>加载完成</h2>
+
 <div id="app" class="container">
 
     <Chengji user="{{$user}}"/>

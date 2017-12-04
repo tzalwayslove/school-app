@@ -14,7 +14,8 @@ fabu = Vue.component('chengji', function (success, error) {
             methods:{
 
             },
-            mounted:function(){
+            mounted: function(){
+                console.log('加载完成');
                 $this = this;
                 axios.get("/api/chengji?user="+this.user).then(function(res){
                     if(res.data.result.code == 0){
