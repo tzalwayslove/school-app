@@ -26,14 +26,8 @@ class IndexController extends Controller
                         case 'event':
                             switch($message->EventKey){
                                 case 'chengji':
-                                    try{
-                                        $user = User::whereOpenId($message->FromUserName)->find();
-                                    }catch(\Exception $e){
-                                        return $e->getMessage();
-                                    }
+                                    $user = User::whereOpenId($message->FromUserName)->first();
 
-
-                                    return $user ? 1: 0;
                                     if(!$user){
                                         return '您还没有绑定过账号!请输入‘绑定’进行绑定操作。';
                                     }else{
