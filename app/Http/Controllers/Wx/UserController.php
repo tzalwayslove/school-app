@@ -21,7 +21,7 @@ class UserController extends Controller
         }
         $login_name = $user->account;
         $password = $user->password;
-
+        try{
 
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->getChengji();
@@ -31,11 +31,10 @@ class UserController extends Controller
                 'chengji'=>$res
             ]);
 
-        try{}catch(\Exception $e){
-            $e->getTraceAsString();
-            /*return response([
+        }catch(\Exception $e){
+            return response([
                 'result'=>new Result(false, $e->getMessage(). $e->getFile(). $e->getLine())
-            ]);*/
+            ]);
         }
 
     }

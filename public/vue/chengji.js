@@ -8,15 +8,20 @@ fabu = Vue.component('chengji', function (success, error) {
             props: ['user'],
             data(){
                 return {
-
+                    chengji:{}
                 }
             },
             methods:{
 
             },
             mounted:function(){
+                $this = this;
                 axios.get("/api/chengji?user="+this.user).then(function(res){
-                    console.log(res);
+                    if(res.data.result.code == 0){
+                        alert(res.data.result.message || '获取失败!');
+                    }else{
+                        $this.chengji = res.data.chengji;
+                    }
                 });
             }
         });
