@@ -23,6 +23,8 @@ class Kechengbiao extends Login
         $diffDays = $now->diffInDays($start_school);
         $this->weekNum = intval($diffDays / 7);
 
+        dd($this->weekNum);
+
     }
 
     /**
