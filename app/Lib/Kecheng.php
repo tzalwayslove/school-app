@@ -48,7 +48,9 @@ class Kecheng
             $jiaoshi = $temp->filterXPath('//font[@title="教室"]')->count() > 0
                 ? $temp->filterXPath('//font[@title="教室"]')->text()
                 : '';
-            $data[] = new self($name, $teacher, $week, $jiaoshi);
+            if($name || $teacher || $week || $jiaoshi){
+                $data[] = new self($name, $teacher, $week, $jiaoshi);
+            }
         }
 
         return collect($data);
