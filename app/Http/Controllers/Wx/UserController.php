@@ -80,6 +80,8 @@ class UserController extends Controller
         $loginName = $user->account;
         $password = $user->password;
         $kecheng = new Kechengbiao($loginName, $password);
+
+        dd($request->input('all', 0) == 1);
         $data = $kecheng->getTable($request->input('all', 0) == 1);
 
         return response([
