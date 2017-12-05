@@ -33,7 +33,7 @@ class Kechengbiao extends Login
     {
         $html = $this->getPage($this->searchQueryUrl);
         $searchPage = new Crawler($html->__toString());
-        $xnxq01id = $searchPage->filterXPath('//select[@id="xnxq01id"]/option[1]')->text();
+        $xnxq01id = $searchPage->filterXPath('//select[@id="xnxq01id"]/option[2]')->text();
 
         $data = [
             'zc'=> $this->weekNum,
