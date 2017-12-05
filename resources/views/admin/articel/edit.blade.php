@@ -71,7 +71,7 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <button type="reset" class="btn btn-primary">取消</button>
+                                    <button type="reset" class="btn btn-primary return">取消</button>
                                     <button id="send" type="submit" class="btn btn-success">确定</button>
                                 </div>
                             </div>
