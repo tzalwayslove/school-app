@@ -57,7 +57,7 @@ class Kechengbiao extends Login
     public function getData(Crawler $table)
     {
         $kecheng = [];
-        for ($i = 2; $i < 8; ++$i) {
+        for ($i = 2; $i < 7; ++$i) {
             $kecheng[] = $table->filterXPath('//tr[' . $i . ']/td')->each(function (Crawler $html, $key) {
                 if ($html->filterXPath('//div[@class="kbcontent"]')->count() > 0) {
                     return Kecheng::getInfoFromHtml($html->filterXPath('//div[@class="kbcontent"]')->html());
