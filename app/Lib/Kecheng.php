@@ -16,12 +16,14 @@ class Kecheng
     public $name;
     public $teacher;
     public $week;
+    public $jiaoshi;
 
-    public function __construct($name = null, $teacher = null, $week = null)
+    public function __construct($name = null, $teacher = null, $week = null, $jiaoshi)
     {
         $this->name = $name;
         $this->teacher = $teacher;
         $this->week = $week;
+        $this->jiaoshi = $jiaoshi;
     }
 
     /**
@@ -43,7 +45,10 @@ class Kecheng
             $week = $temp->filterXPath('//font[@title="周次(节次)"]')->count() > 0
                 ? $temp->filterXPath('//font[@title="周次(节次)"]')->text()
                 : '';
-            $data[] = new self($name, $teacher, $week);
+            $jiaoshi = $temp->filterXPath('//font[@tilte="教室"]')->count() > 0
+                ? $temp->filterXPath('//font[@tilte="教室"]')->text()
+                : '';
+            $data[] = new self($name, $teacher, $week, $jiaoshi);
         }
 
         return collect($data);

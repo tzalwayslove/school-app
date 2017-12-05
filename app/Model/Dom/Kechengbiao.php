@@ -37,7 +37,8 @@ class Kechengbiao extends Login
 
         $data = [
 //            'zc'=> $this->weekNum,
-            'xnxq01id' => $xnxq01id
+//            'xnxq01id' => $xnxq01id
+            'xnxq01id'=> '2017-2018-1'
         ];
 
         if (!$f) {
@@ -49,7 +50,6 @@ class Kechengbiao extends Login
     public function getTable()
     {
         $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery());
-
         $page = new Crawler($html->__toString());
         return $this->getData($page->filterXPath('//table[@id="kbtable"]'));
     }
