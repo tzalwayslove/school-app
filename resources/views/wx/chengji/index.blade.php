@@ -59,9 +59,8 @@
     <title></title>
 </head>
 <body>
-@php(dd($request))
+
 <div id="app" class="container">
-    <Chengji user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
 </div>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
