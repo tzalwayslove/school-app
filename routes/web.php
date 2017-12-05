@@ -34,8 +34,8 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
-    $kcb = new \App\Model\Dom\Kechengbiao('201637025002', 'liuxuemin123');
-    $kcb->getTable();
+     $kaochang = new \App\Model\Dom\Kaochang('', '');
+     $kaochang->getQueryData();
 });
 
 Route::group([
