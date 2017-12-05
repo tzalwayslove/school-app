@@ -18,12 +18,14 @@ fabu = Vue.component('Kecheng', function (success, error) {
             mounted: function(){
                 $this = this;
                 axios.get("/api/kecheng?user="+this.user).then(function(res){
-                    console.log('加载完成');
+
                     $this.jiazai = false;
                     if(res.data.result.code == 0){
                         alert(res.data.result.message || '获取失败!');
                     }else{
                         $this.table = res.data.table;
+
+                        console.log($this.table);
                     }
                 });
             }
