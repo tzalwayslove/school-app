@@ -60,3 +60,4 @@ Route::get('chengji', 'Wx\UserController@nowChengji');
 Route::get('chengji_all', 'Wx\UserController@all');
 
 Route::get('kecheng', 'Wx\UserController@kecheng');
+Route::get('kaochang', 'Wx\userController@kaochang');

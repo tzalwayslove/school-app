@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Wx;
 
 use App\Lib\Result;
 use App\Model\Dom\Chengji;
+use App\Model\Dom\Kaochang;
 use App\Model\Dom\Kechengbiao;
 use App\Model\User;
 use Illuminate\Http\Request;
@@ -90,6 +91,30 @@ class UserController extends Controller
         return response([
             'result' => new Result(true),
             'data' => $data
+        ]);
+    }
+
+    public function kaochang(Request $request)
+    {
+        $user = User::find($request->input('user'));
+        if (!$user) {
+            return response([
+                'result' => new Result(false, '未找到该用户!')
+            ]);
+        }
+        $loginName = $user->account;
+        $password = $user->password;
+        try {
+            $kaochang = new Kaochang($loginName, $password);
+            $data = $kaochang->getQueryData();
+        } catch (\Exception $e) {
+            return response([
+                'result' => new Result(false, $e->getMessage() . '!')
+            ]);
+        }
+        return response([
+            'result' => new Result(true),
+            'kaochang' => $data
         ]);
     }
 }

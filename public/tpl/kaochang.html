@@ -1,0 +1,23 @@
+<div class="page tabfabu js_show">
+    <div class="page__bd" style="height: 100%;">
+        <template v-for="(item, key) in kaochang">
+            <ul>
+                <li>场次：{{ item.changci }}</li>
+                <li>编号：{{ item.bianhao }}</li>
+                <li>名称：{{ item.name }}</li>
+                <li>时间：{{ item.shijian }}</li>
+                <li>考场：{{ item.kaochang }}</li>
+                <li>座位号：{{ item.zuoweihao }}</li>
+                <li>准考证号：{{ item.zhunkaozhenghao }}</li>
+            </ul>
+            <br>
+        </template>
+    </div>
+    <div id="loadingToast" v-show="jiazai">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content">数据加载中</p>
+        </div>
+    </div>
+</div>
