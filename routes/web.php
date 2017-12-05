@@ -74,6 +74,7 @@ Route::group([
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
         return view('wx.kaochang.index')->withUser($request->input('user'));
     });
+
 });
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
@@ -111,7 +112,13 @@ Route::get('wx_menu', function(){
                 ],
             ]
 
+        ],
+        [
+            "type" => "click",
+            "name" => "我的考场",
+            "key" => "考场"
         ]
+    ];
         /*[
             "name"       => "菜单",
             "sub_button" => [
@@ -132,7 +139,6 @@ Route::get('wx_menu', function(){
                 ],
             ],
         ],*/
-    ];
     $menu->add($buttons);
 
 });
