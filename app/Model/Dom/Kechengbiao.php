@@ -36,9 +36,8 @@ class Kechengbiao extends Login
         $xnxq01id = $searchPage->filterXPath('//select[@id="xnxq01id"]/option[1]')->text();
 
         $data = [
-//            'zc'=> $this->weekNum,
-//            'xnxq01id' => $xnxq01id
-            'xnxq01id'=> '2017-2018-1'
+            'zc'=> $this->weekNum,
+            'xnxq01id' => $xnxq01id
         ];
 
         if (!$f) {
