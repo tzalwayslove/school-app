@@ -36,20 +36,11 @@
                     <div>
                         <input type="text" class="form-control" name="name" value="{{ old('name') }}" required
                                autofocus>
-                        @if ($errors->has('name'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                        @endif
                     </div>
                     <div>
                         <input id="password" type="password" class="form-control" name="password" required>
 
-                        @if ($errors->has('password'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                        @endif
+
                     </div>
                     <div>
                         <button class="btn btn-default submit" type="submit">Log in</button>
@@ -114,6 +105,12 @@
         </div>
     </div>
 </div>
+
+@if ($errors->has('name') || $errors->has('password'))
+    <script>
+        alert('用户名或密码错误');
+    </script>
+@endif
 </body>
 </html>
 
