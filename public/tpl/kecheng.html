@@ -15,7 +15,7 @@
             <template v-for="(tr, index) in table">
             <tr>
                 <th width="70" height="28" align="center">
-                    {{index+1}}至{{index+2}}节
+                    {{index*2-1}}至{{index*2}}节
                 </th>
                 <template v-for="(td, index) in tr">
                     <td width="123" height="28" align="center" valign="top">
