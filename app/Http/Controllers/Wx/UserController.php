@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Wx;
 
 use App\Lib\Result;
 use App\Model\Dom\Chengji;
+use App\Model\Dom\Kechengbiao;
 use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -66,5 +67,23 @@ class UserController extends Controller
             ]);
         }
 
+    }
+
+    public function kecheng(Request $request)
+    {
+        $user = User::find($request->input('user'));
+        if(!$user){
+            return response([
+                'result'=>new Result(false, '未找到该用户!')
+            ]);
+        }
+        $loginName = $user->account;
+        $password = $user->password;
+        $kecheng = new Kechengbiao($loginName, $password);
+        $table = $kecheng->getTable();
+        return response([
+            'result'=>new Result(true),
+            'table'=>$table
+        ]);
     }
 }

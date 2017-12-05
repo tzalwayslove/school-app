@@ -85,14 +85,12 @@ class Login
         return $res->getBody();
     }
 
-    public function getInfo()
+    /*public function getInfo()
     {
         $res = $this->getPage($this->info_url);
         $this->infoPage = new Crawler($res->__toString());
 
-
-
-        $this->faculty = $this->infoPage->filterXPath('//tr[3]')->html();
+//        $this->faculty = $this->infoPage->filterXPath('//table[@id=]/tr[3]')->html();
 
         dd($this->faculty);
         echo $res;
@@ -100,5 +98,5 @@ class Login
 
         $this->_class = trim($this->infoPage->filterXPath('//tr[3]/td[4]')->text(), '班级：');
 
-    }
+    }*/
 }

@@ -35,7 +35,7 @@ Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
     $kcb = new \App\Model\Dom\Kechengbiao('201637025002', 'liuxuemin123');
-    dd($kcb->weekNum);
+    $kcb->getTable();
 });
 
 Route::group([
@@ -66,6 +66,10 @@ Route::group([
 
     Route::get('/chengji_all', function (\Illuminate\Http\Request $request) {
         return view('wx.chengji_all.index')->withUser($request->input('user'));
+    });
+
+    Route::get('/kecheng', function(\Illuminate\Http\Request $request){
+        return view('wx.kecheng.index')->withUser($request->input('user'));
     });
 });
 Route::get('wx_menu', function(){
