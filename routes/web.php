@@ -45,7 +45,7 @@ Route::group([
         'auth'
     ]
 ], function(){
-    Route::get('/', 'Admin\AdminController@index');
+    Route::get('/', 'AdminController@index');
     Route::resource('user', 'UserController');
     Route::resource('cate', 'CateController');
     Route::resource('articel', 'ArticelController');
