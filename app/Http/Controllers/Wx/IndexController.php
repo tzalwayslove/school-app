@@ -29,9 +29,14 @@ class IndexController extends Controller
                                 return '您还没有绑定过账号!请输入‘绑定’进行绑定操作。';
                             }
                             switch($message->EventKey){
-                                case 'chengji':
-                                    return '<a href="'.url('/wx/chengji?user='.$user->id).'">最新成绩</a>  <a href="'.url('/wx/chengji_all?user='.$user->id).'">全部成绩</a>';
-
+                                case '最新成绩':
+                                    return '<a href="'.url('/wx/chengji?user='.$user->id).'">最新成绩</a> ';
+                                case "全部成绩":
+                                    return '<a href="'.url('/wx/chengji_all?user='.$user->id).'">全部成绩</a>';
+                                case '本周课程表':
+                                    return '<a href="'.url('/wx/kecheng?user='.$user->id. '&all=0').'">最新成绩</a>';
+                                case '全部课程表':
+                                    return '<a href="'.url('/wx/kecheng?user='.$user->id. '&all=1').'">全部课程表</a>';
                             }
 
                             break;

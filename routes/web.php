@@ -69,7 +69,7 @@ Route::group([
     });
 
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
-        return view('wx.kecheng.index')->withUser($request->input('user'));
+        return view('wx.kecheng.index')->withRequest($request);
     });
 });
 Route::get('wx_menu', function(){
@@ -79,10 +79,36 @@ Route::get('wx_menu', function(){
     $menu = $app->menu;
     $buttons = [
         [
-            "type" => "click",
             "name" => "考试成绩",
-            "key"  => "chengji"
+            "sub_button"=>[
+                [
+                    "type" => "click",
+                    "name" => "最新成绩",
+                    "key"  => "最新成绩"
+                ],
+                [
+                    "type" => "click",
+                    "name" => "全部成绩",
+                    "key"  => "全部成绩"
+                ],
+            ]
         ],
+        [
+            "name" => "课程表",
+            "sub_button"=>[
+                [
+                    "type" => "click",
+                    "name" => "本周课程表",
+                    "key" => "本周课程表"
+                ],
+                [
+                    "type" => "click",
+                    "name" => "全部课程表",
+                    "key" => "全部课程表"
+                ],
+            ]
+
+        ]
         /*[
             "name"       => "菜单",
             "sub_button" => [

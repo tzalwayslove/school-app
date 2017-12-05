@@ -43,14 +43,16 @@ class Kechengbiao extends Login
         if (!$f) {
             unset($data['xnxq01id']);
         }
+
         return $data;
     }
 
-    public function getTable()
+    public function getTable($now = true)
     {
-        $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery());
+        $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery($now));
         $page = new Crawler($html->__toString());
         $table = $page->filterXPath('//table[@id="kbtable"]');
+
         return [
             'table'=> $this->getData($table),
             'desc'=> $this->getDesc($table)
