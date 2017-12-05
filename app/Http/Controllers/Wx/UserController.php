@@ -15,26 +15,26 @@ class UserController extends Controller
     {
 
         $user = User::find($request->input('user'));
-        if(!$user){
+        if (!$user) {
             return response([
-                'result'=>new Result(false, '未找到该用户@'.$request->input('user'))
+                'result' => new Result(false, '未找到该用户@' . $request->input('user'))
             ]);
         }
         $login_name = $user->account;
         $password = $user->password;
-        try{
+        try {
 
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->getChengji();
 
             return response([
-                'result'=>new Result($res),
-                'chengji'=>$res
+                'result' => new Result($res),
+                'chengji' => $res
             ]);
 
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return response([
-                'result'=>new Result(false, $e->getMessage(). $e->getFile(). $e->getLine())
+                'result' => new Result(false, $e->getMessage() . $e->getFile() . $e->getLine())
             ]);
         }
 
@@ -44,26 +44,26 @@ class UserController extends Controller
     {
 
         $user = User::find($request->input('user'));
-        if(!$user){
+        if (!$user) {
             return response([
-                'result'=>new Result(false, '未找到该用户@'.$request->input('user'))
+                'result' => new Result(false, '未找到该用户@' . $request->input('user'))
             ]);
         }
         $login_name = $user->account;
         $password = $user->password;
 
-        try{
+        try {
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->all();
 
             return response([
-                'result'=>new Result($res),
-                'chengji'=>$res
+                'result' => new Result($res),
+                'chengji' => $res
             ]);
 
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return response([
-                'result'=>new Result(false, $e->getMessage(). $e->getFile(). $e->getLine())
+                'result' => new Result(false, $e->getMessage() . $e->getFile() . $e->getLine())
             ]);
         }
 
@@ -72,20 +72,24 @@ class UserController extends Controller
     public function kecheng(Request $request)
     {
         $user = User::find($request->input('user'));
-        if(!$user){
+        if (!$user) {
             return response([
-                'result'=>new Result(false, '未找到该用户!')
+                'result' => new Result(false, '未找到该用户!')
             ]);
         }
         $loginName = $user->account;
         $password = $user->password;
-        $kecheng = new Kechengbiao($loginName, $password);
-
-        $data = $kecheng->getTable($request->input('all', 0) == 1);
-
+        try {
+            $kecheng = new Kechengbiao($loginName, $password);
+            $data = $kecheng->getTable($request->input('all', 0) == 1);
+        } catch (\Exception $e) {
+            return response([
+                'result' => new Result(false, $e->getMessage() . '!')
+            ]);
+        }
         return response([
-            'result'=>new Result(true),
-            'data'=>$data
+            'result' => new Result(true),
+            'data' => $data
         ]);
     }
 }
