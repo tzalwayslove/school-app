@@ -20,11 +20,11 @@ fabu = Vue.component('Kecheng', function (success, error) {
                 axios.get("/api/kecheng?user="+this.user).then(function(res){
 
                     $this.jiazai = false;
+                    console.log(res);
                     if(res.data.result.code == 0){
                         alert(res.data.result.message || '获取失败!');
                     }else{
                         $this.table = res.data.table;
-
                         console.log($this.table);
                     }
                 });
