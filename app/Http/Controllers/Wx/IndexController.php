@@ -37,6 +37,8 @@ class IndexController extends Controller
                                     return '<a href="'.url('/wx/kecheng?user='.$user->id. '&all=0').'">本周课表</a>';
                                 case '全部课程表':
                                     return '<a href="'.url('/wx/kecheng?user='.$user->id. '&all=1').'">全部课程表</a>';
+                                case '考场':
+                                    return '<a href="'.url('/wx/kaochang?user='.$user->id).'">考场</a>';
                             }
 
                             break;
