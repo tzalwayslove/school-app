@@ -1,6 +1,29 @@
 <div class="page tabfabu js_show">
     <div class="page__bd" style="height: 100%;">
-
+        <table id="kbtable" border="1" width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <th width="70" height="28" align="center">&nbsp;</th>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+                <th>星期六</th>
+                <th>星期日</th>
+            </tr>
+            <template v-for="(tr, index) in kechneg">
+            <tr>
+                <th width="70" height="28" align="center">
+                    {{index+1}}至{{index+2}}节
+                </th>
+                <template v-for="(td, index) in tr">
+                    <td width="123" height="28" align="center" valign="top">
+                        {{td.name}}::{{td.week}}::{{td.teacher}}
+                    </td>
+                </template>
+            </tr>
+            </template>
+        </table>
     </div>
     <div id="loadingToast" v-show="jiazai">
         <div class="weui-mask_transparent"></div>

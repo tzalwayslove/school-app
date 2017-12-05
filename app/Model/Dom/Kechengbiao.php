@@ -50,9 +50,6 @@ class Kechengbiao extends Login
     {
         $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery());
 
-        echo $html;
-        die();
-
         $page = new Crawler($html->__toString());
         return $this->getData($page->filterXPath('//table[@id="kbtable"]'));
     }
