@@ -43,7 +43,7 @@ class Kechengbiao extends Login
         if ($f) {
             unset($data['xnxq01id']);
         }
-
+        dd($data);
         return $data;
     }
 
