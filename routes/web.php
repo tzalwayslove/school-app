@@ -40,7 +40,10 @@ Route::get('test', function(){
 
 Route::group([
     'prefix'=>'admin',
-    'namespace'=> 'Admin'
+    'namespace'=> 'Admin',
+    'middleware'=>[
+        'auth'
+    ]
 ], function(){
     Route::resource('user', 'UserController');
     Route::resource('cate', 'CateController');
@@ -142,3 +145,6 @@ Route::get('wx_menu', function(){
     $menu->add($buttons);
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
