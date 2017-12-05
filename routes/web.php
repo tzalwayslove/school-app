@@ -24,7 +24,7 @@ Route::get('/g', function(){
     dd(session('a'));
 });
 
-Route::get('admin', 'Admin\AdminController@index');
+
 
 Route::post('upload', 'UploadController@index');
 Route::delete('upload', 'UploadController@removeUpload');
@@ -45,6 +45,7 @@ Route::group([
         'auth'
     ]
 ], function(){
+    Route::get('/', 'Admin\AdminController@index');
     Route::resource('user', 'UserController');
     Route::resource('cate', 'CateController');
     Route::resource('articel', 'ArticelController');
