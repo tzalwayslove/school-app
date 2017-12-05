@@ -51,9 +51,19 @@ class Kechengbiao extends Login
     {
         $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery());
         $page = new Crawler($html->__toString());
-        return $this->getData($page->filterXPath('//table[@id="kbtable"]'));
+        $table = $page->filterXPath('//table[@id="kbtable"]');
+        return [
+            'table'=> $this->getData($table),
+            'desc'=> $this->getDesc($table)
+        ];
     }
 
+    public function getDesc(Crawler $table)
+    {
+        return $table->filterXPath('//td[@colspan="7"]')->count() > 0
+            ? $table->filterXPath('//td[@colspan="7"]')->text()
+            : '';
+    }
     public function getData(Crawler $table)
     {
         $kecheng = [];
@@ -66,7 +76,6 @@ class Kechengbiao extends Login
                 }
             });
         }
-
 
         return collect($kecheng);
     }
