@@ -14,12 +14,12 @@
     <!-- Font Awesome -->
     <link href="{{asset('public/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="{{ asset('public/vendors/nprogress/nprogress.css) }}" rel="stylesheet">
+    <link href="{{ asset('public/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="{{ asset('public/vendors/animate.css/animate.min.css) }}" rel="stylesheet">
+    <link href="{{ asset('public/vendors/animate.css/animate.min.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="{{ asset('public/build/css/custom.min.css) }}" rel="stylesheet">
+    <link href="{{ asset('public/build/css/custom.min.css') }}" rel="stylesheet">
 </head>
 
 <body class="login">
