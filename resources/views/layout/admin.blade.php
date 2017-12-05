@@ -261,6 +261,7 @@
         $('body').on('click', '.return,.back', function(){
             history.go(-1);
         });
+
     })
 </script>
 @stack('addjs')
