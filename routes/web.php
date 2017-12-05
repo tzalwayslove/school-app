@@ -72,7 +72,7 @@ Route::group([
         return view('wx.kecheng.index')->withRequest($request);
     });
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
-        return view('wx.kaochang.index')->withRequest($request);
+        return view('wx.kaochang.index')->withUser($request->input('user'));
     });
 });
 Route::get('wx_menu', function(){
