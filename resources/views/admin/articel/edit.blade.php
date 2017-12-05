@@ -4,7 +4,7 @@
     <div class="right_col">
         <div class="page-title">
             <div class="title_left">
-                <h2>编辑Articel</h2>
+                <h2>编辑文章</h2>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -16,7 +16,7 @@
                               action="{{  url("admin/articel/$data->id") }}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
-                            <span class="section">Articel信息</span>
+                            <span class="section">文章</span>
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"
                                        for="content">内容</label>
