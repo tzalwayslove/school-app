@@ -71,6 +71,9 @@ Route::group([
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
         return view('wx.kecheng.index')->withRequest($request);
     });
+    Route::get('/kaochang', function(\Illuminate\Http\Request $request){
+        return view('wx.kaochang.index')->withRequest($request);
+    });
 });
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
