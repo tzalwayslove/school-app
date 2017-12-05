@@ -59,7 +59,7 @@
     <title></title>
 </head>
 <body>
-
+@php(dd($request))
 <div id="app" class="container">
     <Chengji user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
 </div>
