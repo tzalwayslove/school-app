@@ -26,7 +26,7 @@ class Kechengbiao extends Login
     }
 
     /**
-     * @param bool $f true 获取当前周， false获取所有
+     * @param bool $f false 获取当前周， true获取所有
      * @return array
      */
     public function getSearchQuery($f = true)
@@ -40,7 +40,7 @@ class Kechengbiao extends Login
             'xnxq01id' => $xnxq01id
         ];
 
-        if (!$f) {
+        if ($f) {
             unset($data['xnxq01id']);
         }
 
