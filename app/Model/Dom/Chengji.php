@@ -9,6 +9,7 @@
 namespace App\Model\Dom;
 
 
+use App\Exceptions\NoPingjiaoException;
 use Symfony\Component\DomCrawler\Crawler;
 
 class Chengji extends Login
@@ -30,7 +31,8 @@ class Chengji extends Login
 
         $this->crawler = new Crawler($get_search_page->__toString());
 
-        $chengjiList = $this->crawler->filterXPath('//select[@id="kksj"]//option')->each(function (Crawler $node, $k) use($list) {
+
+        $chengjiList = $this->crawler->filterXPath('//select[@id="kksj"]//option')->each(function (Crawler $node, $k) use ($list) {
             if ($k == 0 || $this->nowChengji) {
                 return;
             }
@@ -41,31 +43,40 @@ class Chengji extends Login
                 'kksj' => $xueqi
             ]);
 
+            if(strpos($res,'评教未完成，不能查询成绩！')){
+                throw new NoPingjiaoException('评教未完成，不能查询成绩！');
+            }
+
             $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
 
-            if($data->isNotEmpty()){
+            if ($data->isNotEmpty()) {
                 $this->nowChengji = true;
+
                 return $data;
             }
 
             return null;
 
         });
-        $res = collect($chengjiList)->filter(function($v){
+        $res = collect($chengjiList)->filter(function ($v) {
             return !is_null($v);
         });
 
-        if($res->isNotEmpty()){
+        if ($res->isNotEmpty()) {
             return $res->pop();
-        }else{
+        } else {
             return null;
         }
     }
 
+    /**
+     * 获取全部成绩
+     * @return \Illuminate\Support\Collection
+     */
     public function all()
     {
         $query = [
-            'xsfs'=> 'all'
+            'xsfs' => 'all'
         ];
 
         $res = $this->postData($this->search_url, $query);
@@ -78,10 +89,11 @@ class Chengji extends Login
 
     public function getData(Crawler $tableNode)
     {
+
         $res = $tableNode->filterXPath('//tr')->each(function (Crawler $tr, $index) {
 
             if ($index == 0) {
-                return ;
+                return;
             }
 
             $chengji = new \App\Lib\Chengji();
@@ -100,9 +112,7 @@ class Chengji extends Login
             return $chengji;
         });
 
-        if(isset($res[0]) || !$res[0]){
-            unset($res[0]);
-        }
+        unset($res[0]);
 
         return collect($res);
     }
