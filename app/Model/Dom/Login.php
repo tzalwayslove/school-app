@@ -17,6 +17,8 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class Login
 {
+    protected $account;
+    protected $password;
     protected $key;
     protected $jar;
     protected $login = false;
@@ -25,7 +27,8 @@ class Login
     public $faculty;    //院系
     public $_class;     //课程
     public $infoPage;
-    protected $pre = 'http://1900mx9281.51mypc.cn';
+//    protected $pre = 'http://1900mx9281.51mypc.cn';http://222.27.186.113
+    protected $pre = 'http://222.27.186.113';
     protected $client;
 
     /**
@@ -36,6 +39,9 @@ class Login
      */
     public function __construct($user_name, $password)
     {
+        $this->account = $user_name;
+        $this->password = $password;
+
         $this->jar = new CookieJar;
         $this->client = new Client();
 

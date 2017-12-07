@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Wx;
 
+use App\Model\User;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,8 +15,18 @@ class Login extends Controller
         $app = new Application($config);
         $user = $app->oauth->user();
         session(['wx_user'=>$user]);
+        $local_user = User::firstOrCreate([
+            'open_id'=>$user->id
+        ], [
+            'account'=>'',
+            'password'=>'',
+            'name'=>'',
+            'nick_name'=>$user->nick_name,
+            'avatar'=>$user->avatar,
+            'sex'=>$user->original['sex']
+        ]);
 
-        dd($user);
+        session(['user'=>$local_user]);
         return redirect(session('tar_get', url('/articel')));
     }
 }

@@ -14,7 +14,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class Chengji extends Login
 {
-    public $search_url = '/xsd/kscj/cjcx_list';
+    public static $search_url = '/xsd/kscj/cjcx_list';
     public $get_search_url = '/xsd/kscj/cjcx_query';
     public $query = '';
     public $crawler = null;
@@ -39,7 +39,7 @@ class Chengji extends Login
 
             $xueqi = $node->attr('value');
 
-            $res = $this->postData($this->search_url, [
+            $res = $this->postData(self::$search_url, [
                 'kksj' => $xueqi
             ]);
 
@@ -79,7 +79,7 @@ class Chengji extends Login
             'xsfs' => 'all'
         ];
 
-        $res = $this->postData($this->search_url, $query);
+        $res = $this->postData(self::$search_url, $query);
 
         if(strpos($res,'评教未完成，不能查询成绩！')){
             throw new NoPingjiaoException('评教未完成，不能查询成绩！');
@@ -90,6 +90,8 @@ class Chengji extends Login
 
         return $data;
     }
+
+
 
     public function getData(Crawler $tableNode)
     {

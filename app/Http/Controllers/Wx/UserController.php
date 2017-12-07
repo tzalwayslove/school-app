@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers\Wx;
 
+use App\Exceptions\userNotFountException;
 use App\Lib\Result;
 use App\Model\Dom\Chengji;
 use App\Model\Dom\Kaochang;
 use App\Model\Dom\Kechengbiao;
+use App\Model\Dom\Pingjiao;
 use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    //当前成绩
     public function nowChengji(Request $request)
     {
 
@@ -40,7 +43,7 @@ class UserController extends Controller
         }
 
     }
-
+    //全部成绩
     public function all(Request $request)
     {
 
@@ -70,6 +73,7 @@ class UserController extends Controller
 
     }
 
+    //课程表
     public function kecheng(Request $request)
     {
         $user = User::find($request->input('user'));
@@ -93,7 +97,7 @@ class UserController extends Controller
             'data' => $data
         ]);
     }
-
+    //考场
     public function kaochang(Request $request)
     {
         $user = User::find($request->input('user'));
@@ -116,5 +120,27 @@ class UserController extends Controller
             'result' => new Result(true),
             'kaochang' => $data
         ]);
+    }
+
+    //一键评教
+    public function pingjiao(Request $request)
+    {
+        try{
+            $user = User::find($request->input('user'));
+            if(!$user){
+                throw new UserNotFountException('未找到该用户(uid):'.$request->input('user'));
+            }
+            $account = $user->account;
+            $password = $user->password;
+            $pingjiao = new Pingjiao($account, $password);
+            $pingjiao->pingjiao();
+            return [
+                'result'=>new Result(true)
+            ];
+        }catch(\Exception $e){
+            return [
+                'result'=>new Result(false, $e->getMessage())
+            ];
+        }
     }
 }

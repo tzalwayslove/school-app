@@ -120,6 +120,7 @@
     data = {
         nav_active: 'tiezi',
         tiezi:[],
+        user:{}
     };
 
     router.beforeEach((to, from, next) => {

@@ -62,3 +62,12 @@ Route::get('chengji_all', 'Wx\UserController@all');
 
 Route::get('kecheng', 'Wx\UserController@kecheng');
 Route::get('kaochang', 'Wx\UserController@kaochang');
+
+Route::get('get/wx/user', function(){
+    $wx_user = session('wx_user', []);
+    return response()->json($wx_user);
+});
+Route::get('get/local/user', function(){
+    $local_user = session('local_user', []);
+    return response()->json($local_user);
+});
