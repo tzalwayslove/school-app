@@ -19,7 +19,6 @@ class WxRedirect
 
         $wx_user = session('wx_user', false);
 
-        dd($wx_user);
         if(!$wx_user){
             $config = include('wechatConfig.php');
             $config['callback']= url('/wx/login');

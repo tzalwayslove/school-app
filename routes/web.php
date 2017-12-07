@@ -15,7 +15,7 @@ use EasyWeChat\Foundation\Application;
 
 Route::get('/', function () {
     return view('wx.index');
-});
+})->middleware('wx_login');
 
 Route::get('/s', function(){
     session(['a'=>10]);
@@ -61,7 +61,6 @@ Route::any('wx/login', 'Wx\Login@index');
 Route::group([
     'prefix'=>'wx',
     'namespace'=> 'Wx',
-    'middleware'=>'wx_login'
 ], function(){
     Route::get('/articel', 'ArticelController@index');
     Route::get('/comment/{id}', 'CommentController@index');
