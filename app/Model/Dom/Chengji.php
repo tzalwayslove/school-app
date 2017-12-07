@@ -19,7 +19,14 @@ class Chengji extends Login
     public $query = '';
     public $crawler = null;
     private $nowChengji = false;
-
+    public static $map = [
+        '序号'=>'xuhao',
+        '平时成绩'=>'pingshichengji',
+        '平时成绩比例'=>'pingshichengjibili',
+        '期末成绩'=>'qimochengji',
+        '期末成绩比例'=>'qimochengjibili',
+        '总成绩'=>'zongchengji'
+    ];
     /**
      * 获取最新成绩
      * @return mixed|null
@@ -33,10 +40,10 @@ class Chengji extends Login
 
 
         $chengjiList = $this->crawler->filterXPath('//select[@id="kksj"]//option')->each(function (Crawler $node, $k) use ($list) {
-            if ($k == 0 || $this->nowChengji) {
-                return;
-            }
 
+            if ($k == 0 || $this->nowChengji) {
+                return null;
+            }
             $xueqi = $node->attr('value');
 
             $res = $this->postData(self::$search_url, [
@@ -51,7 +58,6 @@ class Chengji extends Login
 
             if ($data->isNotEmpty()) {
                 $this->nowChengji = true;
-
                 return $data;
             }
 
@@ -95,7 +101,6 @@ class Chengji extends Login
 
     public function getData(Crawler $tableNode)
     {
-
         $res = $tableNode->filterXPath('//tr')->each(function (Crawler $tr, $index) {
 
             if ($index == 0) {
@@ -106,7 +111,9 @@ class Chengji extends Login
             $chengji->kaikeshijian = $tr->filterXPath('//td[2]')->text();
             $chengji->kechengbianhao = $tr->filterXPath('//td[3]')->text();
             $chengji->kecengmingceng = $tr->filterXPath('//td[4]')->text();
+
             $chengji->chengji = $tr->filterXPath('//td[5]')->text();
+
             $chengji->xuefen = $tr->filterXPath('//td[6]')->text();
             $chengji->zongxueshi = $tr->filterXPath('//td[7]')->text();
             $chengji->kaohefangshi = $tr->filterXPath('//td[8]')->text();
@@ -115,11 +122,37 @@ class Chengji extends Login
             $chengji->kaoshixingzhi = $tr->filterXPath('//td[11]')->text();
             $chengji->lurushijian = $tr->filterXPath('//td[12]')->text();
 
+            $js = $tr->filterXPath('//td[5]/a')->attr('href');
+            $link = substr($js, strpos($js, '(') + 2, strpos($js, ')') - strpos($js, '(') - 11);
+            $chengji->chengji_info = $this->getChengjiInfo($link);
+
             return $chengji;
         });
 
         unset($res[0]);
 
         return collect($res);
+    }
+
+    public function getChengjiInfo($url)
+    {
+        $html = $this->getPage($url);
+        $page = new Crawler($html->__toString());
+        $theader = $page->filterXPath('//table[@id="dataList"]//th');
+        $data[] = '';
+
+        $fields = $theader->each(function(Crawler $th, $index){
+            return $th->text();
+        });
+
+        foreach($fields as $key=>$field){
+            $index = $key+1;
+
+            $data[self::$map[$field]] = $page->filterXPath('//table[@id="dataList"]//td['.$index.']')->count() > 0
+                ? trim($page->filterXPath('//table[@id="dataList"]//td['.$index.']')->text(), ' &nbsp')
+                : '';
+        }
+        unset($data[0]);
+        return $data;
     }
 }

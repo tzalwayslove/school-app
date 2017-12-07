@@ -40,8 +40,12 @@ Route::get('test', function(){
      /*$chengji = new \App\Model\Dom\Chengji('201723045019', 'smyqueen980818');
      $chengji->getChengji();*/
 
-     $pingjiao = new \App\Model\Dom\Pingjiao('201723045019', 'smyqueen980818');
-     $pingjiao->pingjiao();
+     /*$pingjiao = new \App\Model\Dom\Pingjiao('201723045019', 'smyqueen980818');
+     $pingjiao->pingjiao();*/
+
+     $chengji = new \App\Model\Dom\Chengji('201637025002', 'liuxuemin123');
+     $res = $chengji->getChengji();
+     dd($res);
 });
 
 Route::group([
