@@ -19,11 +19,11 @@ class WxRedirect
 
         $wx_user = session('wx_user', false);
 
-        dd(url('/wx/login'));
         if(!$wx_user){
             $config = include('wechatConfig.php');
             $config['callback']= url('/wx/login');
             $app = new Application($config);
+
             session(['tar_get'=>$request->getRequestUri()]);
 
             return $app->oauth->scopes(['snsapi_userinfo'])
