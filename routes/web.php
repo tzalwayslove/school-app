@@ -14,6 +14,7 @@
 use EasyWeChat\Foundation\Application;
 
 Route::get('/', function () {
+    $user = session('user');
     return view('wx.index');
 })->middleware('wx_login');
 
