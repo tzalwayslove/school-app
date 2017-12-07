@@ -70,18 +70,20 @@
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon-index.png')}}" alt="" class="weui-tabbar__icon">
                     </span>
+                        <div style="height: 10px;"></div>
                     </router-link>
                     <router-link to="/fabu"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'fabu' ? 'weui-bar__item_on' : '']">
                         <img src="{{asset('public/images/icon-fabu.png')}}" alt="" class="weui-tabbar__icon">
                         {{--<p class="weui-tabbar__label">发帖</p>--}}
+                        <div style="height: 10px;"></div>
                     </router-link>
                     <router-link to="/wode"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'wode' ? 'weui-bar__item_on' : '']">
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon-wode.png')}}" alt="" class="weui-tabbar__icon">
                     </span>
-                        {{--<p class="weui-tabbar__label">发现</p>--}}
+                        <div style="height: 10px;"></div>
                     </router-link>
                 </div>
             </div>
