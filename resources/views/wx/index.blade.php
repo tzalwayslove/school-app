@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/we/main.css') }}">
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
     <style>
         .weui-cells {
