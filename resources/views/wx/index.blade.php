@@ -89,7 +89,7 @@
                     </router-link>
                     <router-link to="/wode"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'wode' ? 'weui-bar__item_on' : '']">
-
+                        <div style="height: 10px;"></div>
                         <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon-wode.png')}}" alt="" class="weui-tabbar__icon">
                         </span>
