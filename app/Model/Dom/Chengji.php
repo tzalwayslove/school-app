@@ -81,6 +81,10 @@ class Chengji extends Login
 
         $res = $this->postData($this->search_url, $query);
 
+        if(strpos($res,'评教未完成，不能查询成绩！')){
+            throw new NoPingjiaoException('评教未完成，不能查询成绩！');
+        }
+
         $html = (new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]');
         $data = $this->getData($html);
 

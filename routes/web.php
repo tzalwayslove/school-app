@@ -36,8 +36,11 @@ Route::put('code', 'Admin\CodeController@settable');
 Route::get('test', function(){
      /*$kaochang = new \App\Model\Dom\Kaochang('201637025002', 'liuxuemin123');
      $kaochang->getQueryData();*/
-     $chengji = new \App\Model\Dom\Chengji('201723045019', 'smyqueen980818');
-     $chengji->getChengji();
+     /*$chengji = new \App\Model\Dom\Chengji('201723045019', 'smyqueen980818');
+     $chengji->getChengji();*/
+
+     $pingjiao = new \App\Model\Dom\Pingjiao('201723045019', 'smyqueen980818');
+     $pingjiao->pingjiao();
 });
 
 Route::group([
@@ -54,10 +57,11 @@ Route::group([
     Route::resource('comment', 'CommentController');
 });
 
-
+Route::any('wx/login', 'Wx\Login@index');
 Route::group([
     'prefix'=>'wx',
-    'namespace'=> 'Wx'
+    'namespace'=> 'Wx',
+    'middleware'=>'wx_login'
 ], function(){
     Route::get('/articel', 'ArticelController@index');
     Route::get('/comment/{id}', 'CommentController@index');

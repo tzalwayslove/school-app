@@ -74,13 +74,24 @@ class Login
         return $res->getBody();
     }
 
-    public function postData($url, $data)
+    public function postData($url, $data, $header=[])
     {
-        $res = $this->client->request('post', $this->pre . $url, [
-            'cookies' => $this->jar,
-            'char_set' => 'gbk',
-            'form_params' => $data
-        ]);
+        if(is_string($data)){
+            $res = $this->client->request('post', $this->pre . $url, [
+                'cookies' => $this->jar,
+                'char_set' => 'gbk',
+                'body' => $data,
+                'headers'=>$header
+            ]);
+        }else{
+            $res = $this->client->request('post', $this->pre . $url, [
+                'cookies' => $this->jar,
+                'char_set' => 'gbk',
+                'form_params' => $data,
+                'headers'=>$header
+            ]);
+        }
+
 
         return $res->getBody();
     }

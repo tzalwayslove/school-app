@@ -44,6 +44,7 @@ Route::get('loginTest', function(){
 Route::any('api/test', function(){
     echo file_get_contents('php://input');
     echo '<pre>';
+    echo '<hr>';
 
     foreach ($_SERVER as $name => $value)
     {
