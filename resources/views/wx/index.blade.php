@@ -67,7 +67,8 @@
                 <div class="weui-tabbar">
                     <router-link to="/tiezi"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'tiezi' ? 'weui-bar__item_on' : '']">
-                    <span style="display: inline-block;position: relative;">
+                        <div style="height: 10px;"></div>
+                        <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon-index.png')}}" alt="" class="weui-tabbar__icon">
                     </span>
                         <div style="height: 10px;"></div>
@@ -80,7 +81,8 @@
                     </router-link>
                     <router-link to="/wode"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'wode' ? 'weui-bar__item_on' : '']">
-                    <span style="display: inline-block;position: relative;">
+                        <div style="height: 10px;"></div>
+                        <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon-wode.png')}}" alt="" class="weui-tabbar__icon">
                     </span>
                         <div style="height: 10px;"></div>
