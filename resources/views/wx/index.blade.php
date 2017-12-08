@@ -163,8 +163,8 @@
     }).$mount('#app');
 </script>
 <script>
-    var a =document.getElementsByTagName('html')[0].width;
-    b.style.fontSize=a/10 + 'px';
+    a =document.getElementsByTagName('html')[0].width;
+    a.style.fontSize=a/10 + 'px';
 
 </script>
 </body>
