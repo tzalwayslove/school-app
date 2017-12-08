@@ -163,8 +163,7 @@
     }).$mount('#app');
 </script>
 <script>
-    var a =html.getBoundingClientRect().width;
-    var b = document.getElementsByTagName('html')[0];
+    var a =document.getElementsByTagName('html')[0].width;
     b.style.fontSize=a/10 + 'px';
 
 </script>
