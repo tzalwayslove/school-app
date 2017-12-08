@@ -10,3 +10,13 @@
     width: 100%;
     z-index: 9;
 }
+.touxiang{
+    text-align: center;
+}
+.touxiang>span{
+    display: inline-block;
+}
+.touxiang img{
+    width:64px;
+    height:64px;
+}
