@@ -1,6 +1,9 @@
 .my-top {
     background-color: rgb(0, 0, 0);
     background-image: url('../../images/bg-wode.png');
+    background-position-y: center;
+    background-position-x: center;
+    background-size: 100%;
     position: absolute;
     left: 0;
     height: 320px;
