@@ -6,6 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>
+        var pixclPatio = 1 / window.devicePixelRatio;
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixclPatio+',minimum-scale='+pixclPatio+',maximum-scale='+pixclPatio+',user-scalable=no" />');
+
+        var html = document.getElementsByTagName('html')[0];
+        var pageWidth = html.getBoundingClientRect().width;
+        html.style.fontSize = pageWidth / 16 + 'px';
+    </script>
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/we/main.css') }}">
@@ -162,13 +170,6 @@
         }
     }).$mount('#app');
 </script>
-<script>
-    var pixclPatio = 1 / window.devicePixelRatio;
-    document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixclPatio+',minimum-scale='+pixclPatio+',maximum-scale='+pixclPatio+',user-scalable=no" />');
 
-    var html = document.getElementsByTagName('html')[0];
-    var pageWidth = html.getBoundingClientRect().width;
-    html.style.fontSize = pageWidth / 16 + 'px';
-</script>
 </body>
 </html>
