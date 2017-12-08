@@ -163,9 +163,12 @@
     }).$mount('#app');
 </script>
 <script>
-    a =document.getElementsByTagName('html')[0].width;
-    a.style.fontSize=a/10 + 'px';
+    var pixclPatio = 1 / window.devicePixelRatio;
+    document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixclPatio+',minimum-scale='+pixclPatio+',maximum-scale='+pixclPatio+',user-scalable=no" />');
 
+    var html = document.getElementsByTagName('html')[0];
+    var pageWidth = html.getBoundingClientRect().width;
+    html.style.fontSize = pageWidth / 16 + 'px';
 </script>
 </body>
 </html>
