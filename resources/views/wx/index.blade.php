@@ -71,10 +71,7 @@
             <div class="weui-tab">
                 <router-view></router-view>
                 <div class="weui-tabbar">
-                    <div class="my-bottom">
-
-                    </div>
-                    {{--<router-link to="/tiezi"
+                    <router-link to="/tiezi"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'tiezi' ? 'weui-bar__item_on' : '']">
                         <div style="height: 10px;"></div>
                     <span style="display: inline-block;position: relative;">
@@ -88,7 +85,7 @@
                     <span style="display: inline-block;position: relative;">
                         <img src="{{asset('public/images/icon-fabu.png')}}" alt="" class="weui-tabbar__icon">
                     </span>
-                        --}}{{--<p class="weui-tabbar__label">发帖</p>--}}{{--
+                        <p class="weui-tabbar__label">发帖</p>
                         <div style="height: 10px;"></div>
                     </router-link>
                     <router-link to="/wode"
@@ -98,7 +95,7 @@
                         <img src="{{asset('public/images/icon-wode.png')}}" alt="" class="weui-tabbar__icon">
                         </span>
                         <div style="height: 10px;"></div>
-                    </router-link>--}}
+                    </router-link>
                 </div>
             </div>
         </div>
