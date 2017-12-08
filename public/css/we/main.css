@@ -43,3 +43,6 @@
 .fatieshu span:first-child{
     border-right:1px solid #FFF;
 }
+.menu{
+    background-color: rgba(0,0,0, 0.3);
+}
