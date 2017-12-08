@@ -162,5 +162,11 @@
         }
     }).$mount('#app');
 </script>
+<script>
+    var a =html.getBoundingClientRect().width;
+    var b = document.getElementsByTagName('html')[0];
+    html.style.fontSize=a/10 + 'px';
+
+</script>
 </body>
 </html>
