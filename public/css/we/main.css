@@ -26,31 +26,14 @@
     color: rgb(255, 255, 255);
     line-height: 25px;
 }
-._1 {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 720px;
-    height: 1280px;
-    z-index: 32;
-}
-._100 {
-    font-size: 28px;
-    font-family: "Microsoft YaHei";
-    color: rgb(255, 255, 255);
-    line-height: 2.5;
-    position: absolute;
-    left: 233px;
-    top: 352.5px;
-    z-index: 31;
-}
+
 .fatieshu {
-    font-size: 28px;
+    font-size: 18px;
     font-family: "Microsoft YaHei";
     color: rgb(255, 255, 255);
     line-height: 2.5;
-    position: absolute;
-    left: 158px;
-    top: 422.992px;
-    z-index: 30;
+}
+.fatieshu span{
+    padding: 0 20px;
+    box-sizing: border-box;
 }
