@@ -53,8 +53,13 @@
     box-sizing: border-box;
     padding:10px 30px;
 }
+.menu .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .menu .col{
     height:50px;
     width:30px;
-    margin:10px 20px;
+
 }
