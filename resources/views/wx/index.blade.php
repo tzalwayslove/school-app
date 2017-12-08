@@ -10,8 +10,59 @@
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/we/main.css') }}">
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
+    <style>
+        .weui-cells {
+            margin-top: 0
+        }
 
-    <title>遇见</title>
+        #add_pinglun {
+            position: fixed;
+            padding: 20px;
+            bottom: 70px;
+            width: 100%;
+            box-sizing: border-box;
+            right: 0;
+            z-index: 100;
+            background: #eee;
+        }
+
+        #add_pinglun input {
+            width: 80%;
+        }
+
+        #add_pinglun button {
+            width: 15%;
+        }
+
+        #add_pinglun_show {
+            position: fixed;
+            right: 20px;
+            bottom: 70px;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: rgba(51, 103, 214, 0.8);
+            z-index: 100;
+            line-height: 75px;
+            text-align: center;
+            font-size: 66px;
+            color: #FFF;
+        }
+
+        #remen {
+            position: fixed;
+            right: 20px;
+            bottom: 70px;
+            height: 75px;
+            width: 75px;
+            text-align: center;
+            line-height: 75px;
+            background: #ccc;
+            border-radius: 50%;
+        }
+    </style>
+
+    <title></title>
 </head>
 <body>
 <div id="app" class="container">
@@ -20,7 +71,6 @@
             <div class="weui-tab">
                 <router-view></router-view>
                 <div class="weui-tabbar">
-                    123456
                     {{--<router-link to="/tiezi"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'tiezi' ? 'weui-bar__item_on' : '']">
                         <div style="height: 10px;"></div>
