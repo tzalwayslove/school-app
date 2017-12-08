@@ -6,3 +6,7 @@
     height: 580px;
     z-index: 9;
 }
+.my-bottom{
+    height:100px;
+    background-color: #F00;
+}

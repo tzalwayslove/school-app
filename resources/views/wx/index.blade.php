@@ -71,6 +71,9 @@
             <div class="weui-tab">
                 <router-view></router-view>
                 <div class="weui-tabbar">
+                    <div class="my-bottom">
+
+                    </div>
                     {{--<router-link to="/tiezi"
                                  v-bind:class="['weui-tabbar__item', nav_active == 'tiezi' ? 'weui-bar__item_on' : '']">
                         <div style="height: 10px;"></div>
