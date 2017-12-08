@@ -2,11 +2,6 @@
     background-color: rgb(0, 0, 0);
     position: absolute;
     left: 0;
-    width: 720px;
-    height: 580px;
+    height: 320px;
     z-index: 9;
-}
-.my-bottom{
-    height:44px;
-    background-color: #F00;
 }
