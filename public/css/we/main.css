@@ -3,5 +3,6 @@
     position: absolute;
     left: 0;
     height: 320px;
+    width: 100%;
     z-index: 9;
 }
