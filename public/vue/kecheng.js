@@ -18,9 +18,6 @@ fabu = Vue.component('Kecheng', function (success, error) {
             },
             mounted: function(){
                 $this = this;
-                console.log(111111);
-                console.log(this.user);
-                console.log(111111);
 
                 axios.get("/api/kecheng?user="+this.user + '&all='+this.all).then(function(res){
                     $this.jiazai = false;
