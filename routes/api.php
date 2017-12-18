@@ -64,6 +64,7 @@ Route::get('kecheng', 'Wx\UserController@kecheng');
 Route::get('kaochang', 'Wx\UserController@kaochang');
 
 Route::get('get/wx/user', function(){
+    dd(session('wx_user'));
     $wx_user = session('wx_user', []);
     return response()->json($wx_user);
 });
