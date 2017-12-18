@@ -50,8 +50,8 @@
 
 <div class="mui-content-padded">
     <div class="yjbox">
-        <img
-             :src="articelData.niming != 1 ? articelData.user_account.avatar : '/public/wx/img/m-touxiang.png'" class="yjbox-img" />
+        <!--<img-->
+             <!--:src="articelData.niming != 1 ? articelData.user_account.avatar : '/public/wx/img/m-touxiang.png'" class="yjbox-img" />-->
         <p class="yjbox-tl">
             <template v-if="articelData.niming == 1">
                 <span>某同学·男</span>
@@ -74,9 +74,9 @@
          v-for="(item, index) in list"
          :key="item.id" >
         <div>
-            <img
-                    :src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'"
-                    class="hfbox-img" />
+            <!--<img-->
+                    <!--:src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'"-->
+                    <!--class="hfbox-img" />-->
             <p class="hfbox-tl">
                 <template v-if="item.niming != 1">
                     {{item.user_account.nick_name}}
