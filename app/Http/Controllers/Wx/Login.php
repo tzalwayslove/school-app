@@ -16,6 +16,7 @@ class Login extends Controller
         $user = $app->oauth->user();
         session(['wx_user'=>$user]);
 
+        dd($user->id);
         $local_user = User::firstOrCreate([
             'open_id'=>$user->id
         ], [
