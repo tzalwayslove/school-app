@@ -23,7 +23,17 @@
             <img src="/public/wx/img/icon-chat.png" class="imgicon" /><p class="icon-num">{{ articelData.zan }}</p>
         </div>
     </div>
+    <div class="hfbox"
+         v-for="(item, index) in list"
+         :key="item.id" >
+        <div>
+            <img
+                    :src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'"
+                    class="hfbox-img" />
 
+            <p class="hf-box-main">{item.content}}</p>
+        </div>
+    </div>
 
     <div class="hf-input">
         <input type="text" class="ht-inp ht-inp-t" />
