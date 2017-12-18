@@ -29,7 +29,7 @@
             <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
         </router-link>
     </nav>
-    <div class="mui-content" @scroll="onScroll($event)">
+    <div class="mui-content" @click="onClick($event)">
         {{-- route main --}}
         <router-view></router-view>
 
@@ -172,7 +172,7 @@
             data: data,
             load: true,
             methods: {
-                onScroll: function(){
+                onClick: function(){
                     console.log(2222222222);
                 }
             },
