@@ -10,6 +10,7 @@
     <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
+    <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
     <link href="{{ asset('public/wx/css/mui.css') }}" rel="stylesheet"/>
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
 </head>
