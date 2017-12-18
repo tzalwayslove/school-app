@@ -31,17 +31,17 @@ class UserController extends Controller
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->getChengji();
 
-            foreach($res as $chengji){
+            foreach ($res as $chengji) {
 
-                if($chengji->chengji >= 90 || strpos('优', $chengji->chengji) !== false){
+                if ($chengji->chengji >= 90 || strpos('优', $chengji->chengji) !== false) {
                     $chengji->jidian = 4;
-                }else if($chengji->chengji >= 80 || strpos('良', $chengji->chengji) || strpos('好', $chengji->chengji) !== false){
+                } else if ($chengji->chengji >= 80 || strpos('良', $chengji->chengji) || strpos('好', $chengji->chengji) !== false) {
                     $chengji->jidian = 3;
-                }else if($chengji->chengji >= 70 || strpos('中', $chengji->chengji) !== false){
+                } else if ($chengji->chengji >= 70 || strpos('中', $chengji->chengji) !== false) {
                     $chengji->jidian = 2;
-                }else if($chengji->chengji >= 60 || $chengji->chengji == '及格'){
+                } else if ($chengji->chengji >= 60 || $chengji->chengji == '及格') {
                     $chengji->jidian = 1;
-                }else{
+                } else {
                     $chengji->jidian = 0;
                 }
             }
@@ -58,6 +58,7 @@ class UserController extends Controller
         }
 
     }
+
     //全部成绩
     public function all(Request $request)
     {
@@ -91,8 +92,8 @@ class UserController extends Controller
     //课程表
     public function kecheng(Request $request)
     {
-          $user = User::find($request->input('user'));
-        
+        return [$request->input('user')];
+        $user = User::find($request->input('user'));
 
         if (!$user) {
             return response([
@@ -115,6 +116,7 @@ class UserController extends Controller
             'data' => $data
         ]);
     }
+
     //考场
     public function kaochang(Request $request)
     {
@@ -137,7 +139,7 @@ class UserController extends Controller
             ]);
         }
         $now = time();
-        foreach($data as $item){
+        foreach ($data as $item) {
             $item->finish = $now > $item->shijian;
         }
         return response([
@@ -145,52 +147,54 @@ class UserController extends Controller
             'kaochang' => $data
         ]);
     }
+
     //一键评教
     public function pingjiao(Request $request)
     {
-        try{
+        try {
 //            $user = User::find($request->input('user'));
             $user = session('user');
-            if(!$user){
-                throw new UserNotFountException('未找到该用户(uid):'.$request->input('user'));
+            if (!$user) {
+                throw new UserNotFountException('未找到该用户(uid):' . $request->input('user'));
             }
             $account = $user->account;
             $password = $user->password;
             $pingjiao = new Pingjiao($account, $password);
             $pingjiao->pingjiao();
             return [
-                'result'=>new Result(true)
+                'result' => new Result(true)
             ];
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return [
-                'result'=>new Result(false, $e->getMessage())
+                'result' => new Result(false, $e->getMessage())
             ];
         }
     }
+
     //绑定
     public function bangding(Request $request)
     {
         $account = $request->input('account', false);
         $password = $request->input('password', false);
 
-        if(!$account || !$password){
+        if (!$account || !$password) {
             return response()->json([
-                'result'=>new Result(false, '用户名或密码不能为空')
+                'result' => new Result(false, '用户名或密码不能为空')
             ]);
         }
         $user = session('local_user');
 
         User::where('account', $account)->update([
-            'account'=>'',
-            'password'=>''
+            'account' => '',
+            'password' => ''
         ]);
 
-        $user -> account = $account;
-        $user -> passowrd = $password;
-        $user -> save();
+        $user->account = $account;
+        $user->passowrd = $password;
+        $user->save();
 
         return response()->json([
-            'result'=>new Result(true)
+            'result' => new Result(true)
         ]);
     }
 }
