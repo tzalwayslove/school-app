@@ -28,11 +28,11 @@
          :key="item.id" >
         <div>
             <img
-                    :src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'"
+                    :src="item.niming != 1 ? item.getUser.avatar : '/public/wx/img/m-touxiang.png'"
                     class="hfbox-img" />
             <p class="hfbox-tl">
                 <template v-if="item.niming != 1">
-                    {{item.user_account.nick_name}}
+                    {{item.getUser.nick_name}}
                 </template>
                 <template v-if="item.niming == 1">
                     某同学·男
