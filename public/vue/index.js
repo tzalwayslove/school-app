@@ -76,7 +76,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 },
                 getComment: function (item) {
                     id = item.id;
-                    console.log(this.router);
+
                     router.push({
                         path: '/pinglun/' + id,
                     })

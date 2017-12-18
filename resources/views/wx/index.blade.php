@@ -150,7 +150,7 @@
             {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
         ];
 
-        const router = new VueRouter({
+        router = new VueRouter({
             routes: routes,
         });
 
