@@ -76,6 +76,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
 
                     let bottom = $('#tabbar1')[0].scrollHeight - $('#tabbar1')[0].scrollTop - $('#tabbar1')[0].offsetHeight;
                     console.log(bottom);
+                    console.log('bottom');
                     if (this.lastBottom > bottom && bottom < $('#tabbar1')[0].clientHeight / 3 && this.load) {
                         this.page++;
                         this.getData();
