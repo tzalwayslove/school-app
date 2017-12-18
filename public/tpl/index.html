@@ -34,8 +34,9 @@
         </div>
     </div>
 
-    <div  @scroll="onScroll($event)">
+    <div>
         <div id="item1" class="mui-control-content mui-active"
+             @scroll="onScroll($event)"
              v-for="item in tiezi"
              :key="item.id"
         >
