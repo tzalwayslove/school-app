@@ -53,9 +53,8 @@
                         <span>某同学·男</span>
                         </template>
                         <template v-if="item.niming == 0">
-                            <span>{{ time.user_account.nick_name}}</span>
+                            <span>{{ item.user_account.nick_name}}</span>
                         </template>
-
                         <a
                             style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{item.created_at}}</a></p>
                     <p class="yj-box-main">{{item.content}}</p>
