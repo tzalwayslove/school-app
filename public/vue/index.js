@@ -25,7 +25,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         'background': 'rgba(61, 191, 255, 0.8)',
                         'color': '#fff'
                     }
-
                 }
             },
             methods: {
