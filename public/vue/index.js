@@ -53,7 +53,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.touchStartY = e.changedTouches[0].clientY;
                 },
                 touchMove: function (e) {
-
                     this.move = e.changedTouches[0].clientY - this.touchStartY;
                     this.styles.transform = 'translateY(' + this.move + 'px)';
                 },
@@ -112,7 +111,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 }
             },
             mounted (){
-                console.log(this.mui_active);
                 this.getData();
             }
         });
