@@ -6,13 +6,16 @@ use App\Lib\Result;
 use App\Model\Articel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ArticelController extends Controller
 {
     public function index(Request $request)
     {
         if($request->input('click_count', false)){
+            DB::enableQueryLog();
             $list = Articel::with('getComment')->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")->orderBy('zan', 'desc')->where('show', '1')->paginate(20);
+            dd(DB::getQueryLog());
         }else{
             $list = Articel::with('getComment')->orderBy('created_at', 'desc')->orderBy('click_count', 'desc')->where('show', '1')->paginate(20);
         }
