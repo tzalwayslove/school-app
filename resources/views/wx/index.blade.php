@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div id="tabbar2" class="mui-control-content">
+    {{--<div id="tabbar2" class="mui-control-content">
         <div id="" class="box2">
             <p class="fb-title">发布 <span style="float: right;margin-right: 10px;">匿名</span>
             <div style="float: right; margin-top: -30PX;margin-right: 50px;">
@@ -230,7 +230,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div>--}}
 </div>
 </body>
 </html>
