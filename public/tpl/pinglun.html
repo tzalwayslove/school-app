@@ -6,7 +6,7 @@
              class="yjbox-img" />
         <p class="yjbox-tl">
             <template v-if="articelData.niming == 1">
-                <span>某同学·男</span>
+                <span>某同学·{{articelData.user_account.sex == 1 ? '男' : '女'}}</span>
             </template>
             <template v-if="articelData.niming != 1">
                 <span style="height: 1em;">{{ articelData.user_account.nick_name }}</span>

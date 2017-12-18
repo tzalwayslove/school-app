@@ -13,7 +13,8 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         articelData : {
                             user_account:{
                                 avatar:'/public/wx/img/m-touxiang.png',
-                                nick_name: ''
+                                nick_name: '',
+                                sex: '1'
                             }
                         },
                         jiahao: true,
