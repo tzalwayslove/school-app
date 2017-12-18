@@ -17,8 +17,8 @@ class UserController extends Controller
     //当前成绩
     public function nowChengji(Request $request)
     {
-//        $user = User::find($request->input('user'));
-        $user = session('user');
+        $user = User::find($request->input('user'));
+//        $user = session('user');
 
         if (!$user) {
             return response([
@@ -62,8 +62,8 @@ class UserController extends Controller
     //全部成绩
     public function all(Request $request)
     {
-//        $user = User::find($request->input('user'));
-        $user = session('user');
+        $user = User::find($request->input('user'));
+//        $user = session('user');
         if (!$user) {
             return response([
                 'result' => new Result(false, '未找到该用户@' . $request->input('user'))
@@ -118,8 +118,8 @@ class UserController extends Controller
     //考场
     public function kaochang(Request $request)
     {
-//        $user = User::find($request->input('user'));
-        $user = session('user');
+        $user = User::find($request->input('user'));
+//        $user = session('user');
         if (!$user) {
             return response([
                 'result' => new Result(false, '未找到该用户!')
@@ -150,8 +150,8 @@ class UserController extends Controller
     public function pingjiao(Request $request)
     {
         try {
-//            $user = User::find($request->input('user'));
-            $user = session('user');
+            $user = User::find($request->input('user'));
+//            $user = session('user');
             if (!$user) {
                 throw new UserNotFountException('未找到该用户(uid):' . $request->input('user'));
             }
