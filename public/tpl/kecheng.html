@@ -64,15 +64,23 @@
                 <template v-for="(td, index) in tr">
                     <td width="123" height="28" align="center" valign="top">
                         <div v-for="kecheng in td" style="border-bottom: 1px solid #f0ad4e;">
-                            {{kecheng.name}}::{{kecheng.week}}::{{kecheng.teacher}}::{{kecheng.jiaoshi}}
+                            {{kecheng.name}}&nbsp;&nbsp;{{kecheng.week}}&nbsp;&nbsp;{{kecheng.teacher}}&nbsp;&nbsp;{{kecheng.jiaoshi}}
                         </div>
                     </td>
                 </template>
             </tr>
         </template>
     </table>
+    <p>备注: {{desc}}</p>
     <div class="ct-m">
         <a>	<img src="/public/wx/img/kb-time.png" class="kb-time-img-l" /></a>
         <a>  <img src="/public/wx/img/qrcode.png" class="kb-time-img-r" /></a>
+    </div>
+    <div id="loadingToast" v-show="jiazai">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content">数据加载中</p>
+        </div>
     </div>
 </div>
