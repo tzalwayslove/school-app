@@ -10,10 +10,16 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     return {
                         data : {},
                         list: [],
-                        articelData : {},
+                        articelData : {
+                            user_account:{
+                                avatar:'/public/wx/img/m-touxiang.png',
+                                nick_name: ''
+                            }
+                        },
                         jiahao: true,
                         pinglun_input: false,
                         comment: ''
+
                     }
                 },
                 methods:{
