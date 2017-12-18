@@ -60,9 +60,11 @@
 </head>
 <body>
 
-<div id="app" class="container">
+<div style="margin-top: 54px;" id="app">
     <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
+
 </div>
+
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
@@ -95,3 +97,4 @@
 </script>
 </body>
 </html>
+
