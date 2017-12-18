@@ -56,16 +56,20 @@
             <td>星期六</td>
             <td>星期日</td>
         </tr>
-        <tr style="height: 200px;">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <template v-for="(tr, index) in table">
+            <tr>
+                <th width="70" height="28" align="center">
+                    {{(index+1)*2-1}}至{{(index+1)*2}}节
+                </th>
+                <template v-for="(td, index) in tr">
+                    <td width="123" height="28" align="center" valign="top">
+                        <div v-for="kecheng in td" style="border-bottom: 1px solid #f0ad4e;">
+                            {{kecheng.name}}::{{kecheng.week}}::{{kecheng.teacher}}::{{kecheng.jiaoshi}}
+                        </div>
+                    </td>
+                </template>
+            </tr>
+        </template>
     </table>
     <div class="ct-m">
         <a>	<img src="/public/wx/img/kb-time.png" class="kb-time-img-l" /></a>
