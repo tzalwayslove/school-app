@@ -86,7 +86,6 @@ class UserController extends Controller
                 'result' => new Result(false, $e->getMessage()/* . $e->getFile() . $e->getLine()*/)
             ]);
         }
-
     }
 
     //课程表
