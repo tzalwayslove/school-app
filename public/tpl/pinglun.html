@@ -53,7 +53,7 @@
         <img
              :src="articelData.niming != 1 ? 'asdf' : '/public/wx/img/m-touxiang.png'" class="yjbox-img" />
         <p class="yjbox-tl">
-            articelData.user_account.avatar
+            {{articelData.user_account.avatar}}
             <template v-if="articelData.niming == 1">
                 <span>某同学·男</span>
             </template>
