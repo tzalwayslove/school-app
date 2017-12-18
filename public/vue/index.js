@@ -94,8 +94,10 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     item.zanLog = !!!item.zanLog;
                 },
                 orderConvert(){
-                    this.mui_active = this.mui_active == 'remen'? 'zuixin' : 'remen';
+                    this.mui_active = this.mui_active == 'remen' ? 'zuixin' : 'remen';
+                    console.log(this.mui_active);
                     this.getData(0);
+
                 },
                 getElementTop: function (element) {
                     actualTop = element.offsetTop;
