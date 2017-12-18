@@ -15,7 +15,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     styles: {
                         transform: 'translateY(0px)'
                     },
-                    mui_active: 'remen',
+                    mui_active: 'zuixin',
                     remen: {
                         'background': 'rgba(255, 80, 80, 0.8)',
                         'color': '#fff'
