@@ -152,7 +152,6 @@
 
         const router = new VueRouter({
             routes: routes,
-            default: 'tiezi'
         });
 
         data = {
