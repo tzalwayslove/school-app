@@ -22,7 +22,7 @@
                          class="yjbox-img" style="border-radius: 50%;"/>
                     <p class="yjbox-tl">
                         <template v-if="item.niming == 1">
-                        <span>某同学·男</span>
+                        <span>某同学·{{item.user_account.sex == 1 ?男:女}}</span>
                         </template>
                         <template v-if="item.niming != 1">
                             <span style="height: 1em;">{{ item.user_account.nick_name}}</span>
