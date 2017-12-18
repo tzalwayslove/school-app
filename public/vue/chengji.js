@@ -17,7 +17,7 @@ fabu = Vue.component('chengji', function (success, error) {
             },
             mounted: function(){
                 $this = this;
-                console.log(this.user);
+
                 axios.get("/api/chengji?user="+this.user).then(function(res){
                     $this.jiazai = false;
                     if(res.data.result.code == 0){
