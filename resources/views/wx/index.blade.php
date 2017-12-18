@@ -135,7 +135,6 @@
     $(function () {
         axios.defaults.baseURL = 'http://school.sz25.net';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
-        console.log($('#app'));
 
         const routes = [
             {path: '/tiezi', component: tiezi, name: 'tiezi'},
@@ -161,7 +160,6 @@
                     data.nav_active = 'tiezi';
                     break;
                 default:
-                    console.log(to);
                     data.nav_active = to.name;
             }
             next();
