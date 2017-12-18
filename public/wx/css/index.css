@@ -38,7 +38,7 @@ color: #000000;
 .hf-input{
 	width: 100%;
 	position:fixed;
-    bottom:0;
+    bottom:50px;
     background: #FFFFFF;
 }
 .ht-inp{
