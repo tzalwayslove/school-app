@@ -1,31 +1,31 @@
-<div class="weui-tab__panel" id="scrollPanel"
-     @touchstart="touchStart($event)"
-     @touchmove="touchMove($event)"
-     @touchend="touchEnd($event)"
-     @scroll="onScroll($event)">
->
-    <div class="weui-panel"
-         v-for="item in tiezi"
-         :key="item.id"
-         :style="styles"
-    >
-        <div class="weui-panel__hd">{{item.title}}</div>
-        <div class="weui-panel__bd">
-            <div class="weui-media-box weui-media-box_text">
-                <p class="weui-media-box__desc"  @click="getComment(item)">{{item.content}}{{item.id}}</p>
-                <ul class="weui-media-box__info">
-                    <li class="weui-media-box__info__meta">{{item.created_at}}</li>
-                    <li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="setZan(item)">
-                        赞({{item.zan || 0}})
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">
-        {{order=='热门' ? '热门' : '最新'}}
-    </div>
-</div>
+<!--<div class="weui-tab__panel" id="scrollPanel"-->
+     <!--@touchstart="touchStart($event)"-->
+     <!--@touchmove="touchMove($event)"-->
+     <!--@touchend="touchEnd($event)"-->
+     <!--@scroll="onScroll($event)">-->
+<!--&gt;-->
+    <!--<div class="weui-panel"-->
+         <!--v-for="item in tiezi"-->
+         <!--:key="item.id"-->
+         <!--:style="styles"-->
+    <!--&gt;-->
+        <!--<div class="weui-panel__hd">{{item.title}}</div>-->
+        <!--<div class="weui-panel__bd">-->
+            <!--<div class="weui-media-box weui-media-box_text">-->
+                <!--<p class="weui-media-box__desc"  @click="getComment(item)">{{item.content}}{{item.id}}</p>-->
+                <!--<ul class="weui-media-box__info">-->
+                    <!--<li class="weui-media-box__info__meta">{{item.created_at}}</li>-->
+                    <!--<li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="setZan(item)">-->
+                        <!--赞({{item.zan || 0}})-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">-->
+        <!--{{order=='热门' ? '热门' : '最新'}}-->
+    <!--</div>-->
+<!--</div>-->
 
 
 <!--<div id="tabbar1"-->
