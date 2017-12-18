@@ -1,9 +1,10 @@
-<!--<div class="weui-tab__panel" id="scrollPanel"-->
-     <!--@touchstart="touchStart($event)"-->
-     <!--@touchmove="touchMove($event)"-->
-     <!--@touchend="touchEnd($event)"-->
-     <!--@scroll="onScroll($event)">-->
-<!--&gt;-->
+<div class="weui-tab__panel"
+     id="scrollPanel"
+     @touchstart="touchStart($event)"
+     @touchmove="touchMove($event)"
+     @touchend="touchEnd($event)"
+     @scroll="onScroll($event)">
+>
     <!--<div class="weui-panel"-->
          <!--v-for="item in tiezi"-->
          <!--:key="item.id"-->
@@ -22,10 +23,10 @@
             <!--</div>-->
         <!--</div>-->
     <!--</div>-->
-    <!--<div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">-->
-        <!--{{order=='热门' ? '热门' : '最新'}}-->
-    <!--</div>-->
-<!--</div>-->
+    <div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">
+        {{order=='热门' ? '热门' : '最新'}}
+    </div>
+</div>
 
 
 <!--<div id="tabbar1"-->
