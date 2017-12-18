@@ -16,7 +16,10 @@
         >
             <div class="mui-content-padded" >
                 <div class="yjbox">
-                    <img :src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'" class="yjbox-img" style="border-radius: 50%;"/>
+                    <img :src="item.niming != 1
+                    ? item.user_account.avatar
+                    : item.user_account.sex == 1 ? '/public/wx/img/m-touxiang.png' : '/public/wx/img/m-touxiang-nv.png'"
+                         class="yjbox-img" style="border-radius: 50%;"/>
                     <p class="yjbox-tl">
                         <template v-if="item.niming == 1">
                         <span>某同学·男</span>
