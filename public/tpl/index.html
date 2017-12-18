@@ -26,7 +26,7 @@
 </div>
 -->
 
-<div id="tabbar1" class="mui-control-content mui-active">
+<div id="tabbar1" class="mui-control-content mui-active"   @scroll="onScroll($event)">
     <div id="segmentedControl" class="mui-segmented-control">
         <div style="padding: 20px 40px;">
             <a class="mui-control-item mui-active" href="#item1" style="border-radius: 20px 0 0 20px;">最新</a>
@@ -39,7 +39,7 @@
              v-for="item in tiezi"
              :key="item.id"
         >
-            <div class="mui-content-padded">
+            <div class="mui-content-padded"  @scroll="onScroll($event)">
                 <div class="yjbox">
                     <img src="/public/wx/img/m-touxiang.png" class="yjbox-img"/>
                     <p class="yjbox-tl">某同学·男 <a
