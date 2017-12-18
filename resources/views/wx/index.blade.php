@@ -17,18 +17,18 @@
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
 </head>
 <body>
+<div id="test" style="height: 100px; width: 100px; overflow: auto">
+    拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
 
+</div>
 <div id="app">
-    <div id="test" style="height: 100px; width: 100px; overflow: auto">
-        拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
 
-    </div>
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
         {{-- route link block --}}
         <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
