@@ -9,7 +9,17 @@ fabu = Vue.component('kaochang', function (success, error) {
             data(){
                 return {
                     jiazai:true,
-                    kaochang:{}
+                    kaochang:{},
+                    itemStyleFinish : {
+                        'float': 'right',
+                        'margin-right': '6px',
+                        'color': '#8f8f94'
+                    },
+                    itemStyleUnFinish : {
+                        'float': 'right',
+                        'margin-right': '6px',
+                        'color': '#FFFFFF'
+                    },
                 }
             },
             methods:{

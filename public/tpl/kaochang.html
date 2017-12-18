@@ -1,15 +1,10 @@
 <div>
-    <template v-for="(item, key) in kaochang">
+    <template v-for="(item, key) in finish">
         <!-- 考试完成 -->
-    <div class="kb-info" style="margin-top: 54px;">
-        <p class="kb-info-name">{{ item.name }}<a style="float: right;margin-right: 6px;color: #8f8f94;">考场:{{ item.changci }}</a></p>
+    <div :class="item.finish ? 'kb-info-ing' : 'kb-info'" style="margin-top: 54px;">
+        <p class="kb-info-name">{{ item.name }}<a style="">考场:{{ item.changci }}</a></p>
         <p class="kb-info-detail">时间：{{ item.shijian }}<a style="float: right;margin-right: 6px;color: #8f8f94;">座位号:{{ item.zuoweihao }}</a></p>
-        <img src="/public/wx/img/wancheng.png" class="wc"/>
-    </div>
-        <!-- 为考完 -->
-    <div class="kb-info-ing">
-        <p class="kb-info-name-ing">中国近代史纲要<a style="float: right;margin-right: 6px;color: #FFFFFF;">考场:主0302</a></p>
-        <p class="kb-info-detail-ing">时间：2017-12-08 08:40-10:40<a style="float: right;margin-right: 6px;color: #FFFFFF;">座位号:27号</a></p>
+        <img src="/public/wx/img/wancheng.png" class="wc" v-show="item.finish"/>
     </div>
 
     </template>

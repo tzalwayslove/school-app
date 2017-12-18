@@ -132,22 +132,13 @@ class UserController extends Controller
                 'result' => new Result(false, $e->getMessage() . '!')
             ]);
         }
-        $finish = [];
-        $unfinished = [];
         $now = time();
         foreach($data as $item){
-            $startTime = strtotime($item->shijian);
-            if($now > $startTime){
-                $finish[] = $item;
-            }else{
-                $unfinished[] = $item;
-            }
+            $item->finish = $now > $item->shijian;
         }
-
         return response([
             'result' => new Result(true),
-            'finish' => $finish,
-            'unfinished'=> $unfinished
+            'kaochang' => $data
         ]);
     }
 
