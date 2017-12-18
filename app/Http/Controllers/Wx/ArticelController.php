@@ -12,6 +12,7 @@ class ArticelController extends Controller
 {
     public function index(Request $request)
     {
+        return [$request->input('click_count')];
         if($request->input('click_count') == 1){
             $list = Articel::with('getComment')->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")->orderBy('zan', 'desc')->where('show', '1')->paginate(20);
         }else{
