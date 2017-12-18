@@ -26,7 +26,6 @@ class Login extends Controller
             'avatar'=>$user->avatar,
             'sex'=>$user->original['sex']
         ]);
-        dd($local_user);
         session(['user'=>$local_user]);
 
         return redirect(session('tar_get', url('/articel')));
