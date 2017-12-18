@@ -1,28 +1,27 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-cn">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>遇见</title>
-    <script src="/public/wx/js/mui.min.js"></script>
-    <link href="/public/wx/css/mui.css" rel="stylesheet"/>
-    <link href="/public/wx/css/index.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-        mui.init();
-    </script>
+    <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
+    <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
+    <title></title>
 </head>
 <body>
-<div id="app"
-     style="margin-top: 54px;"
->
+
+<div style="margin-top: 54px;" id="app">
     <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
 </div>
-<script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
+
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
 
+<script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
 <script type="text/javascript">
     $(function () {
         axios.defaults.baseURL = 'http://school.sz25.net';
@@ -50,3 +49,4 @@
 </script>
 </body>
 </html>
+
