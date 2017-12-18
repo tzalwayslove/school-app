@@ -15,7 +15,7 @@ class ArticelController extends Controller
         if($request->input('click_count') == 1){
             DB::enableQueryLog();
             $list = Articel::with('getComment')->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")->orderBy('zan', 'desc')->where('show', '1')->paginate(20);
-            return DB::getQueryLog();
+//            return DB::getQueryLog();
         }else{
             $list = Articel::with('getComment')->orderBy('created_at', 'desc')->orderBy('click_count', 'desc')->where('show', '1')->paginate(20);
         }
