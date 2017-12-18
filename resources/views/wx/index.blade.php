@@ -29,18 +29,18 @@
         拉斯看到放假啦速度快发乐山大佛看
 
     </div>
-    <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
+    {{--<nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">--}}
         {{-- route link block --}}
-        <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
-            <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
-        </router-link>
-        <router-link class="mui-tab-item" to="/fabu">
-            <img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">
-        </router-link>
-        <router-link class="mui-tab-item" to="/wode">
-            <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
-        </router-link>
-    </nav>
+        {{--<router-link class="mui-tab-item mui-active mui-active" to="/tiezi">--}}
+            {{--<img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">--}}
+        {{--</router-link>--}}
+        {{--<router-link class="mui-tab-item" to="/fabu">--}}
+            {{--<img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">--}}
+        {{--</router-link>--}}
+        {{--<router-link class="mui-tab-item" to="/wode">--}}
+            {{--<img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">--}}
+        {{--</router-link>--}}
+    {{--</nav>--}}
     <div class="mui-content">
         {{-- route main --}}
         <router-view></router-view>
