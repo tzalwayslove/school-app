@@ -39,6 +39,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         }
                     }).then(function (res) {
                         this.load = false;
+                        console.log(this.load);
                         if(type == 1){
                             $this.tiezi = $this.tiezi.concat(res.data.list.data);
                         }else{
