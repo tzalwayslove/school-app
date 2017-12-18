@@ -4,14 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>遇见</title>
     <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>
+    <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
+    <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
+    <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
     <link href="{{ asset('public/wx/css/mui.css') }}" rel="stylesheet"/>
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
 </head>
 <body>
 <div id="#app">
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
+        {{-- route link block --}}
         <a class="mui-tab-item mui-active mui-active" href="#tabbar1">
             <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
         </a>
@@ -23,7 +28,7 @@
         </a>
     </nav>
     <div class="mui-content">
-
+        {{-- route main --}}
         <div id="tabbar1" class="mui-control-content mui-active">
             <div id="segmentedControl" class="mui-segmented-control">
                 <div style="padding: 20px 40px;">
@@ -35,6 +40,7 @@
             <div>
                 <div id="item1" class="mui-control-content mui-active">
                     <div class="mui-content-padded">
+                        {{-- foreach --}}
                         <div class="yjbox">
                             <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
                             <p class="yjbox-tl">某同学·男 <a
@@ -51,70 +57,7 @@
                                 <p class="icon-num">10</p>
                             </div>
                         </div>
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·男 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·男 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·男 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·男 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
+                        {{-- endforeach--}}
                     </div>
                 </div>
             </div>
@@ -215,5 +158,56 @@
         </div>--}}
     </div>
 </div>
+<script src="{{ asset('public/vue/index.js') }}"></script>
+<script src="{{ asset('public/vue/fabu.js') }}"></script>
+<script src="{{ asset('public/vue/wode.js') }}"></script>
+<script src="{{ asset('public/vue/pinglun.js') }}"></script>
+<script>
+    $(function () {
+        axios.defaults.baseURL = 'http://school.sz25.net';
+        axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
+    });
+    const routes = [
+        {path: '/tiezi', component: tiezi, name: 'tiezi'},
+        {path: '/fabu', component: fabu, name: 'fabu'},
+        {path: '/wode', component: wode, name: 'wode'},
+        {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
+    ];
+
+    const router = new VueRouter({
+        routes: routes,
+        default: 'tiezi'
+    });
+
+    data = {
+        nav_active: 'tiezi',
+        tiezi: [],
+        user: {}
+    };
+
+    router.beforeEach((to, from, next) => {
+        switch (to.name) {
+            case "pinglun":
+                data.nav_active = 'tiezi';
+                break;
+            default:
+                console.log(to.name);
+                data.nav_active = to.name;
+        }
+        next();
+    });
+
+    vue = new Vue({
+        router: router,
+        data: data,
+        load: true,
+        methods: {},
+        mounted: function () {
+            router.push({
+                path: '/tiezi'
+            })
+        }
+    }).$mount('#app');
+</script>
 </body>
 </html>
