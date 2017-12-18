@@ -1,16 +1,12 @@
 <div id="tabbar2" class="mui-control-content" style="display: block">
     <div id="" class="box2">
-        <p class="fb-title">发布  <span style="float: right;margin-right: 10px;">匿名</span>
-        <div style="float: right; margin-top: -30PX;margin-right: 50px;">
-            <div class="mui-switch mui-active">
-                <div class="mui-switch-handle"></div>
-            </div>
-        </div>
+        <p class="fb-title">发布
+            <span style="float: right;margin-right: 10px;">匿名<input type="checkbox" name="niming"></span>
         </p>
-        <textarea rows="5" maxlength="150" placeholder="写下你想说的话"></textarea>
+        <textarea rows="5" maxlength="150" placeholder="写下你想说的话" v-model="content"></textarea>
         <p class="fb-sub">
             <input type="submit" value="取消" />
-            <input type="submit" value="发布" />
+            <input type="submit" value="发布"  @click="send"/>
         </p>
     </div>
 </div>

@@ -14,7 +14,7 @@ fabu = Vue.component('fabu', function (success, error) {
             methods:{
                 send: function(){
                     axios.post('/wx/articel', {
-                        title: this.title.trim(),
+                        title: '',
                         content: this.content.trim()
                     }).then(function(res){
                         if(res.data.result.code == 1){
