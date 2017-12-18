@@ -13,6 +13,7 @@
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
     <link href="{{ asset('public/wx/css/mui.css') }}" rel="stylesheet"/>
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
 </head>
 <body>
 <div id="app">
@@ -131,6 +132,7 @@
 <script src="{{ asset('public/vue/fabu.js') }}"></script>
 <script src="{{ asset('public/vue/wode.js') }}"></script>
 <script src="{{ asset('public/vue/pinglun.js') }}"></script>
+<script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
 <script>
     $(function () {
         axios.defaults.baseURL = 'http://school.sz25.net';
