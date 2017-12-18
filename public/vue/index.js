@@ -110,6 +110,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 }
             },
             mounted (){
+                console.log(this.mui_active);
                 this.getData();
             }
         });
