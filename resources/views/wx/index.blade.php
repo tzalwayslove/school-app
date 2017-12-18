@@ -19,7 +19,7 @@
 <body>
 
 <div id="app">
-    <div id="test" style="height: 100px; width: 100px; overflow: auto">
+    <div id="test" @click="test" style="height: 100px; width: 100px; overflow: auto">
         拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
         拉斯看到放假啦速度快发乐山大佛看
         拉斯看到放假啦速度快发乐山大佛看
@@ -27,20 +27,19 @@
         拉斯看到放假啦速度快发乐山大佛看
         拉斯看到放假啦速度快发乐山大佛看
         拉斯看到放假啦速度快发乐山大佛看
-
     </div>
-    {{--<nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">--}}
-        {{-- route link block --}}
-        {{--<router-link class="mui-tab-item mui-active mui-active" to="/tiezi">--}}
-            {{--<img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">--}}
-        {{--</router-link>--}}
-        {{--<router-link class="mui-tab-item" to="/fabu">--}}
-            {{--<img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">--}}
-        {{--</router-link>--}}
-        {{--<router-link class="mui-tab-item" to="/wode">--}}
-            {{--<img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">--}}
-        {{--</router-link>--}}
-    {{--</nav>--}}
+    <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
+         route link block
+        <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
+            <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
+        </router-link>
+        <router-link class="mui-tab-item" to="/fabu">
+            <img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">
+        </router-link>
+        <router-link class="mui-tab-item" to="/wode">
+            <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
+        </router-link>
+    </nav>
     <div class="mui-content">
         {{-- route main --}}
         <router-view></router-view>
@@ -146,9 +145,6 @@
 <script src="{{ asset('public/vue/pinglun.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
 <script>
-    $('#test').on('click', function(){
-        console.log($(this).scrollTop());
-    });
 </script>
 <script>
     $(function () {
@@ -156,17 +152,17 @@
         axios.defaults.baseURL = 'http://www.school.dy';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
 
-//        const routes = [
-//            {path: '/tiezi', component: tiezi, name: 'tiezi'},
-//            {path: '/fabu', component: fabu, name: 'fabu'},
-//            {path: '/wode', component: wode, name: 'wode'},
-//            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
-//        ];
+        const routes = [
+            {path: '/tiezi', component: tiezi, name: 'tiezi'},
+            {path: '/fabu', component: fabu, name: 'fabu'},
+            {path: '/wode', component: wode, name: 'wode'},
+            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
+        ];
 
-//        const router = new VueRouter({
-//            routes: routes,
-//            default: 'tiezi'
-//        });
+        const router = new VueRouter({
+            routes: routes,
+            default: 'tiezi'
+        });
 
         data = {
             nav_active: 'tiezi',
@@ -186,12 +182,16 @@
 //        });
 
         vue = new Vue({
-//            router: router,
+            router: router,
+//            ele:'#app',
             data: data,
             load: true,
             methods: {
                 onClick: function(){
                     console.log(2222222222);
+                },
+                test:function(){
+                    console.log($('#test').scrollTop());
                 }
             },
             mounted: function () {
