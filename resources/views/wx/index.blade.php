@@ -29,6 +29,7 @@
         </router-link>
     </nav>
     <div class="mui-content">
+        <span class="mui-spinner mui-spinner-white"></span>
         {{-- route main --}}
         <router-view></router-view>
 
