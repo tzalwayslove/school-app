@@ -9,7 +9,7 @@ fabu = Vue.component('chengji', function (success, error) {
             data(){
                 return {
                     jiazai:true,
-                    chengji:{}
+                    chengji:[]
                 }
             },
             methods:{
