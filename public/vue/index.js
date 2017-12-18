@@ -67,6 +67,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.styles.transform = 'translateY(0px)';
                 },
                 onScroll: function (e) {
+                    console.log($('#scrollPanel')[0].clientHeight / 3 && this.load);
                     let bottom = $('#scrollPanel')[0].scrollHeight - $('#scrollPanel')[0].scrollTop - $('#scrollPanel')[0].offsetHeight
                     if (this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load) {
                         this.page++;
