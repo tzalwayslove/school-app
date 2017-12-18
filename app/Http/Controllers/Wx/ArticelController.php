@@ -12,7 +12,7 @@ class ArticelController extends Controller
     public function index(Request $request)
     {
         if($request->input('click_count', false)){
-            $list = Articel::with('getComment')->orderBy('click_count', 'desc')->orderBy('created_at', 'desc')->where('show', '1')->paginate(20);
+            $list = Articel::with('getComment')->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")->orderBy('zan', 'desc')->where('show', '1')->paginate(20);
         }else{
             $list = Articel::with('getComment')->orderBy('created_at', 'desc')->orderBy('click_count', 'desc')->where('show', '1')->paginate(20);
         }
@@ -20,7 +20,6 @@ class ArticelController extends Controller
         foreach($list as $item){
             $item->commentCount = count($item->getComment);
         }
-
         return response(['result'=>new Result(true), 'list'=> $list]);
     }
 
@@ -33,7 +32,7 @@ class ArticelController extends Controller
             return response(['result'=>new Result(false, '内容必须填写')]);
         }
 
-        Articel::newArticel($title, $content);
+        Articel::newArticel($title, $content, 0, $request->input('niming', false));
 
         return response(['result'=>new Result(true)]);
 

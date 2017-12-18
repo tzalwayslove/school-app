@@ -29,14 +29,14 @@ class Articel extends Model
         return $this->hasMany('App\Model\Comment', 'articel', 'id');
     }
 
-    public static function newArticel($title, $content, $cate = 0)
+    public static function newArticel($title, $content, $cate = 0, $niming = false)
     {
-
 
         $articel = new Articel();
         $articel->title = $title;
         $articel->content = $content;
         $articel->cate = $cate;
+        $articel->niming = $niming ? 1 :0;
         $articel->save();
     }
 

@@ -8,13 +8,16 @@ fabu = Vue.component('fabu', function (success, error) {
             data(){
                 return {
                     title:'',
-                    content:''
+                    content:'',
+                    niming:false
                 }
             },
             methods:{
                 send: function(){
+                    $this = this;
                     axios.post('/wx/articel', {
                         title: '',
+                        niming:$this.niming,
                         content: this.content.trim()
                     }).then(function(res){
                         if(res.data.result.code == 1){

@@ -46,7 +46,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         }
                         $this.load = false;
                     });
-
                 },
                 touchStart: function (e) {
                     this.move = 0;
@@ -59,13 +58,12 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.styles.transform = 'translateY(' + this.move + 'px)';
                 },
                 touchEnd: function (e) {
-
-
                     if (this.move > 75) {
                         this.page = 1;
                         this.tiezi = [];
                         this.getData();
                     }
+
                     this.styles.transition = 'transform 0.5s'
                     this.styles.transform = 'translateY(0px)';
                 },
