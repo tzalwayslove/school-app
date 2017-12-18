@@ -179,7 +179,7 @@
             </a>
             <a href="test-table.html">
                 <div class="md4">
-                    <img src="" class="box2-t-logo2"/>
+                    <img src="{{asset('public/wx/img/icon-kc.png')}}" class="box2-t-logo2"/>
                     <p>考场</p>
                 </div>
             </a>
