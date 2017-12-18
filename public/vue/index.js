@@ -44,7 +44,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                             $this.page = 1;
                             $this.tiezi = res.data.list.data;
                         }
-                        this.load = false;
+                        $this.load = false;
                     });
 
                 },
@@ -71,7 +71,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     if (this.lastBottom > bottom && bottom < $('#scrollPanel')[0].clientHeight / 3 && this.load) {
                         this.page++;
                         this.getData();
-                        this.load = false;
                         this.lastBottom = bottom;
                     }
                 },
