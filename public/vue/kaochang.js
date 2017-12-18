@@ -27,7 +27,7 @@ fabu = Vue.component('kaochang', function (success, error) {
             },
             mounted: function(){
                 $this = this;
-                console.log(this.user);
+
                 axios.get("/api/kaochang?user="+this.user).then(function(res){
                     $this.jiazai = false;
                     if(res.data.result.code == 0){
