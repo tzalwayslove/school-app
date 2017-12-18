@@ -1,5 +1,8 @@
 <div class="weui-tab__panel" id="scrollPanel"
-     @scroll="onScroll($event)"
+     @touchstart="touchStart($event)"
+     @touchmove="touchMove($event)"
+     @touchend="touchEnd($event)"
+     @scroll="onScroll($event)">
 >
     <div class="weui-panel"
          v-for="item in tiezi"
