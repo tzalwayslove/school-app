@@ -12,7 +12,6 @@ class CommentController extends Controller
 {
     public function index(Request $request, $id)
     {
-
         $data = Articel::find($id);
         $data->load(['getComment'=> function($query){
             $query->where('show', 1)->orderBy('created_at', 'asc');
@@ -20,6 +19,7 @@ class CommentController extends Controller
         $data->load('user_account');
         $data->click_count ++;
         $data->save();
+
         return response([
             'result',
             'data'=>$data
