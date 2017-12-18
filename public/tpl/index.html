@@ -1,74 +1,74 @@
-<div class="weui-tab__panel"
-     id="scrollPanel"
-     @touchstart="touchStart($event)"
-     @touchmove="touchMove($event)"
-     @touchend="touchEnd($event)"
-     @scroll="onScroll($event)"
->
-    <div class="weui-panel"
-         v-for="item in tiezi"
-         :key="item.id"
-         :style="styles"
-    >
-        <div class="weui-panel__hd">{{item.title}}</div>
-        <div class="weui-panel__bd">
-            <div class="weui-media-box weui-media-box_text">
-                <p class="weui-media-box__desc"  @click="getComment(item)">{{item.content}}{{item.id}}</p>
-                <ul class="weui-media-box__info">
-                    <li class="weui-media-box__info__meta">{{item.created_at}}</li>
-                    <li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="setZan(item)">
-                        赞({{item.zan || 0}})
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">
-        {{order=='热门' ? '热门' : '最新'}}
-    </div>
-</div>
-
-
-<!--<div id="tabbar1"-->
-     <!--class="mui-control-content mui-active"-->
+<!--<div class="weui-tab__panel"-->
+     <!--id="scrollPanel"-->
+     <!--@touchstart="touchStart($event)"-->
+     <!--@touchmove="touchMove($event)"-->
+     <!--@touchend="touchEnd($event)"-->
      <!--@scroll="onScroll($event)"-->
 <!--&gt;-->
-    <!--<div id="segmentedControl" class="mui-segmented-control">-->
-        <!--<div style="padding: 20px 40px;">-->
-            <!--<a class="mui-control-item mui-active" href="#item1" style="border-radius: 20px 0 0 20px;">最新</a>-->
-            <!--<a class="mui-control-item" href="#item2" style="border-radius: 0 20px 20px 0;">热门</a>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div>-->
-        <!--<div id="item1" class="mui-control-content mui-active"-->
-             <!--v-for="item in tiezi"-->
-             <!--:key="item.id"-->
-        <!--&gt;-->
-            <!--<div class="mui-content-padded"  @scroll="onScroll($event)">-->
-                <!--<div class="yjbox">-->
-                    <!--<img src="/public/wx/img/m-touxiang.png" class="yjbox-img"/>-->
-                    <!--<p class="yjbox-tl">某同学·男 <a-->
-                            <!--style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{item.created_at}}</a></p>-->
-                    <!--<p class="yj-box-main">{{item.content}}</p>-->
-                    <!--<div style="width: 100%;height: 1px;background: #AAAAAA;"></div>-->
-                    <!--<img src="/public/wx/img/icon-point.png" class="imgicon" style="margin-top: 13px;"/>-->
-                    <!--<div style="float: right; margin-right:5px ;">-->
-                        <!--<img src="/public/wx/img/icon-heart.png" class="imgicon"/>-->
-                        <!--<p class="icon-num" @click="setZan(item)">{{item.zan || 0}}</p>-->
-                    <!--</div>-->
-                    <!--<div style="float: right; margin-right:5px ;">-->
-                        <!--<img src="/public/wx/img/icon-chat.png" class="imgicon"/>-->
-                        <!--<p class="icon-num" @click="setZan(item)">{{item.zan || 0}}</p>-->
-                    <!--</div>-->
-                <!--</div>-->
+    <!--<div class="weui-panel"-->
+         <!--v-for="item in tiezi"-->
+         <!--:key="item.id"-->
+         <!--:style="styles"-->
+    <!--&gt;-->
+        <!--<div class="weui-panel__hd">{{item.title}}</div>-->
+        <!--<div class="weui-panel__bd">-->
+            <!--<div class="weui-media-box weui-media-box_text">-->
+                <!--<p class="weui-media-box__desc"  @click="getComment(item)">{{item.content}}{{item.id}}</p>-->
+                <!--<ul class="weui-media-box__info">-->
+                    <!--<li class="weui-media-box__info__meta">{{item.created_at}}</li>-->
+                    <!--<li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="setZan(item)">-->
+                        <!--赞({{item.zan || 0}})-->
+                    <!--</li>-->
+                <!--</ul>-->
             <!--</div>-->
         <!--</div>-->
     <!--</div>-->
-    <!--<div id="loadingToast" v-show="load">-->
-        <!--<div class="weui-mask_transparent"></div>-->
-        <!--<div class="weui-toast">-->
-            <!--<i class="weui-loading weui-icon_toast"></i>-->
-            <!--<p class="weui-toast__content">数据加载中</p>-->
-        <!--</div>-->
+    <!--<div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">-->
+        <!--{{order=='热门' ? '热门' : '最新'}}-->
     <!--</div>-->
 <!--</div>-->
+
+
+<div id="tabbar1"
+           class="mui-control-content mui-active"
+           @scroll="onScroll($event)"
+>
+    <div id="segmentedControl" class="mui-segmented-control">
+        <div style="padding: 20px 40px;">
+            <a class="mui-control-item mui-active" href="#item1" style="border-radius: 20px 0 0 20px;">最新</a>
+            <a class="mui-control-item" href="#item2" style="border-radius: 0 20px 20px 0;">热门</a>
+        </div>
+    </div>
+    <div>
+        <div id="item1" class="mui-control-content mui-active"
+             v-for="item in tiezi"
+             :key="item.id"
+        >
+            <div class="mui-content-padded"  @scroll="onScroll($event)">
+                <div class="yjbox">
+                    <img src="/public/wx/img/m-touxiang.png" class="yjbox-img"/>
+                    <p class="yjbox-tl">某同学·男 <a
+                            style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{item.created_at}}</a></p>
+                    <p class="yj-box-main">{{item.content}}</p>
+                    <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+                    <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin-top: 13px;"/>
+                    <div style="float: right; margin-right:5px ;">
+                        <img src="/public/wx/img/icon-heart.png" class="imgicon"/>
+                        <p class="icon-num" @click="setZan(item)">{{item.zan || 0}}</p>
+                    </div>
+                    <div style="float: right; margin-right:5px ;">
+                        <img src="/public/wx/img/icon-chat.png" class="imgicon"/>
+                        <p class="icon-num" @click="setZan(item)">{{item.zan || 0}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loadingToast" v-show="load">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content">数据加载中</p>
+        </div>
+    </div>
+</div>
