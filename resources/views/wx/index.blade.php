@@ -6,7 +6,7 @@
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>遇见</title>
-        <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>
+    <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
@@ -21,15 +21,14 @@
         <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
             <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
         </router-link>
-        <router-link class="mui-tab-item" href="/fabu">
+        <router-link class="mui-tab-item" to="/fabu">
             <img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">
         </router-link>
-        <router-link class="mui-tab-item" href="/wode">
+        <router-link class="mui-tab-item" to="/wode">
             <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
         </router-link>
     </nav>
     <div class="mui-content">
-        <span class="mui-spinner mui-spinner-white"></span>
         {{-- route main --}}
         <router-view></router-view>
 
