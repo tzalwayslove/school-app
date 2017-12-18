@@ -16,6 +16,7 @@
 <div id="app"
      style="margin-top: 54px;"
 >
+    @php(dd($request->input('user')))
     <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
 </div>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
