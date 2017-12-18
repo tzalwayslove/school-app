@@ -63,8 +63,8 @@ pinglun = Vue.component('pinglun', function (success, error) {
 
                     axios.get('wx/comment/'+ id).then(function(res){
                         $this.articelData = res.data.data;
+                        console.log($this.articelData);
                         $this.list = res.data.data.get_comment;
-                        console.log($this.list[0].get_user);
                         if($this.list.length == 0){
 
                         }
