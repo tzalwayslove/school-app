@@ -29,7 +29,7 @@
             <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
         </router-link>
     </nav>
-    <div class="mui-content">
+    <div class="mui-content" @scroll="onScroll($event)">
         {{-- route main --}}
         <router-view></router-view>
 
@@ -171,7 +171,11 @@
             router: router,
             data: data,
             load: true,
-            methods: {},
+            methods: {
+                onScroll: function(){
+                    console.log(2222222222);
+                }
+            },
             mounted: function () {
                 router.push({
                     path: '/tiezi'
