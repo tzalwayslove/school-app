@@ -38,9 +38,9 @@ tiezi = Vue.component('tiezi', function (success, error) {
                             click_count: this.order == '热门' ? 0 : 1
                         }
                     }).then(function (res) {
-                        if(type == 1){
+                        if (type == 1) {
                             $this.tiezi = $this.tiezi.concat(res.data.list.data);
-                        }else{
+                        } else {
                             $this.page = 1;
                             $this.tiezi = res.data.list.data;
                         }
@@ -73,9 +73,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.styles.transform = 'translateY(0px)';
                 },
                 onScroll: function (e) {
-
                     let bottom = $('#tabbar1')[0].scrollHeight - $('#tabbar1')[0].scrollTop - $('#tabbar1')[0].offsetHeight;
-                    console.log($('#tabbar1')[0].scrollTop);
+                    console.log(this.getElementTop($('#tabbar1')[0]));
                     console.log('bottom');
                     if (this.lastBottom > bottom && bottom < $('#tabbar1')[0].clientHeight / 3 && this.load) {
                         this.page++;
@@ -103,6 +102,17 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 orderConvert(){
                     this.order = this.order == '热门' ? '最新' : '热门';
                     this.getData(0);
+                },
+                getElementTop: function (element) {
+                    actualTop = element.offsetTop;
+                    current = element.offsetParent;
+
+                    while (current !== null) {
+                        actualTop += current.offsetTop;
+                        current = current.offsetParent;
+                    }
+
+                    return actualTop;
                 }
             },
             mounted (){
