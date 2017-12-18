@@ -62,7 +62,6 @@
 
 <div style="margin-top: 54px;" id="app">
     <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
-
 </div>
 
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
