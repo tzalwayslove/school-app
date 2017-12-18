@@ -21,7 +21,7 @@
 <div id="app">
 
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
-         route link block
+         {{--route link block--}}
         <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
             <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
         </router-link>
@@ -34,15 +34,7 @@
     </nav>
     <div class="mui-content">
         {{-- route main --}}
-        <div id="test" @click="test" style="height: 100px; width: 100px; overflow: auto">
-            拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
-            拉斯看到放假啦速度快发乐山大佛看
-            拉斯看到放假啦速度快发乐山大佛看
-            拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
-            拉斯看到放假啦速度快发乐山大佛看
-            拉斯看到放假啦速度快发乐山大佛看
-            拉斯看到放假啦速度快发乐山大佛看
-        </div>
+
         <router-view></router-view>
 
         {{--<div id="tabbar2" class="mui-control-content">
@@ -190,9 +182,7 @@
                 onClick: function(){
                     console.log(2222222222);
                 },
-                test:function(){
-                    console.log($('#test').scrollTop());
-                }
+
             },
             mounted: function () {
                 router.push({

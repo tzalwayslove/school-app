@@ -28,11 +28,21 @@
     <!--</div>-->
 <!--</div>-->
 
-
+<!--<div id="test" @click="test" style="height: 100px; width: 100px; overflow: auto">
+    拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+    拉斯看到放假啦速度快发乐山大佛看
+</div>-->
 <div id="tabbar1"
            class="mui-control-content mui-active"
            @touchmove="onScroll($event)"
+     @click="test"
      style="overflow: auto;"
+
 >
     <div id="segmentedControl" class="mui-segmented-control">
         <div style="padding: 20px 40px;">
@@ -44,7 +54,7 @@
         <div id="item1" class="mui-control-content mui-active"
              v-for="item in tiezi"
              :key="item.id"
-        >
+        &gt;
             <div class="mui-content-padded"  @scroll="onScroll($event)">
                 <div class="yjbox">
                     <img src="/public/wx/img/m-touxiang.png" class="yjbox-img"/>

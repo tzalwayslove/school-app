@@ -72,6 +72,9 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.styles.transition = 'transform 0.5s'
                     this.styles.transform = 'translateY(0px)';
                 },
+                test: function(){
+                    console.log($('#test').scrollTop());
+                },
                 onScroll: function (e) {
                     let bottom = $('#tabbar1')[0].scrollHeight - $('#tabbar1')[0].scrollTop - $('#tabbar1')[0].offsetHeight;
                     console.log(new Date().getTime());
