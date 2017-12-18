@@ -44,8 +44,6 @@
         <div id="item1" class="mui-control-content mui-active"
              v-for="item in tiezi"
              :key="item.id"
-
-
         >
             <div class="mui-content-padded" >
                 <div class="yjbox">
@@ -56,12 +54,12 @@
                     <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
                     <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin-top: 13px;"/>
                     <div style="float: right; margin-right:5px ;">
-                        <img src="/public/wx/img/icon-heart.png" class="imgicon"/>
+                        <img src="/public/wx/img/icon-heart.png" class="imgicon" @click="setZan(item)"/>
                         <p class="icon-num" @click="setZan(item)">{{item.zan || 0}}</p>
                     </div>
                     <div style="float: right; margin-right:5px ;">
                         <img src="/public/wx/img/icon-chat.png" class="imgicon"/>
-                        <p class="icon-num" @click="setZan(item)">{{item.zan || 0}}</p>
+                        <p class="icon-num">{{item.commentCount || 0}}</p>
                     </div>
                 </div>
             </div>
