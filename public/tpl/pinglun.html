@@ -2,7 +2,7 @@
     <div class="yjbox">
         <!--:src="articelData.niming != 1 ? articelData.user_account.avatar : '/public/wx/img/m-touxiang.png'"-->
         <img
-             :src="articelData.user_account.avatar"
+             :src="articelData.niming != 1 ? articelData.user_account.avatar : '/public/wx/img/m-touxiang.png'"
              style="border-radius: 50%"
              class="yjbox-img" />
         <p class="yjbox-tl">
