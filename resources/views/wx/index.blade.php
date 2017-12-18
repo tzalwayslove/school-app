@@ -19,7 +19,6 @@
 <body>
 
 <div id="app">
-
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
          {{--route link block--}}
         <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
@@ -159,7 +158,7 @@
         data = {
             nav_active: 'tiezi',
             tiezi: [],
-            user: {}
+            user: '{{ $user->id }}'
         };
 
 //        router.beforeEach((to, from, next) => {

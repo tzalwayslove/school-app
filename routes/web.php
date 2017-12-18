@@ -3,7 +3,7 @@ use EasyWeChat\Foundation\Application;
 
 Route::get('/', function () {
     $user = session('user');
-    return view('wx.index');
+    return view('wx.index', compact('user'));
 })->middleware('wx_login');
 
 Route::get('/s', function(){
