@@ -30,7 +30,7 @@
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
     });
 </script>
-<script src="{{ asset('public/vue/kecheng.js') }}"></script>
+<script src="{{ asset('public/vue/chengji.js') }}"></script>
 <script>
 
     data = {
