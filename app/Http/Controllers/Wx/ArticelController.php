@@ -12,10 +12,15 @@ class ArticelController extends Controller
     public function index(Request $request)
     {
         if($request->input('click_count', false)){
-            $list = Articel::orderBy('click_count', 'desc')->orderBy('created_at', 'desc')->where('show', '1')->paginate(20);
+            $list = Articel::with('getComment')->orderBy('click_count', 'desc')->orderBy('created_at', 'desc')->where('show', '1')->paginate(20);
         }else{
-            $list = Articel::orderBy('created_at', 'desc')->orderBy('click_count', 'desc')->where('show', '1')->paginate(20);
+            $list = Articel::with('getComment')->orderBy('created_at', 'desc')->orderBy('click_count', 'desc')->where('show', '1')->paginate(20);
         }
+
+        foreach($list as $item){
+            $item->commentCount = count($item->getComment);
+        }
+
         return response(['result'=>new Result(true), 'list'=> $list]);
     }
 
