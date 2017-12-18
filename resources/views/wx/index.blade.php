@@ -19,15 +19,7 @@
 <body>
 
 <div id="app">
-    <div id="test" @click="test" style="height: 100px; width: 100px; overflow: auto">
-        拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-        拉斯看到放假啦速度快发乐山大佛看
-    </div>
+
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
          route link block
         <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
@@ -42,6 +34,15 @@
     </nav>
     <div class="mui-content">
         {{-- route main --}}
+        <div id="test" @click="test" style="height: 100px; width: 100px; overflow: auto">
+            拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
+            拉斯看到放假啦速度快发乐山大佛看
+            拉斯看到放假啦速度快发乐山大佛看
+            拉斯看到放假啦速度快发乐山大佛看拉斯看到放假啦速度快发乐山大佛看
+            拉斯看到放假啦速度快发乐山大佛看
+            拉斯看到放假啦速度快发乐山大佛看
+            拉斯看到放假啦速度快发乐山大佛看
+        </div>
         <router-view></router-view>
 
         {{--<div id="tabbar2" class="mui-control-content">
@@ -144,8 +145,7 @@
 <script src="{{ asset('public/vue/wode.js') }}"></script>
 <script src="{{ asset('public/vue/pinglun.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
-<script>
-</script>
+
 <script>
     $(function () {
 //        axios.defaults.baseURL = 'http://school.sz25.net';
