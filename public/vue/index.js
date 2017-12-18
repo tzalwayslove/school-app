@@ -15,7 +15,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     styles: {
                         transform: 'translateY(0px)'
                     },
-                    order: '最新',
+                    mui_active: 'remen',
                     remen: {
                         'background': 'rgba(255, 80, 80, 0.8)',
                         'color': '#fff'
@@ -35,7 +35,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         params: {
                             cate: 0,
                             page: this.page,
-                            click_count: this.order == '热门' ? 0 : 1
+                            click_count: this.order == 'remen' ? 0 : 1
                         }
                     }).then(function (res) {
                         if (type == 1) {
@@ -94,7 +94,6 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     item.zanLog = !!!item.zanLog;
                 },
                 orderConvert(){
-                    this.order = this.order == '热门' ? '最新' : '热门';
                     this.getData(0);
                 },
                 getElementTop: function (element) {
