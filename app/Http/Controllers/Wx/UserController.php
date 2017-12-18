@@ -91,7 +91,6 @@ class UserController extends Controller
     //课程表
     public function kecheng(Request $request)
     {
-        return [$request->input('user')];
         $user = User::find($request->input('user'));
 
         if (!$user) {
