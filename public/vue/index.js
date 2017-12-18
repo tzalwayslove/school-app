@@ -38,15 +38,15 @@ tiezi = Vue.component('tiezi', function (success, error) {
                             click_count: this.order == '热门' ? 0 : 1
                         }
                     }).then(function (res) {
+                        this.load = false;
                         if(type == 1){
                             $this.tiezi = $this.tiezi.concat(res.data.list.data);
                         }else{
                             $this.page = 1;
                             $this.tiezi = res.data.list.data;
                         }
-
                     });
-                    this.load = false;
+
                 },
                 touchStart: function (e) {
                     this.move = 0;
