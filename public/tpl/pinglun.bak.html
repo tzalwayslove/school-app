@@ -1,0 +1,48 @@
+<div class="weui-tab__panel"
+     id="scrollPanel"
+>
+    <div class="page js_show" @click.capture="hide_input">
+        <div class="page__hd">
+            <h1 class="page__title">{{articelData.title}}</h1>
+        </div>
+        <div class="page__bd">
+            <article class="weui-article">
+                <section>
+                    <section>
+                        <p>
+                            {{articelData.content}}
+                        </p>
+                    </section>
+                </section>
+            </article>
+        </div>
+        <div class="weui-form-preview"
+             v-for="(item, index) in list"
+             :key="item.id"
+             @click.capture="hide_input"
+        >
+            <div class="weui-form-preview__hd">
+                <div class="weui-form-preview__item">
+
+                </div>
+            </div>
+            <div class="weui-form-preview__bd">
+                <div class="weui-form-preview__item">
+                    <label class="weui-form-preview__label">{{index + 1}}楼：</label>
+                    <span class="weui-form-preview__value">{{item.content}}</span>
+                </div>
+            </div>
+            <div class="weui-form-preview__ft">
+                <a class="weui-form-preview__btn weui-form-preview__btn_primary" @click.prevent="setZan(item)">赞（{{item.zan}}）</a>
+            </div>
+        </div>
+        <div style="height: 50px;"></div>
+    </div>
+    <div id="add_pinglun_show" @click="addpinglun" v-show="jiahao">
+        +
+    </div>
+    <div id="add_pinglun" style="display: none;" v-show="pinglun_input">
+        <input type="text" placeholder="请输入评论内容" v-model="comment" autofocus>
+        <button @click="send">发送↑</button>
+    </div>
+</div>
