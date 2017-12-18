@@ -173,7 +173,6 @@
 
         vue = new Vue({
             router: router,
-//            ele:'#app',
             data: data,
             load: true,
             methods: {
