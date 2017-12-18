@@ -22,7 +22,7 @@ class Login extends Controller
             'account'=>'',
             'password'=>'',
             'name'=>'',
-            'nick_name'=>$user->nick_name,
+            'nick_name'=>$user->nickname,
             'avatar'=>$user->avatar,
             'sex'=>$user->original['sex']
         ]);
