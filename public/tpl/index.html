@@ -1,34 +1,3 @@
-<!--<div class="weui-tab__panel"-->
-     <!--id="scrollPanel"-->
-     <!--@touchstart="touchStart($event)"-->
-     <!--@touchmove="touchMove($event)"-->
-     <!--@touchend="touchEnd($event)"-->
-     <!--@scroll="onScroll($event)"-->
-<!--&gt;-->
-    <!--<div class="weui-panel"-->
-         <!--v-for="item in tiezi"-->
-         <!--:key="item.id"-->
-         <!--:style="styles"-->
-    <!--&gt;-->
-        <!--<div class="weui-panel__hd">{{item.title}}</div>-->
-        <!--<div class="weui-panel__bd">-->
-            <!--<div class="weui-media-box weui-media-box_text">-->
-                <!--<p class="weui-media-box__desc"  @click="getComment(item)">{{item.content}}{{item.id}}</p>-->
-                <!--<ul class="weui-media-box__info">-->
-                    <!--<li class="weui-media-box__info__meta">{{item.created_at}}</li>-->
-                    <!--<li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="setZan(item)">-->
-                        <!--赞({{item.zan || 0}})-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">-->
-        <!--{{order=='热门' ? '热门' : '最新'}}-->
-    <!--</div>-->
-<!--</div>-->
-
-
 <div id="tabbar1"
            class="mui-control-content mui-active"
      @scroll="onScroll($event)"
@@ -55,8 +24,8 @@
                         <template v-if="item.niming != 1">
                             <span style="height: 1em;">{{ item.user_account.nick_name}}</span>
                         </template>
-                        <a
-                            style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{item.created_at}}</a></p>
+                        <a style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{item.created_at}}</a>
+                    </p>
                     <p class="yj-box-main">{{item.content}}</p>
                     <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
                     <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin-top: 13px;"/>

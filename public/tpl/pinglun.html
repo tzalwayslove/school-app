@@ -1,6 +1,6 @@
+<!--
 <div class="weui-tab__panel"
      id="scrollPanel"
-
 >
     <div class="page js_show" @click.capture="hide_input">
         <div class="page__hd">
@@ -45,5 +45,59 @@
     <div id="add_pinglun" style="display: none;" v-show="pinglun_input">
         <input type="text" placeholder="请输入评论内容" v-model="comment" autofocus>
         <button @click="send">发送↑</button>
+    </div>
+</div>-->
+
+<div class="mui-content-padded">
+    <div class="yjbox">
+        <img
+             :src="articelData.niming != 1 ? articelData.user_account.avatar : '/public/wx/img/m-touxiang.png'" class="yjbox-img" />
+        <p class="yjbox-tl">
+            <template v-if="item.niming == 1">
+                <span>某同学·男</span>
+            </template>
+            <template v-if="item.niming != 1">
+                <span style="height: 1em;">{{ articelData.user_account.nick_name }}</span>
+            </template>
+            <a style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{ {{ articelData.created_at }} }}</a></p>
+        <p class="yj-box-main">{{articelData.content}}</p>
+        <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+        <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin-top: 13px;"/>
+        <div style="float: right; margin-right:5px ;">
+            <img src="/public/wx/img/icon-heart.png" class="imgicon"  /><p class="icon-num">{{ articelData.commentCount }}</p>
+        </div>
+        <div style="float: right; margin-right:5px ;">
+            <img src="/public/wx/img/icon-chat.png" class="imgicon" /><p class="icon-num">{{ articelData.zan }}</p>
+        </div>
+    </div>
+    <div class="hfbox"
+         v-for="(item, index) in list"
+         :key="item.id" >
+        <div>
+            <img
+                    :src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'"
+                    class="hfbox-img" />
+            <p class="hfbox-tl">
+                <template v-if="item.niming != 1">
+                    {{item.user_account.nick_name}}
+                </template>
+                <template v-if="item.niming == 1">
+                    某同学·男
+                </template>
+                <a style="font-size: 12px;margin-right: 5px;color: #a7a7a7;">
+                    {{ item.created_at }}
+                </a>
+                <a  class="sm-f">
+                    <span  class="sm-f-num">{{ item.zan }}</span>
+                    <img src="/public/wx/img/smile-face.png" id="heart" class="sm-f-img">
+                </a>
+            </p>
+            <p class="hf-box-main">{item.content}}</p>
+        </div>
+    </div>
+
+    <div class="hf-input">
+        <input type="text" class="ht-inp ht-inp-t" />
+        <input type="button" class="ht-inp ht-inp-s" value="发送"/>
     </div>
 </div>
