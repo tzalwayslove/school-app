@@ -161,7 +161,7 @@
                     data.nav_active = 'tiezi';
                     break;
                 default:
-                    console.log(to.name);
+                    console.log(to);
                     data.nav_active = to.name;
             }
             next();
