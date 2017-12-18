@@ -6,7 +6,7 @@
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>遇见</title>
-    {{--    <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>--}}
+        <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
