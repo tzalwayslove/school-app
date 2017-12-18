@@ -123,6 +123,7 @@ class UserController extends Controller
         }
         $loginName = $user->account;
         $password = $user->password;
+
         try {
             $kaochang = new Kaochang($loginName, $password);
             $data = $kaochang->getQueryData();
@@ -131,9 +132,22 @@ class UserController extends Controller
                 'result' => new Result(false, $e->getMessage() . '!')
             ]);
         }
+        $finish = [];
+        $unfinished = [];
+        $now = time();
+        foreach($data as $item){
+            $startTime = strtotime($item->shijian);
+            if($now > $startTime){
+                $finish[] = $item;
+            }else{
+                $unfinished[] = $item;
+            }
+        }
+
         return response([
             'result' => new Result(true),
-            'kaochang' => $data
+            'finish' => $finish,
+            'unfinished'=> $unfinished
         ]);
     }
 
