@@ -307,3 +307,6 @@ input[type="submit"]:hover{
 .mt10{
 	margin-top: 10px;
 }
+.weui-toast__content{
+	color: #FFF;
+ }
