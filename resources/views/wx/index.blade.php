@@ -29,7 +29,7 @@
             <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
         </router-link>
     </nav>
-    <div class="mui-content" @click="onClick($event)">
+    <div class="mui-content">
         {{-- route main --}}
         <router-view></router-view>
 
