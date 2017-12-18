@@ -161,16 +161,16 @@
             user: '{{ $user->id }}'
         };
 
-//        router.beforeEach((to, from, next) => {
-//            switch (to.name) {
-//                case "pinglun":
-//                    data.nav_active = 'tiezi';
-//                    break;
-//                default:
-//                    data.nav_active = to.name;
-//            }
-//            next();
-//        });
+        router.beforeEach((to, from, next) => {
+            switch (to.name) {
+                case "pinglun":
+                    data.nav_active = 'tiezi';
+                    break;
+                default:
+                    data.nav_active = to.name;
+            }
+            next();
+        });
 
         vue = new Vue({
             router: router,
