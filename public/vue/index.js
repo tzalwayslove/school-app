@@ -35,7 +35,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         params: {
                             cate: 0,
                             page: this.page,
-                            click_count: this.order == 'remen' ? 0 : 1
+                            click_count: this.mui_active == 'remen' ? 0 : 1
                         }
                     }).then(function (res) {
                         if (type == 1) {
@@ -94,6 +94,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     item.zanLog = !!!item.zanLog;
                 },
                 orderConvert(){
+                    this.mui_active == 'remen'? 'zuixin' : 'remen';
                     this.getData(0);
                 },
                 getElementTop: function (element) {
