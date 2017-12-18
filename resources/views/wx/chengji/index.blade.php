@@ -14,9 +14,7 @@
     </script>
 </head>
 <body>
-<div id="app"
-     style="margin-top: 54px;"
->
+<div id="app">
     <Chengji user="{{$user}}"/>
 </div>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
