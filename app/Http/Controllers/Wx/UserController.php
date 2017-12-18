@@ -17,7 +17,6 @@ class UserController extends Controller
     //当前成绩
     public function nowChengji(Request $request)
     {
-
         $user = User::find($request->input('user'));
         if (!$user) {
             return response([
@@ -27,9 +26,23 @@ class UserController extends Controller
         $login_name = $user->account;
         $password = $user->password;
         try {
-
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->getChengji();
+
+            foreach($res as $chengji){
+
+                if($chengji->chengji >= 90 || strpos('优', $chengji->chengji) !== false){
+                    $chengji->jidian = 4;
+                }else if($chengji->chengji >= 80 || strpos('良', $chengji->chengji) || strpos('好', $chengji->chengji) !== false){
+                    $chengji->jidian = 3;
+                }else if($chengji->chengji >= 70 || strpos('中', $chengji->chengji) !== false){
+                    $chengji->jidian = 2;
+                }else if($chengji->chengji >= 60 || $chengji->chengji == '及格'){
+                    $chengji->jidian = 1;
+                }else{
+                    $chengji->jidian = 0;
+                }
+            }
 
             return response([
                 'result' => new Result($res),
@@ -59,6 +72,8 @@ class UserController extends Controller
         try {
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->all();
+
+
 
             return response([
                 'result' => new Result($res),
@@ -142,5 +157,32 @@ class UserController extends Controller
                 'result'=>new Result(false, $e->getMessage())
             ];
         }
+    }
+
+    //绑定
+    public function bangding(Request $request)
+    {
+        $account = $request->input('account', false);
+        $password = $request->input('password', false);
+
+        if(!$account || !$password){
+            return response()->json([
+                'result'=>new Result(false, '用户名或密码不能为空')
+            ]);
+        }
+        $user = session('local_user');
+
+        User::where('account', $account)->update([
+            'account'=>'',
+            'password'=>''
+        ]);
+
+        $user -> account = $account;
+        $user -> passowrd = $password;
+        $user -> save();
+
+        return response()->json([
+            'result'=>new Result(true)
+        ]);
     }
 }

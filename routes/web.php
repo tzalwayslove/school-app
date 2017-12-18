@@ -43,9 +43,11 @@ Route::get('test', function(){
      /*$pingjiao = new \App\Model\Dom\Pingjiao('201723045019', 'smyqueen980818');
      $pingjiao->pingjiao();*/
 
-     $chengji = new \App\Model\Dom\Chengji('201637025002', 'liuxuemin123');
+     /*$chengji = new \App\Model\Dom\Chengji('201637025002', 'liuxuemin123');
      $res = $chengji->getChengji();
-     dd($res);
+     dd($res);*/
+     $renxing = new \App\Model\Dom\RenxingLogin('rxwudanqian', 'wudanqian');
+    $renxing->dingdan();
 });
 
 Route::group([

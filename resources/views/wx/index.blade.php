@@ -1,164 +1,236 @@
-<!doctype html>
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/vendors/weui/example.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/css/we/main.css') }}">
-    <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
-    <style>
-        .weui-cells {
-            margin-top: 0
-        }
-
-        #add_pinglun {
-            position: fixed;
-            padding: 20px;
-            bottom: 70px;
-            width: 100%;
-            box-sizing: border-box;
-            right: 0;
-            z-index: 100;
-            background: #eee;
-        }
-
-        #add_pinglun input {
-            width: 80%;
-        }
-
-        #add_pinglun button {
-            width: 15%;
-        }
-
-        #add_pinglun_show {
-            position: fixed;
-            right: 20px;
-            bottom: 70px;
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            background: rgba(51, 103, 214, 0.8);
-            z-index: 100;
-            line-height: 75px;
-            text-align: center;
-            font-size: 66px;
-            color: #FFF;
-        }
-
-        #remen {
-            position: fixed;
-            right: 20px;
-            bottom: 70px;
-            height: 75px;
-            width: 75px;
-            text-align: center;
-            line-height: 75px;
-            background: #ccc;
-            border-radius: 50%;
-        }
-    </style>
-
-    <title></title>
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>遇见</title>
+    <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>
+    <link href="{{ asset('public/wx/css/mui.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+        mui.init();
+    </script>
 </head>
 <body>
-<div id="app" class="container">
-    <div class="page tabfabu js_show">
-        <div class="page__bd" style="height: 100%;">
-            <div class="weui-tab">
-                <router-view></router-view>
-                <div class="weui-tabbar">
-                    <router-link to="/tiezi"
-                                 v-bind:class="['weui-tabbar__item', nav_active == 'tiezi' ? 'weui-bar__item_on' : '']">
-                        <div style="height: 10px;"></div>
-                    <span style="display: inline-block;position: relative;">
-                        <img src="{{asset('public/images/icon-index.png')}}" alt="" class="weui-tabbar__icon">
-                    </span>
-                        <div style="height: 10px;"></div>
-                    </router-link>
-                    <router-link to="/fabu"
-                                 v-bind:class="['weui-tabbar__item', nav_active == 'fabu' ? 'weui-bar__item_on' : '']">
-                        <div style="height: 10px;"></div>
-                    <span style="display: inline-block;position: relative;">
-                        <img src="{{asset('public/images/icon-fabu.png')}}" alt="" class="weui-tabbar__icon">
-                    </span>
-                        {{--<p class="weui-tabbar__label">发帖</p>--}}
-                        <div style="height: 10px;"></div>
-                    </router-link>
-                    <router-link to="/wode"
-                                 v-bind:class="['weui-tabbar__item', nav_active == 'wode' ? 'weui-bar__item_on' : '']">
-                        <div style="height: 10px;"></div>
-                        <span style="display: inline-block;position: relative;">
-                        <img src="{{asset('public/images/icon-wode.png')}}" alt="" class="weui-tabbar__icon">
-                        </span>
-                        <div style="height: 10px;"></div>
-                    </router-link>
+<nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
+    <a class="mui-tab-item mui-active mui-active" href="#tabbar1">
+        <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
+    </a>
+    <a class="mui-tab-item" href="#tabbar2">
+        <img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">
+    </a>
+    <a class="mui-tab-item" href="#tabbar3">
+        <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
+    </a>
+</nav>
+<div class="mui-content">
+    <div id="tabbar1" class="mui-control-content mui-active">
+        <div id="segmentedControl" class="mui-segmented-control">
+            <div style="padding: 20px 40px;">
+                <a class="mui-control-item mui-active" href="#item1" style="border-radius: 20px 0 0 20px;">最新</a>
+                <a class="mui-control-item" href="#item2" style="border-radius: 0 20px 20px 0;">热门</a>
+            </div>
+        </div>
+        <div>
+            <div id="item1" class="mui-control-content mui-active">
+                <div class="mui-content-padded">
+                    <div class="yjbox">
+                        <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
+                        <p class="yjbox-tl">某同学·男 <a
+                                    style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
+                        <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
+                        <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+                        <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                    </div>
+                    <div class="yjbox">
+                        <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
+                        <p class="yjbox-tl">某同学·男 <a
+                                    style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
+                        <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
+                        <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+                        <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                    </div>
+                    <div class="yjbox">
+                        <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
+                        <p class="yjbox-tl">某同学·男 <a
+                                    style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
+                        <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
+                        <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+                        <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="item2" class="mui-control-content">
+                <div class="mui-content-padded">
+                    <div class="yjbox">
+                        <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
+                        <p class="yjbox-tl">某同学·女 <a
+                                    style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
+                        <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
+                        <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+                        <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                    </div>
+                    <div class="yjbox">
+                        <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
+                        <p class="yjbox-tl">某同学·女 <a
+                                    style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
+                        <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
+                        <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+                        <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                    </div>
+                    <div class="yjbox">
+                        <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
+                        <p class="yjbox-tl">某同学·男 <a
+                                    style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
+                        <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
+                        <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
+                        <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                        <div style="float: right; margin-right:5px ;">
+                            <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
+                            <p class="icon-num">10</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="tabbar2" class="mui-control-content">
+        <div id="" class="box2">
+            <p class="fb-title">发布 <span style="float: right;margin-right: 10px;">匿名</span>
+            <div style="float: right; margin-top: -30PX;margin-right: 50px;">
+
+                <div class="mui-switch mui-active">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </div>
+
+            </p>
+            <textarea rows="5" maxlength="150" placeholder="写下你想说的话"></textarea>
+            <p class="fb-sub">
+                <input type="submit" value="取消"/>
+                <input type="submit" value="发布"/>
+            </p>
+
+        </div>
+
+    </div>
+    <div id="tabbar3" class="mui-control-content ">
+        <div class="box2-t">
+            <a><img src="{{asset('public/wx/img/m-touxiang.png')}}" class="box2-t-logo"></a><br/>
+            <a style="margin-bottom: 10px;">某同学·男</a><br/>
+            <div class="md6" style="border-right: 1px solid #FFFFFF;"><a>帖子 100</a></div>
+            <div class="md6"><a>帖子 100</a></div>
+            <a href="classtable.html">
+                <div class="md4">
+                    <img src="{{asset('public/wx/img/icon-kebiao.png')}}" class="box2-t-logo2"/>
+                    <p>课表</p>
+                </div>
+            </a>
+            <a href="transcript.html">
+                <div class="md4">
+                    <img src="{{asset('public/wx/img/icon-cj.png')}}" class="box2-t-logo2"/>
+                    <p>成绩</p>
+                </div>
+            </a>
+            <a href="test-table.html">
+                <div class="md4">
+                    <img src="" class="box2-t-logo2"/>
+                    <p>考场</p>
+                </div>
+            </a>
+            <div class="md4">
+                <img src="{{asset('public/wx/img/icon-xl.png')}}" class="box2-t-logo2"/>
+                <p>校历</p>
+            </div>
+            <div class="md4">
+                <img src="{{asset('public/wx/img/icon-ts.png')}}" class="box2-t-logo2"/>
+                <p>图书馆</p>
+            </div>
+            <div class="md4">
+                <img src="{{asset('public/wx/img/icon-kjs.png')}}" class="box2-t-logo2"/>
+                <p>空教室</p>
+            </div>
+        </div>
+        <div class="box2-m">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        校内电话簿
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        教务处网络
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        四六级成绩
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        座位预约
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        忘记密码
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        联系我们
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
-<script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
-<script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
-
-<script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
-<script type="text/javascript">
-    $(function () {
-        axios.defaults.baseURL = 'http://school.sz25.net';
-        axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
-    });
-</script>
-<script src="{{ asset('public/vue/index.js') }}"></script>
-<script src="{{ asset('public/vue/fabu.js') }}"></script>
-<script src="{{ asset('public/vue/wode.js') }}"></script>
-<script src="{{ asset('public/vue/pinglun.js') }}"></script>
-<script>
-    const routes = [
-        {path: '/tiezi', component: tiezi, name: 'tiezi'},
-        {path: '/fabu', component: fabu, name: 'fabu'},
-        {path: '/wode', component: wode, name: 'wode'},
-        {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
-    ];
-
-    const router = new VueRouter({
-        routes: routes,
-        default: 'tiezi'
-    });
-
-    data = {
-        nav_active: 'tiezi',
-        tiezi: [],
-        user: {}
-    };
-
-    router.beforeEach((to, from, next) => {
-        switch (to.name) {
-            case "pinglun":
-                data.nav_active = 'tiezi';
-                break;
-            default:
-                console.log(to.name);
-                data.nav_active = to.name;
-        }
-        next();
-    });
-
-    vue = new Vue({
-        router: router,
-        data: data,
-        load: true,
-        methods: {},
-        mounted: function () {
-            router.push({
-                path: '/tiezi'
-            })
-        }
-    }).$mount('#app');
-</script>
-
 </body>
 </html>
