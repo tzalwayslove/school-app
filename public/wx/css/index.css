@@ -427,3 +427,6 @@ input[type="submit"]:hover{
 	font-size: 16px;
 	line-height: 25px;
 }
+div.mui-content-padded{
+	padding-bottom:50px;
+}
