@@ -5,12 +5,9 @@
     <meta name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>遇见</title>
-    <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>
+    {{--<script src="{{ asset('public/wx/js/mui.min.js') }}"></script>--}}
     <link href="{{ asset('public/wx/css/mui.css') }}" rel="stylesheet"/>
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-//        mui.init();
-    </script>
 </head>
 <body>
 <div id="#app">
