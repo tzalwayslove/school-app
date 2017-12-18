@@ -17,52 +17,19 @@
 <div id="#app">
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
         {{-- route link block --}}
-        <a class="mui-tab-item mui-active mui-active" href="#tabbar1">
+        <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
             <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
-        </a>
-        <a class="mui-tab-item" href="#tabbar2">
+        </router-link>
+        <router-link class="mui-tab-item" href="/fabu">
             <img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">
-        </a>
-        <a class="mui-tab-item" href="#tabbar3">
+        </router-link>
+        <router-link class="mui-tab-item" href="/wode">
             <img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">
-        </a>
+        </router-link>
     </nav>
     <div class="mui-content">
         {{-- route main --}}
-        <div id="tabbar1" class="mui-control-content mui-active">
-            <div id="segmentedControl" class="mui-segmented-control">
-                <div style="padding: 20px 40px;">
-                    <a class="mui-control-item mui-active" href="#item1" style="border-radius: 20px 0 0 20px;">最新</a>
-                    <a class="mui-control-item" href="#item2" style="border-radius: 0 20px 20px 0;">热门</a>
-                </div>
-            </div>
-
-            <div>
-                <div id="item1" class="mui-control-content mui-active">
-                    <div class="mui-content-padded">
-                        {{-- foreach --}}
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·男 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
-                        {{-- endforeach--}}
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <router-view></router-view>
 
         {{--<div id="tabbar2" class="mui-control-content">
             <div id="" class="box2">
