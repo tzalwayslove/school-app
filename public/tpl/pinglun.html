@@ -23,31 +23,7 @@
             <img src="/public/wx/img/icon-chat.png" class="imgicon" /><p class="icon-num">{{ articelData.zan }}</p>
         </div>
     </div>
-    <div class="hfbox"
-         v-for="(item, index) in list"
-         :key="item.id" >
-        <div>
-            <img
-                    :src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'"
-                    class="hfbox-img" />
-            <p class="hfbox-tl">
-                <template v-if="item.niming != 1">
-                    <!--{{item.user_account.nick_name}}-->
-                </template>
-                <template v-if="item.niming == 1">
-                    某同学·男
-                </template>
-                <a style="font-size: 12px;margin-right: 5px;color: #a7a7a7;">
-                    {{ item.created_at }}
-                </a>
-                <a  class="sm-f">
-                    <span  class="sm-f-num">{{ item.zan }}</span>
-                    <img src="/public/wx/img/smile-face.png" id="heart" class="sm-f-img">
-                </a>
-            </p>
-            <p class="hf-box-main">{item.content}}</p>
-        </div>
-    </div>
+
 
     <div class="hf-input">
         <input type="text" class="ht-inp ht-inp-t" />
