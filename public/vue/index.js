@@ -49,20 +49,18 @@ tiezi = Vue.component('tiezi', function (success, error) {
 
                 },
                 touchStart: function (e) {
-                    console.log('touchStart');
 
                     this.move = 0;
                     this.styles.transition = 'transform 0s';
                     this.touchStartY = e.changedTouches[0].clientY;
                 },
                 touchMove: function (e) {
-                    console.log('touchMove');
 
                     this.move = e.changedTouches[0].clientY - this.touchStartY;
                     this.styles.transform = 'translateY(' + this.move + 'px)';
                 },
                 touchEnd: function (e) {
-                    console.log('touchEnd');
+
 
                     if (this.move > 75) {
                         this.page = 1;
@@ -72,12 +70,10 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     this.styles.transition = 'transform 0.5s'
                     this.styles.transform = 'translateY(0px)';
                 },
-                test: function(){
-                    console.log($('#test').scrollTop());
-                },
+
                 onScroll: function (e) {
                     let bottom = $('#tabbar1')[0].scrollHeight - $('#tabbar1')[0].scrollTop - $('#tabbar1')[0].offsetHeight;
-                    console.log(new Date().getTime());
+
                     console.log($('#tabbar1').scrollTop());
 
                     if (this.lastBottom > bottom && bottom < $('#tabbar1')[0].clientHeight / 3 && this.load) {
