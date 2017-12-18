@@ -28,7 +28,7 @@
          :key="item.id" >
         <div>
             <img
-                    :src="item.user_account.avatar"
+                    :src="item.niming != 1 ? item.user_account.avatar : '/public/wx/img/m-touxiang.png'"
                     class="hfbox-img" />
             <p class="hfbox-tl">
                 <template v-if="item.niming != 1">
