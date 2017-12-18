@@ -6,7 +6,7 @@
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>遇见</title>
-{{--    <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>--}}
+    {{--    <script src="{{ asset('public/wx/js/mui.min.js') }}"></script>--}}
     <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/axios.min.js') }}"></script>
@@ -136,48 +136,49 @@
         axios.defaults.baseURL = 'http://school.sz25.net';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
         console.log($('#app'));
+
+        const routes = [
+            {path: '/tiezi', component: tiezi, name: 'tiezi'},
+            {path: '/fabu', component: fabu, name: 'fabu'},
+            {path: '/wode', component: wode, name: 'wode'},
+            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
+        ];
+
+        const router = new VueRouter({
+            routes: routes,
+            default: 'tiezi'
+        });
+
+        data = {
+            nav_active: 'tiezi',
+            tiezi: [],
+            user: {}
+        };
+
+        router.beforeEach((to, from, next) => {
+            switch (to.name) {
+                case "pinglun":
+                    data.nav_active = 'tiezi';
+                    break;
+                default:
+                    console.log(to.name);
+                    data.nav_active = to.name;
+            }
+            next();
+        });
+
+        vue = new Vue({
+            router: router,
+            data: data,
+            load: true,
+            methods: {},
+            mounted: function () {
+                router.push({
+                    path: '/tiezi'
+                })
+            }
+        }).$mount('#app');
     });
-    const routes = [
-        {path: '/tiezi', component: tiezi, name: 'tiezi'},
-        {path: '/fabu', component: fabu, name: 'fabu'},
-        {path: '/wode', component: wode, name: 'wode'},
-        {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
-    ];
-
-    const router = new VueRouter({
-        routes: routes,
-        default: 'tiezi'
-    });
-
-    data = {
-        nav_active: 'tiezi',
-        tiezi: [],
-        user: {}
-    };
-
-    router.beforeEach((to, from, next) => {
-        switch (to.name) {
-            case "pinglun":
-                data.nav_active = 'tiezi';
-                break;
-            default:
-                console.log(to.name);
-                data.nav_active = to.name;
-        }
-        next();
-    });
-
-    vue = new Vue({
-        router: router,
-        data: data,
-        load: true,
-        methods: {},
-        mounted: function () {
-            router.push({
-                path: '/tiezi'
-            })
-        }
-    }).$mount('#app');
 </script>
 </body>
 </html>
