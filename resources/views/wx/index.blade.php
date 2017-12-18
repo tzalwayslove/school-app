@@ -15,7 +15,7 @@
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
 </head>
 <body>
-<div id="#app">
+<div id="app">
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;">
         {{-- route link block --}}
         <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
