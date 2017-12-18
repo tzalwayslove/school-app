@@ -156,17 +156,17 @@
         axios.defaults.baseURL = 'http://www.school.dy';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
 
-        const routes = [
-            {path: '/tiezi', component: tiezi, name: 'tiezi'},
-            {path: '/fabu', component: fabu, name: 'fabu'},
-            {path: '/wode', component: wode, name: 'wode'},
-            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
-        ];
+//        const routes = [
+//            {path: '/tiezi', component: tiezi, name: 'tiezi'},
+//            {path: '/fabu', component: fabu, name: 'fabu'},
+//            {path: '/wode', component: wode, name: 'wode'},
+//            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
+//        ];
 
-        const router = new VueRouter({
-            routes: routes,
-            default: 'tiezi'
-        });
+//        const router = new VueRouter({
+//            routes: routes,
+//            default: 'tiezi'
+//        });
 
         data = {
             nav_active: 'tiezi',
@@ -174,16 +174,16 @@
             user: {}
         };
 
-        router.beforeEach((to, from, next) => {
-            switch (to.name) {
-                case "pinglun":
-                    data.nav_active = 'tiezi';
-                    break;
-                default:
-                    data.nav_active = to.name;
-            }
-            next();
-        });
+//        router.beforeEach((to, from, next) => {
+//            switch (to.name) {
+//                case "pinglun":
+//                    data.nav_active = 'tiezi';
+//                    break;
+//                default:
+//                    data.nav_active = to.name;
+//            }
+//            next();
+//        });
 
         vue = new Vue({
 //            router: router,
