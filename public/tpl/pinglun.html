@@ -10,7 +10,7 @@
                 <span>某同学·男</span>
             </template>
             <template v-if="articelData.niming != 1">
-                <span style="height: 1em;">{{ articelData.user_account }}</span>
+                <span style="height: 1em;">{{ list[0] }}</span>
             </template>
             <a style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{ articelData.created_at }}</a></p>
         <p class="yj-box-main">{{articelData.content}}</p>
