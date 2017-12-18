@@ -17,7 +17,7 @@ class CommentController extends Controller
         $data->load(['getComment'=> function($query){
             $query->where('show', 1)->orderBy('created_at', 'asc');
         }]);
-
+        $data->load('user_account');
         $data->click_count ++;
         $data->save();
         return response([
