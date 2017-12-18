@@ -9,7 +9,7 @@
     <link href="{{ asset('public/wx/css/mui.css') }}" rel="stylesheet"/>
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
     <script type="text/javascript" charset="utf-8">
-        mui.init();
+//        mui.init();
     </script>
 </head>
 <body>
@@ -87,62 +87,10 @@
                         </div>
                     </div>
                 </div>
-                <div id="item2" class="mui-control-content">
-                    <div class="mui-content-padded">
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·女 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·女 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
-                        <div class="yjbox">
-                            <img src="{{asset('public/wx/img/m-touxiang.png')}}" class="yjbox-img"/>
-                            <p class="yjbox-tl">某同学·男 <a
-                                        style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">11分钟前</a></p>
-                            <p class="yj-box-main">“我家常公子天生神力，根本不会武(外)功(挂)。戚家上下29口人都是被毒死的嘻嘻～” <br>“常威！你还说你不会武(外)功(挂）？”</p>
-                            <div style="width: 100%;height: 1px;background: #AAAAAA;"></div>
-                            <img src="{{asset('public/wx/img/icon-point.png')}}" class="imgicon" style="margin-top: 13px;"/>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{asset('public/wx/img/icon-heart.png')}}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                            <div style="float: right; margin-right:5px ;">
-                                <img src="{{ asset('public/wx/img/icon-chat.png') }}" class="imgicon"/>
-                                <p class="icon-num">10</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div id="tabbar2" class="mui-control-content">
+        {{--<div id="tabbar2" class="mui-control-content">
             <div id="" class="box2">
                 <p class="fb-title">发布 <span style="float: right;margin-right: 10px;">匿名</span>
                 <div style="float: right; margin-top: -30PX;margin-right: 50px;">
@@ -233,11 +181,8 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div>--}}
     </div>
 </div>
-
-
-
 </body>
 </html>
