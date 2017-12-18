@@ -9,6 +9,7 @@ Route::get('/', function () {
 Route::get('/s', function(){
     session(['a'=>10]);
 });
+
 Route::get('/g', function(){
     dd(session('a'));
 });

@@ -26,6 +26,9 @@ fabu = Vue.component('fabu', function (success, error) {
                             alert(res.data.result.message || '发布失败');
                         }
                     });
+                },
+                back: function(){
+                    window.history.go(-1);
                 }
             }
         });

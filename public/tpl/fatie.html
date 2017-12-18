@@ -5,7 +5,7 @@
         </p>
         <textarea rows="5" maxlength="150" placeholder="写下你想说的话" v-model="content"></textarea>
         <p class="fb-sub">
-            <input type="submit" value="取消" />
+            <input type="submit" value="取消" @click="back"/>
             <input type="submit" value="发布"  @click="send"/>
         </p>
     </div>
