@@ -93,11 +93,13 @@ class UserController extends Controller
     {
 //        $user = User::find($request->input('user'));
         $user = session('user');
+        dd($user);
         if (!$user) {
             return response([
                 'result' => new Result(false, '未找到该用户!')
             ]);
         }
+
         $loginName = $user->account;
         $password = $user->password;
         try {
@@ -118,7 +120,6 @@ class UserController extends Controller
     {
 //        $user = User::find($request->input('user'));
         $user = session('user');
-        dd($user);
         if (!$user) {
             return response([
                 'result' => new Result(false, '未找到该用户!')
