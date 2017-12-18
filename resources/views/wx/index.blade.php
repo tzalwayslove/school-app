@@ -126,6 +126,7 @@
         </div>--}}
     </div>
 </div>
+
 <script src="{{ asset('public/vue/index.js') }}"></script>
 <script src="{{ asset('public/vue/fabu.js') }}"></script>
 <script src="{{ asset('public/vue/wode.js') }}"></script>
@@ -134,6 +135,7 @@
     $(function () {
         axios.defaults.baseURL = 'http://school.sz25.net';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
+        console.log($('#app'));
     });
     const routes = [
         {path: '/tiezi', component: tiezi, name: 'tiezi'},
