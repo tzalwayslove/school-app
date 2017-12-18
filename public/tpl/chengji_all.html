@@ -1,22 +1,42 @@
-<div class="page tabfabu js_show">
-    <div class="page__bd" style="height: 100%;">
-        <template v-for="(item, key) in chengji">
-            <ul>
-                <li>成绩：{{ item.chengji }}</li>
-                <li>开课时间：{{ item.kaikeshijian }}</li>
-                <li>考核方式：{{ item.kaohefangshi }}</li>
-                <li>考试性质：{{ item.kaoshixingzhi }}</li>
-                <li>课程名称：{{ item.kecengmingceng }}</li>
-                <li>课程编号：{{ item.kechengbianhao }}</li>
-                <li>课程属性：{{ item.kechengshuxing }}</li>
-                <li>课程性质：{{ item.kechengxingzhi }}</li>
-                <li>录入时间：{{ item.lurushijian }}</li>
-                <li>学分：{{ item.xuefen }}</li>
-                <li>总学时：{{ item.zongxueshi }}</li>
-            </ul>
-            <br>
-        </template>
+<div class="ts-list" style="margin-top: 10px;">
+    <div class="tableh">
+        <div class="table-id">
+            <p class="tableh-t">序号</p>
+        </div>
+        <div class="table-name">
+            <p class="tableh-t">课程名称</p>
+        </div>
+        <div class="table-grade">
+            <p class="tableh-t">成绩</p>
+        </div>
+        <div class="table-fractions">
+            <p class="tableh-t">学分</p>
+        </div>
+        <div class="table-attribute">
+            <p class="tableh-t">考试性质</p>
+        </div>
     </div>
+    <ul>
+        <li style="float: left;border-top: 1px solid #80d4cc;width: 100%;padding-top: 5px;margin-top: 5px;" v-for="(item, key) in chengji">
+            <div class="tableh">
+                <div class="table-id">
+                    <p class="tableh-t">{{ item.bianhao }}</p>
+                </div>
+                <div class="table-name">
+                    <p class="tableh-t">{{ item.kecengmingceng }}</p>
+                </div>
+                <div class="table-grade">
+                    <p class="tableh-t">{{ item.chengji}}</p>
+                </div>
+                <div class="table-fractions">
+                    <p class="tableh-t">3</p>
+                </div>
+                <div class="table-attribute">
+                    <p class="tableh-t">{{ item.kaoshixingzhi }}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
     <div id="loadingToast" v-show="jiazai">
         <div class="weui-mask_transparent"></div>
         <div class="weui-toast">
