@@ -15,7 +15,7 @@ class Login extends Controller
         $app = new Application($config);
         $user = $app->oauth->user();
         session(['wx_user'=>$user]);
-        dd($user);
+
         $local_user = User::firstOrCreate([
             'open_id'=>$user->id
         ], [
@@ -26,6 +26,7 @@ class Login extends Controller
             'avatar'=>$user->avatar,
             'sex'=>$user->original['sex']
         ]);
+
         session(['user'=>$local_user]);
 
         return redirect(session('tar_get', url('/articel')));
