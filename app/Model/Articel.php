@@ -31,12 +31,13 @@ class Articel extends Model
 
     public static function newArticel($title, $content, $cate = 0, $niming = false)
     {
-
+        $user = session('user');
         $articel = new Articel();
         $articel->title = $title;
         $articel->content = $content;
         $articel->cate = $cate;
         $articel->niming = $niming ? 1 :0;
+        $articel->user = $user->id;
         $articel->save();
     }
 

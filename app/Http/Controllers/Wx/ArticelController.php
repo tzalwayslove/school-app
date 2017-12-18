@@ -13,9 +13,7 @@ class ArticelController extends Controller
     public function index(Request $request)
     {
         if($request->input('click_count') == 1){
-            DB::enableQueryLog();
             $list = Articel::with('getComment')->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")->orderBy('zan', 'desc')->where('show', '1')->paginate(20);
-//            return DB::getQueryLog();
         }else{
             $list = Articel::with('getComment')->orderBy('created_at', 'desc')->orderBy('click_count', 'desc')->where('show', '1')->paginate(20);
         }
@@ -30,6 +28,7 @@ class ArticelController extends Controller
     {
         $title = $request->input('title', false);
         $content = $request->input('content', false);
+        $user = $request->input('user');
 
         if(!$content){
             return response(['result'=>new Result(false, '内容必须填写')]);
