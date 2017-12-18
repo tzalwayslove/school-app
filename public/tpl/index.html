@@ -1,4 +1,32 @@
-<div id="tabbar1" class="mui-control-content mui-active" @scroll="onScroll">
+<!--
+<div class="weui-tab__panel" id="scrollPanel"
+     @scroll="onScroll($event)"
+>
+    <div class="weui-panel"
+         v-for="item in tiezi"
+         :key="item.id"
+         :style="styles"
+    >
+        <div class="weui-panel__hd">{{item.title}}</div>
+        <div class="weui-panel__bd">
+            <div class="weui-media-box weui-media-box_text">
+                <p class="weui-media-box__desc"  @click="getComment(item)">{{item.content}}{{item.id}}</p>
+                <ul class="weui-media-box__info">
+                    <li class="weui-media-box__info__meta">{{item.created_at}}</li>
+                    <li class="weui-media-box__info__meta weui-media-box__info__meta_extra" @click="setZan(item)">
+                        赞({{item.zan || 0}})
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="remen" :style="[order=='热门' ? remen : zuixin]" @click="orderConvert">
+        {{order=='热门' ? '热门' : '最新'}}
+    </div>
+</div>
+-->
+
+<div id="tabbar1" class="mui-control-content mui-active" @scroll="onScroll($event)">
     <div id="segmentedControl" class="mui-segmented-control">
         <div style="padding: 20px 40px;">
             <a class="mui-control-item mui-active" href="#item1" style="border-radius: 20px 0 0 20px;">最新</a>
