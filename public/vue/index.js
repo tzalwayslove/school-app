@@ -74,7 +74,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                 },
                 onScroll: function (e) {
                     let bottom = $('#tabbar1')[0].scrollHeight - $('#tabbar1')[0].scrollTop - $('#tabbar1')[0].offsetHeight;
-                    console.log($('#tabbar1')[0]);
+                    console.log($('#tabbar1'));
 
                     console.log(this.getElementTop($('#tabbar1')[0]));
                     console.log('bottom');
