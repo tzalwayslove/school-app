@@ -8,6 +8,7 @@
 html
 {
     font-family: sans-serif;
+
     -webkit-text-size-adjust: 100%;
 }
 
@@ -521,10 +522,11 @@ a:active
 
 h1, h2, h3, h4, h5, h6
 {
-    line-height: 1;
-
+    line-height: 1.42;
+	color: #FFFFFF;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-weight: 100;
 }
 
 h1, .mui-h1
@@ -1176,15 +1178,15 @@ button,
 {
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.42;
+    line-height: 1;
 
     position: relative;
 
     display: inline-block;
 
     margin-bottom: 0;
-    padding: 4px 14px;
-
+    padding: 10px 15px;
+	margin: 5px 10px;
     cursor: pointer;
     -webkit-transition: all;
             transition: all;
@@ -1195,15 +1197,11 @@ button,
     text-align: center;
     vertical-align: top;
     white-space: nowrap;
-
-    color: #333;
+	background: #3cc4b6;
+	color: #FFFFFF;
+  
     border: 1px solid #ccc;
-    border-radius: 3px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    background-color: #fff;
+   
     background-clip: padding-box;
 }
 input[type='button']:enabled:active, input[type='button'].mui-active:enabled,
@@ -1238,6 +1236,7 @@ input[type='submit'],
 {
     color: #fff;
     border: 1px solid #3cc3b6;
+    border-radius: 3px;
     background-color: #3cc3b6;
 }
 input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
@@ -2775,7 +2774,7 @@ textarea,
 select
 {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 17px;
+    font-size: 14px;
 
     -webkit-tap-highlight-color: transparent;
     -webkit-tap-highlight-color: transparent;
@@ -2806,17 +2805,14 @@ input[type='url'],
 input[type='tel'],
 input[type='color']
 {
-    line-height: 21px;
-
-    width: 100%;
-    height: 40px;
-    margin-bottom: 15px;
+  
+   margin: 5px 10px;
     padding: 10px 15px;
 
     -webkit-user-select: text;
 
     border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 3px;
+   
     outline: none;
     background-color: #fff;
 

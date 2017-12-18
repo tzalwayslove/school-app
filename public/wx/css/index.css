@@ -9,11 +9,57 @@ ul li{
 	max-width: 30px;
 	margin: 12px 0 6px 0;
 }
+.hfbox{
+	width: 100%;
+	margin-top: 45px;
+	border: 1px solid #d9d9d9;
+	border-radius: 3px;
+    box-shadow: 1px 1px 1px #AAAAAA;
+}
+.hfbox-img{
+	width: 30px;
+	margin: 10px;
+}
+.hfbox-tl{
+margin-left: 50px;
+margin-top: -40px;
+color: #000000;
+}
+.hf-box-main{
+	padding: 10px;
+	color: #000000;
+	letter-spacing: 1px;
+	font-size: 12px;
+	border-bottom:1px solid #AAAAAA ;
+	margin: 0 10px 20px 10px;
+
+}
+.hf-input{
+	width: 100%;
+	position:fixed;
+    bottom:0;
+    background: #FFFFFF;
+}
+.ht-inp{
+	height: 35px;
+	border-radius: 18px;
+	
+}
+.ht-inp-t{
+	width: 68%;
+	float: left;
+}
+.ht-inp-s{
+	width: 20%;
+	float: right;
+	
+}
 .yjbox{
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 45px;
 	border: 1px solid #d9d9d9;
-	border-radius: 5px;
+	border-radius: 3px;
+    box-shadow: 1px 1px 1px #AAAAAA;
 	font-size: 14px;
 	color: #000000;
 }
@@ -32,6 +78,23 @@ color: #000000;
 	color: #000000;
 	letter-spacing: 1px;
 	font-size: 12px;
+}
+.sm-f{
+	float: right;
+	color: #AAAAAA;
+	margin-right: 10px;
+}
+.sm-f-img{
+	float: right;
+	width: 16px;
+	margin-right: 5px;
+}
+.sm-f-num{
+	float: right;
+	font-size: 16px;
+	margin-top: -2px;
+	margin-right: 10px;
+	color: #AAAAAA;
 }
 p{
 	margin: 0;
@@ -63,6 +126,8 @@ p{
 textarea{
 	font-size: 14px;
 	border-radius: 0 0 5px 5px;
+	width: 100%;
+	margin:0;
 }
 .fb-sub{
 	text-align: right;
@@ -94,8 +159,7 @@ input[type="submit"]:hover{
 }
 .md4{
 	width: 33.33%;
-	/*margin-bottom: 10px;*/
-	padding-bottom:10px;
+	margin-bottom: 10px;
 	float: left;
 	background: rgba(0,0,0,.2);
 }
@@ -110,6 +174,26 @@ input[type="submit"]:hover{
 .box2-m{
 	float: left;
 	width: 100%;
+}
+.headtop{
+	background: #3cc4b6;
+}
+.gt-back{
+	max-height: 14px;
+	margin: 15px;
+	float: left;
+}
+.headtop2{
+	float: left;
+	line-height: 44px;
+	margin-top: -44px;
+	color: #FFFFFF;
+}
+.ht-t{
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	line-height: 44px;
 }
 /*test-table样式表*/
 .kb-info{
@@ -180,16 +264,19 @@ input[type="submit"]:hover{
 	
 }
 .showup{
-	padding: 4px 10px;
+	padding: 5px 10px;
 	text-align: right;
 	color: #cccccc;
+	background-color: #FFFFFF;
 	font-size: 12px;
+	margin: 0;
+	border-radius: 3px;
 }
 .ui-alert{
 	position:absolute;
 	z-index: 9;
 	margin-left: 15px;
-	margin-top: -34px;
+	margin-top: -32px;
 	font-size: 15px;
 	color: #2ebeb0;
 }
@@ -308,6 +395,34 @@ input[type="submit"]:hover{
 .mt10{
 	margin-top: 10px;
 }
-.weui-toast__content{
-	color: #FFF;
- }
+/*binding样式表*/
+.bind-logo{
+	text-align: center;
+	margin: 0 auto;
+}
+.bind-logo-img{
+	max-height: 150px;
+	margin:40px 0 10px;
+}
+.input-in{
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 20px;
+	margin: 10px 15% 30px;
+	color: #FFFFFF;
+}
+.fix-bott{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+.fix-bott-p{
+	text-align: center;
+	color: #FFFFFF;
+}
+.huifu{
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	line-height: 25px;
+}
