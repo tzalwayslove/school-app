@@ -13,6 +13,18 @@ fabu = Vue.component('Chengjiall', function (success, error) {
                     page:'all'
                 }
             },
+            computed: {
+                GPA: function () {
+                    count = 0;
+                    for( i=0, len = this.chengji.length; i< len; ++i){
+                        count += this.chengji[i].jidian
+                    }
+
+                    return this.chengji.length > 1
+                        ? count / this.chengji.length
+                        : 0;
+                }
+            },
             methods:{
                 changePage: function(){
                     if(this.page == 'newest'){

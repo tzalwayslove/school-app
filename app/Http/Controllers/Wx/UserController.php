@@ -32,20 +32,7 @@ class UserController extends Controller
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->getChengji();
 
-            foreach ($res as $chengji) {
-
-                if ($chengji->chengji >= 90 || strpos('优', $chengji->chengji) !== false) {
-                    $chengji->jidian = 4;
-                } else if ($chengji->chengji >= 80 || strpos('良', $chengji->chengji) || strpos('好', $chengji->chengji) !== false) {
-                    $chengji->jidian = 3;
-                } else if ($chengji->chengji >= 70 || strpos('中', $chengji->chengji) !== false) {
-                    $chengji->jidian = 2;
-                } else if ($chengji->chengji >= 60 || $chengji->chengji == '及格') {
-                    $chengji->jidian = 1;
-                } else {
-                    $chengji->jidian = 0;
-                }
-            }
+            $this->getJidian($res);
             $data = [];
             foreach($res as $item){
                 $data[] = $item;
@@ -64,11 +51,27 @@ class UserController extends Controller
 
     }
 
+    public function getJidian($res)
+    {
+        foreach ($res as $chengji) {
+            if ($chengji->chengji >= 90 || strpos('优', $chengji->chengji) !== false) {
+                $chengji->jidian = 4;
+            } else if ($chengji->chengji >= 80 || strpos('良', $chengji->chengji) || strpos('好', $chengji->chengji) !== false) {
+                $chengji->jidian = 3;
+            } else if ($chengji->chengji >= 70 || strpos('中', $chengji->chengji) !== false) {
+                $chengji->jidian = 2;
+            } else if ($chengji->chengji >= 60 || $chengji->chengji == '及格') {
+                $chengji->jidian = 1;
+            } else {
+                $chengji->jidian = 0;
+            }
+        }
+    }
     //全部成绩
     public function all(Request $request)
     {
         $user = User::find($request->input('user'));
-//        $user = session('user');
+
         if (!$user) {
             return response([
                 'result' => new Result(false, '未找到该用户@' . $request->input('user'))
@@ -80,12 +83,16 @@ class UserController extends Controller
         try {
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->all();
+            $data = [];
+            $this->getJidian($res);
+            foreach($res as $item){
+                $data[] = $item;
+            }
 
             return response([
                 'result' => new Result($res),
-                'chengji' => $res
+                'chengji' => $data
             ]);
-
         } catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage()/* . $e->getFile() . $e->getLine()*/)
