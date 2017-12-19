@@ -19,7 +19,7 @@
 <body>
 
 <div id="app">
-    <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;" v-show="bar-buttom">
+    <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;" v-show="bar_buttom">
          {{--route link block--}}
         <router-link class="mui-tab-item mui-active mui-active" to="/tiezi">
             <img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">
@@ -64,7 +64,7 @@
             nav_active: 'tiezi',
             tiezi: [],
             user: '{{ $user->id }}',
-            'bar-buttom': true
+            'bar_buttom': true
         };
 
         router.beforeEach((to, from, next) => {
