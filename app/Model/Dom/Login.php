@@ -27,7 +27,7 @@ class Login
     public $faculty;    //院系
     public $_class;     //课程
     public $infoPage;
-    protected $pre = 'http://1900mx9281.51mypc.cn';//http://222.27.186.113
+    protected $pre = '1900mx9281.51mypc.cn';//http://222.27.186.113
 //    protected $pre = 'http://222.27.186.112';
     protected $client;
 
