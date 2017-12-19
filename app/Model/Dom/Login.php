@@ -46,7 +46,7 @@ class Login
         $this->client = new Client();
 
         $url = $this->pre . '/xsd/xk/LoginToXk';
-        dd($url);
+
         $res = $this->client->request('post', $url, [
             'form_params' => [
                 'USERNAME' => $user_name,
@@ -56,9 +56,9 @@ class Login
             'char_set' => 'gbk'
         ]);
 
-
         $this->login_res = $res->getBody();
 
+        dd($this->login_res);
         $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
         $filter = $errorDom->filterXPath('//font[@color="red"]');
 
