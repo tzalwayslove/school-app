@@ -22,16 +22,20 @@
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;" v-show="bar_buttom">
          {{--route link block--}}
         <router-link
-                :class="['weui-tabbar__item', nav_active == 'fabu' ? 'weui-bar__item_on' : '']"
+                :class="['mui-tab-item', nav_active == 'tiezi' ? 'mui-active' : '']"
                 class="mui-tab-item mui-active mui-active" to="/tiezi">
             {{--<img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">--}}
             <span class="icon-index"></span>
         </router-link>
-        <router-link class="mui-tab-item" to="/fabu">
+        <router-link
+                :class="['mui-tab-item', nav_active == 'fabu' ? 'mui-active' : '']"
+                to="/fabu">
             {{--<img src="{{ asset('public/wx/img/icon-fabu.png')}}" class="item-logo">--}}
             <span class="icon-fabu"></span>
         </router-link>
-        <router-link class="mui-tab-item" to="/wode">
+        <router-link
+                :class="['mui-tab-item', nav_active == 'wode' ? 'mui-active' : '']"
+                to="/wode">
             {{--<img src="{{ asset('public/wx/img/icon-wode.png')}}" class="item-logo">--}}
             <span class="icon-wode"></span>
         </router-link>
