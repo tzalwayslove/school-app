@@ -1,12 +1,12 @@
 <div id="tabbar3" class="mui-control-content " style="display: block;">
     <div class="box2-t">
-        <template v-if="user.niming == 1">
+        <template v-if="user.niming != 0">
         <a><img src="/public/wx/img/m-touxiang.png" class="box2-t-logo"></a><br />
         <a style="margin-bottom: 10px;">某同学·男</a><br />
         </template>
-        <template v-if="user.niming == 1">
-            <a><img src="/public/wx/img/m-touxiang.png" class="box2-t-logo"></a><br />
-            <a style="margin-bottom: 10px;">某同学·男</a><br />
+        <template v-if="user.niming == 0">
+            <a><img :src="{{ user.avatar }}" class="box2-t-logo"></a><br />
+            <a style="margin-bottom: 10px;">{{ user.nick_name }}</a><br />
         </template>
         <div class="md6" style="border-right: 1px solid #FFFFFF;"><a>帖子 {{ tiezi }}</a></div>
         <div class="md6"><a>赞 {{ zan }}</a></div>
