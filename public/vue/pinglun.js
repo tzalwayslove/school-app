@@ -51,7 +51,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                             this.success = true;
                             this.timeOut = setTimeout(function(obj){
                                 obj.success = false;
-                            }, 500, this);
+                            }, 1000, this);
                         }
 
 
