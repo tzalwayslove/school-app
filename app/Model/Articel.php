@@ -66,10 +66,10 @@ class Articel extends Model
                     if ($dur < 86400) {
                         return floor($dur / 3600) . '小时前';
                     } else {
-                        if ($dur < 259200) {//3天内
+                        if ($dur < 2592000) {//30天内
                             return floor($dur / 86400) . '天前';
                         } else {
-                            return '3天以前';
+                            return '很久以前';
                         }
                     }
                 }
