@@ -251,7 +251,7 @@ input[type="submit"]:hover {
     font-size: 16px;
     padding: 6px;
 }
-.kb-info-name a{
+.kb-info-name a,.kb-info-detail a{
     float: right;
     margin-right: 6px;
     color: #8f8f94;
