@@ -79,7 +79,10 @@ class Login
     {
         $res = $this->client->request('get', $this->pre . $url, [
             'cookies' => $this->jar,
-            'char_set' => 'gbk'
+            'char_set' => 'gbk',
+            'headers' => [
+                'connection'=>'keep-alive'
+            ]
         ]);
         return $res->getBody();
     }
