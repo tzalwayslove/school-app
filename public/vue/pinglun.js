@@ -19,7 +19,9 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         },
                         jiahao: true,
                         pinglun_input: false,
-                        comment: ''
+                        comment: '',
+                        success:false,
+                        timeOut:null,
 
                     }
                 },
@@ -33,6 +35,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                             if($this.list.length == 0){
 
                             }
+
                         });
                     },
                     addpinglun(){
@@ -41,6 +44,17 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     showConvert(){
                         this.jiahao = !this.jiahao;
                         this.pinglun_input = !this.pinglun_input;
+                    },
+                    showSuccess: function(){
+                        // "#toast"
+                        if(!this.success){
+                            this.success = true;
+                            this.timeOut = setTimeout(function(obj){
+                                obj.success = false;
+                            }, 500, this);
+                        }
+
+
                     },
                     send(){
                         let articel_id = this.articelData.id;
@@ -54,6 +68,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                             if(res.data.result.code == 1){
                                 $this.getData()
                                 $this.comment = '';
+                                this.showSuccess();
                             }else{
                                 alert(res.data.result.message || '评论失败');
                             }

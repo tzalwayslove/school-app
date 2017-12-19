@@ -53,4 +53,12 @@
         <input type="text" class="ht-inp ht-inp-t" v-model="comment" @keyup.enter="send"/>
         <input type="button" class="ht-inp ht-inp-s" value="发送" @click="send"/>
     </div>
+
+    <div id="toast" style="display: none;" v-show="success">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+            <p class="weui-toast__content">已完成</p>
+        </div>
+    </div>
 </div>
