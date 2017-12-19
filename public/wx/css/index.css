@@ -38,7 +38,7 @@ ul li{
 .hf-input{
 	width: 100%;
 	position:fixed;
-	bottom:50px;
+	bottom:0;
 	background: #FFFFFF;
 }
 .ht-inp{
