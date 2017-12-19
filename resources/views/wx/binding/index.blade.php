@@ -21,7 +21,7 @@
     学号:<input type="text" style="background-color:#3cc4b6;border:none;margin: 0;" placeholder="请输入你的学号" id="account"/>
 </div>
 <div class="input-in">
-    密码:<input type="text" style="background-color:#3cc4b6;border:none;margin: 0;" placeholder="请输入教务处密码" id="password"/>
+    密码:<input type="password" style="background-color:#3cc4b6;border:none;margin: 0;" placeholder="请输入教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
     <input type="button" value="确认绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 20px;margin: 0;background: #FFFFFF;color: #3CC3B6;" id="binding"/>
