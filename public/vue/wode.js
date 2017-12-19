@@ -13,7 +13,9 @@ wode = Vue.component('wode', function (resolve, reject) {
                     user:{
                         niming:1,
                         sex:1,
-                        avatar:'/public/wx/img/m-touxiang.png'
+                        avatar:'/public/wx/img/m-touxiang.png',
+                        zan:'...',
+                        tiezi:'...'
                     }
                 }
             },
