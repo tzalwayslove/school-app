@@ -1,4 +1,8 @@
 <div class="ts-list" style="margin-top: 10px;">
+    <select name="" id="change" @change="changePage" v-model="page">
+        <option value="all">全部</option>
+        <option value="newest">最新</option>
+    </select>
     <div class="tableh">
         <div class="table-id">
             <p class="tableh-t">序号</p>
