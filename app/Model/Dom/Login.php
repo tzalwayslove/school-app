@@ -52,10 +52,6 @@ class Login
                 'USERNAME' => $user_name,
                 'PASSWORD' => $password
             ],
-            'headers'=>[
-                'cache-control'=>'no-cache',
-                'Content-Type'=>'application/x-www-form-urlencoded'
-            ],
             'cookies' => $this->jar,
             'char_set' => 'gbk'
         ]);
