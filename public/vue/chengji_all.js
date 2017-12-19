@@ -9,11 +9,16 @@ fabu = Vue.component('Chengjiall', function (success, error) {
             data(){
                 return {
                     jiazai:true,
-                    chengji:{}
+                    chengji:{},
+                    page:'all'
                 }
             },
             methods:{
-
+                changePage: function(){
+                    if(this.page == 'newest'){
+                        window.location.href= '/wx/chengji?user='+this.user
+                    }
+                }
             },
             mounted: function(){
                 console.log('加载完成');
