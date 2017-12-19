@@ -47,6 +47,7 @@ class Login
 
         $url = $this->pre . '/xsd/xk/LoginToXk';
 
+        dd($url);
         $res = $this->client->request('post', $url, [
             'form_params' => [
                 'USERNAME' => $user_name,
