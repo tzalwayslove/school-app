@@ -11,7 +11,8 @@ fabu = Vue.component('chengji', function (success, error) {
                     jiazai:true,
                     chengji:[],
                     jige:[],
-                    bujige:[]
+                    bujige:[],
+                    page: 'newest'
                 }
             },
             computed: {
@@ -28,7 +29,11 @@ fabu = Vue.component('chengji', function (success, error) {
                 }
             },
             methods:{
-
+                changePage: function(){
+                    if(this.page == 'all'){
+                        window.location.href='/wx/chengji_all?user='+this.user
+                    }
+                }
             },
 
             mounted: function(){

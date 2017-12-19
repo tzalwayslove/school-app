@@ -1,7 +1,7 @@
 <div class="mui-content-padded">
-    <select name="" id="change">
-        <option value="全部">全部</option>
-        <option value="最新">最新</option>
+    <select name="" id="change" @change="changePage" v-model="page">
+        <option value="all">全部</option>
+        <option value="newest">最新</option>
     </select>
     <div class="ts-fen">
         <p class="ts-fen-p">你当前学期平均学分绩点（GPA）</p>
