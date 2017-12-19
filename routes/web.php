@@ -22,6 +22,7 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
+    dd(date('Y-m-d H:i:s'));
      /*$kaochang = new \App\Model\Dom\Kaochang('201637025002', 'liuxuemin123');
      $kaochang->getQueryData();*/
      /*$chengji = new \App\Model\Dom\Chengji('201723045019', 'smyqueen980818');
