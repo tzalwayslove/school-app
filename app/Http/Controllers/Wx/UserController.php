@@ -46,10 +46,13 @@ class UserController extends Controller
                     $chengji->jidian = 0;
                 }
             }
-
+            $data = [];
+            foreach($res as $item){
+                $data[] = $item;
+            }
             return response([
                 'result' => new Result($res),
-                'chengji' => $res->toArray()
+                'chengji' => $data
             ]);
 
         } catch (\Exception $e) {
