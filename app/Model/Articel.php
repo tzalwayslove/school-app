@@ -57,23 +57,28 @@ class Articel extends Model
         if ($dur < 0) {
             return $the_time;
         } else {
-            if ($dur < 60) {
-                return $dur . '秒前';
-            } else {
-                if ($dur < 3600) {
-                    return floor($dur / 60) . '分钟前';
+            if($dur  < 3){
+                return '刚刚';
+            }else{
+                if ($dur < 60) {
+                    return $dur . '秒前';
                 } else {
-                    if ($dur < 86400) {
-                        return floor($dur / 3600) . '小时前';
+                    if ($dur < 3600) {
+                        return floor($dur / 60) . '分钟前';
                     } else {
-                        if ($dur < 8640000) {//100天内
-                            return floor($dur / 86400) . '天前';
+                        if ($dur < 86400) {
+                            return floor($dur / 3600) . '小时前';
                         } else {
-                            return '很久以前';
+                            if ($dur < 8640000) {//100天内
+                                return floor($dur / 86400) . '天前';
+                            } else {
+                                return '很久以前';
+                            }
                         }
                     }
                 }
             }
+
         }
     }
 }
