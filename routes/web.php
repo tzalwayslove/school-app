@@ -33,8 +33,9 @@ Route::get('test', function(){
      /*$chengji = new \App\Model\Dom\Chengji('201637025002', 'liuxuemin123');
      $res = $chengji->getChengji();
      dd($res);*/
-     $renxing = new \App\Model\Dom\RenxingLogin('rxwudanqian', 'wudanqian');
-    $renxing->dingdan();
+//     $renxing = new \App\Model\Dom\RenxingLogin('rxwudanqian', 'wudanqian');
+//    $renxing->dingdan();
+    return view('wx.binding.index');
 });
 
 Route::group([
