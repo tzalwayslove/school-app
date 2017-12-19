@@ -1,8 +1,8 @@
 <div>
     <template v-for="(item, key) in kaochang">
     <div :class="item.finish ? 'kb-info' : 'kb-info-ing'">
-        <p :class="item.finish ? 'kb-info-name' : 'kb-info-name-ing'">{{ item.name }}<a>考场:{{ item.changci }}</a></p>
-        <p :class="item.finish ? 'kb-info-detail' : 'kb-info-detail-ing'">时间：{{ item.shijian }}<a :class="'zuowei'">座位号:{{ item.zuoweihao }}</a></p>
+        <p :class="item.finish ? 'kb-info-name' : 'kb-info-name-ing'">{{ item.name }}<a style="float: right;margin-right: 6px;color: #8f8f94;">考场:{{ item.changci }}</a></p>
+        <p :class="item.finish ? 'kb-info-detail' : 'kb-info-detail-ing'">时间：{{ item.shijian }}<a style="float: right;margin-right: 6px;color: #8f8f94;">座位号:{{ item.zuoweihao }}</a></p>
         <img src="/public/wx/img/wancheng.png" class="wc" v-show="item.finish"/>
     </div>
     </template>
