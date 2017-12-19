@@ -1,51 +1,57 @@
-<div class="ts-list" style="margin-top: 10px;">
+<div class="mui-content-padded">
     <select name="" id="change" class="select-change-page" @change="changePage" v-model="page">
         <option value="all">全部</option>
         <option value="newest">最新</option>
     </select>
-    <div class="tableh">
-        <div class="table-id">
-            <p class="tableh-t">序号</p>
+    <div class="ts-list" style="margin-top: 10px;">
+        <div class="ts-fen">
+            <p class="ts-fen-p">平均学分绩点（GPA）</p>
+            <p class="ts-fen-p" style="font-size: 36px;line-height: 48px;">3.0</p>
         </div>
-        <div class="table-name">
-            <p class="tableh-t">课程名称</p>
-        </div>
-        <div class="table-grade">
-            <p class="tableh-t">成绩</p>
-        </div>
-        <div class="table-fractions">
-            <p class="tableh-t">学分</p>
-        </div>
-        <div class="table-attribute">
-            <p class="tableh-t">考试性质</p>
-        </div>
-    </div>
-    <ul>
-        <li style="float: left;border-top: 1px solid #80d4cc;width: 100%;padding-top: 5px;margin-top: 5px;" v-for="(item, key) in chengji">
-            <div class="tableh">
-                <div class="table-id">
-                    <p class="tableh-t">{{ item.bianhao }}</p>
-                </div>
-                <div class="table-name">
-                    <p class="tableh-t">{{ item.kecengmingceng }}</p>
-                </div>
-                <div class="table-grade">
-                    <p class="tableh-t">{{ item.chengji}}</p>
-                </div>
-                <div class="table-fractions">
-                    <p class="tableh-t">3</p>
-                </div>
-                <div class="table-attribute">
-                    <p class="tableh-t">{{ item.kaoshixingzhi }}</p>
-                </div>
+        <div class="tableh">
+            <div class="table-id">
+                <p class="tableh-t">序号</p>
             </div>
-        </li>
-    </ul>
-    <div id="loadingToast" v-show="jiazai">
-        <div class="weui-mask_transparent"></div>
-        <div class="weui-toast">
-            <i class="weui-loading weui-icon_toast"></i>
-            <p class="weui-toast__content">数据加载中</p>
+            <div class="table-name">
+                <p class="tableh-t">课程名称</p>
+            </div>
+            <div class="table-grade">
+                <p class="tableh-t">成绩</p>
+            </div>
+            <div class="table-fractions">
+                <p class="tableh-t">学分</p>
+            </div>
+            <div class="table-attribute">
+                <p class="tableh-t">考试性质</p>
+            </div>
+        </div>
+        <ul>
+            <li style="float: left;border-top: 1px solid #80d4cc;width: 100%;padding-top: 5px;margin-top: 5px;" v-for="(item, key) in chengji">
+                <div class="tableh">
+                    <div class="table-id">
+                        <p class="tableh-t">{{ item.bianhao }}</p>
+                    </div>
+                    <div class="table-name">
+                        <p class="tableh-t">{{ item.kecengmingceng }}</p>
+                    </div>
+                    <div class="table-grade">
+                        <p class="tableh-t">{{ item.chengji}}</p>
+                    </div>
+                    <div class="table-fractions">
+                        <p class="tableh-t">3</p>
+                    </div>
+                    <div class="table-attribute">
+                        <p class="tableh-t">{{ item.kaoshixingzhi }}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="loadingToast" v-show="jiazai">
+            <div class="weui-mask_transparent"></div>
+            <div class="weui-toast">
+                <i class="weui-loading weui-icon_toast"></i>
+                <p class="weui-toast__content">数据加载中</p>
+            </div>
         </div>
     </div>
 </div>
