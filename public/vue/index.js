@@ -78,7 +78,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     id = item.id;
 
                     router.push({
-                        path: '/pinglun/' + id + '/'+this.user,
+                        path: '/pinglun/' + id,
                     })
                 },
                 setZan: function (item) {
