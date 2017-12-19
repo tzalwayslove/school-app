@@ -72,5 +72,6 @@ Route::get('get/user', function(Request $request){
     unset($local_user->account);
     unset($local_user->password);
     unset($local_user->open_id);
+    $local_user->tiezi = \App\Model\Articel::where('user', $request->input('user'))->count();
     return response()->json($local_user);
 });
