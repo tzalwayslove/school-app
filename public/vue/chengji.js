@@ -25,7 +25,8 @@ fabu = Vue.component('chengji', function (success, error) {
                             count += jidian;
                         }
                     }
-
+                    console.log(count);
+                    console.log(this.chengji.length);
                     return this.chengji.length > 1
                         ? count / this.chengji.length
                         : 0;
