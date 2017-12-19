@@ -17,18 +17,18 @@ fabu = Vue.component('chengji', function (success, error) {
             computed: {
                 GPA:function(){
                     count = 0;
-                    if(this.chengji.length > 0){
-                        for ( i = 0, count = this.chengji.length; i < count; ++i ){
-                            console.log(this.chengji[i]);
-                            console.log(this.chengji[i].jidian);
-                        }
 
+                    for ( i = 0, count = this.chengji.length; i < count; ++i ){
+                        console.log(this.chengji[i]);
+                        console.log(this.chengji[i].jidian);
+                        jidian = this.chengji[i].jidian;
+                        count += jidian;
+                    }
+                    return this.chengji.length > 1
+                        ? count / this.chengji.length
+                        : 0;
                         // return count / this.chengji.length;
-                        return count / 1;
-                    }else{
-                        return 0;
-                    }/**/
-                    return 0;
+
                 }
             },
             methods:{
