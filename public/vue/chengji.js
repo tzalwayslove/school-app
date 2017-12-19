@@ -28,7 +28,7 @@ fabu = Vue.component('chengji', function (success, error) {
                         alert(res.data.result.message || '获取失败!');
                     }else{
                         $this.chengji = res.data.chengji;
-                        console.log(res.data.chengji);
+                        console.log(res.data.chengji.length);
                         $this.jige =$this.chengji.filter(function(item){
                             return item.jidian > 1;
                         });
