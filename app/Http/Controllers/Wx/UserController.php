@@ -11,6 +11,7 @@ use App\Model\Dom\Pingjiao;
 use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -194,5 +195,26 @@ class UserController extends Controller
         return response()->json([
             'result' => new Result(true)
         ]);
+    }
+
+    public function binding(Request $request)
+    {
+        $rules = [
+            'account'=>'required',
+            'password'=>'required'
+        ];
+        $message = [
+            'account.required' => '账户必须填写!',
+            'password.required'=> '密码必须填写!'
+        ];
+
+        $v = Validator::make($request->all(), $rules, $message);
+        $v->validate();
+
+        $user = session('user');
+        $user-> binding($request->input('account'), $request->input('password'));
+        return [
+            'result'=>new Result(true)
+        ];
     }
 }

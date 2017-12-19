@@ -63,6 +63,13 @@ class User extends Model
         }
     }
 
+    public function binding($account, $password)
+    {
+        $this->account = $account;
+        $this->password = $password;
+        $this->save();
+    }
+
     public static function createInit($uid)
     {
         Redis::set($uid, json_encode(['step'=>1]));
