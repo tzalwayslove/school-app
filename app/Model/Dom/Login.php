@@ -61,7 +61,7 @@ class Login
         }catch(\Exception $e){
             $e->getTraceAsString();
         }
-
+        dd($res);
         $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
         $filter = $errorDom->filterXPath('//font[@color="red"]');
 
