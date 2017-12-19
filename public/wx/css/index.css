@@ -5,6 +5,59 @@ ul li{
 	list-style: none;
 }
 /*首页基本样式表*/
+/*首页基本样式表*/
+@font-face {
+	font-family: 'icomoon';
+	src:  url('../fonts/icomoon.eot?n2o4lq');
+	src:  url('../fonts/icomoon.eot?n2o4lq#iefix') format('embedded-opentype'),
+	url('../fonts/icomoon.ttf?n2o4lq') format('truetype'),
+	url('../fonts/icomoon.woff?n2o4lq') format('woff'),
+	url('../fonts/icomoon.svg?n2o4lq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-fabu:before {
+	content: "\e900";
+	font-size: 32px;
+	color: inherit;
+}
+.icon-index:before {
+	content: "\e901";
+	font-size: 32px;
+	color: inherit;
+}
+.icon-wode:before {
+	content: "\e902";
+	font-size: 32px;
+	color: inherit;
+}
+.nm-btn{
+	background-color: rgba(0,0,0,0);
+	border: none;
+	padding: 0;
+	font-size: 12px;
+	margin-top: 10px;
+	color: #FFFFFF;
+}
+.nm-lab{
+	margin: 8px;
+	padding-left:20px ;
+}
 .item-logo{
 	max-width: 30px;
 	margin: 12px 0 6px 0;
