@@ -52,10 +52,14 @@ class Login
                 'USERNAME' => $user_name,
                 'PASSWORD' => $password
             ],
+            'headers'=>[
+                'cache-control'=>'no-cache',
+                'content-type'=>'multipart/form-data'
+            ],
             'cookies' => $this->jar,
             'char_set' => 'gbk'
         ]);
-        dd($this->login_res);
+
         $this->login_res = $res->getBody();
 
         $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
