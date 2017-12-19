@@ -152,6 +152,7 @@ input[type="submit"]:hover{
 .box2-t-logo{
 	max-width: 50px;
 	margin: 10px 0 5px 0;
+	border-radius: 50%;
 }
 .md6{
 	float: left;
