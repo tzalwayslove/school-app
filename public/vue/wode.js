@@ -22,7 +22,9 @@ wode = Vue.component('wode', function (resolve, reject) {
                 this.userId = data.user;
                 axios.get('/api/get/user?user='+this.userId, function(res){
                     this.user = res;
+                    console.log(this.user.niming);
                 });
+
             }
         });
     });
