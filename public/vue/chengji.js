@@ -9,11 +9,15 @@ fabu = Vue.component('chengji', function (success, error) {
             data(){
                 return {
                     jiazai:true,
-                    chengji:[]
+                    chengji:[],
+                    jige:[],
+                    bujige:[]
                 }
             },
             methods:{
-
+                isJige:function(item){
+                    return item.jidian > 1;
+                }
             },
             mounted: function(){
                 $this = this;
@@ -24,6 +28,12 @@ fabu = Vue.component('chengji', function (success, error) {
                         alert(res.data.result.message || '获取失败!');
                     }else{
                         $this.chengji = res.data.chengji;
+                        $this.jige =$this.chengji.filter(function(item){
+                            return item.jidian > 1;
+                        });
+                        $this.bujige = $this.chengji.filter(function(item){
+                            return item.jidian < 2;
+                        });
                     }
                 });
             }

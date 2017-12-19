@@ -5,7 +5,7 @@
     </div>
     <p class="ts-fen-title"> ———   解放区    ———</p>
 
-    <div class="ts-fen-jf" v-for="(item, key) in chengji">
+    <div class="ts-fen-jf" v-for="(item, key) in jige">
         <a class="ts-fen-mtit">{{item.kecengmingceng}}</a><a class="ts-fen-mtit">总分：{{item.chengji}}</a>
         <div class="ts-fen-cj">
             <p class="ts-fen-cj-p">学分：{{ item.xuefen }}</p>
@@ -21,7 +21,7 @@
     </div>
 
     <p class="ts-fen-title2"> ———   沦陷区    ———</p>
-    <div class="ts-fen-jf lx"  v-for="(item, key) in chengji">
+    <div class="ts-fen-jf lx"  v-for="(item, key) in bujige">
         <a class="ts-fen-mtit lx-c">{{item.kecengmingceng}}</a><a class="ts-fen-mtit lx-c">总分：{{item.chengji}}</a>
         <div class="ts-fen-cj">
             <p class="ts-fen-cj-p lx-c">学分：{{ item.xuefen }}</p>
