@@ -38,7 +38,7 @@
         $('#binding').on('click', function(){
             account = $('#account').val();
             password = $('#password').val();
-            if(!account == '' || password == ''){
+            if(account == '' || password == ''){
                 alert('请输入正确账户和密码!');
             }
             data = {
