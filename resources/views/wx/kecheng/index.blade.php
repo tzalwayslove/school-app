@@ -8,9 +8,6 @@
     <script src="/public/wx/js/mui.min.js"></script>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-        mui.init();
-    </script>
 </head>
 <body>
 <div id="app"
