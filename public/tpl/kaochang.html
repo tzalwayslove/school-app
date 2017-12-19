@@ -1,11 +1,10 @@
 <div>
-    <template v-for="(item, key) in finish">
+    <template v-for="(item, key) in kaochang">
     <div :class="item.finish ? 'kb-info-ing' : 'kb-info'" style="margin-top: 54px;">
         <p class="kb-info-name">{{ item.name }}<a style="">考场:{{ item.changci }}</a></p>
         <p class="kb-info-detail">时间：{{ item.shijian }}<a style="float: right;margin-right: 6px;color: #8f8f94;">座位号:{{ item.zuoweihao }}</a></p>
         <img src="/public/wx/img/wancheng.png" class="wc" v-show="item.finish"/>
     </div>
-
     </template>
     <div id="loadingToast" v-show="jiazai">
         <div class="weui-mask_transparent"></div>

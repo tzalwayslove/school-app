@@ -126,7 +126,6 @@ class Pingjiao extends Login
                 $this->postData($this->saveUrl, $str, [
                     'Content-Type'=>'application/x-www-form-urlencoded'
                 ]);
-
             }
         });
 

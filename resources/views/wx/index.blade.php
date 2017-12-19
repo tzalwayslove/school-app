@@ -178,8 +178,7 @@
             methods: {
                 onClick: function(){
                     console.log(2222222222);
-                },
-
+                }
             },
             mounted: function () {
 
