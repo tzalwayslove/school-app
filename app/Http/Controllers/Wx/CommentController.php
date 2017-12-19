@@ -30,6 +30,7 @@ class CommentController extends Controller
     public function addComment(Request $request)
     {
         $articel = Articel::find($request->input('id'));
+        $user = $request->input('user');
         if(!$articel){
             return response([
                 'result'=> new Result(false, '未找到该文章')
@@ -43,7 +44,7 @@ class CommentController extends Controller
             ]);
         }
 
-        $comment = Comment::addComment($articel, $content);
+        $comment = Comment::addComment($articel, $content, $user);
         return response([
             'result'=> new Result(true),
             'comment' => $comment
