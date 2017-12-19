@@ -431,6 +431,6 @@ p.weui-toast__content{
 	color: #FFF;
 }
 .mui-content-padded select{
-	border: 1px solid #2ebeb0;
+	border: 1px solid #2ebeb0!important;
 	width: 97%;
 }
