@@ -52,7 +52,6 @@ class Login
                 'USERNAME' => $user_name,
                 'PASSWORD' => $password
             ],
-            'allow_redirects'=>true,
             'cookies' => $this->jar,
             'char_set' => 'gbk'
         ]);

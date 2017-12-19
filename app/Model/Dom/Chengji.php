@@ -7,8 +7,6 @@
  */
 
 namespace App\Model\Dom;
-
-
 use App\Exceptions\NoPingjiaoException;
 use Symfony\Component\DomCrawler\Crawler;
 

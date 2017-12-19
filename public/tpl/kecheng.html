@@ -1,49 +1,6 @@
-<!--<div class="page tabfabu js_show">
-    <div class="page__bd" style="height: 100%;">
-        <h2>table</h2>
-        <table id="kbtable" border="1" width="100%" cellspacing="0" cellpadding="0">
-            <tr>
-                <th width="70" height="28" align="center">&nbsp;</th>
-                <th>星期一</th>
-                <th>星期二</th>
-                <th>星期三</th>
-                <th>星期四</th>
-                <th>星期五</th>
-                <th>星期六</th>
-                <th>星期日</th>
-            </tr>
-            <template v-for="(tr, index) in table">
-            <tr>
-                <th width="70" height="28" align="center">
-                    {{(index+1)*2-1}}至{{(index+1)*2}}节
-                </th>
-                <template v-for="(td, index) in tr">
-                    <td width="123" height="28" align="center" valign="top">
-                        <div v-for="kecheng in td" style="border-bottom: 1px solid #f0ad4e;">
-                            {{kecheng.name}}::{{kecheng.week}}::{{kecheng.teacher}}::{{kecheng.jiaoshi}}
-                        </div>
-                    </td>
-                </template>
-            </tr>
-            </template>
-        </table>
-        <p>
-            备注： {{desc}}
-        </p>
-    </div>
-    <div id="loadingToast" v-show="jiazai">
-        <div class="weui-mask_transparent"></div>
-        <div class="weui-toast">
-            <i class="weui-loading weui-icon_toast"></i>
-            <p class="weui-toast__content">数据加载中</p>
-        </div>
-    </div>
-</div>-->
 <div>
     <p class="ct-title">
-        <input type="button" value="显示当前课表" style="font-size: 10px;padding: 4px;border-radius: 15px;" />
-        2017-2018上半学期课程表
-        <input type="button" value="显示当前课表" style="font-size: 10px;padding: 4px;border-radius: 15px;" />
+        当前课表
     </p>
     <table border="1" bordercolor="#aaaaaa" style="width: 100%;background-color: #FFFFFF;">
         <tr >
