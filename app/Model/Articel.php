@@ -69,7 +69,7 @@ class Articel extends Model
                         if ($dur < 259200) {//3天内
                             return floor($dur / 86400) . '天前';
                         } else {
-                            return '很久以前';
+                            return '3天以前';
                         }
                     }
                 }
