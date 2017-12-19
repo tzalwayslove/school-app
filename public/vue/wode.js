@@ -23,7 +23,7 @@ wode = Vue.component('wode', function (resolve, reject) {
                 $this = this;
                 axios.get('/api/get/user?user='+this.userId).then(function(res){
                     console.log(res);
-                    $this.user = res;
+                    $this.user = res.data;
                 });
 
             }
