@@ -126,7 +126,6 @@ Route::get('wx_menu', function(){
                     "key" => "全部课程表"
                 ],
             ]
-
         ],
         [
             "type" => "click",
