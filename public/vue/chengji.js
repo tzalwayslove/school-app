@@ -23,7 +23,7 @@ fabu = Vue.component('chengji', function (success, error) {
                             jidian = this.chengji[i].jidian;
                             count += jidian;
                         }else{
-                            console.log(i);
+                            // console.log(i);
                             console.log(this.chengji);
                         }
                     }
