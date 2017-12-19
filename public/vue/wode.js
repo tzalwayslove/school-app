@@ -7,15 +7,17 @@ wode = Vue.component('wode', function (resolve, reject) {
         resolve({
             data:function(){
                 return {
-                    user:null,
+                    userId:null,
                     zan:0,
                     tiezi:0
                 }
             },
             template: res.data,
             mounted:function(){
-                this.user = data.user;
-
+                this.userId = data.user;
+                axios.get('/api/get/user', {user:this.userId}, function(res){
+                    this.user = res;
+                });
             }
         });
     });
