@@ -4,7 +4,7 @@ ul{
 ul li{
 	list-style: none;
 }
-/*首页基本样式表*/ 
+/*首页基本样式表*/
 .item-logo{
 	max-width: 30px;
 	margin: 12px 0 6px 0;
@@ -14,16 +14,16 @@ ul li{
 	margin-top: 45px;
 	border: 1px solid #d9d9d9;
 	border-radius: 3px;
-    box-shadow: 1px 1px 1px #AAAAAA;
+	box-shadow: 1px 1px 1px #AAAAAA;
 }
 .hfbox-img{
 	width: 30px;
 	margin: 10px;
 }
 .hfbox-tl{
-margin-left: 50px;
-margin-top: -40px;
-color: #000000;
+	margin-left: 50px;
+	margin-top: -40px;
+	color: #000000;
 }
 .hf-box-main{
 	padding: 10px;
@@ -37,13 +37,13 @@ color: #000000;
 .hf-input{
 	width: 100%;
 	position:fixed;
-    bottom:0;
-    background: #FFFFFF;
+	bottom:0;
+	background: #FFFFFF;
 }
 .ht-inp{
 	height: 35px;
 	border-radius: 18px;
-	
+
 }
 .ht-inp-t{
 	width: 68%;
@@ -52,21 +52,21 @@ color: #000000;
 .ht-inp-s{
 	width: 20%;
 	float: right;
-	
+
 }
 .yjbox{
 	width: 100%;
 	margin-top: 45px;
 	border: 1px solid #d9d9d9;
 	border-radius: 3px;
-    box-shadow: 1px 1px 1px #AAAAAA;
+	box-shadow: 1px 1px 1px #AAAAAA;
 	font-size: 14px;
 	color: #000000;
 }
 .yjbox-tl{
-margin-left: 80px;
-margin-top: -30px;
-color: #000000;
+	margin-left: 80px;
+	margin-top: -30px;
+	color: #000000;
 }
 .yjbox-img{
 	width: 60px;
@@ -106,7 +106,7 @@ p{
 .icon-num{
 	line-height: 32px;
 	float: right;
-	
+
 }
 .box2{
 	width: 100%;
@@ -142,7 +142,7 @@ input[type="submit"]:hover{
 	float: left;
 	text-align: center;
 	background-image: url(../img/bg-wode.png);
-	
+
 }
 .box2-t a{
 	color: #FFFFFF;
@@ -200,7 +200,7 @@ input[type="submit"]:hover{
 	background-color: #dddddd;
 	margin: 10px;
 	border-radius: 6px;
-	
+
 }
 .kb-info-ing{
 	background-color: #3cc3b6;
@@ -249,19 +249,19 @@ input[type="submit"]:hover{
 }
 .kb-time-img-l{
 	max-height: 125px;
-	
+
 }
 .kb-time-img-r{
 	margin: 20px 0;
 	max-width: 85px;
-	
+
 }
 /*transcript样式表*/
 .gtg-img{
 	margin-bottom: -1px;
 	height: 10px;
 	margin-left: 3px;
-	
+
 }
 .showup{
 	padding: 5px 10px;
@@ -309,7 +309,7 @@ input[type="submit"]:hover{
 	background: #2ebeb0;
 	border-radius: 3px;
 	padding-top: 20px;
-	padding-bottom: 15px;	
+	padding-bottom: 15px;
 	margin-bottom: 10px;
 }
 .ts-fen-cj{
@@ -320,7 +320,7 @@ input[type="submit"]:hover{
 .ts-fen-cj-p{
 	font-size: 10px;
 	color: #FFFFFF;
-	
+
 }
 .ts-fen-cj-p2{
 	font-size: 10px;
@@ -425,7 +425,4 @@ input[type="submit"]:hover{
 	color: #FFFFFF;
 	font-size: 16px;
 	line-height: 25px;
-}
-p.weui-toast__content{
-	color: #FFF;
 }
