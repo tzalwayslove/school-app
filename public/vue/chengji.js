@@ -17,14 +17,15 @@ fabu = Vue.component('chengji', function (success, error) {
             computed: {
                 GPA:function(){
                     count = 0;
-                    /*if(this.chengji.length > 0){
+                    if(this.chengji.length > 0){
                         for ( i = 0, count = this.chengji.length; i < count; ++i ){
-                            count += this.chengji[i].jidian
+                            // count += this.chengji[i].jidian
+                            console.log(this.chengji[i].jidian);
                         }
                         return count / this.chengji.length;
                     }else{
                         return 0;
-                    }*/
+                    }/**/
                     return 0;
                 }
             },
@@ -44,7 +45,6 @@ fabu = Vue.component('chengji', function (success, error) {
                         $this.jige =$this.chengji.filter(function(item){
                             return item.jidian > 1;
                         });
-                        console.log($this.chengji);
                         $this.bujige = $this.chengji.filter(function(item){
                             return item.jidian < 2;
                         });
