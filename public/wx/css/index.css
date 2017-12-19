@@ -251,7 +251,11 @@ input[type="submit"]:hover {
     font-size: 16px;
     padding: 6px;
 }
-
+.kb-info-name a{
+    float: right;
+    margin-right: 6px;
+    color: #8f8f94;
+}
 .kb-info-name-ing {
     color: #FFFFFF;
     font-size: 16px;
@@ -509,10 +513,4 @@ input[type="submit"]:hover {
 
 p.weui-toast__content {
     color: #FFF;
-}
-
-.zuowei {
-    float: right;
-    margin-right: 6px;
-    color: #8f8f94;
 }
