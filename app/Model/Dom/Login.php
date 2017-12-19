@@ -46,7 +46,8 @@ class Login
         $this->client = new Client();
 
         $url = $this->pre . '/xsd/xk/LoginToXk';
-
+        echo 1;
+        die();
         try{
             $res = $this->client->request('post', $url, [
                 'form_params' => [
@@ -56,8 +57,7 @@ class Login
                 'cookies' => $this->jar,
                 'char_set' => 'gbk'
             ]);
-            echo 1;
-            die();
+
             $this->login_res = $res->getBody();
             dd($res->getBody());
         }catch(\Exception $e){
