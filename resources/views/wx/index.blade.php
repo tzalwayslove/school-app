@@ -76,6 +76,7 @@
                     data.nav_active = to.name;
             }
             next();
+            data.bar_buttom = true;
         });
 
         vue = new Vue({
