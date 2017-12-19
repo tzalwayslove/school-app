@@ -49,7 +49,7 @@ class Kechengbiao extends Login
     public function getTable($now = true)
     {
         $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery($now));
-        dd($html);
+
         $page = new Crawler($html->__toString());
         $table = $page->filterXPath('//table[@id="kbtable"]');
 

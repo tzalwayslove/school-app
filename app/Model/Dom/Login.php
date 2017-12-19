@@ -58,6 +58,7 @@ class Login
             'char_set' => 'gbk'
         ]);
 
+        dd($res);
         $this->login_res = $res->getBody();
 
         $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
