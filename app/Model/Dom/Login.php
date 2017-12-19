@@ -45,12 +45,6 @@ class Login
         $this->jar = new CookieJar;
         $this->client = new Client();
 
-
-        $url = '/xsd';
-
-        $res = $this->getPage($url);
-        dd($res);
-
         $url = $this->pre . '/xsd/xk/LoginToXk';
 
         $res = $this->client->request('post', $url, [
@@ -62,6 +56,7 @@ class Login
             'char_set' => 'gbk'
         ]);
 
+        dd($res);
         $this->login_res = $res->getBody();
 
         $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
