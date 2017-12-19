@@ -35,4 +35,11 @@
         <a class="ts-fen-cj-p2 lx-c">卷面分：80</a><a class="ts-fen-cj-p2 lx-c">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
         <a class="ts-fen-cj-p ksxz lx-c">考试性质：{{ item.kaoshixingzhi }}</a>
     </div>
+    <div id="loadingToast" v-show="jiazai">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content">数据加载中</p>
+        </div>
+    </div>
 </div>
