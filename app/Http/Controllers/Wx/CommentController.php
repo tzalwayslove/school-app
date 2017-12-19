@@ -63,8 +63,10 @@ class CommentController extends Controller
         $comment->zan += $request->input('zan');
         $comment->zan  = $comment->zan < 0 ? 0 : $comment->zan;
 
-        if($comment->getUser)
+        if($comment->getUser){
             $comment->getUser->zan += $request->input('zan');
+            $comment->getUser->save();
+        }
 
         $comment->save();
         return response(['result'=>new Result(true), 'comment'=>$comment]);
