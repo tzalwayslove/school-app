@@ -8,6 +8,7 @@
     <script src="/public/wx/js/mui.min.js"></script>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
 </head>
 <body>
 <div id="app"
