@@ -315,7 +315,7 @@ input[type="submit"]:hover{
 .ts-fen-cj{
 	float: right;
 	margin-right: 10px;
-	margin-top: -20px;
+	/*margin-top: -20px;*/
 }
 .ts-fen-cj-p{
 	font-size: 10px;
