@@ -17,9 +17,10 @@ fabu = Vue.component('Chengjiall', function (success, error) {
                 GPA: function () {
                     count = 0;
                     num = 0;
+
                     for( i=0, len = this.chengji.length; i< len; ++i){
                         if(this.chengji[i].kaoshixingzhi == '正常考试'){
-                            count += this.chengji[i].jidian
+                            count += this.chengji[i].jidian;
                             ++num
                         }
                     }
