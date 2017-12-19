@@ -211,8 +211,9 @@ class UserController extends Controller
         $v = Validator::make($request->all(), $rules, $message);
         $v->validate();
 
-        $user = session('user');
-        $user-> binding($request->input('account'), $request->input('password'));
+        $user = User::find(session('user')->id);
+
+        $user->binding($request->input('account'), $request->input('password'));
         return [
             'result'=>new Result(true)
         ];
