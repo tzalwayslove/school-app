@@ -8,7 +8,7 @@
     <script src="/public/wx/js/mui.min.js"></script>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
-
+    <link rel="stylesheet" href="/public/vendors/weui/weui.css">
     <script type="text/javascript" charset="utf-8">
         mui.init();
     </script>
