@@ -79,9 +79,12 @@ Route::group([
         return view('wx.kaochang.index')->withUser($request->input('user'));
     });
 
+    Route::get('/binding', function(){
+        return view('wx.binding.index');
+    });
     Route::post('/binding', 'UserController@binding');
     Route::post('/bind-success', function(){
-        return view('wx/binding/success');
+        return view('wx.binding.success');
     });
 
 });
