@@ -32,7 +32,7 @@ fabu = Vue.component('kaochang', function (success, error) {
                     $this.jiazai = false;
                     if(res.data.result.code == 0){
                         alert(res.data.result.message || '获取失败!');
-                    }else{
+                    } else {
                         $this.kaochang = res.data.kaochang;
                     }
                 });
