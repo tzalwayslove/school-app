@@ -46,6 +46,8 @@ class Login
         $this->client = new Client();
 
         $url = $this->pre . '/xsd/xk/LoginToXk';
+        $res = $this->client->request('get', 'http://www.baidu.com');
+        dd($res);
 
         $res = $this->client->request('post', $url, [
             'form_params' => [
