@@ -20,8 +20,9 @@ wode = Vue.component('wode', function (resolve, reject) {
             template: res.data,
             mounted:function(){
                 this.userId = data.user;
+                $this = this;
                 axios.get('/api/get/user?user='+this.userId, function(res){
-                    this.user = res;
+                    $this.user = res;
                     console.log(this.user.niming);
                 });
 
