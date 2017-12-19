@@ -56,6 +56,8 @@ class Login
                 'cookies' => $this->jar,
                 'char_set' => 'gbk'
             ]);
+            echo 1;
+            die();
             $this->login_res = $res->getBody();
             dd($res->getBody());
         }catch(\Exception $e){
