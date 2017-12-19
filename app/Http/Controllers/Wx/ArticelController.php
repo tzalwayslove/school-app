@@ -51,7 +51,6 @@ class ArticelController extends Controller
         $articel->zan  = $articel->zan < 0 ? 0 : $articel->zan;
 
         if($articel->user_account){
-            return [$articel->user_account];
             $articel->user_account->zan += $request->input('zan');
             $articel->user_account->save();
         }
