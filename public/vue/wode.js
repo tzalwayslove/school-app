@@ -7,7 +7,9 @@ wode = Vue.component('wode', function (resolve, reject) {
         resolve({
             data:function(){
                 return {
-                    user:null
+                    user:null,
+                    zan:0,
+                    tiezi:0
                 }
             },
             template: res.data,
