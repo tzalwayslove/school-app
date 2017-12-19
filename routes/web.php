@@ -86,7 +86,7 @@ Route::group([
         return view('wx.binding.index');
     });
     Route::post('/binding', 'UserController@binding');
-    Route::post('/bind-success', function(){
+    Route::get('/bind-success', function(){
         return view('wx.binding.success');
     });
 
