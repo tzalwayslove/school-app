@@ -8,7 +8,7 @@
             <a><img :src="user.avatar" class="box2-t-logo"></a><br />
             <a style="margin-bottom: 10px;">{{ user.nick_name }}{{user.niming}}</a><br />
         </template>
-        <div class="md6" style="border-right: 1px solid #FFFFFF;"><a>帖子 {{ tiezi }}</a></div>
+        <div class="md6" style="border-right: 1px solid #FFFFFF;"><a>帖子 {{ user.tiezi }}</a></div>
         <div class="md6"><a>赞 {{ user.zan }}</a></div>
         <a :href="'/wx/kecheng?user='+this.userId">
             <div class="md4">
