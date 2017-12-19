@@ -14,7 +14,8 @@ wode = Vue.component('wode', function (resolve, reject) {
             },
             template: res.data,
             mounted:function(){
-                this.user = vue.user;
+                this.user = data.user;
+
             }
         });
     });

@@ -67,7 +67,7 @@ Route::get('get/wx/user', function(){
     $wx_user = session('wx_user', []);
     return response()->json($wx_user);
 });
-Route::get('get/local/user', function(){
-    $local_user = session('local_user', []);
+Route::get('get/user', function(Request $request){
+    $local_user = \App\Model\User::find($request->input('user'));
     return response()->json($local_user);
 });
