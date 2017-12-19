@@ -37,6 +37,10 @@ class Comment extends Model
         $comment->user = $user;
         $comment->show = 1;
         $comment->zan = 0;
+        $userDb = User::find($user);
+        if($userDb){
+            $comment->niming = $userDb->niming;
+        }
         $comment->save();
         return $comment;
     }
