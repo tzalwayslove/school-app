@@ -430,3 +430,7 @@ input[type="submit"]:hover{
 p.weui-toast__content{
 	color: #FFF;
 }
+.mui-content-padded select{
+	border: 1px solid #2ebeb0;
+	width: 97%;
+}
