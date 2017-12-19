@@ -23,7 +23,7 @@
          {{--route link block--}}
         <router-link
                 :class="['mui-tab-item', nav_active == 'tiezi' ? 'mui-active' : '']"
-                class="mui-tab-item mui-active mui-active" to="/tiezi">
+                to="/tiezi">
             {{--<img src="{{ asset('public/wx/img/icon-index.png')}}" class="item-logo">--}}
             <span class="icon-index"></span>
         </router-link>
