@@ -45,7 +45,7 @@
                 account:account,
                 password:password,
             };
-            postData('/wx/binding', data, function(res){
+            $.postData('/wx/binding', data, function(res){
                 if(res.result.code == 1){
                     //跳转
                     window.location.href='/wx/bind-success';
