@@ -54,7 +54,7 @@ class Login
             ],
             'headers'=>[
                 'cache-control'=>'no-cache',
-                'content-type'=>'multipart/form-data'
+                'Content-Type'=>'application/x-www-form-urlencoded'
             ],
             'cookies' => $this->jar,
             'char_set' => 'gbk'
