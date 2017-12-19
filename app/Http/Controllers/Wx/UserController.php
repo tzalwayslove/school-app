@@ -50,6 +50,7 @@ class UserController extends Controller
             foreach($res as $item){
                 $data[] = $item;
             }
+
             return response([
                 'result' => new Result($res),
                 'chengji' => $data
