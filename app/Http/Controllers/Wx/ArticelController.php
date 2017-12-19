@@ -20,6 +20,7 @@ class ArticelController extends Controller
 
         foreach($list as $item){
             $item->commentCount = count($item->getComment);
+            $item->created_at = Articel::getTimeAgo($item->created_at);
         }
         return response(['result'=>new Result(true), 'list'=> $list]);
     }

@@ -36,7 +36,7 @@ class Articel extends Model
         $articel->title = $title;
         $articel->content = $content;
         $articel->cate = $cate;
-        $articel->niming = $niming ? 1 :0;
+        $articel->niming = $niming ? 1 : 0;
         $articel->user = $user->id;
         $articel->save();
     }
@@ -44,8 +44,36 @@ class Articel extends Model
     public static function minganci($str)
     {
         $client = new Client();
-        $res = $client->request('GET', 'http://www.hoapi.com/index.php/Home/Api/check?str='.$str);
+        $res = $client->request('GET', 'http://www.hoapi.com/index.php/Home/Api/check?str=' . $str);
         dd($res->getBody);
     }
 
+    public static function getTimeAgo($the_time)
+    {
+        $now_time = date("Y-m-d H:i:s", time() + 8 * 60 * 60);
+        $now_time = strtotime($now_time);
+        $show_time = strtotime($the_time);
+        $dur = $now_time - $show_time;
+        if ($dur < 0) {
+            return $the_time;
+        } else {
+            if ($dur < 60) {
+                return $dur . '秒前';
+            } else {
+                if ($dur < 3600) {
+                    return floor($dur / 60) . '分钟前';
+                } else {
+                    if ($dur < 86400) {
+                        return floor($dur / 3600) . '小时前';
+                    } else {
+                        if ($dur < 259200) {//3天内
+                            return floor($dur / 86400) . '天前';
+                        } else {
+                            return $the_time;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
