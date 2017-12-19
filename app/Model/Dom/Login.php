@@ -27,7 +27,7 @@ class Login
     public $faculty;    //院系
     public $_class;     //课程
     public $infoPage;
-    protected $pre = 'http://1900mx9281.51mypc.cn';//http://222.27.186.113
+    protected $pre = 'http://1900mx9281.51mypc.cn'; //http://222.27.186.113
 //    protected $pre = 'http://222.27.186.112';
     protected $client;
 
@@ -46,14 +46,13 @@ class Login
         $this->client = new Client();
 
         $url = $this->pre . '/xsd/xk/LoginToXk';
-        $res = $this->client->request('get', '1900mx9281.51mypc.cn/xsd');
-        dd($res);
 
         $res = $this->client->request('post', $url, [
             'form_params' => [
                 'USERNAME' => $user_name,
                 'PASSWORD' => $password
             ],
+            'allow_redirects'=>true,
             'cookies' => $this->jar,
             'char_set' => 'gbk'
         ]);
