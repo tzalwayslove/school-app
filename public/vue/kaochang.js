@@ -20,6 +20,11 @@ fabu = Vue.component('kaochang', function (success, error) {
                         'margin-right': '6px',
                         'color': '#FFFFFF'
                     },
+                    zuowei:{
+                        float:'right',
+                        'margin-right':'6px',
+                        color:'#8f8f94'
+                    }
                 }
             },
             methods:{
