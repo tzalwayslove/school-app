@@ -79,6 +79,11 @@ Route::group([
         return view('wx.kaochang.index')->withUser($request->input('user'));
     });
 
+    Route::post('/binding', 'UserController@binding');
+    Route::post('/bind-success', function(){
+        return view('wx/binding/success');
+    });
+
 });
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
