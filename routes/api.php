@@ -69,5 +69,7 @@ Route::get('get/wx/user', function(){
 });
 Route::get('get/user', function(Request $request){
     $local_user = \App\Model\User::find($request->input('user'));
+    unset($local_user->account);
+    unset($local_user->password);
     return response()->json($local_user);
 });
