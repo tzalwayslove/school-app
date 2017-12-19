@@ -140,7 +140,6 @@ class UserController extends Controller
         $now = time();
         foreach ($data as $item) {
             $item_time = substr($item->shijian, 0, strpos($item->shijian, '~'));
-            dd($item_time);
             $item->finish = $now > strtotime($item_time);
         }
         return response([
