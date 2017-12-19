@@ -5,7 +5,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
     axios.get("/public/tpl/pinglun.html").then(function (res) {
         success({
                 template: res.data,
-                props: ['articel'],
+                props: ['articel', 'user'],
                 data(){
                     return {
                         data : {},
@@ -49,7 +49,8 @@ pinglun = Vue.component('pinglun', function (success, error) {
 
                         axios.post('wx/addComment', {
                             id: articel_id,
-                            content: this.comment
+                            content: this.comment,
+                            user: this.user
                         }).then(function(res){
                             if(res.data.result.code == 1){
                                 $this.getData()
