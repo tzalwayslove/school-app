@@ -45,6 +45,11 @@ class Login
         $this->jar = new CookieJar;
         $this->client = new Client();
 
+
+        $url = $this->pre . '/xsd';
+        $res = $this->getPage($url);
+        dd($res);
+
         $url = $this->pre . '/xsd/xk/LoginToXk';
 
         $res = $this->client->request('post', $url, [
