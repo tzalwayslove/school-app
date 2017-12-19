@@ -46,7 +46,7 @@ class Login
         $this->client = new Client();
 
 
-        $url = $this->pre . '/xsd';
+        $url = '/xsd';
 
         $res = $this->getPage($url);
         dd($res);
