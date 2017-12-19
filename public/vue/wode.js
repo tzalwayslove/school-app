@@ -9,7 +9,11 @@ wode = Vue.component('wode', function (resolve, reject) {
                 return {
                     userId:null,
                     zan:0,
-                    tiezi:0
+                    tiezi:0,
+                    user:{
+                        niming:1,
+                        sex:1
+                    }
                 }
             },
             template: res.data,
