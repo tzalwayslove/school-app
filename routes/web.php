@@ -56,6 +56,9 @@ Route::any('wx/login', 'Wx\Login@index');
 Route::group([
     'prefix'=>'wx',
     'namespace'=> 'Wx',
+    'middleware'=>[
+        'wx_login'
+    ]
 ], function(){
     Route::get('/articel', 'ArticelController@index');
     Route::get('/comment/{id}', 'CommentController@index');
@@ -152,7 +155,6 @@ Route::get('wx_menu', function(){
             ],
         ],*/
     $menu->add($buttons);
-
 });
 Auth::routes();
 
