@@ -182,9 +182,7 @@
 
             },
             mounted: function () {
-                router.push({
-                    path: '/tiezi'
-                })
+
             }
         }).$mount('#app');
     });
