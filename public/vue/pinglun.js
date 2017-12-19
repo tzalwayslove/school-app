@@ -24,6 +24,18 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     }
                 },
                 methods:{
+                    getData:function(){
+                        let id =this.$route.params.id;
+                        let $this =this;
+
+                        axios.get('wx/comment/'+ id).then(function(res){
+                            $this.articelData = res.data.data;
+                            $this.list = res.data.data.get_comment;
+                            if($this.list.length == 0){
+
+                            }
+                        });
+                    },
                     addpinglun(){
                         this.showConvert();
                     },
@@ -40,7 +52,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                             content: this.comment
                         }).then(function(res){
                             if(res.data.result.code == 1){
-                                $this.list.push(res.data.comment);
+                                $this.getData()
                                 $this.comment = '';
                             }else{
                                 alert(res.data.result.message || '评论失败');
@@ -65,19 +77,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     }
                 },
                 mounted: function () {
-                    let id =this.$route.params.id;
-                    let $this =this;
-
-                    axios.get('wx/comment/'+ id).then(function(res){
-                        $this.articelData = res.data.data;
-                        console.log($this.articelData);
-                        console.log($this.articelData.user_account);
-                        console.log($this.articelData.user_account.avatar);
-                        $this.list = res.data.data.get_comment;
-                        if($this.list.length == 0){
-
-                        }
-                    });
+                   this.getData();
                 }
             }
         );
