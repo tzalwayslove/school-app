@@ -18,7 +18,7 @@ fabu = Vue.component('chengji', function (success, error) {
                 GPA:function(){
                     count = 0;
 
-                    for ( i = 0, count = this.chengji.length; i < count; ++i ){
+                    for ( var i = 0, count = this.chengji.length; i < count; ++i ){
                         if(typeof this.chengji[i] != 'undefined'){
                             jidian = this.chengji[i].jidian;
                             count += jidian;
