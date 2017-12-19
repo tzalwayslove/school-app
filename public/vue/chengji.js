@@ -22,7 +22,8 @@ fabu = Vue.component('chengji', function (success, error) {
                             // count += this.chengji[i].jidian
                             console.log(this.chengji[i].jidian);
                         }
-                        return count / this.chengji.length;
+                        // return count / this.chengji.length;
+                        return count / 1;
                     }else{
                         return 0;
                     }/**/
