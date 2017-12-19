@@ -29,7 +29,7 @@
 </div>
 <div class="fix-bott">
     <p class="fix-bott-p" style="font-size: 12px;margin-bottom: 20px;">希望我们不只是遇见</p>
-    <p class="fix-bott-p" style="font-size: 10px;margin-bottom: 15px;">copyright©   2017 遇见商大</p>
+    <p class="fix-bott-p" style="font-size: 10px;margin-bottom: 15px;">copyright©   {{date('Y')}} 遇见商大</p>
 </div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
