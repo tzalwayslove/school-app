@@ -21,6 +21,7 @@ fabu = Vue.component('chengji', function (success, error) {
                         for ( i=0, count = this.chengji.length; i<count; ++i){
                             count += this.chengji[i].jidian
                         }
+
                         return count / this.chengji.length;
                     }else{
                         return 0;
@@ -28,9 +29,7 @@ fabu = Vue.component('chengji', function (success, error) {
                 }
             },
             methods:{
-                isJige:function(item){
-                    return item.jidian > 1;
-                }
+
             },
 
             mounted: function(){
