@@ -3,11 +3,11 @@
         <option value="all">全部</option>
         <option value="newest">最新</option>
     </select>
+    <div class="ts-fen">
+        <p class="ts-fen-p">平均学分绩点（GPA）</p>
+        <p class="ts-fen-p" style="font-size: 36px;line-height: 48px;">3.0</p>
+    </div>
     <div class="ts-list" style="margin-top: 10px;">
-        <div class="ts-fen">
-            <p class="ts-fen-p">平均学分绩点（GPA）</p>
-            <p class="ts-fen-p" style="font-size: 36px;line-height: 48px;">3.0</p>
-        </div>
         <div class="tableh">
             <div class="table-id">
                 <p class="tableh-t">序号</p>
@@ -26,7 +26,8 @@
             </div>
         </div>
         <ul>
-            <li style="float: left;border-top: 1px solid #80d4cc;width: 100%;padding-top: 5px;margin-top: 5px;" v-for="(item, key) in chengji">
+            <li style="float: left;border-top: 1px solid #80d4cc;width: 100%;padding-top: 5px;margin-top: 5px;"
+                v-for="(item, key) in chengji">
                 <div class="tableh">
                     <div class="table-id">
                         <p class="tableh-t">{{ item.bianhao }}</p>
