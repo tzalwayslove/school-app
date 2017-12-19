@@ -93,6 +93,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                 },
                 mounted: function () {
                    this.getData();
+                   console.log(data);
                 }
             }
         );
