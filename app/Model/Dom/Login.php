@@ -47,7 +47,7 @@ class Login
 
 
         $url = $this->pre . '/xsd';
-        dd($url);
+
         $res = $this->getPage($url);
         dd($res);
 
