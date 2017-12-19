@@ -47,17 +47,19 @@ class Login
 
         $url = $this->pre . '/xsd/xk/LoginToXk';
 
-        $res = $this->client->request('post', $url, [
-            'form_params' => [
-                'USERNAME' => $user_name,
-                'PASSWORD' => $password
-            ],
-            'cookies' => $this->jar,
-            'char_set' => 'gbk'
-        ]);
-
-        dd($res);
-        $this->login_res = $res->getBody();
+        try{
+            $res = $this->client->request('post', $url, [
+                'form_params' => [
+                    'USERNAME' => $user_name,
+                    'PASSWORD' => $password
+                ],
+                'cookies' => $this->jar,
+                'char_set' => 'gbk'
+            ]);
+            $this->login_res = $res->getBody();
+        }catch(\Exception $e){
+            $e->getTraceAsString();
+        }
 
         $errorDom = new Crawler(iconv('gbk', 'utf-8//IGNORE', $this->login_res->__toString()));
         $filter = $errorDom->filterXPath('//font[@color="red"]');
