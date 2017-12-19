@@ -110,6 +110,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
             },
             mounted (){
                 this.getData();
+                data.bar_buttom = true;
             }
         });
     });
