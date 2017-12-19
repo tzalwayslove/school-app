@@ -47,6 +47,7 @@ class UserController extends Controller
                 }
             }
 
+            dd($res);
             return response([
                 'result' => new Result($res),
                 'chengji' => $res
