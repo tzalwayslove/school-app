@@ -522,7 +522,7 @@ p.weui-toast__content{
 	font-size: 16px;
 	line-height: 25px;
 }
-.bind-input-style{
+input.bind-input-style.bind-input-style{
 	background-color:#3cc4b6;
 	border:none;
 	margin: 0;
