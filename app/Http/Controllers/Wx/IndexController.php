@@ -28,7 +28,7 @@ class IndexController extends Controller
 
                             if(!$user) {
                                 $user = User::storeUser($message->FromUserName);
-                                return '您还没有绑定过账号!请输入<a href="'.url('wx/binding/?user='. 5).'">‘绑定’</a>进行绑定操作。';
+                                return '您还没有绑定过账号!请输入<a href="'.url('wx/binding/?user='. $user->id).'">‘绑定’</a>进行绑定操作。';
                             }
 
                             switch($message->EventKey){
