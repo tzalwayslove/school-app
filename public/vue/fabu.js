@@ -23,6 +23,7 @@ fabu = Vue.component('fabu', function (success, error) {
                     }).then(function(res){
                         if(res.data.result.code == 1){
                             alert('发布成功');
+                            window.history.go(-1);
                         }else{
                             alert(res.data.result.message || '发布失败');
                         }
