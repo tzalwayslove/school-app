@@ -14,7 +14,7 @@ return [
     'token'   => 'songzi',          // Token*/
     'app_id'  => 'wxdc4356e019416357',         // AppID
     'secret'  => '25cce64ff875f6dea539c21cd742bedc',     // AppSecret
-    /*'token'   => 'songzi',          // Token*/
+    'token'   => 'school',          // Token/**/
     /**
      * 日志配置
      *
