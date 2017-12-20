@@ -16,7 +16,6 @@ class IndexController extends Controller
     {
         try {
             $option = require 'wechatConfig.php';
-
             $app = new Application($option);
 
             $server = $app->server;
@@ -70,6 +69,13 @@ class IndexController extends Controller
                                         return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                     }
                                     return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
+                                case "一键评教":
+                                    $user = User::whereOpenId($message->FromUserName)->first();
+                                    if (!$user) {
+                                        $user = User::storeUser($message->FromUserName);
+                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    }
+                                    return '一键评教： <a href="' . url('/wx/pingjiao?user=' . $user->id) . '">一键评教</a>';
                                 default:
                                     try {
                                         $res = User::bind($message->FromUserName, $message);
