@@ -52,7 +52,6 @@ class IndexController extends Controller
                                     return '请输入您的学号:';
                                 case "考场":
                                     $user = User::whereOpenId($message->FromUserName)->first();
-
                                     if (!$user) {
                                         $user = User::storeUser($message->FromUserName);
                                         return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
@@ -61,12 +60,11 @@ class IndexController extends Controller
                                 case "课表":
                                 case "课程表":
                                     $user = User::whereOpenId($message->FromUserName)->first();
-
                                     if (!$user) {
                                         $user = User::storeUser($message->FromUserName);
                                         return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                     }
-                                    return '课程表： <a href="' . url() . '">课程表</a>';
+                                    return '课程表： <a href="' . url('/wx/kecheng?user=' . $user->id . '&all=0') . '">课程表</a>';
                                 case "成绩":
                                 case "考试成绩":
                                     $user = User::whereOpenId($message->FromUserName)->first();
@@ -74,7 +72,7 @@ class IndexController extends Controller
                                         $user = User::storeUser($message->FromUserName);
                                         return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                     }
-                                    return '成绩： <a href="' . url() . '">成绩</a>';
+                                    return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
                                 default:
                                     try {
                                         Log::log(json_encode($message, JSON_UNESCAPED_UNICODE));
