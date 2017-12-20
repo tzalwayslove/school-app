@@ -9,9 +9,12 @@ return [
     /**
      * 账号基本信息，请从微信公众平台/开放平台获取
      */
-    'app_id'  => 'wx9d83d5c8064aa174',         // AppID
+    /*'app_id'  => 'wx9d83d5c8064aa174',         // AppID
     'secret'  => 'de822b9492386fe7ade0ce7f11a5cc7c',     // AppSecret
-    'token'   => 'songzi',          // Token
+    'token'   => 'songzi',          // Token*/
+    'app_id'  => 'wxdc4356e019416357',         // AppID
+    'secret'  => '25cce64ff875f6dea539c21cd742bedc',     // AppSecret
+    /*'token'   => 'songzi',          // Token*/
     /**
      * 日志配置
      *
