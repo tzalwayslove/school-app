@@ -7,6 +7,6 @@
  */
 use EasyWeChat\Foundation\Application;
 
-Route::get('/', function(){
-    echo 1;
+Route::get('/wechat', function(){
+    echo $_GET['echostr'];
 });
