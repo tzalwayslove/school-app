@@ -100,6 +100,7 @@ Route::group([
         return view('wx.binding.success');
     });
 
+    Route::get('/pingjiao', 'UserController@pingjiaoView');
 });
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';

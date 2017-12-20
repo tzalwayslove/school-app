@@ -179,7 +179,8 @@ class UserController extends Controller
 
     public function pingjiaoView(Request $request)
     {
-        return view('wx.pingjiao.index');
+        $userId = $request->input('user');
+        return view('wx.pingjiao.index', compact('userId'));
     }
     //一键评教
     public function pingjiao(Request $request)
