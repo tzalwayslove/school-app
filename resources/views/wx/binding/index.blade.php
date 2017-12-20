@@ -16,21 +16,21 @@
 </head>
 <body>
 <p class="bind-logo">
-    <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
+    <img src="img/yj-m-logo.png" class="bind-logo-img" />
 </p>
 <div class="input-in">
-    学号:<input type="text" style="background-color:#3cc4b6;border:none;margin: 0;" placeholder="请输入你的学号" id="account"/>
+    学号:<input type="text" class="bind-input-style" placeholder="请输入你的学号" id="account"/>
 </div>
 <div class="input-in">
-    密码:<input type="password" style="background-color:#3cc4b6;border:none;margin: 0;" placeholder="请输入教务处密码" id="password"/>
+    密码:<input type="text" class="bind-input-style" placeholder="请输入教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
-    <input type="button" value="确认绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 20px;margin: 0;background: #FFFFFF;color: #3CC3B6;" id="binding"/>
+    <input type="button" value="确认绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 20px;margin: 0;background: #FFFFFF;color: #3CC3B6;" id="binding" />
     <p style="font-size: 10px;color: #FFFFFF;text-align: center;">您尚未绑定，请先进行绑定开启你的教务旅程</p>
 </div>
 <div class="fix-bott">
-    <p class="fix-bott-p" style="font-size: 12px;margin-bottom: 20px;">希望我们不只是遇见</p>
-    <p class="fix-bott-p" style="font-size: 10px;margin-bottom: 15px;">copyright©   {{date('Y')}} 遇见商大</p>
+    <p class="fix-bott-p">希望我们不只是遇见</p>
+    <p class="fix-bott-p">copyright©   2017 遇见商大</p>
 </div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
@@ -59,4 +59,5 @@
     });
 </script>
 </body>
+
 </html>
