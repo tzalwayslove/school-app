@@ -18,7 +18,8 @@ fabu = Vue.component('fabu', function (success, error) {
                     axios.post('/wx/articel', {
                         title: '',
                         niming:$this.niming,
-                        content: this.content.trim()
+                        content: this.content.trim(),
+                        user:data.user
                     }).then(function(res){
                         if(res.data.result.code == 1){
                             alert('发布成功');

@@ -22,12 +22,9 @@ class IndexController extends Controller
             $server = $app->server;
             try {
                 $server->setMessageHandler(function ($message) use ($server) {
-
-
                     switch ($message->MsgType) {
                         case 'event':
                             $user = User::whereOpenId($message->FromUserName)->first();
-
                             if (!$user) {
                                 $user = User::storeUser($message->FromUserName);
                                 return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
@@ -75,7 +72,6 @@ class IndexController extends Controller
                                     return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
                                 default:
                                     try {
-                                        Log::log(json_encode($message, JSON_UNESCAPED_UNICODE));
                                         $res = User::bind($message->FromUserName, $message);
                                         return $res;
                                     } catch (userNotFountException $e) {
