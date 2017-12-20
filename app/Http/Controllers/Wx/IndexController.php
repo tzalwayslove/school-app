@@ -66,7 +66,7 @@ class IndexController extends Controller
                                     return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                 }
                                 return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
-                            } else if (strpos($message->Content, '一键评教') !== false) {
+                            } else if (strpos($message->Content, '评教') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
