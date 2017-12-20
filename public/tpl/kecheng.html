@@ -1,7 +1,10 @@
 <div>
-    <p class="ct-title">
-        当前课表
-    </p>
+    <div style="padding:10px">
+        <select name="" id="change" class="select-change-page" @change="changePage" v-model="page">
+            <option value="all">全部</option>
+            <option value="newest">最新</option>
+        </select>
+    </div>
     <table border="1" bordercolor="#aaaaaa" style="width: 100%;background-color: #FFFFFF;">
         <tr >
             <td>时间</td>
