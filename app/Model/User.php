@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Exceptions\userNotFountException;
+use EasyWeChat\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Redis;
@@ -24,6 +25,13 @@ class User extends Model
     public static function bind($open_id, $message)
     {
         $ruser = Redis::get($open_id);
+
+        $option = require 'wechatConfig.php';
+
+        $app = new Application($option);
+        $wx_user = $app->user->get($open_id);
+
+        Log::log(json_encode($wx_user, JSON_UNESCAPED_UNICODE));
 
         if(!$ruser){
             throw new userNotFountException();
