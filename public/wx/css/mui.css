@@ -3149,7 +3149,7 @@ select:focus
 }
 .mui-radio input[type='radio']:checked:before, .mui-checkbox input[type='checkbox']:checked:before
 {
-    color: #3cc3b6;
+    color: #FFF;
 }
 
 .mui-radio.mui-disabled label, .mui-radio label.mui-disabled, .mui-checkbox.mui-disabled label, .mui-checkbox label.mui-disabled
