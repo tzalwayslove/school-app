@@ -35,6 +35,9 @@ Route::get('test', function(){
      dd($res);*/
 //     $renxing = new \App\Model\Dom\RenxingLogin('rxwudanqian', 'wudanqian');
 //    $renxing->dingdan();
+
+    $user = \App\Model\User::where('open_id', 'ocDq7wTnH5dh9n09aNxRV0jrc05c')->find();
+
     return view('wx.binding.index');
 });
 
