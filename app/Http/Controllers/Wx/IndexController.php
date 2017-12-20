@@ -22,26 +22,27 @@ class IndexController extends Controller
             $server = $app->server;
             try {
                 $server->setMessageHandler(function ($message) use ($server) {
+
+
                     switch ($message->MsgType) {
                         case 'event':
                             $user = User::whereOpenId($message->FromUserName)->first();
 
-                            if(!$user) {
+                            if (!$user) {
                                 $user = User::storeUser($message->FromUserName);
-                                return '您还没有绑定过账号!请输入<a href="'.url('wx/binding/?user='. $user->id).'">‘绑定’</a>进行绑定操作。';
+                                return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                             }
-
-                            switch($message->EventKey){
+                            switch ($message->EventKey) {
                                 case '最新成绩':
-                                    return '<a href="'.url('/wx/chengji?user='.$user->id).'">最新成绩</a> ';
+                                    return '<a href="' . url('/wx/chengji?user=' . $user->id) . '">最新成绩</a> ';
                                 case "全部成绩":
-                                    return '<a href="'.url('/wx/chengji_all?user='.$user->id).'">全部成绩</a>';
+                                    return '<a href="' . url('/wx/chengji_all?user=' . $user->id) . '">全部成绩</a>';
                                 case '本周课程表':
-                                    return '<a href="'.url('/wx/kecheng?user='.$user->id. '&all=0').'">本周课表</a>';
+                                    return '<a href="' . url('/wx/kecheng?user=' . $user->id . '&all=0') . '">本周课表</a>';
                                 case '全部课程表':
-                                    return '<a href="'.url('/wx/kecheng?user='.$user->id. '&all=1').'">全部课程表</a>';
+                                    return '<a href="' . url('/wx/kecheng?user=' . $user->id . '&all=1') . '">全部课程表</a>';
                                 case '考场':
-                                    return '<a href="'.url('/wx/kaochang?user='.$user->id).'">考场</a>';
+                                    return '<a href="' . url('/wx/kaochang?user=' . $user->id) . '">考场</a>';
                             }
                             break;
                         case 'text':
@@ -49,6 +50,31 @@ class IndexController extends Controller
                                 case "绑定":
                                     User::createInit($message->FromUserName);
                                     return '请输入您的学号:';
+                                case "考场":
+                                    $user = User::whereOpenId($message->FromUserName)->first();
+
+                                    if (!$user) {
+                                        $user = User::storeUser($message->FromUserName);
+                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    }
+                                    return '考场： <a href="' . url('/wx/kaochang?user=' . $user->id) . '">考场</a>';
+                                case "课表":
+                                case "课程表":
+                                    $user = User::whereOpenId($message->FromUserName)->first();
+
+                                    if (!$user) {
+                                        $user = User::storeUser($message->FromUserName);
+                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    }
+                                    return '课程表： <a href="' . url() . '">课程表</a>';
+                                case "成绩":
+                                case "考试成绩":
+                                    $user = User::whereOpenId($message->FromUserName)->first();
+                                    if (!$user) {
+                                        $user = User::storeUser($message->FromUserName);
+                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    }
+                                    return '成绩： <a href="' . url() . '">成绩</a>';
                                 default:
                                     try {
                                         Log::log(json_encode($message, JSON_UNESCAPED_UNICODE));
@@ -90,4 +116,5 @@ class IndexController extends Controller
         }
         return '';
     }
+
 }
