@@ -90,8 +90,10 @@ Route::group([
         return view('wx.kaochang.index')->withUser($request->input('user'));
     });
 
-    Route::get('/binding', function(){
-        return view('wx.binding.index');
+    Route::get('/binding', function(\Illuminate\Http\Request $request){
+        $userId = $request->input('user');
+
+        return view('wx.binding.index', compact('userId'));
     });
     Route::post('/binding', 'UserController@binding');
     Route::get('/bind-success', function(){

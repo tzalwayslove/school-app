@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="id" content="{{ $userId }}">
     <title>遇见-绑定账号</title>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
@@ -44,6 +45,7 @@
             data = {
                 account:account,
                 password:password,
+                user:$('meta[name="id"]').attr('content')
             };
             $.postData('/wx/binding', data, function(res){
                 if(res.result.code == 1){
