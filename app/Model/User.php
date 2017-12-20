@@ -7,6 +7,7 @@ use EasyWeChat\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Redis;
+use phpDocumentor\Reflection\Types\Self_;
 
 
 class User extends Model
@@ -86,18 +87,24 @@ class User extends Model
         Redis::set($uid, json_encode(['step'=>1]));
         Redis::expire ($uid, 300);
     }
-    /**
-     * 学号
-     */
-    public function account($account)
-    {
 
-    }
-    /**
-     * 密码
-     */
-    public function password()
+    public static function storeUser($open_id)
     {
+        $option = require 'wechatConfig.php';
 
+        $app = new Application($option);
+        $wx_user = $app->user->get($open_id);
+
+        $user = User::whereOpenId($open_id)->find();
+        if(!$user){
+            $user = new self();
+        }
+
+        $user->nick_name = $wx_user->nickname;
+        $user->sex = $wx_user->sex;
+        $user->avatar = $wx_user->headimgurl;
+        $user->save();
+        return $user;
     }
+
 }
