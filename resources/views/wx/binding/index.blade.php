@@ -36,6 +36,12 @@
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
 <script>
     $(function(){
+        $('input').on('focus', function(){
+            $('.fix-bott').hide()
+        });
+        $('input').on('blur', function(){
+            $('.fix-bott').show()
+        });
         $('#binding').on('click', function(){
             account = $('#account').val();
             password = $('#password').val();
