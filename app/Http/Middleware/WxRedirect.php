@@ -30,7 +30,7 @@ class WxRedirect
                 ->setRequest($request)
                 ->redirect();
         }*/
-        if(!$request->input('user')){
+        if(!$request->input('user') && !session('user')){
             die('请使用微信公众号打开网页');
         }
         $user = User::find($request->input('user'));
