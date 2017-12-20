@@ -57,13 +57,16 @@ pinglun = Vue.component('pinglun', function (success, error) {
 
                     },
                     send(){
+                        niming = confirm('是否匿名?');
+
                         let articel_id = this.articelData.id;
                         let $this = this;
 
                         axios.post('wx/addComment', {
                             id: articel_id,
                             content: this.comment,
-                            user: vue.user
+                            user: vue.user,
+                            niming:niming
                         }).then(function(res){
                             if(res.data.result.code == 1){
                                 $this.getData()

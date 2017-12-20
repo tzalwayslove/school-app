@@ -1621,7 +1621,6 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
 .mui-bar-tab .mui-tab-item .mui-icon
 {
     top: 3px;
-
     width: 24px;
     height: 24px;
     padding-top: 0;
