@@ -1,6 +1,6 @@
 <?php
 use EasyWeChat\Foundation\Application;
-
+/*
 Route::get('/', function () {
     $user = session('user');
     return view('wx.index', compact('user'));
@@ -53,7 +53,7 @@ Route::group([
     Route::resource('comment', 'CommentController');
 });
 
-Route::any('wx/login', 'Wx\Login@index');
+Route::any('wx/login', 'Wx\Login@index');*/
 
 /*Route::group([
     'prefix'=>'wx',
@@ -93,7 +93,7 @@ Route::any('wx/login', 'Wx\Login@index');
     Route::get('/bind-success', function(){
         return view('wx.binding.success');
     });
-});*/
+});*//*
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
 
@@ -160,4 +160,4 @@ Route::get('wx_menu', function(){
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');*/
