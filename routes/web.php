@@ -95,6 +95,7 @@ Route::group([
 
         return view('wx.binding.index', compact('userId'));
     });
+
     Route::post('/binding', 'UserController@binding');
     Route::get('/bind-success', function(){
         return view('wx.binding.success');

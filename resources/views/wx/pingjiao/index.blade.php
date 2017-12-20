@@ -7,16 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="id" content="{{ $userId }}">
+    <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
     <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
     <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
     <title>一键评教</title>
 </head>
 <body>
+<div id="loadingToast" v-show="jiazai">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-loading weui-icon_toast"></i>
+        <p class="weui-toast__content">数据加载中</p>
+    </div>
+</div>
 <script>
     $(function(){
+        $('#loadingToast').show();
         $.postData('/wx/pingjiao',{
             user:$('meta[name="id"]').attr('content')
         }, function (res) {
+            $('#loadingToast').hide();
             if(res.result.code == 1){
                 alert('评教成功');
                 window.location.href = '/?user=12#/wode'
