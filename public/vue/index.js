@@ -34,7 +34,8 @@ tiezi = Vue.component('tiezi', function (success, error) {
                         params: {
                             cate: 0,
                             page: this.page,
-                            click_count: this.mui_active == 'remen' ? 1 : 0
+                            click_count: this.mui_active == 'remen' ? 1 : 0,
+                            user:data.user
                         }
                     }).then(function (res) {
                         if (type == 1) {
