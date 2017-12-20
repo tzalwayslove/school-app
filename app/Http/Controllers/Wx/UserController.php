@@ -187,12 +187,18 @@ class UserController extends Controller
     {
         try {
             $user = User::find($request->input('user'));
-//            $user = session('user');
+
             if (!$user) {
                 throw new UserNotFountException('未找到该用户(uid):' . $request->input('user'));
             }
+
             $account = $user->account;
             $password = $user->password;
+
+            if(!$account || !$password){
+                throw  new \Exception('用户名或密码为空， 请绑定正确的账户');
+            }
+
             $pingjiao = new Pingjiao($account, $password);
             $pingjiao->pingjiao();
             return [
