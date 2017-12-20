@@ -4,6 +4,18 @@ ul{
 ul li{
 	list-style: none;
 }
+　　::-webkit-input-placeholder { /* WebKit browsers */
+	　　color:rgba(255,255,255,.6);
+	　　}
+	　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color:rgba(255,255,255,.6);
+	　　}
+	　　::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color:rgba(255,255,255,.6);
+	　　}
+	　　:-ms-input-placeholder { /* Internet Explorer 10+ */
+		color:rgba(255,255,255,.6);
+	　　}
 /*首页基本样式表*/
 @font-face {
 	font-family: 'icomoon';
