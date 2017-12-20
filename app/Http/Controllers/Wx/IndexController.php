@@ -42,48 +42,45 @@ class IndexController extends Controller
                             }
                             break;
                         case 'text':
-                            switch ($message->Content) {
-                                case "绑定":
-                                    User::createInit($message->FromUserName);
-                                    return '请输入您的学号:';
-                                case "考场":
-                                    $user = User::whereOpenId($message->FromUserName)->first();
-                                    if (!$user) {
-                                        $user = User::storeUser($message->FromUserName);
-                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
-                                    }
-                                    return '考场： <a href="' . url('/wx/kaochang?user=' . $user->id) . '">考场</a>';
-                                case "课表":
-                                case "课程表":
-                                    $user = User::whereOpenId($message->FromUserName)->first();
-                                    if (!$user) {
-                                        $user = User::storeUser($message->FromUserName);
-                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
-                                    }
-                                    return '课程表： <a href="' . url('/wx/kecheng?user=' . $user->id . '&all=0') . '">课程表</a>';
-                                case "成绩":
-                                case "考试成绩":
-                                    $user = User::whereOpenId($message->FromUserName)->first();
-                                    if (!$user) {
-                                        $user = User::storeUser($message->FromUserName);
-                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
-                                    }
-                                    return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
-                                case "一键评教":
-                                    $user = User::whereOpenId($message->FromUserName)->first();
-                                    if (!$user) {
-                                        $user = User::storeUser($message->FromUserName);
-                                        return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
-                                    }
+                            if (strpos($message->Content, '绑定')) {
+                                User::createInit($message->FromUserName);
+                                return '请输入您的学号:';
+                            } else if (strpos($message->Content, '考场')) {
+                                $user = User::whereOpenId($message->FromUserName)->first();
+                                if (!$user) {
+                                    $user = User::storeUser($message->FromUserName);
+                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                }
+                                return '考场： <a href="' . url('/wx/kaochang?user=' . $user->id) . '">考场</a>';
+                            } else if (strpos($message->Content, '课表') || strpos($message->Content, '课程表')) {
+                                $user = User::whereOpenId($message->FromUserName)->first();
+                                if (!$user) {
+                                    $user = User::storeUser($message->FromUserName);
+                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                }
+                                return '课程表： <a href="' . url('/wx/kecheng?user=' . $user->id . '&all=0') . '">课程表</a>';
+                            } else if (strpos($message->Content, '成绩')) {
+                                $user = User::whereOpenId($message->FromUserName)->first();
+                                if (!$user) {
+                                    $user = User::storeUser($message->FromUserName);
+                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                }
+                                return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
+                            } else if (strpos($message->Content, '一键评教')) {
+                                $user = User::whereOpenId($message->FromUserName)->first();
+                                if (!$user) {
+                                    $user = User::storeUser($message->FromUserName);
+                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                }
 
-                                    return '一键评教： <a href="' . url('/wx/pingjiao?user=' . $user->id) . '">一键评教</a>';
-                                default:
-                                    try {
-                                        $res = User::bind($message->FromUserName, $message);
-                                        return $res;
-                                    } catch (userNotFountException $e) {
-                                        return '输入绑定即可进入绑定流程';
-                                    }
+                                return '一键评教： <a href="' . url('/wx/pingjiao?user=' . $user->id) . '">一键评教</a>';
+                            } else {
+                                try {
+                                    $res = User::bind($message->FromUserName, $message);
+                                    return $res;
+                                } catch (userNotFountException $e) {
+                                    return '输入绑定即可进入绑定流程';
+                                }
                             }
                             break;
                         case 'image':
