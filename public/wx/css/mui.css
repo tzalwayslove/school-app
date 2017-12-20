@@ -1185,8 +1185,8 @@ button,
     display: inline-block;
 
     margin-bottom: 0;
-    padding: 10px 15px;
-	margin: 5px 10px;
+    padding: 4px 20px;
+	
     cursor: pointer;
     -webkit-transition: all;
             transition: all;
@@ -1200,7 +1200,7 @@ button,
 	background: #3cc4b6;
 	color: #FFFFFF;
   
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
    
     background-clip: padding-box;
 }
