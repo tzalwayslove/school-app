@@ -53,7 +53,6 @@ class CodeController extends Controller
 
     private function getField($table)
     {
-
         $col = Schema::getColumnListing($table);
 
         $data = Code::where(['table' => $table])->get();

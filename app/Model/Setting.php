@@ -27,8 +27,7 @@ class Setting extends Model
         $setting = self::where('key', $key)->first();
 
         return isset($setting->value)
-                ? $setting->value
-                : null;
+            ? $setting->value
+            : null;
     }
-                                                                            
 }

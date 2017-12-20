@@ -53,6 +53,7 @@ Route::group([
     Route::resource('cate', 'CateController');
     Route::resource('articel', 'ArticelController');
     Route::resource('comment', 'CommentController');
+    Route::resource('setting', 'SettingController');
 });
 
 Route::any('wx/login', 'Wx\Login@index');
