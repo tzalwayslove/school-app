@@ -65,7 +65,7 @@ class User extends Model
                     'password'=>$ruserInfo->password,
                     'sex'=>$wx_user->sex,
                     'avatar'=>$wx_user->headimgurl,
-                    'nick_name'=>$wx_user->nick_name
+                    'nick_name'=>$wx_user->nickname
                 ]);
 
                 return '账户:'.$ruserInfo->account.'已保存';
