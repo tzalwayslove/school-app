@@ -10,8 +10,8 @@
         </p>
         <textarea rows="5" maxlength="150" placeholder="写下你想说的话" v-model="content"></textarea>
         <p class="fb-sub">
-            <button class="fb-btn" value="取消" @click="back"/></button>
-            <button value="发布" @click="send"/></button>
+            <button class="fb-btn" @click="back"/>取消</button>
+            <button @click="send"/>发布</button>
         </p>
     </div>
 </div>
