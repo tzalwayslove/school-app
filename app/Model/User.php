@@ -95,16 +95,17 @@ class User extends Model
         $app = new Application($option);
         $wx_user = $app->user->get($open_id);
 
-        $user = User::whereOpenId($open_id)->find();
-        if(!$user){
-            $user = new self();
-        }
-
-        $user->nick_name = $wx_user->nickname;
-        $user->sex = $wx_user->sex;
-        $user->avatar = $wx_user->headimgurl;
-        $user->save();
-        return $user;
+//        $user = User::whereOpenId($open_id)->find();
+//
+//        if(!$user){
+//            $user = new self();
+//        }
+//
+//        $user->nick_name = $wx_user->nickname;
+//        $user->sex = $wx_user->sex;
+//        $user->avatar = $wx_user->headimgurl;
+//        $user->save();
+        return null;
     }
 
 }
