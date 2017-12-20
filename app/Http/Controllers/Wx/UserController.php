@@ -9,6 +9,8 @@ use App\Model\Dom\Kaochang;
 use App\Model\Dom\Kechengbiao;
 use App\Model\Dom\Pingjiao;
 use App\Model\User;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -19,7 +21,6 @@ class UserController extends Controller
     public function nowChengji(Request $request)
     {
         $user = User::find($request->input('user'));
-//        $user = session('user');
 
         if (!$user) {
             return response([
@@ -43,6 +44,10 @@ class UserController extends Controller
                 'chengji' => $data
             ]);
 
+        } catch(RequestException $e){
+            return response([
+                'result' => new Result(false, '请求校原网络超时或传输失败')
+            ]);
         } catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage() /*. $e->getFile() . $e->getLine()*/)
@@ -93,7 +98,11 @@ class UserController extends Controller
                 'result' => new Result($res),
                 'chengji' => $data
             ]);
-        } catch (\Exception $e) {
+        } catch(RequestException $e){
+            return response([
+                'result' => new Result(false, '请求校原网络超时或传输失败')
+            ]);
+        }  catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage()/* . $e->getFile() . $e->getLine()*/)
             ]);
@@ -116,7 +125,11 @@ class UserController extends Controller
         try {
             $kecheng = new Kechengbiao($loginName, $password);
             $data = $kecheng->getTable($request->input('all', 0) == 1);
-        } catch (\Exception $e) {
+        } catch(RequestException $e){
+            return response([
+                'result' => new Result(false, '请求校原网络超时或传输失败')
+            ]);
+        }  catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage() . '!')
             ]);
@@ -143,7 +156,11 @@ class UserController extends Controller
         try {
             $kaochang = new Kaochang($loginName, $password);
             $data = $kaochang->getQueryData();
-        } catch (\Exception $e) {
+        } catch(RequestException $e){
+            return response([
+                'result' => new Result(false, '请求校原网络超时或传输失败')
+            ]);
+        }  catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage() . '!')
             ]);
@@ -175,7 +192,11 @@ class UserController extends Controller
             return [
                 'result' => new Result(true)
             ];
-        } catch (\Exception $e) {
+        } catch(RequestException $e){
+            return response([
+                'result' => new Result(false, '请求校原网络超时或传输失败')
+            ]);
+        }  catch (\Exception $e) {
             return [
                 'result' => new Result(false, $e->getMessage())
             ];
