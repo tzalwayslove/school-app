@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="id" content="{{ $userId }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
-    <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
+    <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
     <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
     <title>一键评教</title>
 </head>
