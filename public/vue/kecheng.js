@@ -10,24 +10,36 @@ fabu = Vue.component('Kecheng', function (success, error) {
                 return {
                     jiazai:true,
                     table:{},
-                    desc: ''
+                    desc: '',
+                    page: 'all'
                 }
             },
             methods:{
-
+                getData: function(all){
+                    $this = this;
+                    this.page = all == 1
+                        ? 'all'
+                        : 'now';
+                    axios.get("/api/kecheng?user="+this.user + '&all='+ all).then(function(res){
+                        $this.jiazai = false;
+                        if(res.data.result.code == 0){
+                            alert(res.data.result.message || '获取失败!');
+                        }else{
+                            $this.table = res.data.data.table;
+                            $this.desc = res.data.data.desc;
+                        }
+                    });
+                },
+                changePage:function(){
+                    if(this.page == 'all'){
+                        this.getData(1);
+                    }else{
+                        this.getData(0);
+                    }
+                }
             },
             mounted: function(){
-                $this = this;
-
-                axios.get("/api/kecheng?user="+this.user + '&all='+this.all).then(function(res){
-                    $this.jiazai = false;
-                    if(res.data.result.code == 0){
-                        alert(res.data.result.message || '获取失败!');
-                    }else{
-                        $this.table = res.data.data.table;
-                        $this.desc = res.data.data.desc;
-                    }
-                });
+                this.getData(1)
             }
         });
     });
