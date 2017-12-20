@@ -17,6 +17,7 @@ fabu = Vue.component('Kecheng', function (success, error) {
             methods:{
                 getData: function(all){
                     $this = this;
+                    this.jiazai = true;
                     this.page = all == 1
                         ? 'all'
                         : 'now';
