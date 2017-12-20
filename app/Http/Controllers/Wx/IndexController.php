@@ -42,31 +42,31 @@ class IndexController extends Controller
                             }
                             break;
                         case 'text':
-                            if (strpos($message->Content, '绑定')) {
+                            if (strpos($message->Content, '绑定') !== false) {
                                 User::createInit($message->FromUserName);
                                 return '请输入您的学号:';
-                            } else if (strpos($message->Content, '考场')) {
+                            } else if (strpos($message->Content, '考场') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
                                     return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                 }
                                 return '考场： <a href="' . url('/wx/kaochang?user=' . $user->id) . '">考场</a>';
-                            } else if (strpos($message->Content, '课表') || strpos($message->Content, '课程表')) {
+                            } else if (strpos($message->Content, '课表') !== false || strpos($message->Content, '课程表') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
                                     return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                 }
                                 return '课程表： <a href="' . url('/wx/kecheng?user=' . $user->id . '&all=0') . '">课程表</a>';
-                            } else if (strpos($message->Content, '成绩')) {
+                            } else if (strpos($message->Content, '成绩') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
                                     return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                 }
                                 return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
-                            } else if (strpos($message->Content, '一键评教')) {
+                            } else if (strpos($message->Content, '一键评教') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
