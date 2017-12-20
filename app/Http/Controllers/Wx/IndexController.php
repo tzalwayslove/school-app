@@ -74,6 +74,14 @@ class IndexController extends Controller
                                 }
 
                                 return '一键评教： <a href="' . url('/wx/pingjiao?user=' . $user->id) . '">一键评教</a>';
+                            }else if (strpos($message->Content, '社区') !== false) {
+                                $user = User::whereOpenId($message->FromUserName)->first();
+                                if (!$user) {
+                                    $user = User::storeUser($message->FromUserName);
+                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                }
+
+                                return '匿名社区： <a href="' . url('/?user='.$user->id.'#/tiezi') . '">匿名社区</a>';
                             } else {
                                 try {
                                     $res = User::bind($message->FromUserName, $message);
