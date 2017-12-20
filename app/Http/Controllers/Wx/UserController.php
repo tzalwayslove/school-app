@@ -35,7 +35,7 @@ class UserController extends Controller
 
             $this->getJidian($res);
             $data = [];
-            foreach($res as $item){
+            foreach ($res as $item) {
                 $data[] = $item;
             }
 
@@ -44,7 +44,7 @@ class UserController extends Controller
                 'chengji' => $data
             ]);
 
-        } catch(RequestException $e){
+        } catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
@@ -72,6 +72,7 @@ class UserController extends Controller
             }
         }
     }
+
     //全部成绩
     public function all(Request $request)
     {
@@ -90,7 +91,7 @@ class UserController extends Controller
             $res = $chengji->all();
             $data = [];
             $this->getJidian($res);
-            foreach($res as $item){
+            foreach ($res as $item) {
                 $data[] = $item;
             }
 
@@ -98,11 +99,11 @@ class UserController extends Controller
                 'result' => new Result($res),
                 'chengji' => $data
             ]);
-        } catch(RequestException $e){
+        } catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
-        }  catch (\Exception $e) {
+        } catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage()/* . $e->getFile() . $e->getLine()*/)
             ]);
@@ -125,11 +126,11 @@ class UserController extends Controller
         try {
             $kecheng = new Kechengbiao($loginName, $password);
             $data = $kecheng->getTable($request->input('all', 0) == 1);
-        } catch(RequestException $e){
+        } catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
-        }  catch (\Exception $e) {
+        } catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage() . '!')
             ]);
@@ -156,11 +157,11 @@ class UserController extends Controller
         try {
             $kaochang = new Kaochang($loginName, $password);
             $data = $kaochang->getQueryData();
-        } catch(RequestException $e){
+        } catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
-        }  catch (\Exception $e) {
+        } catch (\Exception $e) {
             return response([
                 'result' => new Result(false, $e->getMessage() . '!')
             ]);
@@ -176,6 +177,10 @@ class UserController extends Controller
         ]);
     }
 
+    public function pingjiaoView(Request $request)
+    {
+        return view('wx.pingjiao.index');
+    }
     //一键评教
     public function pingjiao(Request $request)
     {
@@ -192,11 +197,11 @@ class UserController extends Controller
             return [
                 'result' => new Result(true)
             ];
-        } catch(RequestException $e){
+        } catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
-        }  catch (\Exception $e) {
+        } catch (\Exception $e) {
             return [
                 'result' => new Result(false, $e->getMessage())
             ];
@@ -233,12 +238,12 @@ class UserController extends Controller
     public function binding(Request $request)
     {
         $rules = [
-            'account'=>'required',
-            'password'=>'required'
+            'account' => 'required',
+            'password' => 'required'
         ];
         $message = [
             'account.required' => '账户必须填写!',
-            'password.required'=> '密码必须填写!'
+            'password.required' => '密码必须填写!'
         ];
 
         $v = Validator::make($request->all(), $rules, $message);
@@ -248,7 +253,7 @@ class UserController extends Controller
 
         $user->binding($request->input('account'), $request->input('password'));
         return [
-            'result'=>new Result(true)
+            'result' => new Result(true)
         ];
     }
 }

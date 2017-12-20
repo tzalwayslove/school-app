@@ -37,7 +37,6 @@ Route::get('test', function(){
 //    $renxing->dingdan();
 
     $user = \App\Model\User::where('open_id', 'ocDq7wTnH5dh9n09aNxRV0jrc05c')->first();
-
     return view('wx.binding.index');
 });
 
