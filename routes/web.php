@@ -13,9 +13,8 @@ Route::get('/s', function(){
 Route::get('/g', function(){
     dd(session('a'));
 });
-Route::get('/wx', function(\Illuminate\Http\Request $request){
-    echo isset($_GET['echostr'])?$_GET['echostr']:'no echo str';
-});
+
+
 Route::post('upload', 'UploadController@index');
 Route::delete('upload', 'UploadController@removeUpload');
 
@@ -56,7 +55,7 @@ Route::group([
 
 Route::any('wx/login', 'Wx\Login@index');
 
-Route::group([
+/*Route::group([
     'prefix'=>'wx',
     'namespace'=> 'Wx',
     'middleware'=>[
@@ -94,8 +93,7 @@ Route::group([
     Route::get('/bind-success', function(){
         return view('wx.binding.success');
     });
-
-});
+});*/
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
 
