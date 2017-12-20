@@ -95,7 +95,7 @@ class User extends Model
         $app = new Application($option);
         $wx_user = $app->user->get($open_id);
 
-        $user = self::whereOpenId($open_id)->find();
+        $user = self::where('open_id', $open_id)->find();
 
 //        if(!$user){
 //            $user = new self();
