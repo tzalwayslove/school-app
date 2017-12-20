@@ -102,6 +102,7 @@ Route::group([
     });
 
     Route::get('/pingjiao', 'UserController@pingjiaoView');
+    Route::post('/pingjiao', 'UserController@pingjiao');
 });
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
