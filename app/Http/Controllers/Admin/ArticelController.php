@@ -22,7 +22,7 @@ class ArticelController extends Controller
 
     public function index()
     {
-        $list = \App\Model\Articel::paginate(100);
+        $list = \App\Model\Articel::orderBy('created_at', 'desc')->paginate(100);
         return view('admin.articel.index', compact('list'));
     }
 
