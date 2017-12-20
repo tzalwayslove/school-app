@@ -32,7 +32,7 @@
                 window.location.href = '/?user=12#/wode'
             }else{
                 alert(res.result.message || '评教失败!');
-                window.location.href = '/wx/bangding/?user=12'
+                window.location.href = '/wx/binding/?user=12'
             }
         });
     });
