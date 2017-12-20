@@ -1,9 +1,12 @@
 <div id="tabbar2" class="mui-control-content" style="display: block">
     <div id="" class="box2">
         <p class="fb-title">发布
-            <span style="float: right;margin-right: 10px;">匿名
-                <div class=" mui-checkbox mui-right"><input type="checkbox" name="niming" v-model="niming"></div>
-            </span>
+        <div style="float: right; margin-top: -30PX;margin-right: 10px;">
+            <div class=" mui-checkbox mui-right">
+            <input name="checkbox" value="Item 1" type="checkbox" style="right: 30px;top: -2px;" v-model="niming">
+        </div>
+            <label class="nm-lab2">匿名</label>
+        </div>
         </p>
         <textarea rows="5" maxlength="150" placeholder="写下你想说的话" v-model="content"></textarea>
         <p class="fb-sub">
