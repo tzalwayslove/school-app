@@ -40,7 +40,6 @@ class IndexController extends Controller
                                 case '考场':
                                     return '<a href="'.url('/wx/kaochang?user='.$user->id).'">考场</a>';
                             }
-
                             break;
                         case 'text':
                             switch ($message->Content) {
@@ -49,6 +48,7 @@ class IndexController extends Controller
                                     return '请输入您的学号:';
                                 default:
                                     try {
+                                        Log::log(json_encode($message, JSON_UNESCAPED_UNICODE));
                                         $res = User::bind($message->FromUserName, $message);
                                         return $res;
                                     } catch (userNotFountException $e) {
@@ -58,19 +58,19 @@ class IndexController extends Controller
 //                        return json_encode($message, JSON_UNESCAPED_UNICODE);
                             break;
                         case 'image':
-                            return '收到图片消息';
+                            return 'i';
                             break;
                         case 'voice':
-                            return '收到语音消息';
+                            return 'vo';
                             break;
                         case 'video':
-                            return '收到视频消息';
+                            return 'vi';
                             break;
                         case 'location':
-                            return '收到坐标消息';
+                            return 'lo';
                             break;
                         case 'link':
-                            return '收到链接消息';
+                            return 'li';
                             break;
                         // ... 其它消息
                         default:
