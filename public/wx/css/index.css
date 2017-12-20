@@ -185,10 +185,9 @@ textarea{
 .fb-sub{
 	text-align: right;
 }
-input[type="submit"]:hover{
-	color: #000000;
-	background-color: #FFFFFF;
-	border:1px solid #3cc3b6;
+.fb-btn{
+	background: #fff;
+	color: #3cc3b6;
 }
 .box2-t{
 	width: 100%;;
