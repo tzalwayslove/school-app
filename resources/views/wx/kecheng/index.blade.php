@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
 </head>
 <body>
-<div id="app"
-     style="margin-top: 54px;"
->
+<div id="app">
     <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
 </div>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
