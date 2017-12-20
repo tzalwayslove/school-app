@@ -4,18 +4,7 @@ ul{
 ul li{
 	list-style: none;
 }
-　　::-webkit-input-placeholder { /* WebKit browsers */
-	　　color:#b0e3dd;
-	　　}
-	　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	　　color:#b0e3dd;
-	　　}
-	　　::-moz-placeholder { /* Mozilla Firefox 19+ */
-	　　color:#b0e3dd;
-	　　}
-	　　:-ms-input-placeholder { /* Internet Explorer 10+ */
-	　　color:#b0e3dd;
-	　　}
+
 /*首页基本样式表*/
 @font-face {
 	font-family: 'icomoon';
@@ -460,48 +449,6 @@ textarea{
 }
 .mt10{
 	margin-top: 10px;
-}
-/*binding样式表*/
-.bind-logo{
-	text-align: center;
-	margin: 0 auto;
-}
-.bind-logo-img{
-	max-height: 150px;
-	margin:40px 0 10px;
-}
-.input-in{
-	text-align: center;
-	border: 1px solid #FFFFFF;
-	border-radius: 20px;
-	margin: 10px 15% 30px;
-	color: #FFFFFF;
-}
-.fix-bott{
-	width: 100%;
-	position: fixed;
-	bottom: 0;
-}
-.fix-bott-p{
-	text-align: center;
-	color: #FFFFFF;
-}
-.huifu{
-	text-align: center;
-	color: #FFFFFF;
-	font-size: 16px;
-	line-height: 25px;
-}
-
-p.weui-toast__content{
-	color: #FFF;
-}
-
-.select-change-page{
-	margin:0;
-	margin-bottom:10px;
-	border: 1px solid #2ebeb0!important;
-	width: 100%;
 }
 /*binding样式表*/
 .bind-logo{
