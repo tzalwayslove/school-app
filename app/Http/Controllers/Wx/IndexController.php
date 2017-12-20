@@ -55,7 +55,6 @@ class IndexController extends Controller
                                         return '输入绑定即可进入绑定流程';
                                     }
                             }
-//                        return json_encode($message, JSON_UNESCAPED_UNICODE);
                             break;
                         case 'image':
                             return 'i';
