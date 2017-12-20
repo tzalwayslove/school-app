@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Model\User;
 use Closure;
 use EasyWeChat\Foundation\Application;
 
@@ -17,7 +18,7 @@ class WxRedirect
     public function handle($request, Closure $next)
     {
 
-        $wx_user = session('wx_user', false);
+        /*$wx_user = session('wx_user', false);
 
         if(!$wx_user){
             $config = include('wechatConfig.php');
@@ -28,7 +29,15 @@ class WxRedirect
             return $app->oauth->scopes(['snsapi_userinfo'])
                 ->setRequest($request)
                 ->redirect();
+        }*/
+        if(!$request->input('user')){
+            die('请使用微信公众号打开网页');
         }
+        $user = User::find($request->input('user'));
+        if(!$user){
+            die('请使用微信公众号打开网页');
+        }
+        session(['user'=>$user]);
 
         return $next($request);
     }
