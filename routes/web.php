@@ -53,6 +53,7 @@ Route::group([
 });
 
 Route::any('wx/login', 'Wx\Login@index');
+
 Route::group([
     'prefix'=>'wx',
     'namespace'=> 'Wx',
@@ -60,6 +61,9 @@ Route::group([
         'wx_login'
     ]
 ], function(){
+    Route::get('/wx', function(\Illuminate\Http\Request $request){
+        echo isset($_GET['echostr'])?$_GET['echostr']:'no echo str';
+    });
     Route::get('/articel', 'ArticelController@index');
     Route::get('/comment/{id}', 'CommentController@index');
     Route::post('/articel', 'ArticelController@store');
