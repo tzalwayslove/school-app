@@ -50,7 +50,7 @@
             $.postData('/wx/binding', data, function(res){
                 if(res.result.code == 1){
                     //跳转
-                    window.location.href='/wx/bind-success';
+                    window.location.href='/wx/bind-success/?user='+data.user;
                 }else{
                     alert('绑定失败，请稍后再试!'||res.result.message);
                 }
