@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Gentelella Alela! | </title>
+    <title>商大Pro! | </title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('public/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2>管理员</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
