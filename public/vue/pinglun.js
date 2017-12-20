@@ -84,7 +84,8 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         id = item.id;
                         axios.post('wx/comment_zan', {
                             id: id,
-                            zan: zan
+                            zan: zan,
+                            user:data.user
                         }).then(function (res) {
                             item.zan = res.data.comment.zan ;
                         });
