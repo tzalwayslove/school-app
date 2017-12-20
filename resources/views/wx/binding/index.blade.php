@@ -16,7 +16,7 @@
 </head>
 <body>
 <p class="bind-logo">
-    <img src="img/yj-m-logo.png" class="bind-logo-img" />
+    <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
 </p>
 <div class="input-in">
     学号:<input type="text" class="bind-input-style" placeholder="请输入你的学号" id="account"/>
