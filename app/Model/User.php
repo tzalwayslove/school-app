@@ -97,14 +97,15 @@ class User extends Model
 
         $user = self::where('open_id', $open_id)->first();
 
-        if(!$user){
-            $user = new self();
-        }
 
-        $user->nick_name = $wx_user->nickname;
-        $user->sex = $wx_user->sex;
-        $user->avatar = $wx_user->headimgurl;
-        $user->save();
+//        if(!$user){
+//            $user = new self();
+//        }
+//
+//        $user->nick_name = $wx_user->nickname;
+//        $user->sex = $wx_user->sex;
+//        $user->avatar = $wx_user->headimgurl;
+//        $user->save();
         return null;
     }
 
