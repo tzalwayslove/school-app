@@ -88,7 +88,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     axios.post('wx/articel_zan', {
                         id: id,
                         zan: zan,
-                        user:data.zan
+                        user:data.user
                     }).then(function (res) {
                         item.zan = res.data.articel.zan;
                     });
