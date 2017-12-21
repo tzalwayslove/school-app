@@ -60,6 +60,7 @@ class YikatongLogin
         return $res;
     }
 
+
     public function login($code)
     {
         $res = $this->postData('/loginstudent.action', [
