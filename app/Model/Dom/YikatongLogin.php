@@ -43,7 +43,7 @@ class YikatongLogin
     public function getCode()
     {
         $res = $this->getPage('/getCheckpic.action');
-        echo $res;
+        return $res;
     }
 
     public function getPage($url)
