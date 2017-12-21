@@ -133,7 +133,6 @@ Route::get('/wx/yikatongCode', function(){
 });
 Route::post('/wx/yikatonglogin', 'YikatongController@index');
 
-
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
 
