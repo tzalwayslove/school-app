@@ -527,7 +527,7 @@ table tr td{
 	margin: 10px auto;
 }
 .kc-select{
-	margin-top: 5px;
+	margin-bottom: -5px;
 	margin-right: 10px;
 	float: right;
 	max-width: 5px;
