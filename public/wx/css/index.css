@@ -24,11 +24,11 @@ html{-webkit-text-size-adjust: none;}
 /*首页基本样式表*/
 @font-face {
 	font-family: 'icomoon';
-	src:  url('fonts/icomoon.eot?hhdoys');
-	src:  url('fonts/icomoon.eot?hhdoys#iefix') format('embedded-opentype'),
-	  url('fonts/icomoon.ttf?hhdoys') format('truetype'),
-	  url('fonts/icomoon.woff?hhdoys') format('woff'),
-	  url('fonts/icomoon.svg?hhdoys#icomoon') format('svg');
+	src:  url('../fonts/icomoon.eot?hhdoys');
+	src:  url('../fonts/icomoon.eot?hhdoys#iefix') format('embedded-opentype'),
+	  url('../fonts/icomoon.ttf?hhdoys') format('truetype'),
+	  url('../fonts/icomoon.woff?hhdoys') format('woff'),
+	  url('../fonts/icomoon.svg?hhdoys#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
   }
@@ -132,7 +132,7 @@ html{-webkit-text-size-adjust: none;}
 	margin-bottom: 50px;
 	box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.19);
 	font-size: 14px;
-	color: #000;
+	color: #000000;
 	font-weight: 300;
 }
 .yjbox-tl{
