@@ -23,6 +23,7 @@ Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
     die(10);
+
      /*$kaochang = new \App\Model\Dom\Kaochang('201637025002', 'liuxuemin123');
      $kaochang->getQueryData();*/
      /*$chengji = new \App\Model\Dom\Chengji('201723045019', 'smyqueen980818');
