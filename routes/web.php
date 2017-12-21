@@ -44,7 +44,7 @@ Route::get('test', function(){
     $code = $yikatong->getCode();
 
     return response($code, [
-        'Content-Type' => 'image/jpeg',
+        'Content-Type' => 'image/jpg',
     ]);
 });
 
