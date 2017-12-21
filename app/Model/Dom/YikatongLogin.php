@@ -101,6 +101,7 @@ class YikatongLogin
             $arr['contents'] = $val;
             $resData[] = $arr;
         }
+        dd($this->jar);
         $res = $this->client->request('post', /*$this->pre . $url*/'http://school.sz25.net/api/api/test', [
             'cookies' => $this->jar,
             'char_set' => 'gbk',
