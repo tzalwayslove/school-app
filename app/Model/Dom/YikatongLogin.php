@@ -71,9 +71,10 @@ class YikatongLogin
         $res = iconv('gbk', 'utf-8', $res);
 
         $erroDom = new Crawler($res);
-        $erroDom->filter('//p[@class="biaotou"]');
-        if($erroDom->count()){
-            throw new LoginErrorException($erroDom->text());
+        $filter = $erroDom->filterXPath('//p[@class="biaotou"]');
+
+        if($filter->count()){
+            throw new LoginErrorException($filter->text());
         }
 
         session(['isLogin'=>true]);
