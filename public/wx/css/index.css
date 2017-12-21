@@ -149,7 +149,10 @@ html{-webkit-text-size-adjust: none;}
 	padding: 10px;
 	color: #000000;
 	letter-spacing: 1px;
-	font-size: 14px;
+	font-size: 16px;
+	line-height: 21px;
+	letter-spacing: 2px;
+
 }
 .sm-f{
 	float: right;
