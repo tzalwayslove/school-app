@@ -528,7 +528,7 @@ table tr td{
 }
 .kc-select{
 	position: absolute;
-	z-index: 10;
+	z-index: 999;
 	right:15px;
 	top: 35px;
 	max-width: 10px;
