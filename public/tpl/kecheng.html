@@ -25,8 +25,8 @@
                     </th>
                     <template v-for="(td, index) in tr">
                         <td width="12.5%" height="28" align="center" valign="top">
-                            <div v-for="kecheng in td">
-                                {{kecheng.name}}&nbsp;&nbsp;{{kecheng.week}}&nbsp;&nbsp;{{kecheng.teacher}}&nbsp;&nbsp;{{kecheng.jiaoshi}}
+                            <div v-for="kecheng in td" style="width:12.5%;">
+                                {{kecheng.name}}&nbsp;&nbsp;{{kecheng.week}}&nbsp;&nbsp;{{kecheng.teacher}}&nbsp;&nbsp;{{kecheng.jiaoshi}}<br/>
                             </div>
                         </td>
                     </template>
