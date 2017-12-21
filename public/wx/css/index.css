@@ -527,8 +527,10 @@ table tr td{
 	margin: 10px auto;
 }
 .kc-select{
-	margin-bottom: -5px;
+	position: absolute;
+	z-index: 10;
+	margin-bottom: -10px;
 	margin-right: 10px;
 	float: right;
-	max-width: 5px;
+	max-width: 10px;
 }
