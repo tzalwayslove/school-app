@@ -9,6 +9,9 @@
 namespace App\Model\Dom;
 
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Cookie\CookieJar;
+
 class YikatongLogin
 {
     public $user_name;
@@ -19,6 +22,8 @@ class YikatongLogin
     {
         $this->user_name;
         $this->passwrod;
+        $this->jar = new CookieJar();
+        $this->client = new Client();
 
         $res = $this->postData('/loginstudent.action', [
             'name'=>$user_name,
