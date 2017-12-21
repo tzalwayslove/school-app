@@ -9,6 +9,7 @@
 </head>
 <body>
 <form action="{{ url('/wx/yikatonglogin') }}" method="post">
+    {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="">
     <input type="text" name="code">
     <input type="submit">
