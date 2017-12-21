@@ -512,6 +512,9 @@ input.bind-input-style.bind-input-style{
 	/* background: url("/public/wx/img/hb-bg.png"); */
 	color: #313131;
 }
+table{
+	table-layout: fixed;
+}
 table tr td{
 	width: 12.5%;
 	text-align: center;
