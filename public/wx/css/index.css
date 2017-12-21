@@ -509,8 +509,8 @@ input.bind-input-style.bind-input-style{
 	color: #FFFFFF;
 }
 .kecheng-table{
-	background: url("/public/wx/img/hb-bg.png");
-	color: #FFF;
+	/* background: url("/public/wx/img/hb-bg.png"); */
+	color: #313131;
 }
 table tr td{
 	width: 12.5%;
