@@ -58,7 +58,7 @@ class YikatongLogin
 
         $res = $this->postData('/loginstudent.action', $data);
 
-        echo $res;
+        echo iconv('utf-8', 'gbk', $res);
         die();
     }
 
