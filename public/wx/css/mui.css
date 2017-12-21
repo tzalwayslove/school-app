@@ -2856,11 +2856,11 @@ textarea
 select
 {
     font-size: 14px;
-
+    width: 100%;
     height: auto;
-    margin-top: 1px;
-
-    border: 0 !important;
+    margin: 1px 0 10px;
+    padding: 4px 10px;
+    border-radius: 3px;
     background-color: #fff;
 }
 select:focus
