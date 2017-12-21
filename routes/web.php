@@ -122,7 +122,7 @@ Route::group([
 
 });
 
-Route::get('/home/yikatongCode', function(){
+Route::get('/wx/yikatongCode', function(){
     $user_name = 'asdfasdf';
     $password = 'asdf';
     $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
