@@ -131,6 +131,7 @@ Route::get('/wx/yikatongCode', function(){
         'Content-Type' => 'image/jpeg',
     ]);
 });
+
 Route::post('/wx/yikatonglogin', 'Wx\YikatongController@index');
 
 Route::get('wx_menu', function(){

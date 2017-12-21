@@ -65,7 +65,7 @@ class YikatongLogin
         $res = $this->postData('', [
             'name'=>$this->user_name,
             'userType'=>1,
-            'passwd'=>$this->password,
+            'passwd'=>$this->passwrod,
             'loginType'=>1,
             'rand'=>$code, //验证码
             'imageField.x'=>rand(1, 100),
