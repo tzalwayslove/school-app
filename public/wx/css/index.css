@@ -178,7 +178,8 @@ p{
 	margin: 5px;
 }
 .icon-num{
-	line-height: 40px;
+	line-height: 30px;
+	font-size: 18px;
 	float: right;
 
 }
