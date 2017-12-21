@@ -50,7 +50,7 @@ class YikatongLogin
             'name'=>$this->user_name,
             'userType'=>1,
             'passwd'=>$this->passwrod,
-            'loginType'=>1,
+            'loginType'=>2,
             'rand'=>$code, //验证码
             'imageField.x'=>rand(1, 100),
             'imageField.y'=>rand(1, 100)
