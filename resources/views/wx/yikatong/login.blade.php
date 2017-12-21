@@ -16,7 +16,7 @@
     <input type="text" name="user_name" placeholder="用户名" id="user_name">
     <input type="text" name="password" placeholder="密码" id="password">
     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code">
-    <button id="login">登录</button>
+    <button id="login" type="button">登录</button>
 </form>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
