@@ -131,7 +131,7 @@ Route::get('/wx/yikatongCode', function(){
         'Content-Type' => 'image/jpeg',
     ]);
 });
-Route::post('/wx/yikatonglogin', 'YikatongController@index');
+Route::post('/wx/yikatonglogin', 'Wx\YikatongController@index');
 
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
