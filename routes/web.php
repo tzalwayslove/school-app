@@ -51,7 +51,6 @@ Route::get('test', function(){
         'Content-Type' => 'image/jpeg',
     ]);
 });
-
 Route::group([
     'prefix'=>'admin',
     'namespace'=> 'Admin',
