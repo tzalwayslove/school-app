@@ -51,17 +51,17 @@ html{-webkit-text-size-adjust: none;}
   .icon-fabu:before {
 	content: "\e900";
 	color:inherit;
-	font-size: 32px;
+	font-size: 30px;
   }
   .icon-index:before {
 	content: "\e901";
 	color:inherit;
-	font-size: 32px;
+	font-size: 30px;
   }
   .icon-wode:before {
 	content: "\e902";
 	color: inherit;
-	font-size: 32px;
+	font-size: 30px;
   }
   
 
