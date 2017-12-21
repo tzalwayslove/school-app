@@ -7,7 +7,7 @@
     </div>
 
     <div>
-        <table border="1" bordercolor="#aaaaaa" style="background-color: #FFFFFF;" class="kecheng-table">
+        <table border="1" bordercolor="#aaaaaa" style="background-color: #FFF;font-size:6px;" class="kecheng-table">
             <tr >
                 <td>时间</td>
                 <td>星期一</td>
@@ -24,7 +24,7 @@
                         {{(index+1)*2-1}}至{{(index+1)*2}}节
                     </th>
                     <template v-for="(td, index) in tr">
-                        <td width="10%" height="28" align="center" valign="top">
+                        <td width="8%" height="28" align="center" valign="top">
                             <div v-for="kecheng in td" style="border-bottom: 1px solid #f0ad4e;">
                                 {{kecheng.name}}&nbsp;&nbsp;{{kecheng.week}}&nbsp;&nbsp;{{kecheng.teacher}}&nbsp;&nbsp;{{kecheng.jiaoshi}}
                             </div>
