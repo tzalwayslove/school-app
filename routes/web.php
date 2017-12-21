@@ -116,7 +116,6 @@ Route::group([
 
     Route::get('/yikatongLogin', 'YikatongController@login');
 
-
 });
 
 Route::get('/wx/yikatongCode', function(){
