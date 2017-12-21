@@ -27,8 +27,9 @@
     </div>
     <div class="hfbox"
         >
-        <div   v-for="(item, index) in list"
-        :key="item.id">
+        <div
+                v-for="(item, index) in list"
+                :key="item.id">
             <img
                     :src="item.niming != 1 ? item.get_user.avatar : '/public/wx/img/m-touxiang.png'"
                     class="hfbox-img" />
