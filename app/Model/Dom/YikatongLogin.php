@@ -17,6 +17,7 @@ class YikatongLogin
     public $user_name;
     public $passwrod;
     public $pre = 'http://1900mx9281.51mypc.cn';
+    public $jar;
 
     public function __construct($user_name, $password)
     {
@@ -102,8 +103,8 @@ class YikatongLogin
             $resData[] = $arr;
         }
 
-        $res = $this->client->request('post', /*$this->pre . $url*/'http://school.sz25.net/api/api/test', [
-            'cookies' => /*$this->jar*/['a'=>10],
+        $res = $this->client->request('post', $this->pre . $url/*'http://school.sz25.net/api/api/test'*/, [
+            'cookies' => $this->jar,
             'char_set' => 'gbk',
             'multipart' => $resData,
             'headers'=>$header
