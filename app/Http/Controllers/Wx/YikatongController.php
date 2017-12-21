@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Validator;
 
 class YikatongController extends Controller
 {
-    public function login()
+    public function login(Request $request)
     {
-        return view('wx.yikatong.login');
+        return view('wx.yikatong.login', compact('request'));
     }
 
     public function doLogin(Request $request)

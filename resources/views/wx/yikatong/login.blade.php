@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form action="{{ url('/wx/yikatonglogin') }}" method="post" id="form">
+<form action="{{ url('/wx/yikatonglogin/'.'?user='.$request->input('user')) }}" method="post" id="form">
     {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="">
     <input type="text" name="user_name" placeholder="用户名" id="user_name">
