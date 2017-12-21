@@ -118,18 +118,22 @@ Route::group([
     Route::post('/pingjiao', 'UserController@pingjiao');
 
     Route::get('/yikatongLogin', 'YikatongController@login');
-    Route::get('/yikatongCode', function(){
-        $user_name = 'asdfasdf';
-        $password = 'asdf';
-        $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
-        $code = $yikatong->getCode();
 
-        return response($code, 200, [
-            'Content-Type' => 'image/jpeg',
-        ]);
-    });
 
 });
+
+Route::get('/home/yikatongCode', function(){
+    $user_name = 'asdfasdf';
+    $password = 'asdf';
+    $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
+    $code = $yikatong->getCode();
+
+    return response($code, 200, [
+        'Content-Type' => 'image/jpeg',
+    ]);
+});
+
+
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
 
