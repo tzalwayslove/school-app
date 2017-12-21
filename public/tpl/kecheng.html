@@ -27,7 +27,7 @@
                         <td width="12.5%" height="28" align="center" valign="top">
                             <div v-for="(kecheng, key) in td" style="font-size:1px;margin:0;padding:0;">
                                 {{kecheng.name}}&nbsp;&nbsp;{{kecheng.week}}&nbsp;&nbsp;{{kecheng.teacher}}&nbsp;&nbsp;{{kecheng.jiaoshi}}
-                                <template v-if="td.length > 1">
+                                <template v-if="td.length > 1 && key+1 != td.length">
                                     <hr>
                                 </template>
                             </div>
