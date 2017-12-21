@@ -28,7 +28,6 @@ class YikatongLogin
         if(!$jar){
             $jar = new CookieJar();
         }else{
-            dd(1);
             $jar = unserialize($jar);
         }
 
