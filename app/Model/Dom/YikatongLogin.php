@@ -32,6 +32,7 @@ class YikatongLogin
         }
 
         $this->jar = $jar;
+        dd($this->jar);
         $this->client = new Client();
 
 
