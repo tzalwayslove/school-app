@@ -3428,7 +3428,7 @@ select:focus
     overflow: hidden;
     padding:6px 12px;
     width: 1%;
-
+    font-weight: 500;
     -webkit-transition: background-color .1s linear;
             transition: background-color .1s linear;
     text-align: center;
