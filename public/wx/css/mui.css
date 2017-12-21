@@ -3321,7 +3321,7 @@ select:focus
 
     text-align: center;
 
-    color: #999;
+    color: #afe3de;
     border: 0;
     border-radius: 6px;
     background: none;
@@ -3330,7 +3330,7 @@ select:focus
 {
     font-size: 20px;
 
-    color: #333;
+    color: #afe3de;
 }
 .mui-search:before
 {
@@ -5547,15 +5547,3 @@ body > .mui-progressbar
 
     border: 0;
 }
-　　::-webkit-input-placeholder { /* WebKit browsers */
-    　　color:#afe3de;
-    　　}
-    　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    　　color:#afe3de;
-    　　}
-    　　::-moz-placeholder { /* Mozilla Firefox 19+ */
-    　　color:#afe3de;
-    　　}
-    　　:-ms-input-placeholder { /* Internet Explorer 10+ */
-    　　color:#afe3de;
-    　　}

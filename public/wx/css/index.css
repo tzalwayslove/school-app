@@ -5,6 +5,22 @@ ul li{
 	list-style: none;
 }
 
+::-webkit-input-placeholder 
+{
+    color:#afe3de !important;
+}
+:-moz-placeholder
+ { 
+    color:#afe3de  !important;
+}
+::-moz-placeholder 
+{ 
+    color:#afe3de !important;
+}
+:-ms-input-placeholder 
+{ 
+    color:#afe3de !important;
+}
 /*首页基本样式表*/
 @font-face {
 	font-family: 'icomoon';
