@@ -74,7 +74,6 @@ class YikatongLogin
             'imageField.y'=>rand(1, 100)
         ];
 
-        dd($data);
         $res = $this->postData('/loginstudent.action', $data);
 
         echo $res;
