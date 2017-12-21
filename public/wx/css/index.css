@@ -137,7 +137,7 @@ html{-webkit-text-size-adjust: none;}
 }
 .yjbox-tl{
 	margin-left: 80px;
-	margin-top: -30px;
+	margin-top: -20px;
 	color: #000000;
 }
 .yjbox-img{
@@ -149,7 +149,7 @@ html{-webkit-text-size-adjust: none;}
 	padding: 10px;
 	color: #000000;
 	letter-spacing: 1px;
-	font-size: 12px;
+	font-size: 14px;
 }
 .sm-f{
 	float: right;
@@ -532,4 +532,7 @@ table tr td{
 	right:15px;
 	top: 35px;
 	max-width: 10px;
+}
+.kb-b{
+	background-image: 
 }
