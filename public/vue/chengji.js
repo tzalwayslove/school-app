@@ -49,7 +49,7 @@ fabu = Vue.component('chengji', function (success, error) {
                             return item.jidian > 1;
                         });
                         $this.bujige = $this.chengji.filter(function(item){
-                            return item.jidian < 2;
+                            return item.jidian < 1;
                         });
                     }
                 });
