@@ -56,14 +56,14 @@ class YikatongLogin
         if(is_string($data)){
             $res = $this->client->request('post', $this->pre . $url, [
                 'cookies' => $this->jar,
-                'char_set' => 'gbk',
+                'char_set' => 'utf-8',
                 'body' => $data,
                 'headers'=>$header
             ]);
         }else{
             $res = $this->client->request('post', $this->pre . $url, [
                 'cookies' => $this->jar,
-                'char_set' => 'gbk',
+                'char_set' => 'utf-8',
                 'form_params' => $data,
                 'headers'=>$header
             ]);
