@@ -31,6 +31,7 @@ class YikatongLogin
         $this->jar = $jar;
         $this->client = new Client();
 
+        $this->getPage('/homeLogin.action');// 获取sessionId
     }
 
 
