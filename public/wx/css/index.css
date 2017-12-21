@@ -24,16 +24,16 @@ html{-webkit-text-size-adjust: none;}
 /*首页基本样式表*/
 @font-face {
 	font-family: 'icomoon';
-	src:  url('../fonts/icomoon.eot?n2o4lq');
-	src:  url('../fonts/icomoon.eot?n2o4lq#iefix') format('embedded-opentype'),
-	url('../fonts/icomoon.ttf?n2o4lq') format('truetype'),
-	url('../fonts/icomoon.woff?n2o4lq') format('woff'),
-	url('../fonts/icomoon.svg?n2o4lq#icomoon') format('svg');
+	src:  url('fonts/icomoon.eot?hhdoys');
+	src:  url('fonts/icomoon.eot?hhdoys#iefix') format('embedded-opentype'),
+	  url('fonts/icomoon.ttf?hhdoys') format('truetype'),
+	  url('fonts/icomoon.woff?hhdoys') format('woff'),
+	  url('fonts/icomoon.svg?hhdoys#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'icomoon' !important;
 	speak: none;
@@ -42,26 +42,26 @@ html{-webkit-text-size-adjust: none;}
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-
+  
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-.icon-fabu:before {
+  }
+  
+  .icon-fabu:before {
 	content: "\e900";
-	font-size: 32px;
-	color: inherit;
-}
-.icon-index:before {
+	color: #bfbfbf;
+  }
+  .icon-index:before {
 	content: "\e901";
-	font-size: 32px;
-	color: inherit;
-}
-.icon-wode:before {
+	color: #bfbfbf;
+  }
+  .icon-wode:before {
 	content: "\e902";
-	font-size: 32px;
-	color: inherit;
-}
+	color: #bfbfbf;
+  }
+  
+
 .nm-btn{
 	background-color: rgba(0,0,0,0);
 	border: none;
@@ -128,11 +128,12 @@ html{-webkit-text-size-adjust: none;}
 }
 .yjbox{
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-bottom: 50px;
 	box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.19);
 	font-size: 14px;
 	color: #313131;
+	font-weight: 300;
 }
 .yjbox-tl{
 	margin-left: 80px;
