@@ -47,10 +47,10 @@ fabu = Vue.component('chengji', function (success, error) {
                     }else{
                         $this.chengji = res.data.chengji;
                         $this.jige =$this.chengji.filter(function(item){
-                            return item.jidian >= 1;
+                            return item.chengji >= 60;
                         });
                         $this.bujige = $this.chengji.filter(function(item){
-                            return item.jidian < 1;
+                            return item.chengji < 60;
                         });
                     }
                 });

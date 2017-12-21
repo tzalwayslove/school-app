@@ -76,7 +76,6 @@ class UserController extends Controller
             }else{
                 $chengji->jidian = 0;
             }
-
         }
     }
 
