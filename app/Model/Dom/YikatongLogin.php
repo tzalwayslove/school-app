@@ -95,9 +95,10 @@ class YikatongLogin
     public function postData($url, $data, $header=[])
     {
         if(is_string($data)){
+
             $res = $this->client->request('post', $this->pre . $url, [
                 'cookies' => $this->jar,
-                'char_set' => 'utf-8',
+                'char_set' => 'gbk',
                 'body' => $data,
                 'headers'=>$header
             ]);
@@ -105,7 +106,7 @@ class YikatongLogin
         }else{
             $res = $this->client->request('post', $this->pre . $url, [
                 'cookies' => $this->jar,
-                'char_set' => 'utf-8',
+                'char_set' => 'gbk',
                 'form_params' => $data,
                 'headers'=>$header
             ]);
