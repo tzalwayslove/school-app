@@ -62,6 +62,7 @@ class YikatongLogin
 
     public function login($code)
     {
+
         $data = [
             'name'=>$this->user_name,
             'userType'=>1,
