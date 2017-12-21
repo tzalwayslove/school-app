@@ -62,7 +62,7 @@ class YikatongLogin
 
     public function login($code)
     {
-        $res = $this->postData('/loginstudent.action', [
+        $data = [
             'name'=>$this->user_name,
             'userType'=>1,
             'passwd'=>$this->passwrod,
@@ -70,7 +70,10 @@ class YikatongLogin
             'rand'=>$code, //验证码
             'imageField.x'=>rand(1, 100),
             'imageField.y'=>rand(1, 100)
-        ]);
+        ];
+
+        dd($data);
+        $res = $this->postData('/loginstudent.action', $data);
 
         echo $res;
         die();
