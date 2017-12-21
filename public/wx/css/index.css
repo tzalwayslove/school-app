@@ -21,6 +21,22 @@ html{-webkit-text-size-adjust: none;}
 { 
     color:#afe3de !important;
 }
+textarea::-webkit-input-placeholder 
+{
+    color:#aaa !important;
+}
+textarea:-moz-placeholder
+ { 
+    color:#aaa  !important;
+}
+textarea::-moz-placeholder 
+{ 
+    color:#aaa !important;
+}
+textarea:-ms-input-placeholder 
+{ 
+    color:#aaa !important;
+}
 /*首页基本样式表*/
 @font-face {
 	font-family: 'icomoon';
