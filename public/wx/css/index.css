@@ -50,15 +50,18 @@ html{-webkit-text-size-adjust: none;}
   
   .icon-fabu:before {
 	content: "\e900";
-	color: #bfbfbf;
+	color: #8a8a8a;
+	font-size: 24px;
   }
   .icon-index:before {
 	content: "\e901";
-	color: #bfbfbf;
+	color: #8a8a8a;
+	font-size: 24px;
   }
   .icon-wode:before {
 	content: "\e902";
-	color: #bfbfbf;
+	color: #8a8a8a;
+	font-size: 24px;
   }
   
 
