@@ -101,7 +101,6 @@ class YikatongLogin
             $arr['contents'] = $val;
             $resData[] = $arr;
         }
-        dd($resData);
         $res = $this->client->request('post', $this->pre . $url, [
             'cookies' => $this->jar,
             'char_set' => 'gbk',
