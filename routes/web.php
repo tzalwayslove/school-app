@@ -118,7 +118,7 @@ Route::group([
     Route::post('/pingjiao', 'UserController@pingjiao');
 
     Route::get('/yikatongLogin', 'YikatongController@login');
-
+    Route::post('/yikatonglogin', 'YikatongController@index');
 
 });
 

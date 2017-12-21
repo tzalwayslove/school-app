@@ -8,7 +8,7 @@
     <title>一卡通登录</title>
 </head>
 <body>
-<form action="/yikatonglogin">
+<form action="{{ url('/wx/yikatonglogin') }}">
     <img src="{{ url('/wx/yikatongCode') }}" alt="">
     <input type="text" name="code">
     <input type="submit">

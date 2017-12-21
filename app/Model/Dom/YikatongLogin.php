@@ -60,6 +60,21 @@ class YikatongLogin
         return $res;
     }
 
+    public function login($code)
+    {
+        $res = $this->postData('', [
+            'name'=>$this->user_name,
+            'userType'=>1,
+            'passwd'=>$this->password,
+            'loginType'=>1,
+            'rand'=>$code, //验证码
+            'imageField.x'=>rand(1, 100),
+            'imageField.y'=>rand(1, 100)
+        ]);
+
+        echo $res;
+    }
+
     public function getPage($url)
     {
         $res = $this->client->request('get', $this->pre . $url, [
