@@ -528,4 +528,6 @@ table tr td{
 }
 .kc-select{
 	margin-right: 10px;
+	float: right;
+	max-width: 5px;
 }
