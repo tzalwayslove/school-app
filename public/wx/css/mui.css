@@ -5547,3 +5547,15 @@ body > .mui-progressbar
 
     border: 0;
 }
+　　::-webkit-input-placeholder { /* WebKit browsers */
+    　　color:#afe3de;
+    　　}
+    　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    　　color:#afe3de;
+    　　}
+    　　::-moz-placeholder { /* Mozilla Firefox 19+ */
+    　　color:#afe3de;
+    　　}
+    　　:-ms-input-placeholder { /* Internet Explorer 10+ */
+    　　color:#afe3de;
+    　　}
