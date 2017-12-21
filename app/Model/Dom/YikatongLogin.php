@@ -96,8 +96,10 @@ class YikatongLogin
     {
         $resData = [];
         foreach($data as $key=>$val){
-            $resData[]['name'] = $key;
-            $resData[]['contents'] = $val;
+            $arr = [];
+            $arr['name'] =$key;
+            $arr['contents'] = $val;
+            $resData[] = $arr;
         }
         dd($resData);
         $res = $this->client->request('post', $this->pre . $url, [
