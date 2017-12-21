@@ -25,6 +25,7 @@ class YikatongLogin
         $this->jar = new CookieJar();
         $this->client = new Client();
 
+
         $res = $this->postData('/loginstudent.action', [
             'name'=>$user_name,
             'userType'=>1,
