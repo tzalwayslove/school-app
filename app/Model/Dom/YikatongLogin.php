@@ -94,10 +94,15 @@ class YikatongLogin
 
     public function postData($url, $data, $header=[])
     {
+        $resData = [];
+        foreach($data as $key=>$val){
+            $resData[]['name'] = $key;
+            $resData[]['contents'] = $val;
+        }
         $res = $this->client->request('post', $this->pre . $url, [
             'cookies' => $this->jar,
             'char_set' => 'gbk',
-            'multipart' => [$data],
+            'multipart' => $resData,
             'headers'=>$header
         ]);
 
