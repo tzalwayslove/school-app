@@ -562,4 +562,7 @@ table tr td{
 	background: -moz-linear-gradient(#537ed6, #6a61c5); /* Firefox 3.6 - 15 */
 	background: linear-gradient(#537ed6, #6a61c5); /* 标准的语法 */
   }
+.kb-desc{
+	text-align: left;
+	color: #fff;
 }
