@@ -60,7 +60,7 @@ class UserController extends Controller
     {
         foreach ($res as $chengji) {
             if ($chengji->chengji >= 90 || strpos('优', $chengji->chengji) !== false) {
-                $chengji->jidian = 4;
+                $chengji->jidian = 4 ;
             } else if ($chengji->chengji >= 80 || strpos('良', $chengji->chengji) || strpos('好', $chengji->chengji) !== false) {
                 $chengji->jidian = 3;
             } else if ($chengji->chengji >= 70 || strpos('中', $chengji->chengji) !== false) {
@@ -70,6 +70,12 @@ class UserController extends Controller
             } else {
                 $chengji->jidian = 0;
             }
+            if($chengji->xuefen > 0){
+                $chengji->jidian /= $chengji->xuefen;
+            }else{
+                $chengji->jidian = 0;
+            }
+
         }
     }
 
