@@ -514,4 +514,6 @@ input.bind-input-style.bind-input-style{
 }
 table tr td{
 	width: 12.5%;
+	text-align: center;
+	float: left;
 }
