@@ -26,7 +26,11 @@ class YikatongLogin
         $this->user_name = $user_name;
         $this->passwrod = $password;
 
-        $jar = new CookieJar();
+        $jar = session('cookie_jar');
+
+        if(!$jar){
+            $jar = new CookieJar();
+        }
 
         $this->jar = $jar;
         $this->client = new Client();
@@ -39,7 +43,6 @@ class YikatongLogin
     {
         $res = $this->getPage('/getCheckpic.action');
 
-        Log::log(json_encode($this->jar->toArray(), JSON_UNESCAPED_UNICODE));
         session(['cookie_jar'=>serialize($this->jar)]);
         return $res;
     }
@@ -58,7 +61,7 @@ class YikatongLogin
 
         $res = $this->postData('/loginstudent.action', $data);
 
-        echo iconv('gbk', 'utf-8', $res);
+        echo dd(iconv('gbk', 'utf-8', $res));
         die();
     }
 

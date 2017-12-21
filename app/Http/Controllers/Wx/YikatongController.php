@@ -15,7 +15,7 @@ class YikatongController extends Controller
 
     public function index(Request $request)
     {
-        $yikatong = new YikatongLogin('201623025021', '071020');
+        $yikatong = new YikatongLogin('201623025021', '071021');
         $code = $request->input('code');
 
         $yikatong->login($code);
