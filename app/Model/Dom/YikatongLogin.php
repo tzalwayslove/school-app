@@ -30,6 +30,8 @@ class YikatongLogin
 
         if(!$jar){
             $jar = new CookieJar();
+        }else{
+            $jar = unserialize($jar);
         }
 
         $this->jar = $jar;
