@@ -25,7 +25,7 @@ fabu = Vue.component('chengji', function (success, error) {
                     }
 
                     return this.chengji.length > 1
-                        ? count / this.chengji.length
+                        ? (count / this.chengji.length).toFixed(2)
                         : 0;
                 }
             },
