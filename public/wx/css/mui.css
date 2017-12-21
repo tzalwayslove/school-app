@@ -3435,9 +3435,9 @@ select:focus
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    color: #3cc4b6;
-    border-color: #3cc4b6;
-    border: 1px solid #3cc4b6;
+    color: #32b9b2;
+    border-color: #32b9b2;
+    border: 1px solid #32b9b2;
 }
 .mui-segmented-control .mui-control-item:first-child
 {
@@ -3446,7 +3446,7 @@ select:focus
 .mui-segmented-control .mui-control-item.mui-active
 {
     color: #fff;
-    background-color: #3cc4b6;
+    background-color: #32b9b2;
 }
 .mui-segmented-control.mui-segmented-control-inverted
 {
