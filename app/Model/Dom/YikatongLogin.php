@@ -9,6 +9,7 @@
 namespace App\Model\Dom;
 
 
+use App\Model\Log;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 
@@ -42,6 +43,8 @@ class YikatongLogin
     public function getCode()
     {
         $res = $this->getPage('/getCheckpic.action');
+
+        Log::log(json_encode($this->jar->toArray(), JSON_UNESCAPED_UNICODE));
         session(['cookie_jar'=>serialize($this->jar)]);
         return $res;
     }
