@@ -43,8 +43,8 @@ Route::get('test', function(){
     $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
     $code = $yikatong->getCode();
 
-    return response($code, [
-//        'Content-Type' => 'image/jpg',
+    return response($code, 200, [
+        'Content-Type' => 'image/jpeg',
     ]);
 });
 
