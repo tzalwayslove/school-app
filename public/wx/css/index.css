@@ -21,6 +21,22 @@ html{-webkit-text-size-adjust: none;}
 { 
     color:#afe3de !important;
 }
+textarea::-webkit-input-placeholder 
+{
+    color:#aaa !important;
+}
+textarea:-moz-placeholder
+ { 
+    color:#aaa  !important;
+}
+textarea::-moz-placeholder 
+{ 
+    color:#aaa !important;
+}
+textarea:-ms-input-placeholder 
+{ 
+    color:#aaa !important;
+}
 /*首页基本样式表*/
 @font-face {
 	font-family: 'icomoon';
@@ -95,7 +111,7 @@ html{-webkit-text-size-adjust: none;}
 }
 .hfbox-tl{
 	margin-left: 50px;
-	margin-top: -40px;
+	margin-top: -50px;
 	color: #000000;
 }
 .hf-box-main{
@@ -152,15 +168,15 @@ html{-webkit-text-size-adjust: none;}
 	padding:7px 20px;
 	color: #000000;
 	letter-spacing: 1px;
-	font-size: 16px;
+	font-size: 17px;
 	line-height: 21px;
-	letter-spacing: 2px;
+	letter-spacing: 0.5px;
 
 }
 .sm-f{
 	float: right;
 	color: #AAAAAA;
-	margin-right: 10px;
+	margin-top: -20px;
 }
 .sm-f-img{
 	float: right;
