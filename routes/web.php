@@ -105,7 +105,6 @@ Route::group([
 
     Route::get('/binding', function(\Illuminate\Http\Request $request){
         $userId = $request->input('user');
-
         return view('wx.binding.index', compact('userId'));
     });
 
@@ -118,7 +117,7 @@ Route::group([
     Route::post('/pingjiao', 'UserController@pingjiao');
 
     Route::get('/yikatongLogin', 'YikatongController@login');
-    Route::post('/yikatonglogin', 'YikatongController@index');
+
 
 });
 
@@ -132,6 +131,7 @@ Route::get('/wx/yikatongCode', function(){
         'Content-Type' => 'image/jpeg',
     ]);
 });
+Route::post('/wx/yikatonglogin', 'YikatongController@index');
 
 
 Route::get('wx_menu', function(){
