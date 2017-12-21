@@ -20,8 +20,9 @@ class YikatongLogin
 
     public function __construct($user_name, $password)
     {
-        $this->user_name;
-        $this->passwrod;
+
+        $this->user_name = $user_name;
+        $this->passwrod = $password;
 
         $jar = session('cookie_jar');
 
