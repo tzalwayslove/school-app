@@ -9,7 +9,7 @@
 </head>
 <body>
 <form action="/yikatonglogin">
-    <img src="/yikatongCode" alt="">
+    <img src="{{ url('/wx/yikatongCode') }}" alt="">
     <input type="text" name="code">
     <input type="submit">
 </form>
