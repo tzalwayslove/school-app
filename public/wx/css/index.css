@@ -129,6 +129,7 @@ html{-webkit-text-size-adjust: none;}
 .yjbox{
 	width: 100%;
 	margin-top: 30px;
+	margin-bottom: 20px;
 	box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.19);
 	font-size: 14px;
 	color: #000000;
