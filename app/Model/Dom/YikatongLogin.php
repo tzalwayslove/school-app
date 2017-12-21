@@ -99,6 +99,7 @@ class YikatongLogin
             $resData[]['name'] = $key;
             $resData[]['contents'] = $val;
         }
+        dd($resData);
         $res = $this->client->request('post', $this->pre . $url, [
             'cookies' => $this->jar,
             'char_set' => 'gbk',
