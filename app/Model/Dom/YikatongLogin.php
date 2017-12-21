@@ -72,10 +72,8 @@ class YikatongLogin
             'imageField.y'=>rand(1, 100)
         ]);
 
-        echo 1;
-        die();
         echo $res;
-
+        die();
     }
 
     public function getPage($url)
