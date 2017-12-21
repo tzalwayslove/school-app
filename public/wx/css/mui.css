@@ -1610,7 +1610,7 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    color: #929292;
+    color: #8a8a8a;
 }
 .mui-bar-tab .mui-tab-item.mui-active
 {
@@ -3428,7 +3428,7 @@ select:focus
     overflow: hidden;
     padding:6px 12px;
     width: 1%;
-
+    font-weight: 500;
     -webkit-transition: background-color .1s linear;
             transition: background-color .1s linear;
     text-align: center;
