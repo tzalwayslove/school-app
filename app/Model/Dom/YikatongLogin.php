@@ -94,7 +94,6 @@ class YikatongLogin
 
     public function postData($url, $data, $header=[])
     {
-        dd($this->jar);
         $resData = [];
         foreach($data as $key=>$val){
             $arr = [];
