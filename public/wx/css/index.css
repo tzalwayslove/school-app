@@ -533,7 +533,7 @@ input.bind-input-style.bind-input-style{
 }
 .kecheng-table{
 	/* background: url("/public/wx/img/hb-bg.png"); */
-	color: #313131;
+	color: #fff;
 }
 table{
 	table-layout: fixed;
