@@ -24,8 +24,8 @@
                         {{(index+1)*2-1}}至{{(index+1)*2}}节
                     </th>
                     <template v-for="(td, index) in tr">
-                        <td width="8%" height="28" align="center" valign="top">
-                            <div v-for="kecheng in td" style="border-bottom: 1px solid #f0ad4e;">
+                        <td width="7%" height="28" align="center" valign="top">
+                            <div v-for="kecheng in td" style="font-size:6px;">
                                 {{kecheng.name}}&nbsp;&nbsp;{{kecheng.week}}&nbsp;&nbsp;{{kecheng.teacher}}&nbsp;&nbsp;{{kecheng.jiaoshi}}
                             </div>
                         </td>
