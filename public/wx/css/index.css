@@ -514,6 +514,7 @@ input.bind-input-style.bind-input-style{
 }
 table{
 	table-layout: fixed;
+	word-wrap: break-word;
 }
 table tr td{
 	width: 12.5%;
