@@ -99,7 +99,6 @@ class Login
             ]);
         }
 
-
         return $res->getBody();
     }
 

@@ -64,7 +64,6 @@ class YikatongLogin
 
     public function login($code)
     {
-
         $data = [
             'name'=>$this->user_name,
             'userType'=>1,
@@ -102,7 +101,6 @@ class YikatongLogin
             $arr['contents'] = $val;
             $resData[] = $arr;
         }
-
 
         $res = $this->client->request('post', $this->pre . $url/*'http://school.sz25.net/api/api/test'*/, [
             'cookies' => $this->jar,

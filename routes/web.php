@@ -46,7 +46,7 @@ Route::get('test', function(){
     $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
     $code = $yikatong->getCode();
 
-
+    dd($yikatong->jar);
 
     return response($code, 200, [
         'Content-Type' => 'image/jpeg',
