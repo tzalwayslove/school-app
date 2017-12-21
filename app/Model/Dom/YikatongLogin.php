@@ -97,7 +97,7 @@ class YikatongLogin
         $res = $this->client->request('post', $this->pre . $url, [
             'cookies' => $this->jar,
             'char_set' => 'gbk',
-            'multipart' => $data,
+            'multipart' => [$data],
             'headers'=>$header
         ]);
 
