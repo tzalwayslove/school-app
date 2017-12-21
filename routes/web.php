@@ -45,7 +45,6 @@ Route::get('test', function(){
     $password = 'asdf';
     $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
     $code = $yikatong->getCode();
-
     dd($yikatong->jar);
 
     return response($code, 200, [
