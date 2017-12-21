@@ -22,7 +22,16 @@ class YikatongLogin
     {
         $this->user_name;
         $this->passwrod;
-        $this->jar = new CookieJar();
+
+        $jar = session('cookie_jar');
+
+        if(!$jar){
+            $jar = new CookieJar();
+        }else{
+            $jar = unserialize($jar);
+        }
+
+        $this->jar = $jar;
         $this->client = new Client();
 
 
@@ -38,6 +47,11 @@ class YikatongLogin
 
         echo $res;
         die();*/
+    }
+
+    public function __destruct()
+    {
+        session(['cookie_jar'=>serialize($this->jar)]);
     }
 
     public function getCode()

@@ -9,7 +9,17 @@ Route::get('/', function () {
 Route::get('/s', function(){
     session(['a'=>10]);
 });
+Route::get('/yikatongCode', function(){
+    $user_name = 'asdfasdf';
+    $password = 'asdf';
+    $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
+    $code = $yikatong->getCode();
 
+    return response($code, 200, [
+        'Content-Type' => 'image/jpeg',
+    ]);
+
+});
 Route::get('/g', function(){
     dd(session('a'));
 });
@@ -38,10 +48,14 @@ Route::get('test', function(){
 
 //    $user = \App\Model\User::where('open_id', 'ocDq7wTnH5dh9n09aNxRV0jrc05c')->first();
 //    return view('wx.binding.index');
+
+
     $user_name = 'asdfasdf';
     $password = 'asdf';
     $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
     $code = $yikatong->getCode();
+
+
 
     return response($code, 200, [
         'Content-Type' => 'image/jpeg',
