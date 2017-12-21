@@ -6,7 +6,7 @@
         </select>
     </div>
 
-    <div>
+    <div style="width: 100%; overflow: scroll">
         <table border="1" bordercolor="#aaaaaa" style="background-color: #FFFFFF;" class="kecheng-table">
             <tr >
                 <td>时间</td>
@@ -24,8 +24,8 @@
                         {{(index+1)*2-1}}至{{(index+1)*2}}节
                     </th>
                     <template v-for="(td, index) in tr">
-                        <td width="7%" height="28" align="center" valign="top">
-                            <div v-for="kecheng in td" style="font-size:6px;">
+                        <td width="123" height="28" align="center" valign="top">
+                            <div v-for="kecheng in td" style="font-size:1px;">
                                 {{kecheng.name}}&nbsp;&nbsp;{{kecheng.week}}&nbsp;&nbsp;{{kecheng.teacher}}&nbsp;&nbsp;{{kecheng.jiaoshi}}
                             </div>
                         </td>
