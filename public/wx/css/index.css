@@ -4,7 +4,7 @@ ul{
 ul li{
 	list-style: none;
 }
-
+html{-webkit-text-size-adjust: none;}
 ::-webkit-input-placeholder 
 {
     color:#afe3de !important;
