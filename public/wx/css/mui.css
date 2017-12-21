@@ -3426,7 +3426,7 @@ select:focus
 	background-color: #ffffff;
     display: table-cell;
     overflow: hidden;
-
+    padding:6px 12px;
     width: 1%;
 
     -webkit-transition: background-color .1s linear;
