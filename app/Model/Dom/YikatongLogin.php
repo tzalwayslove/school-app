@@ -102,7 +102,6 @@ class YikatongLogin
                 'body' => $data,
                 'headers'=>$header
             ]);
-
         }else{
             $res = $this->client->request('post', $this->pre . $url, [
                 'cookies' => $this->jar,
