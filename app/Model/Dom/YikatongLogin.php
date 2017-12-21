@@ -68,7 +68,7 @@ class YikatongLogin
         $res = $this->postData('/loginstudent.action', $data);
 
 
-        $res = iconv('gbk', 'utf-8', $res);
+        $res = $res->__toString();
 
         $erroDom = new Crawler($res);
         $filter = $erroDom->filterXPath('//p[@class="biaotou"]');
