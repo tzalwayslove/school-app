@@ -62,7 +62,7 @@ class YikatongLogin
 
     public function login($code)
     {
-        $res = $this->postData('', [
+        $res = $this->postData('/loginstudent.action', [
             'name'=>$this->user_name,
             'userType'=>1,
             'passwd'=>$this->passwrod,
