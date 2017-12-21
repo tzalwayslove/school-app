@@ -26,7 +26,7 @@ class YikatongLogin
         $this->client = new Client();
 
 
-        $res = $this->postData('/loginstudent.action', [
+        /*$res = $this->postData('/loginstudent.action', [
             'name'=>$user_name,
             'userType'=>1,
             'passwd'=>$password,
@@ -37,7 +37,13 @@ class YikatongLogin
         ]);
 
         echo $res;
-        die();
+        die();*/
+    }
+
+    public function getCode()
+    {
+        $res = $this->getPage('/getCheckpic.action');
+        echo $res;
     }
 
     public function getPage($url)

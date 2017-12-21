@@ -43,6 +43,7 @@ Route::get('test', function(){
     $user_name = 'asdfasdf';
     $password = 'asdf';
     $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
+    $yikatong->getCode();
 
 });
 
