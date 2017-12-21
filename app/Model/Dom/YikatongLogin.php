@@ -44,7 +44,7 @@ class YikatongLogin
     {
         $res = $this->getPage('/getCheckpic.action');
         header('Accept:image/webp,image/apng,image/*,*/*;q=0.8');
-        return $res;
+        echo $res;
     }
 
     public function getPage($url)
