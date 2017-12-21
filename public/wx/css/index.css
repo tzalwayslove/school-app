@@ -82,7 +82,7 @@ html{-webkit-text-size-adjust: none;}
 	width: 100%;
 	margin-top: 45px;
 	border: 1px solid #d9d9d9;
-	border-radius: 3px;
+	border-radius: 5px;
 	box-shadow: 1px 1px 1px #AAAAAA;
 }
 .hfbox-img{
@@ -130,7 +130,7 @@ html{-webkit-text-size-adjust: none;}
 	width: 100%;
 	margin-top: 45px;
 	border: 1px solid #d9d9d9;
-	border-radius: 3px;
+	border-radius: 5px;
 	box-shadow: 1px 1px 1px #AAAAAA;
 	font-size: 14px;
 	color: #000000;
@@ -343,7 +343,7 @@ textarea{
 	background-color: #FFFFFF;
 	font-size: 12px;
 	margin: 0;
-	border-radius: 3px;
+	border-radius: 5px;
 }
 .ui-alert{
 	position:absolute;
@@ -380,7 +380,7 @@ textarea{
 .ts-fen-jf{
 	width: 100%;
 	background: #2ebeb0;
-	border-radius: 3px;
+	border-radius: 5px;
 	padding-top: 20px;
 	padding-bottom: 15px;
 	margin-bottom: 10px;
@@ -457,7 +457,7 @@ textarea{
 	float: left;
 	width: 100%;
 	background: #2ebeb0;
-	border-radius: 3px;
+	border-radius: 5px;
 	padding-top: 10px;
 	padding-bottom: 5px;
 	text-indent: 5px;
@@ -519,5 +519,5 @@ table{
 table tr td{
 	width: 12.5%;
 	text-align: center;
-	line-height: 1.1;
+	line-height: 1.42;
 }
