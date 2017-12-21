@@ -12,7 +12,9 @@
 <form action="{{ url('/wx/yikatonglogin') }}" method="post">
     {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="">
-    <input type="text" name="code">
+    <input type="text" name="user_name" placeholder="用户名">
+    <input type="text" name="password" placeholder="密码">
+    <input type="number" name="code" placeholder="验证码" maxlength="2">
     <input type="submit">
 </form>
 
