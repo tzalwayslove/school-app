@@ -67,7 +67,6 @@ class YikatongLogin
 
         $res = $this->postData('/loginstudent.action', $data);
 
-
         $res = $res->__toString();
 
         $erroDom = new Crawler($res);

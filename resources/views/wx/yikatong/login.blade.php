@@ -32,7 +32,7 @@
                 if(res.result.code == 1){
                     alert('登录成功');
                 }else{
-                    alert('登录失败');
+                    alert(res.result.message || '登录失败');
                 }
             })
         });
