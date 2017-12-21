@@ -521,3 +521,8 @@ table tr td{
 	text-align: center;
 	line-height: 1.42;
 }
+.kc-m-tit{
+	text-align: center;
+	font-size: 18px;
+	margin: 10px auto;
+}
