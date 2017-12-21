@@ -40,16 +40,6 @@ Route::get('test', function(){
 //    $user = \App\Model\User::where('open_id', 'ocDq7wTnH5dh9n09aNxRV0jrc05c')->first();
 //    return view('wx.binding.index');
 
-
-    $user_name = 'asdfasdf';
-    $password = 'asdf';
-    $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
-    $code = $yikatong->getCode();
-    dd($yikatong->jar);
-
-    return response($code, 200, [
-        'Content-Type' => 'image/jpeg',
-    ]);
 });
 Route::group([
     'prefix'=>'admin',
@@ -114,7 +104,14 @@ Route::group([
     Route::get('/pingjiao', 'UserController@pingjiaoView');
     Route::post('/pingjiao', 'UserController@pingjiao');
 
-    Route::get('/yikatongLogin', 'YikatongController@login');
+    Route::group([
+        'middleware'=>['yikatong'],
+        'prefix'=>'yikatong',
+    ], function(){
+        Route::get('yikatongLogin', 'YikatongController@login');
+        Route::post('yikatongLogin', 'YikatongController@');
+    });
+
 
 });
 
@@ -123,13 +120,11 @@ Route::get('/wx/yikatongCode', function(){
     $password = 'asdf';
     $yikatong = new \App\Model\Dom\YikatongLogin($user_name, $password);
     $code = $yikatong->getCode();
-
     return response($code, 200, [
         'Content-Type' => 'image/jpeg',
     ]);
 });
 
-Route::post('/wx/yikatonglogin', 'Wx\YikatongController@index');
 
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';

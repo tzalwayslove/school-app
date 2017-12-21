@@ -9,9 +9,11 @@
 namespace App\Model\Dom;
 
 
+use App\Exceptions\LoginErrorException;
 use App\Model\Log;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
+use Symfony\Component\DomCrawler\Crawler;
 
 class YikatongLogin
 {
@@ -22,33 +24,35 @@ class YikatongLogin
 
     public function __construct($user_name, $password)
     {
-
         $this->user_name = $user_name;
         $this->passwrod = $password;
 
-        $jar = session('cookie_jar');
-
-        if(!$jar){
-            $jar = new CookieJar();
-        }else{
+        if(session('isLogin') && $jar = session('cookie_jar')){
             $jar = unserialize($jar);
+        }else{
+            $jar = new CookieJar();
         }
 
         $this->jar = $jar;
         $this->client = new Client();
-
-        $this->getPage('/homeLogin.action');// 获取sessionId
+        if(!session('isLogin')){
+            $this->getPage('/homeLogin.action');// 获取sessionId
+        }
     }
 
 
     public function getCode()
     {
         $res = $this->getPage('/getCheckpic.action');
-
         session(['cookie_jar'=>serialize($this->jar)]);
         return $res;
     }
 
+    /**
+     * 此方法依赖getCode()获取验证码
+     * @param $code
+     * @throws LoginErrorException
+     */
     public function login($code)
     {
         $data = [
@@ -63,8 +67,16 @@ class YikatongLogin
 
         $res = $this->postData('/loginstudent.action', $data);
 
-        echo dd(iconv('gbk', 'utf-8', $res));
-        die();
+
+        $res = iconv('gbk', 'utf-8', $res);
+
+        $erroDom = new Crawler($res);
+        $erroDom->filter('//p[@class="biaotou"]');
+        if($erroDom->count()){
+            throw new LoginErrorException($erroDom->text());
+        }
+
+        session(['isLogin'=>true]);
     }
 
     public function getPage($url)
