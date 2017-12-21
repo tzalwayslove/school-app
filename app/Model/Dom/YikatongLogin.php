@@ -36,29 +36,13 @@ class YikatongLogin
         $this->jar = $jar;
         $this->client = new Client();
 
-
-        /*$res = $this->postData('/loginstudent.action', [
-            'name'=>$user_name,
-            'userType'=>1,
-            'passwd'=>$password,
-            'loginType'=>1,
-            'rand'=>'88', //验证码
-            'imageField.x'=>rand(1, 100),
-            'imageField.y'=>rand(1, 100)
-        ]);
-
-        echo $res;
-        die();*/
     }
 
-    public function __destruct()
-    {
-        session(['cookie_jar'=>serialize($this->jar)]);
-    }
 
     public function getCode()
     {
         $res = $this->getPage('/getCheckpic.action');
+        session(['cookie_jar'=>serialize($this->jar)]);
         return $res;
     }
 
@@ -102,11 +86,14 @@ class YikatongLogin
             $resData[] = $arr;
         }
 
-        $res = $this->client->request('post', $this->pre . $url/*'http://school.sz25.net/api/api/test'*/, [
+        $res = $this->client->request('post', $this->pre . $url, [
             'cookies' => $this->jar,
             'char_set' => 'gbk',
             'multipart' => $resData,
-            'headers'=>$header
+            'headers'=>$header,
+            'allow_redirects'=>true,
+            'max'=>5, //重定向次数
+            'strict'=>'false'//是否严格重定向，不明觉厉 false
         ]);
 
         return $res->getBody();
