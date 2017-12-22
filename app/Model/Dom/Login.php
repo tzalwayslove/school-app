@@ -10,6 +10,7 @@ namespace App\Model\Dom;
 
 
 use App\Exceptions\LoginErrorException;
+use App\Model\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\TransferStats;
@@ -78,17 +79,21 @@ class Login
         if(!$table->count()){
             return false;
         }
+
         $name = $table->filterXPath('//tr[4]/td[2]');
+        $info = [];
         if($name->count()){
-            $this->name = $name->text();
+            $info['name'] = $name->text();
         }
 //        48
         $idCard = $table->filterXPath('//tr[48]/td[4]');
         if(!$idCard){
-            $this->id_card = $idCard->text();
-            $this->yikatong_password = substr($this->id_card, -6);
+            $info['id_card'] = $idCard->text();
+            $info['yikatong_password'] = substr($this->id_card, -6);
         }
-        $this->save();
+
+        User::where('account', $info)->update();
+
         return true;
     }
     public function getPage($url)
