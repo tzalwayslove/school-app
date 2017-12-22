@@ -107,12 +107,12 @@ Route::group([
     Route::get('yikatongLogin', 'YikatongController@login');
     Route::post('yikatongLogin', 'YikatongController@doLogin');
 
-    /*Route::group([
+    Route::group([
         'middleware'=>['yikatong'],
         'prefix'=>'yikatong',
     ], function(){
-
-    });*/
+        Route::get('liushui', 'YikatongController@liushui');
+    });
 
 
 });
