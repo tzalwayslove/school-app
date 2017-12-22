@@ -10,6 +10,8 @@ namespace App\Model\Dom;
 
 
 use App\Exceptions\LoginErrorException;
+use App\Exceptions\TableNotFoundException;
+use Symfony\Component\DomCrawler\Crawler;
 
 class Liushui extends YikatongLogin
 {
@@ -30,6 +32,46 @@ class Liushui extends YikatongLogin
         dd(iconv('gbk', 'utf-8', $res));
     }
 
+    public function getData($startTime, $endTime)
+    {
+        $url = '/accounthisTrjn2.action';
+        $data['inputStartDate'] = $startTime;
+        $data['inputEndDate'] = $endTime;
+
+        $res = $this->postData($url, $data);
+        $dom = new Crawler($res->__toString());
+        $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
+        if(!$table->count()){
+            throw new TableNotFoundException('获取数据失败！');
+        }
+        $trs = $table->filterXPath('//tr');
+        if(!$trs->count()){
+            return collect([]);
+        }
+        $res = $trs->each(function(Crawler $tr, $index){
+            if($index == 0){
+                return [];
+            }
+
+            $liusui = new \App\Lib\Liushui();
+            $liusui->create_at = $tr->filterXPath('//td[1]') -> count()
+                                ? $tr->filterXPath('//td[1]') -> text()
+                                : '';
+            $liusui->xingming = $tr->filterXPath('//td[3]') -> count()
+                ? $tr->filterXPath('//td[3]') -> text()
+                : '';
+            $liusui->price = $tr->filterXPath('//td[6]') -> count()
+                ? $tr->filterXPath('//td[6]') -> text()
+                : '';
+            $liusui->yue = $tr->filterXPath('//td[7]') -> count()
+                ? $tr->filterXPath('//td[7]') -> text()
+                : '';
+            return $liusui;
+        });
+        return collect($res)->filter(function($item){
+            return !empty($item);
+        });
+    }
     public static function getSelectDate()
     {
         //三天
@@ -44,37 +86,45 @@ class Liushui extends YikatongLogin
         $N = date('N');//今天星期几
 
         $data['threeDaysAgo'] = [
-            date($format, $now - 3 * self::$day),
-            date($format, $now)
+            'start_time'=>date($format, $now - 3 * self::$day),
+            'end_time' =>date($format, $now),
+            'name'=>'三天前'
         ];
         $data['aWeekAgo'] = [
-            date($format, $now - ($N - 1) * self::$day),
-            date($format, $now),
+            'start_time'=>date($format, $now - ($N - 1) * self::$day),
+            'end_time' =>date($format, $now),
+            'name'=>'这周'
         ];
         $data['ThisMonth'] = [
-            date($format, mktime(0,0,0, date('m'), 1)),
-            date($format, strtotime(date('Y-m-t')))
+            'start_time'=>date($format, mktime(0,0,0, date('m'), 1)),
+            'end_time' =>date($format, strtotime(date('Y-m-t'))),
+            'name'=>'本月'
         ];
 
         $data['lastMonth'] = [
-            date($format, mktime(0,0,0, date('m')-1, 1)),
-            date($format, mktime(0,0,0,date('m'), 1) -1)
+            'start_time'=>date($format, mktime(0,0,0, date('m')-1, 1)),
+            'end_time' =>date($format, mktime(0,0,0,date('m'), 1) -1),
+            'name'=>'上月'
         ];
         $data['twoMonthsAgo'] = [
-            date($format, mktime(0,0,0, date('m')-2, 1)),
-            date($format, mktime(0,0,0, date('m')-1, 1)-1)
+            'start_time'=>date($format, mktime(0,0,0, date('m')-2, 1)),
+            'end_time' =>date($format, mktime(0,0,0, date('m')-1, 1)-1),
+            'name' =>date('m月', mktime(0,0,0, date('m')-2, 1))
         ];
         $data['threeMonthAgo']= [
-            date($format, mktime(0,0,0, date('m')-3, 1)),
-            date($format, mktime(0,0,0, date('m')-2, 1)-1)
+            'start_time'=>date($format, mktime(0,0,0, date('m')-3, 1)),
+            'end_time' =>date($format, mktime(0,0,0, date('m')-2, 1)-1),
+            'name' =>date('m月', mktime(0,0,0, date('m')-3, 1))
         ];
         $data['foreMonthAgo'] = [
-            date($format, mktime(0,0,0, date('m')-4, 1)),
-            date($format, mktime(0, 0,0, date('m')-3, 1) -1)
+            'start_time'=>date($format, mktime(0,0,0, date('m')-4, 1)),
+            'end_time' =>date($format, mktime(0, 0,0, date('m')-3, 1) -1),
+            'name' =>date('m月', mktime(0,0,0, date('m')-4, 1))
         ];
         $data['all']=[
-            date($format, mktime(0,0,0,0,0,0)),
-            date($format, $now)
+            'start_time'=>date($format, mktime(0,0,0,0,0,0)),
+            'end_time' =>date($format, $now),
+            'name' =>'所有'
         ];
         return $data;
     }

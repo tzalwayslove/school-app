@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Wx;
 
 use App\Exceptions\LoginErrorException;
+use App\Lib\Liushui;
 use App\Lib\Result;
 use App\Model\Dom\YikatongLogin;
 use Illuminate\Http\Request;
@@ -57,9 +58,7 @@ class YikatongController extends Controller
      */
     public function index(Request $request)
     {
-
-
+        $query = \App\Model\Dom\Liushui::getSelectDate();
+        return view('wx.yikatong.index', compact('query'));
     }
-
-
 }
