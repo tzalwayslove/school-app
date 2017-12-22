@@ -27,6 +27,11 @@ fabu = Vue.component('liushui', function (success, error) {
                     ++this.page;
                     this.getData(0);
                 },
+                changeData:function(){
+                    this.page = 1;
+                    console.log(this.seachKey);
+                    this.getData()
+                },
                 getData:function(cover = 1){
                     $this =this;
                     this.jiazai = true;
