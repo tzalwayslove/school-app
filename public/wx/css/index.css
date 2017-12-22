@@ -404,11 +404,11 @@ textarea{
 .ts-fen-jf{
 	width: 100%;
 	background: #32b9b2;
-	border-radius: 5px;
+	border-radius: 3px;
 	padding-top: 20px;
 	padding-bottom: 15px;
 	margin-bottom: 10px;
-	box-shadow: 0 1px 3px 0 #ddd;
+	box-shadow: 0 3px 3px 0 #ddd;
 }
 .ts-fen-cj{
 	float: right;
