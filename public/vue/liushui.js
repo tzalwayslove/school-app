@@ -24,9 +24,8 @@ fabu = Vue.component('liushui', function (success, error) {
                     ++this.page;
                     this.getData(0);
                 },
-                getData:function(cover){
+                getData:function(cover = 1){
                     $this =this;
-                    cover = cover || 1;
                     this.jiazai = true;
                     axios.post('wx/yikatong/liushui?user=' + this.user, {
                         start_time:'19991130',
