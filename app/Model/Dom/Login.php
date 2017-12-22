@@ -69,6 +69,28 @@ class Login
         }
     }
 
+    public function getInfo()
+    {
+        $url = '/xsd/grxx/xsxx?Ves632DSdyV=NEW_XSD_XJCJ';
+        $res = $this->getPage($url);
+        $dom = new Crawler(iconv('gbk', 'utf-8', $res));
+        $table = $dom->filterXPath('//table[@id="xjkpTable"]');
+        if(!$table->count()){
+            return false;
+        }
+        $name = $table->filterXPath('//tr[4]/td[2]');
+        if($name->count()){
+            $this->name = $name->text();
+        }
+//        48
+        $idCard = $table->filterXPath('//tr[48]/td[4]');
+        if(!$idCard){
+            $this->id_card = $idCard->text();
+            $this->yikatong_password = substr($this->id_card, -6);
+        }
+        $this->save();
+        return true;
+    }
     public function getPage($url)
     {
         $res = $this->client->request('get', $this->pre . $url, [

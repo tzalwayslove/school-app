@@ -17,6 +17,10 @@ class YikatongController extends Controller
     public function login(Request $request)
     {
         $user = session('user');
+        if(!$user->yikatong_password){
+            $loginUser = new \App\Model\Dom\Login($user->account, $user->password);
+            $loginUser->getInfo();
+        }
         return view('wx.yikatong.login', compact('request', 'user'));
     }
 
@@ -35,6 +39,10 @@ class YikatongController extends Controller
 
         $v = Validator::make($request->all(), $rules, $message);
         $v->validate();
+
+        $user = session('user');
+        $user->yikatong_password = $request->input('password');
+        $user->save();
 
         $code = $request->input('code');
         $user_name = $request->input('user_name');

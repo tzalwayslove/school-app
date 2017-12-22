@@ -20,6 +20,7 @@
 </form>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
+
 <script>
     $(function(){
         $('#login').on('click', function(){
