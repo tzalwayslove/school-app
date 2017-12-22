@@ -107,8 +107,8 @@ Route::group([
     Route::get('/pingjiao', 'UserController@pingjiaoView');
     Route::post('/pingjiao', 'UserController@pingjiao');
 
-    Route::get('yikatongLogin', 'YikatongController@login');
-    Route::post('yikatongLogin', 'YikatongController@doLogin');
+    Route::get('yikatong/login', 'YikatongController@login');
+    Route::post('yikatong/login', 'YikatongController@doLogin');
 
     Route::group([
         'middleware'=>['yikatong'],
