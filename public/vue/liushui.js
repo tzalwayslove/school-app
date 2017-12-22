@@ -10,6 +10,7 @@ fabu = Vue.component('liushui', function (success, error) {
                 return {
                     jiazai:true,
                     liushui:[],
+                    queryList:[]
                 }
             },
             computed: {
@@ -20,7 +21,13 @@ fabu = Vue.component('liushui', function (success, error) {
             },
 
             mounted: function(){
-
+                this.jiazai = true;
+                $this = this;
+                axios.get('/wx/yikatong/queryList').then(function(res){
+                    $this.jiazai = false;
+                    console.log(res.data);
+                    $this.queryList =res.data;
+                });
             }
         });
     });

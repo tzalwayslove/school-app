@@ -109,7 +109,7 @@ Route::group([
 
     Route::get('yikatong/login', 'YikatongController@login');
     Route::post('yikatong/login', 'YikatongController@doLogin');
-
+    Route::get('yikatong/queryList', 'YikatongController@queryList');
     Route::group([
         'middleware'=>['yikatong'],
         'prefix'=>'yikatong',

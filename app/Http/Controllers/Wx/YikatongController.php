@@ -60,10 +60,13 @@ class YikatongController extends Controller
      */
     public function index(Request $request)
     {
-        $query = \App\Model\Dom\Liushui::getSelectDate();
-        return view('wx.yikatong.index', compact('query', 'request'));
+        return view('wx.yikatong.index', compact('request'));
     }
 
+    public function getQueryList(Request $request)
+    {
+        return \App\Model\Dom\Liushui::getSelectDate();
+    }
     public function getData(Request $request)
     {
         $query = \App\Model\Dom\Liushui::getSelectDate();

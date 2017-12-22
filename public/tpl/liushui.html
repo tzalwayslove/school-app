@@ -1,7 +1,6 @@
 <div class="mui-content-padded">
     <select name="" id="change" class="select-change-page">
-        <option value="all">全部</option>
-        <option value="newest">最新</option>
+        <option v-for="(value, key) in queryList">{{ value.name }}</option>
     </select>
 
     <!-- foreach -->
