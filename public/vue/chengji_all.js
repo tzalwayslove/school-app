@@ -4,8 +4,10 @@
 fabu = Vue.component('Chengjiall', function (success, error) {
     axios.get("/public/tpl/chengji_all.html").then(function (res) {
         success({
+
             template: res.data,
             props: ['user'],
+
             data(){
                 return {
                     jiazai:true,
@@ -13,6 +15,7 @@ fabu = Vue.component('Chengjiall', function (success, error) {
                     page:'all'
                 }
             },
+
             computed: {
                 GPA: function () {
                     xuefenjidian = 0;
