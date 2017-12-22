@@ -28,7 +28,9 @@
 </script>
 <script src="{{ asset('public/vue/liushui.js') }}"></script>
 <script>
-
+    data = {
+        user: '{{$request->user }}'
+    };
     vue = new Vue({
         data: data,
         load: true,
