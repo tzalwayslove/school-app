@@ -1,0 +1,49 @@
+<div class="mui-content-padded">
+    <select name="" id="change" class="select-change-page" @change="changePage" v-model="page">
+        <option value="all">全部</option>
+        <option value="newest">最新</option>
+    </select>
+    <div class="ts-fen">
+        <p class="ts-fen-p">你当前学期平均学分绩点（GPA）</p>
+        <p class="ts-fen-p" style="font-size: 36px;line-height: 48px;">{{ GPA }}</p>
+    </div>
+    <p class="ts-fen-title"> ———   解放区    ———</p>
+
+    <div class="ts-fen-jf" v-for="(item, key) in jige">
+        <a class="ts-fen-mtit">{{item.kecengmingceng}}</a><a class="ts-fen-mtit">总分：{{item.chengji}}</a>
+        <div class="ts-fen-cj">
+            <p class="ts-fen-cj-p">学分：{{ item.xuefen }}</p>
+            <!-- <p class="ts-fen-cj-p">学分绩点：{{ item.jidian }}</p> -->
+        </div>
+        <br />
+        <br />
+        <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
+        <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
+        <br />
+        <a class="ts-fen-cj-p2">卷面分：{{ item.chengji_info.qimochengji }}</a><a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
+        <a class="ts-fen-cj-p ksxz">考试性质：{{item.kechengxingzhi}}</a>
+    </div>
+
+    <p class="ts-fen-title2"> ———   沦陷区    ———</p>
+    <div class="ts-fen-jf lx"  v-for="(item, key) in bujige">
+        <a class="ts-fen-mtit lx-c">{{item.kecengmingceng}}</a><a class="ts-fen-mtit lx-c">总分：{{item.chengji}}</a>
+        <div class="ts-fen-cj">
+            <p class="ts-fen-cj-p lx-c">学分：{{ item.xuefen }}</p>
+            <p class="ts-fen-cj-p lx-c">学分绩点：3</p>
+        </div>
+        <br />
+        <br />
+        <a class="ts-fen-cj-p2 lx-c">平时分：{{item.chengji_info.pingshichengji}}</a>
+        <a class="ts-fen-cj-p2 lx-c">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
+        <br />
+        <a class="ts-fen-cj-p2 lx-c">卷面分：80</a><a class="ts-fen-cj-p2 lx-c">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
+        <a class="ts-fen-cj-p ksxz lx-c">考试性质：{{ item.kaoshixingzhi }}</a>
+    </div>
+    <div id="loadingToast" v-show="jiazai">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content">数据加载中</p>
+        </div>
+    </div>
+</div>
