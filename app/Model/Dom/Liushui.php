@@ -43,7 +43,6 @@ class Liushui extends YikatongLogin
         $now = time();
         $N = date('N');//今天星期几
 
-        dd($N * self::$day);
         $data['threeDaysAgo'] = [
             date($format, $now - 3 * self::$day),
             date($format, $now)
