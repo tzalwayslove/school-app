@@ -41,6 +41,7 @@ fabu = Vue.component('liushui', function (success, error) {
                             }
                             $this.nextPage = res.data.nextPage
                         }
+                        console.log($this.liushui);
                     });
                 }
             },
