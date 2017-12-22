@@ -12,7 +12,10 @@ fabu = Vue.component('liushui', function (success, error) {
                     liushui:[],
                     queryList:[],
                     nextPage:false,
-                    page: 1
+                    page: 1,
+                    start_time:'',
+                    end_time:'',
+                    seachKey:'threeDaysAgo'
                 }
             },
             computed: {

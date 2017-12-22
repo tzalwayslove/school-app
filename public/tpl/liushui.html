@@ -1,6 +1,6 @@
 <div class="mui-content-padded">
-    <select name="" id="change" class="select-change-page">
-        <option v-for="(value, key) in queryList">{{ value.name }}</option>
+    <select name="" id="change" class="select-change-page" @change="changeData" v-model="seachKey">
+        <option v-for="(value, key) in queryList" :vaule="key">{{ value.name }}</option>
     </select>
 
     <!-- foreach -->
