@@ -35,9 +35,9 @@ fabu = Vue.component('liushui', function (success, error) {
                             window.location='/wx/yikatong/reLogin?user='+$this.user;
                         }else if(res.data.result.code == 1){
                             if(cover == 1){
-                                $this.liushui = res.data.liushui
+                                $this.liushui = res.data.liushui.data;
                             }else{
-                                $this.liushui = $this.liushui.concat(res.data.liushui)
+                                $this.liushui = $this.liushui.concat(res.data.liushui.data)
                             }
                             $this.nextPage = res.data.nextPage
                         }
