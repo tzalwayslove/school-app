@@ -5,6 +5,8 @@
 
     <!-- foreach -->
     <ul>
-        <li></li>
+        <li v-for="(item, index) in liushui">{{ item.create_at }} {{ item.type }} {{ item.price }} 余额 ： {{ item.yue }}</li>
     </ul>
+
+    <button v-show="nextPage" @click="getData(0)">加载更多</button>
 </div>

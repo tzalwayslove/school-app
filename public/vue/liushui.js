@@ -10,14 +10,38 @@ fabu = Vue.component('liushui', function (success, error) {
                 return {
                     jiazai:true,
                     liushui:[],
-                    queryList:[]
+                    queryList:[],
+                    nextPage:false,
+                    page: 1
                 }
             },
             computed: {
 
             },
             methods:{
-
+                getData:function(cover){
+                    $this =this;
+                    cover = cover || 1;
+                    this.jiazai = true;
+                    axios.post('wx/yikatong/liushui?user=' + this.user, {
+                        start_time:'19991130',
+                        end_time:'20171222',
+                        page:this.page
+                    }).then(function(res){
+                        $this.jiazai = false;
+                        if(res.data.result.code == -2){
+                            //重新登录
+                            alert('您的登录凭证已过期，请重新登录一卡通');
+                            window.location='/wx/yikatong/reLogin?user='+$this.user;
+                        }else if(res.data.result.code == 1){
+                            if(cover == 1){
+                                $this.liushui = res.data.result.liushui
+                            }else{
+                                $this.liushui = $this.liushui.concat(res.data.result.liushui)
+                            }
+                        }
+                    });
+                }
             },
 
             mounted: function(){
@@ -27,18 +51,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     $this.jiazai = false;
                     $this.queryList =res.data;
                 });
-
-                axios.post('wx/yikatong/liushui?user=' + this.user, {
-                    start_time:'19991130',
-                    end_time:'20171222'
-                }).then(function(res){
-                    if(res.data.result.code == -2){
-                        //重新登录
-                        alert('您的登录凭证已过期，请重新登录一卡通');
-                        window.location='/wx/yikatong/reLogin?user='+$this.user;
-                    }
-                });
-
+                this.getData(1);
             }
         });
     });
