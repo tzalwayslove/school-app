@@ -80,7 +80,6 @@ class YikatongController extends Controller
         try{
             $res = $liushui->getData($start_time, $end_time, $page);
             $data = [];
-            dd($res);
             foreach($res['data'] as $item){
                 $data[] = $item;
             }

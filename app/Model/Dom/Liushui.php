@@ -106,6 +106,7 @@ class Liushui extends YikatongLogin
         $nextPage = $dom->filterXPath('//a[@href="javascript:button14_Onclick();"]');
         $prePage = $dom->filterXPath('//A[@href="javascript:button13_Onclick();"]');//上一页
 
+        dd($res);
         $resData['data'] = collect($res)->filter(function($item, $key)use ($res){
             return !empty($item) && $key!= count($res)-1;
         })->all();
