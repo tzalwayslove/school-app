@@ -37,9 +37,11 @@ fabu = Vue.component('liushui', function (success, error) {
                     timestamp  = timestamp - 60 * 60 * 24 * 3; //3天
                     ago.setTime(timestamp * 1000);
                     now = new Date();
+                    agoMonth = ago.getMonth()+ 1;
+                    nowMounth = now.getMonth() +1 ;
 
-                    start_time = "" + ago.getFullYear() + ago.getMonth()+1+ago.getDay();
-                    end_time = "" + now.getFullYear() + now.getMonth()+1+now.getDay();
+                    start_time = "" + ago.getFullYear() + agoMonth +ago.getDay();
+                    end_time = "" + now.getFullYear() + nowMounth +now.getDay();
 
                     $.each(this.queryList, function(key, value){
                         if(key == $this.selected){
