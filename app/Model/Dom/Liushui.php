@@ -53,7 +53,9 @@ class Liushui extends YikatongLogin
             throw new \Exception($errDom->text());
         }
 
-        $res = $this->postData('/accounthisTrjn3.action', []);
+        $res = $this->postData('/accounthisTrjn3.action', [], [
+            'Referer'=>'http://1900mx9281.51mypc.cn/accounthisTrjn2.action'
+        ]);
         $res = iconv('gbk', 'utf-8',$res);
 
         sleep(300);
