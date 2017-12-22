@@ -13,7 +13,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     queryList:[],
                     nextPage:false,
                     page: 1,
-                    selected:"threeDaysAgo"
+                    selected:"all"
                 }
             },
             computed: {
@@ -38,7 +38,6 @@ fabu = Vue.component('liushui', function (success, error) {
 
                     $.each(this.queryList, function(key, value){
                         if(key == $this.selected){
-                            console.log($this.selected);
                             start_time = value.start_time;
                             end_time = value.end_time
                         }

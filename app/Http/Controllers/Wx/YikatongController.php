@@ -76,7 +76,7 @@ class YikatongController extends Controller
 
         $user = session('user');
         $liushui = new \App\Model\Dom\Liushui($user->account, '123456');
-
+        dd($request->all());
         try{
             $res = $liushui->getData($start_time, $end_time, $page);
             $data = [];
