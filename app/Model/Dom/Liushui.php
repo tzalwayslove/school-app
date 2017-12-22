@@ -78,7 +78,6 @@ class Liushui extends YikatongLogin
             if($index == 0){
                 return [];
             }
-
             $liusui = new \App\Lib\Liushui();
             $liusui->create_at = $tr->filterXPath('//td[1]') -> count()
                                 ? $tr->filterXPath('//td[1]') -> text()
@@ -101,11 +100,16 @@ class Liushui extends YikatongLogin
 
             return $liusui;
         });
+        $nextPage = $dom->filterXPath('//a[@href="javascript:button14_Onclick();"]');
+        $prePage = $dom->filterXPath('//A[@href="javascript:button13_Onclick();"]');//上一页
 
-
-        return collect($res)->filter(function($item, $key)use ($res){
+        $data['data'] = collect($res)->filter(function($item, $key)use ($res){
             return !empty($item) && $key!= count($res)-1;
         })->all();
+        $data['nextPage'] = !!$nextPage->count();
+        $data['prePage'] = !!$prePage->count();
+
+        return $data;
     }
     public static function getSelectDate()
     {
