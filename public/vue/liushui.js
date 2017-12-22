@@ -23,7 +23,7 @@ fabu = Vue.component('liushui', function (success, error) {
             mounted: function(){
                 this.jiazai = true;
                 $this = this;
-                axios.get('/wx/yikatong/queryList').then(function(res){
+                axios.get('/wx/yikatong/queryList?user=' + this.user).then(function(res){
                     $this.jiazai = false;
                     $this.queryList =res.data;
                 });
