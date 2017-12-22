@@ -11,7 +11,7 @@ namespace App\Lib;
 
 class Liushui
 {
-    public $create_at;
+    public $created_at;
     public $shanghu;
     public $price;
     public $xingming;
