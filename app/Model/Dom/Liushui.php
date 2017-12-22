@@ -68,6 +68,7 @@ class Liushui extends YikatongLogin
 
         $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
 
+
         if(!$table->count()){
             throw new TableNotFoundException('获取数据失败！');
         }
