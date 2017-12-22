@@ -40,7 +40,7 @@ class Liushui extends YikatongLogin
 
         $res = $this->postData($url, $data);
 
-        dd($res->__toString());
+        dd(iconv('gbk', 'utf-8', $res->__toString()));
 
         $dom = new Crawler($res->__toString());
 
