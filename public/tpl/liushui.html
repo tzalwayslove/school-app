@@ -1,5 +1,5 @@
 <div class="mui-content-padded">
-    <select name="" id="change" class="select-change-page" @change="changeData" v-model="seachKey">
+    <select name="" id="change" class="select-change-page" @change="changeData" v-bind="searchKey">
         <option v-for="(value, key) in queryList" :vaule="key">{{ value.name }}</option>
     </select>
 
