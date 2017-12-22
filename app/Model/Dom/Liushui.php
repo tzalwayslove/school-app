@@ -69,7 +69,6 @@ class Liushui extends YikatongLogin
 
         $dom = new Crawler($res);
 
-
         $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
 
 

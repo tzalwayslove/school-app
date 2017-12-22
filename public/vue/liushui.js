@@ -21,7 +21,7 @@ fabu = Vue.component('liushui', function (success, error) {
             },
             methods:{
                 next: function(){
-                    ++this.page;
+                    this.page++;
                     this.getData(0);
                 },
                 changeData:function(){
