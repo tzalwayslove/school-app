@@ -52,6 +52,10 @@ class Liushui extends YikatongLogin
         if($errDom->count()){
             throw new \Exception($errDom->text());
         }
+
+        echo $res;
+        die();
+
         sleep(500);
 
         $res = $this->getPage('/accounthisTrjn3.action');
