@@ -36,7 +36,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     start_time = "19991130";
                     end_time = "20171222";
 
-                    $.each(this.queryList, function(value, key){
+                    $.each(this.queryList, function(key, value){
                         console.log('value');
                         console.log(value);
 
