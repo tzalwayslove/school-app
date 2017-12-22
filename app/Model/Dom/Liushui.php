@@ -10,6 +10,7 @@ namespace App\Model\Dom;
 
 
 use App\Exceptions\LoginErrorException;
+use App\Exceptions\noAccountException;
 use App\Exceptions\TableNotFoundException;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -17,19 +18,25 @@ class Liushui extends YikatongLogin
 {
     public static $day = 86400;
     public static $week = 604800;
-    /*
-     * 获取查询条件返回数组
-        此函数依赖父类的登录方法必须先登录，否则抛出登录Exception
-    */
-    public function getQueryList()
-    {
-        $url = '/accounthisTrjn1.action';
-        if(!session('isLogin')){
-            throw new LoginErrorException('请重新登录!');
-        }
-        $res = $this->getPage($url);
 
-        dd(iconv('gbk', 'utf-8', $res));
+    public function __construct($user_name, $password)
+    {
+        parent::__construct($user_name, $password);
+        $url = '/accounthisTrjn.action';
+        $res = $this->getPage('/accounthisTrjn.action');
+
+        $res = iconv('gbk', 'utf-8', $res);
+        $dom = new Crawler($res);
+        $option = $dom->filterXPath('//select[@id="account"]/option[1]');
+        if(!$option->count()){
+            throw new noAccountException('没有一卡通账号!');
+        }
+        $this->postData('/accounthisTrjn1.action', [
+            'account'=>$option->attr('value'),
+            'inputObject'=>'all',
+            'Submit'=>'(unable to decode value)'
+        ]);
+
     }
 
     public function getData($startTime, $endTime)
@@ -38,7 +45,7 @@ class Liushui extends YikatongLogin
         $data['inputStartDate'] = $startTime;
         $data['inputEndDate'] = $endTime;
 
-        $res = $this->postData($url, $data);
+        $res = $this->postData($url, $data, []);
 
         $res = iconv('gbk', 'utf-8', $res->__toString());
 
@@ -53,14 +60,8 @@ class Liushui extends YikatongLogin
             throw new \Exception($errDom->text());
         }
 
-        $res = $this->postData('/accounthisTrjn3.action', [], [
-            'Referer'=>'http://1900mx9281.51mypc.cn/accounthisTrjn2.action'
-        ]);
+        $res = $this->postData('/accounthisTrjn3.action', []);
         $res = iconv('gbk', 'utf-8',$res);
-
-        sleep(300);
-        echo $res;
-        die();
 
         $dom = new Crawler($res);
 
@@ -152,5 +153,41 @@ class Liushui extends YikatongLogin
             'name' =>'所有'
         ];
         return $data;
+    }
+
+    public function getPage($url, $jar=null)
+    {
+
+        $res = $this->client->request('get', $this->pre . $url, [
+            'cookies' => $jar? $jar : $this->jar,
+            'char_set' => 'utf-8',
+            'headers' => [
+                'connection'=>'keep-alive'
+            ]
+        ]);
+        return $res->getBody();
+    }
+
+    public function postData($url, $data, $header=null, $jar=null)
+    {
+        $resData = [];
+        foreach($data as $key=>$val){
+            $arr = [];
+            $arr['name'] =$key;
+            $arr['contents'] = $val;
+            $resData[] = $arr;
+        }
+
+        $res = $this->client->request('post', $this->pre . $url, [
+            'cookies' => $jar? $jar :$this->jar,
+            'char_set' => 'gbk',
+            'multipart' => $resData,
+            'headers'=>$header,
+            'allow_redirects'=>true,
+            'max'=>5, //重定向次数
+            'strict'=>'false'//是否严格重定向，不明觉厉 false
+        ]);
+
+        return $res->getBody();
     }
 }
