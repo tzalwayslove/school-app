@@ -63,7 +63,8 @@ class Liushui extends YikatongLogin
 
         $pageUrl = '/accountconsubBrows.action';
         $url = '/accounthisTrjn3.action';
-        $res = $this->postData($page == 1 ? $pageUrl : $url, $data);
+//        $res = $this->postData($page == 1 ? $pageUrl : $url, $data);
+        $res = $this->postData($pageUrl, $data);
         $res = iconv('gbk', 'utf-8',$res);
 
         $dom = new Crawler($res);
