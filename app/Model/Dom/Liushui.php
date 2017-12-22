@@ -166,11 +166,11 @@ class Liushui extends YikatongLogin
             'end_time' =>date($format, mktime(0, 0,0, date('m')-3, 1) -1),
             'name' =>date('m月', mktime(0,0,0, date('m')-4, 1))
         ];
-        $data['all']=[
+        /*$data['all']=[
             'start_time'=>date($format, mktime(0,0,0,0,0,0)),
             'end_time' =>date($format, $now),
             'name' =>'所有'
-        ];
+        ];*/
         return $data;
     }
 
