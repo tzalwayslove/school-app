@@ -73,7 +73,7 @@ class Login
     {
         $url = '/xsd/grxx/xsxx?Ves632DSdyV=NEW_XSD_XJCJ';
         $res = $this->getPage($url);
-        $dom = new Crawler(iconv('gbk', 'utf-8', $res));
+        $dom = new Crawler($res->__toString());
         $table = $dom->filterXPath('//table[@id="xjkpTable"]');
         if(!$table->count()){
             return false;
