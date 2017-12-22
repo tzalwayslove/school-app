@@ -45,6 +45,7 @@ fabu = Vue.component('liushui', function (success, error) {
                 }
             },
 
+
             mounted: function(){
                 this.jiazai = true;
                 $this = this;
