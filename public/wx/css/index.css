@@ -399,7 +399,6 @@ textarea{
 .ts-fen-mtit{
 	color: #FFFFFF;
 	font-size: 18px;
-	text-shadow: 0 1px 1px #ddd;
 	margin: 5px 0 5px 10px;
 }
 .ts-fen-jf{
@@ -417,12 +416,12 @@ textarea{
 	/*margin-top: -20px;*/
 }
 .ts-fen-cj-p{
-	font-size: 12px;
+	font-size: 13px;
 	color: #FFFFFF;
 
 }
 .ts-fen-cj-p2{
-	font-size: 13px;
+	font-size: 14px;
 	color: #FFFFFF;
 	margin-left: 10px;
 }
