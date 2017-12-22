@@ -80,6 +80,7 @@ class Liushui extends YikatongLogin
             if($index == 0){
                 return [];
             }
+
             $liusui = new \App\Lib\Liushui();
             $liusui->created_at = $tr->filterXPath('//td[1]') -> count()
                                 ? $tr->filterXPath('//td[1]') -> text()
