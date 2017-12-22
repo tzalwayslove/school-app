@@ -82,6 +82,7 @@ class YikatongController extends Controller
             foreach($res['data'] as $item){
                 $data[] = $item;
             }
+
             $res['data'] = $data;
             return [
                 'result'=>new Result(true),

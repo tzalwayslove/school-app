@@ -17,15 +17,17 @@ fabu = Vue.component('chengji', function (success, error) {
             },
             computed: {
                 GPA:function(){
-                    count = 0;
+                    xuefenjidian = 0;
+                    xuefen = 0;
+                    for ( i = 0, len = this.chengji.length; i < len; ++i ){
 
-                    for ( var i = 0, len = this.chengji.length; i < len; ++i ){
-                        jidian = this.chengji[i].jidian;
-                        count += jidian;
+                        xuefenjidian += this.chengji[i].xuefen * this.chengji[i].jidian;
+                        xuefen += this.chengji[i].xuefen;
                     }
-
-                    return this.chengji.length > 1
-                        ? (count / this.chengji.length).toFixed(2)
+                    console.log(xuefenjidian);
+                    console.log(xuefen);
+                    return xuefen > 0
+                        ? (xuefenjidian / xuefen).toFixed(2)
                         : 0;
                 }
             },
