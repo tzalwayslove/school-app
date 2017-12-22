@@ -7,7 +7,7 @@
         <p class="ts-fen-p">你当前学期平均学分绩点（GPA）</p>
         <p class="ts-fen-p" style="font-size: 36px;line-height: 48px;">{{ GPA }}</p>
     </div>
-    <p class="ts-fen-title"> <img src="../public/wx/img/line-g.png" class="line-g" /> 解放区<img src="../public/wx/img/line-g.png" class="line-g" /> </p>
+    <p class="ts-fen-title"> <img src="../wx/img/line-g" class="line-g" /> 解放区<img src="../wx/img/line-g" class="line-g" /> </p>
 
     <div class="ts-fen-jf" v-for="(item, key) in jige">
         <a class="ts-fen-mtit">{{item.kecengmingceng}}</a><a class="ts-fen-mtit">总分：{{item.chengji}}</a>
@@ -26,7 +26,7 @@
         <a class="ts-fen-cj-p ksxz">考试性质：{{item.kechengxingzhi}}</a>
     </div>
 
-    <p class="ts-fen-title2"><img src="../public/wx/img/line-g.png" class="line-g" />沦陷区<img src="../public/wx/img/line-g.png" class="line-g" /></p>
+    <p class="ts-fen-title2"><img src="../wx/img/line-g" class="line-g" /> 沦陷区<img src="../wx/img/line-g" class="line-g" /></p>
     <div class="ts-fen-jf lx"  v-for="(item, key) in bujige">
         <a class="ts-fen-mtit lx-c">{{item.kecengmingceng}}</a><a class="ts-fen-mtit lx-c">总分：{{item.chengji}}</a>
         <div class="ts-fen-cj">
