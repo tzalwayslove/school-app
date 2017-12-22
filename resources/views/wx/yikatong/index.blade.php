@@ -10,6 +10,7 @@
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/public/vendors/weui/weui.css">
 </head>
+
 <body>
 <div id="app">
     <Liushui user="{{$request->input('user')}}"></Liushui>

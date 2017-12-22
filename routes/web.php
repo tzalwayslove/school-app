@@ -114,7 +114,8 @@ Route::group([
         'middleware'=>['yikatong'],
         'prefix'=>'yikatong',
     ], function(){
-        Route::get('liushui', 'YikatongController@liushui');
+        Route::get('liushui', 'YikatongController@index');
+        Route::post('liushui', 'YikatongController@getData');
     });
 
 
