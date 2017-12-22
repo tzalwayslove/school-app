@@ -40,6 +40,7 @@ fabu = Vue.component('kaochang', function (success, error) {
                     } else {
                         $this.kaochang = res.data.kaochang;
                     }
+                    console.log($this.liushui);
                 });
 
             }
