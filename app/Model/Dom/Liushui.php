@@ -40,11 +40,16 @@ class Liushui extends YikatongLogin
 
         $res = $this->postData($url, $data);
 
-        dd(iconv('gbk', 'utf-8', $res->__toString()));
+        $res = iconv('gbk', 'utf-8', $res->__toString());
 
-        $dom = new Crawler($res->__toString());
+        if(strpos($res, '请重新登陆')){
+            throw new LoginErrorException('请重新登陆');
+        }
+
+        $dom = new Crawler($res);
 
         $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
+
         if(!$table->count()){
             throw new TableNotFoundException('获取数据失败！');
         }
