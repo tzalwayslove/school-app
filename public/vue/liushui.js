@@ -29,7 +29,9 @@ fabu = Vue.component('liushui', function (success, error) {
                 });
 
                 axios.post('wx/yikatong/liushui?user=' + this.user).then(function(res){
-                    console.log(res);
+                    if(res.result.code == -2){
+
+                    }
                 });
             }
         });

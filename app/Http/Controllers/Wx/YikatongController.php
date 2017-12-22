@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Validator;
 class YikatongController extends Controller
 {
 
-
     public function login(Request $request)
     {
         return view('wx.yikatong.login', compact('request'));
@@ -81,6 +80,10 @@ class YikatongController extends Controller
                 'result'=>new Result(true),
                 'liushui'=>$data
             ];
+        } catch(LoginErrorException $e){
+            return [
+                'result'=>new Result(false, $e->getMessage(), -2)
+            ];
         }catch(\Exception $e){
             return [
                 'result'=>new Result(false, $e->getMessage())
@@ -88,5 +91,12 @@ class YikatongController extends Controller
         }
     }
 
-
+    /**
+     * 重新登录
+     */
+    public function reLogin(Request $request)
+    {
+        session('isLogin', false);
+        return back();
+    }
 }
