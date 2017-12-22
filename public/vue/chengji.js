@@ -20,11 +20,12 @@ fabu = Vue.component('chengji', function (success, error) {
                     xuefenjidian = 0;
                     xuefen = 0;
                     for ( i = 0, len = this.chengji.length; i < len; ++i ){
-                        console.log(this.chengji[i].xuefen);
+
                         xuefenjidian += this.chengji[i].xuefen * this.chengji[i].jidian;
                         xuefen += this.chengji[i].xuefen;
                     }
-
+                    console.log(xuefenjidian);
+                    console.log(xuefen);
                     return xuefen > 0
                         ? (xuefenjidian / xuefen).toFixed(2)
                         : 0;
