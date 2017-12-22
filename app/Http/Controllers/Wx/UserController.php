@@ -70,13 +70,6 @@ class UserController extends Controller
             } else {
                 $chengji->jidian = 0;
             }
-            if($chengji->xuefen > 0){
-                $chengji->jidian *= $chengji->xuefen;
-                $chengji->jidian =$chengji->jidian / $chengji->xuefen
-                $chengji->jidian = round($chengji->jidian, 2);
-            }else{
-                $chengji->jidian = 0;
-            }
         }
     }
 
