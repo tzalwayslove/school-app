@@ -95,8 +95,13 @@ class Liushui extends YikatongLogin
             $liusui->yue = $tr->filterXPath('//td[7]') -> count()
                 ? $tr->filterXPath('//td[7]') -> text()
                 : '';
+
             return $liusui;
         });
+
+        $c = collect($res);
+        $c->pop();
+
         return collect($res)->filter(function($item){
             return !empty($item);
         });
