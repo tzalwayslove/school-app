@@ -40,6 +40,9 @@ Route::get('test', function(){
 //    $user = \App\Model\User::where('open_id', 'ocDq7wTnH5dh9n09aNxRV0jrc05c')->first();
 //    return view('wx.binding.index');
 
+    $yikatong = \App\Model\Dom\Liushui::getSelectDate();
+    dd($yikatong);
+
 });
 Route::group([
     'prefix'=>'admin',

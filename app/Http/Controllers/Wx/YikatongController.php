@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 class YikatongController extends Controller
 {
+
+
     public function login(Request $request)
     {
         return view('wx.yikatong.login', compact('request'));
@@ -58,4 +60,6 @@ class YikatongController extends Controller
 
 
     }
+
+
 }
