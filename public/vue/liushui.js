@@ -29,10 +29,10 @@ fabu = Vue.component('liushui', function (success, error) {
                     console.log(this.selected);
                     this.getData()
                 },
+
                 getData:function(cover = 1){
                     $this =this;
                     this.jiazai = true;
-                    console.log(this.page);
 
                     start_time = "19991130";
                     end_time = "20171222";
