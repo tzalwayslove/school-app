@@ -39,7 +39,11 @@ class Liushui extends YikatongLogin
         $data['inputEndDate'] = $endTime;
 
         $res = $this->postData($url, $data);
+
+        dd($res->__toString());
+
         $dom = new Crawler($res->__toString());
+
         $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
         if(!$table->count()){
             throw new TableNotFoundException('获取数据失败！');
