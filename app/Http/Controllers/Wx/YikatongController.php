@@ -42,8 +42,10 @@ class YikatongController extends Controller
         $yikatong = new YikatongLogin($user_name, $password);
         try{
             $yikatong->login($code);
+
             return [
-                'result'=>new Result(true)
+                'result'=>new Result(true),
+                'target'=>session('target')
             ];
         }catch(LoginErrorException $e){
             return [

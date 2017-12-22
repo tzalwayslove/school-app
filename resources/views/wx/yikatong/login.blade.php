@@ -31,6 +31,11 @@
             $.postData($('#form').attr('action'), data, function(res){
                 if(res.result.code == 1){
                     alert('登录成功');
+                    if(typeof res.target != 'undefined'){
+                        window.location.href=res.target
+                    }else{
+                        window.history.go(-1);
+                    }
                 }else{
                     alert(res.result.message || '登录失败');
                 }
