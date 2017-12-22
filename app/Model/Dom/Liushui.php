@@ -33,7 +33,7 @@ class Liushui extends YikatongLogin
     public static function getSelectDate()
     {
         //三天
-        //一周内
+        //这周
         //一月内
         //这月
         //上月
@@ -48,8 +48,8 @@ class Liushui extends YikatongLogin
             date($format, $now)
         ];
         $data['aWeekAgo'] = [
-            date($format, $now - strtotime($N) * self::$week - 7 * self::$day),
             date($format, $now - strtotime($N) * self::$week),
+            date($format, $now),
         ];
         $data['ThisMonth'] = [
             date($format, mktime(0,0,0, date('m'), 1)),
