@@ -25,9 +25,6 @@ fabu = Vue.component('Chengjiall', function (success, error) {
                         xuefen += this.chengji[i].xuefen;
                     }
 
-                    console.log(xuefenjidian);
-                    console.log(xuefen);
-
                     return xuefen > 0
                         ? (xuefenjidian / xuefen).toFixed(2)
                         : 0;
