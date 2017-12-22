@@ -92,7 +92,7 @@ class Login
             $info['yikatong_password'] = substr($this->id_card, -6);
         }
 
-        User::where('account', $info)->update();
+        User::where('account', $this->account)->update($info);
 
         return true;
     }
