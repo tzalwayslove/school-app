@@ -96,7 +96,7 @@ class YikatongController extends Controller
      */
     public function reLogin(Request $request)
     {
-        session('isLogin', false);
+        session(['isLogin'=>false]);
         return back();
     }
 }
