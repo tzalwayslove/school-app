@@ -61,10 +61,9 @@ class Liushui extends YikatongLogin
             throw new \Exception($errDom->text());
         }
 
-        $res = $this->postData('/accountconsubBrows.action', $data);
+        $res = $this->postData('/accounthisTrjn3.action', $data);
         $res = iconv('gbk', 'utf-8',$res);
 
-        dd($res);
         $dom = new Crawler($res);
 
 
