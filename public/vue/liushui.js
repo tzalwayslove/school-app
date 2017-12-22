@@ -40,8 +40,8 @@ fabu = Vue.component('liushui', function (success, error) {
                     agoMonth = ago.getMonth()+ 1;
                     nowMounth = now.getMonth() +1 ;
 
-                    start_time = "" + ago.getFullYear() + agoMonth +ago.getDay();
-                    end_time = "" + now.getFullYear() + nowMounth +now.getDay();
+                    start_time = "" + ago.getFullYear() + agoMonth +ago.getDate();
+                    end_time = "" + now.getFullYear() + nowMounth +now.getDate();
 
                     $.each(this.queryList, function(key, value){
                         if(key == $this.selected){
