@@ -13,11 +13,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     queryList:[],
                     nextPage:false,
                     page: 1,
-                    selected:{
-                        end_time:"20171222",
-                        name: "三天前",
-                        start_time:"20171219"
-                    }
+                    selected:"三天前"
                 }
             },
             computed: {
