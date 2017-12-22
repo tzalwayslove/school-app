@@ -89,7 +89,7 @@ class Login
         $idCard = $table->filterXPath('//tr[48]/td[4]');
         if($idCard->count()){
             $info['id_card'] = $idCard->text();
-            $info['yikatong_password'] = substr($this->id_card, -6);
+            $info['yikatong_password'] = substr($info['id_card'], -6);
         }
 
         User::where('account', $this->account)->update($info);
