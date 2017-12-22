@@ -22,15 +22,14 @@ fabu = Vue.component('liushui', function (success, error) {
             methods:{
                 next: function(){
                     this.page++;
-                    this.getData(0);
+                    this.getData(1);
                 },
                 changeData:function(){
                     this.page = 1;
-                    console.log(this.selected);
-                    this.getData()
+                    this.getData(0)
                 },
 
-                getData:function(cover = 1){
+                getData:function(cover){
                     $this =this;
                     this.jiazai = true;
 
@@ -55,7 +54,7 @@ fabu = Vue.component('liushui', function (success, error) {
                             alert('您的登录凭证已过期，请重新登录一卡通');
                             window.location='/wx/yikatong/reLogin?user='+$this.user;
                         }else if(res.data.result.code == 1){
-                            if(cover == 1){
+                            if(cover == 0){
                                 $this.liushui = res.data.liushui.data;
                             }else{
                                 $this.liushui = $this.liushui.concat(res.data.liushui.data)
@@ -74,7 +73,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     $this.jiazai = false;
                     $this.queryList =res.data;
                 });
-                this.getData(1);
+                this.getData(0);
             }
         });
     });
