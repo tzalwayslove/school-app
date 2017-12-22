@@ -397,8 +397,8 @@ textarea{
 }
 .ts-fen-mtit{
 	color: #FFFFFF;
-	font-size: 15px;
-	margin: 10px;
+	font-size: 18px;
+	margin: 5px 0 5px 10px;
 }
 .ts-fen-jf{
 	width: 100%;
@@ -407,10 +407,11 @@ textarea{
 	padding-top: 20px;
 	padding-bottom: 15px;
 	margin-bottom: 10px;
+	box-shadow: 0 1px 3px 0 #ddd;
 }
 .ts-fen-cj{
 	float: right;
-	margin-right: 10px;
+	margin-right: 5px;
 	/*margin-top: -20px;*/
 }
 .ts-fen-cj-p{
@@ -565,8 +566,5 @@ table tr td{
   }
 .kb-desc{
 	text-align: left;
-	color: #fff;
-}
-.kb-name{
 	color: #fff;
 }
