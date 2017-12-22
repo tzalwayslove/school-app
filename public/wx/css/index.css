@@ -374,11 +374,11 @@ textarea{
 	margin-left: 15px;
 	margin-top: -32px;
 	font-size: 15px;
-	color: #2ebeb0;
+	color: #32b9b2;
 }
 .ts-fen{
 	width: 100%;
-	background: #2ebeb0;
+	background: #32b9b2;
 	border-radius: 3px;
 	padding-top: 10px;
 	padding-bottom: 5px;
@@ -393,17 +393,17 @@ textarea{
 	text-align: center;
 	margin: 10px auto;
 	font-size: 16px;
-	color: #2ebeb0;
+	color: #32b9b2;
 }
 .ts-fen-mtit{
 	color: #FFFFFF;
 	font-size: 18px;
-	text-shadow: 0 2px 2px #000;
+	text-shadow: 0 1px 2px #ddd;
 	margin: 5px 0 5px 10px;
 }
 .ts-fen-jf{
 	width: 100%;
-	background: #2ebeb0;
+	background: #32b9b2;
 	border-radius: 5px;
 	padding-top: 20px;
 	padding-bottom: 15px;
@@ -417,13 +417,11 @@ textarea{
 }
 .ts-fen-cj-p{
 	font-size: 12px;
-	text-shadow: 0 2px 2px #000;
 	color: #FFFFFF;
 
 }
 .ts-fen-cj-p2{
 	font-size: 13px;
-	text-shadow: 0 2px 2px #000;
 	color: #FFFFFF;
 	margin-left: 10px;
 }
@@ -483,7 +481,7 @@ textarea{
 .ts-list{
 	float: left;
 	width: 100%;
-	background: #2ebeb0;
+	background: #32b9b2;
 	border-radius: 5px;
 	padding-top: 10px;
 	padding-bottom: 5px;
@@ -527,7 +525,7 @@ textarea{
 	line-height: 25px;
 }
 input.bind-input-style.bind-input-style{
-	background-color:#3cc4b6;
+	background-color:#32b9b2;
 	border:none;
 	margin: 0;
 	width: 65%;
