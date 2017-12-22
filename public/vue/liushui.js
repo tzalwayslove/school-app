@@ -39,8 +39,8 @@ fabu = Vue.component('liushui', function (success, error) {
                             }else{
                                 $this.liushui = $this.liushui.concat(res.data.liushui.data)
                             }
-                            console.log(res.data.nextPage);
-                            $this.nextPage = res.data.nextPage
+                            console.log(res.data.liushui.nextPage);
+                            $this.nextPage = res.data.liushui.nextPage
                         }
                     });
                 }
