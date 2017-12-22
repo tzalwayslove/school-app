@@ -91,7 +91,7 @@ class Login
             $info['id_card'] = $idCard->text();
             $info['yikatong_password'] = substr($info['id_card'], -6);
         }
-
+        dd($idCard->text());
         User::where('account', $this->account)->update($info);
 
         return true;
