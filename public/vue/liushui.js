@@ -15,7 +15,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     page: 1,
                     start_time:'',
                     end_time:'',
-                    seachKey:'threeDaysAgo'
+                    searchKey:'threeDaysAgo'
                 }
             },
             computed: {

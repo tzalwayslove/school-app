@@ -89,6 +89,7 @@ class YikatongController extends Controller
                 'result'=>new Result(true),
                 'liushui'=>$res
             ];
+
         } catch(LoginErrorException $e){
             return [
                 'result'=>new Result(false, $e->getMessage(), -2)
