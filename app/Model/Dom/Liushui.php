@@ -52,7 +52,7 @@ class Liushui extends YikatongLogin
             date($format, $now - strtotime($N) * self::$week),
         ];
         $data['ThisMonth'] = [
-            date($format, strtotime('the month')),
+            date($format, mktime(0,0,0, date('m'), 1)),
             date($format, strtotime(date('Y-m-t')))
         ];
 
