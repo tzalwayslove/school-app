@@ -100,12 +100,10 @@ class Liushui extends YikatongLogin
         });
 
         $c = collect($res);
-        $o = $c->pop();
 
-        dd($c->all());
         return collect($res)->filter(function($item){
             return !empty($item);
-        });
+        })->all();
     }
     public static function getSelectDate()
     {
