@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Wx;
 
 use App\Exceptions\LoginErrorException;
+use App\Exceptions\noAccountException;
 use App\Lib\Liushui;
 use App\Lib\Result;
 use App\Model\Dom\YikatongLogin;
@@ -91,6 +92,10 @@ class YikatongController extends Controller
         } catch(LoginErrorException $e){
             return [
                 'result'=>new Result(false, $e->getMessage(), -2)
+            ];
+        } catch(noAccountException $e){
+            return [
+                'result'=>new Result(false, '登录过期，请重新登录', -2)
             ];
         }catch(\Exception $e){
             return [
