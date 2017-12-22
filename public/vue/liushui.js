@@ -32,9 +32,20 @@ fabu = Vue.component('liushui', function (success, error) {
                 getData:function(cover = 1){
                     $this =this;
                     this.jiazai = true;
+
+                    start_time = "19991130";
+                    end_time = "20171222";
+
+                    $.each(this.queryList, function(value, key){
+                        if(key == $this.selected){
+                            start_time = value.start_time;
+                            end_time = value.end_time
+                        }
+                    });
+
                     axios.post('wx/yikatong/liushui?user=' + this.user, {
-                        start_time:'19991130',
-                        end_time:'20171222',
+                        start_time:start_time,
+                        end_time:end_time,
                         page:this.page
                     }).then(function(res){
                         $this.jiazai = false;
