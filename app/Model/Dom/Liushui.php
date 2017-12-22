@@ -70,7 +70,7 @@ class Liushui extends YikatongLogin
         ];
         $data['foreMonthAgo'] = [
             date($format, mktime(0,0,0, date('m')-4, 1)),
-            date($format, mktime(0, 0,0,0, date('m')-3, 1) -1)
+            date($format, mktime(0, 0,0, date('m')-3, 1) -1)
         ];
         return $data;
     }
