@@ -19,6 +19,10 @@ fabu = Vue.component('liushui', function (success, error) {
 
             },
             methods:{
+                next: function(){
+                    ++this.page;
+                    this.getData(0);
+                },
                 getData:function(cover){
                     $this =this;
                     cover = cover || 1;
@@ -39,7 +43,6 @@ fabu = Vue.component('liushui', function (success, error) {
                             }else{
                                 $this.liushui = $this.liushui.concat(res.data.liushui.data)
                             }
-                            console.log(res.data.liushui.nextPage);
                             $this.nextPage = res.data.liushui.nextPage
                         }
                     });
