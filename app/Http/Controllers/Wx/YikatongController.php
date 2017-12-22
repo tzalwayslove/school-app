@@ -59,6 +59,29 @@ class YikatongController extends Controller
     public function index(Request $request)
     {
         $query = \App\Model\Dom\Liushui::getSelectDate();
-        return view('wx.yikatong.index', compact('query'));
+        return view('wx.yikatong.index', compact('query', 'request'));
     }
+
+    public function getData(Request $request)
+    {
+        $query = \App\Model\Dom\Liushui::getSelectDate();
+        $start_time = $request->input('start_time', $query['threeDaysAgo']['start_time']);
+        $end_time = $request->input('start_time', $query['threeDaysAgo']['end_time']);
+        $user = session('user');
+        $liushui = new \App\Model\Dom\Liushui($user->account, '123456');
+
+        try{
+            $data = $liushui->getData($start_time, $end_time);
+            return [
+                'result'=>new Result(true),
+                'liushui'=>$data
+            ];
+        }catch(\Exception $e){
+            return [
+                'result'=>new Result(false, $e->getMessage())
+            ];
+        }
+    }
+
+
 }

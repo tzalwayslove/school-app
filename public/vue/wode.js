@@ -26,7 +26,6 @@ wode = Vue.component('wode', function (resolve, reject) {
                 $this = this;
                 this.bindurl = '/wx/binding/?user='+this.userId;
                 axios.get('/api/get/user?user='+this.userId).then(function(res){
-                    console.log(res);
                     $this.user = res.data;
                 });
 
