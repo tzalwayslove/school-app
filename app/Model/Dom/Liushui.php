@@ -56,6 +56,7 @@ class Liushui extends YikatongLogin
         $res = $this->postData('/accounthisTrjn3.action', []);
         $res = iconv('gbk', 'utf-8',$res);
 
+        sleep(300);
         echo $res;
         die();
 
