@@ -77,7 +77,11 @@ class YikatongController extends Controller
         $liushui = new \App\Model\Dom\Liushui($user->account, '123456');
 
         try{
-            $data = $liushui->getData($start_time, $end_time, $page);
+            $res = $liushui->getData($start_time, $end_time, $page);
+            $data = [];
+            foreach($res as $item){
+                $data[] = $item;
+            }
             return [
                 'result'=>new Result(true),
                 'liushui'=>$data
