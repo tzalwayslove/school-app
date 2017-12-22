@@ -72,6 +72,10 @@ class Liushui extends YikatongLogin
             date($format, mktime(0,0,0, date('m')-4, 1)),
             date($format, mktime(0, 0,0, date('m')-3, 1) -1)
         ];
+        $data['all']=[
+            date($format, mktime(0,0,0,0,0,0)),
+            date($format, $now)
+        ];
         return $data;
     }
 }
