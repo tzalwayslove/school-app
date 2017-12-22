@@ -52,6 +52,7 @@ class Liushui extends YikatongLogin
         if($errDom->count()){
             throw new \Exception($errDom->text());
         }
+        dd($res);
         $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
 
         if(!$table->count()){
