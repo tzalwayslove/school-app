@@ -38,6 +38,7 @@ fabu = Vue.component('liushui', function (success, error) {
                         window.location='/wx/yikatong/reLogin?user='+$this.user;
                     }
                 });
+
             }
         });
     });
