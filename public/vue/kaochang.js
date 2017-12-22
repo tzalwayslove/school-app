@@ -41,6 +41,7 @@ fabu = Vue.component('kaochang', function (success, error) {
                         $this.kaochang = res.data.kaochang;
                     }
                 });
+
             }
         });
     });
