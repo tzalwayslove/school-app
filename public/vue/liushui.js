@@ -13,7 +13,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     queryList:[],
                     nextPage:false,
                     page: 1,
-                    selected:"all"
+                    selected:"threeDaysAgo"
                 }
             },
             computed: {
@@ -32,9 +32,14 @@ fabu = Vue.component('liushui', function (success, error) {
                 getData:function(cover){
                     $this =this;
                     this.jiazai = true;
+                    ago = new Date();
+                    timestamp = ago.getTime() / 1000;
+                    timestamp  = timestamp - 60 * 60 * 24 * 3; //3天
+                    ago.setTime(timestamp * 1000);
+                    now = new Date();
 
-                    start_time = "19991130";
-                    end_time = "20171222";
+                    start_time = "" + ago.getFullYear() + ago.getMonth()+1+ago.getDay();
+                    end_time = "" + now.getFullYear() + now.getMonth()+1+now.getDay();
 
                     $.each(this.queryList, function(key, value){
                         if(key == $this.selected){
