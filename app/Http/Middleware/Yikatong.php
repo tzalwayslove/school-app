@@ -16,7 +16,7 @@ class Yikatong
     public function handle($request, Closure $next)
     {
         if(!session('isLogin')){
-            return redirect('wx/yikatong/login');
+            return redirect('wx/yikatong/login?user='.$request->input('user'));
         }
         return $next($request);
     }
