@@ -75,7 +75,7 @@ class YikatongLogin
         if($filter->count()){
             throw new LoginErrorException($filter->text());
         }
-
+        session(['cookie_jar'=>$this->jar]);
         session(['isLogin'=>true]);
     }
 
