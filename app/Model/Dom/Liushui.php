@@ -105,13 +105,13 @@ class Liushui extends YikatongLogin
         $nextPage = $dom->filterXPath('//a[@href="javascript:button14_Onclick();"]');
         $prePage = $dom->filterXPath('//A[@href="javascript:button13_Onclick();"]');//上一页
 
-        $data['data'] = collect($res)->filter(function($item, $key)use ($res){
+        $resData['data'] = collect($res)->filter(function($item, $key)use ($res){
             return !empty($item) && $key!= count($res)-1;
         })->all();
-        $data['nextPage'] = !!$nextPage->count();
-        $data['prePage'] = !!$prePage->count();
+        $resData['nextPage'] = !!$nextPage->count();
+        $resData['prePage'] = !!$prePage->count();
 
-        return $data;
+        return $resData;
 
     }
     public static function getSelectDate()
