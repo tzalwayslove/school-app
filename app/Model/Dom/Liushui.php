@@ -39,11 +39,12 @@ class Liushui extends YikatongLogin
 
     }
 
-    public function getData($startTime, $endTime)
+    public function getData($startTime, $endTime, $page=1)
     {
         $url = '/accounthisTrjn2.action';
         $data['inputStartDate'] = $startTime;
         $data['inputEndDate'] = $endTime;
+        $data['pageNum'] = $page;
 
         $res = $this->postData($url, $data, []);
 
@@ -60,7 +61,7 @@ class Liushui extends YikatongLogin
             throw new \Exception($errDom->text());
         }
 
-        $res = $this->postData('/accountconsubBrows.action', []);
+        $res = $this->postData('/accountconsubBrows.action', $data);
         $res = iconv('gbk', 'utf-8',$res);
 
         $dom = new Crawler($res);
