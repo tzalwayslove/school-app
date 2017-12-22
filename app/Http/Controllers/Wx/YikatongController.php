@@ -70,7 +70,7 @@ class YikatongController extends Controller
     {
         $query = \App\Model\Dom\Liushui::getSelectDate();
         $start_time = $request->input('start_time', $query['threeDaysAgo']['start_time']);
-        $end_time = $request->input('start_time', $query['threeDaysAgo']['end_time']);
+        $end_time = $request->input('end_time', $query['threeDaysAgo']['end_time']);
         $user = session('user');
         $liushui = new \App\Model\Dom\Liushui($user->account, '123456');
 

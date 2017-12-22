@@ -28,7 +28,10 @@ fabu = Vue.component('liushui', function (success, error) {
                     $this.queryList =res.data;
                 });
 
-                axios.post('wx/yikatong/liushui?user=' + this.user).then(function(res){
+                axios.post('wx/yikatong/liushui?user=' + this.user, {
+                    start_time:'19991130',
+                    end_time:'20171222'
+                }).then(function(res){
                     if(res.data.result.code == -2){
                         //重新登录
                         alert('您的登录凭证已过期，请重新登录一卡通');
