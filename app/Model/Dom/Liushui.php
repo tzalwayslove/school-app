@@ -110,6 +110,7 @@ class Liushui extends YikatongLogin
         $data['prePage'] = !!$prePage->count();
 
         return $data;
+
     }
     public static function getSelectDate()
     {
