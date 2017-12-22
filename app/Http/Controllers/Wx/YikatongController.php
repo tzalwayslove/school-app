@@ -16,7 +16,8 @@ class YikatongController extends Controller
 
     public function login(Request $request)
     {
-        return view('wx.yikatong.login', compact('request'));
+        $user = session('user');
+        return view('wx.yikatong.login', compact('request', 'user'));
     }
 
     public function doLogin(Request $request)

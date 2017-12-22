@@ -13,8 +13,8 @@
 <form method="post" id="form">
     {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="">
-    <input type="text" name="user_name" placeholder="用户名" id="user_name">
-    <input type="text" name="password" placeholder="密码" id="password">
+    <input type="text" name="user_name" placeholder="用户名" id="user_name" value="{{ $user->account or ""}}">
+    <input type="text" name="password" placeholder="密码" id="password" value="{{ $user->yikatong_passworde or ""}}">
     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code">
     <button id="login" type="button">登录</button>
 </form>
