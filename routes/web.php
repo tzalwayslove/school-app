@@ -116,6 +116,7 @@ Route::group([
     ], function(){
         Route::get('liushui', 'YikatongController@index');
         Route::post('liushui', 'YikatongController@getData');
+        Route::get('reLogin', 'YikatongController@reLogin');
     });
 
 
