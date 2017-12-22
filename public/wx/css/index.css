@@ -395,7 +395,7 @@ textarea{
 	margin: 10px auto;
 	font-size: 16px;
 	color: #32b9b2;
-	font-weight: 600px !important;
+	
 }
 .ts-fen-mtit{
 	color: #FFFFFF;
@@ -573,4 +573,7 @@ table tr td{
 .line-g{
 	margin-bottom: 6px;
 	width:60px;
+}
+.fw-6{
+	font-weight: 600px !important;
 }
