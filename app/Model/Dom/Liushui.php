@@ -102,6 +102,7 @@ class Liushui extends YikatongLogin
         $c = collect($res);
         $c->pop();
 
+
         return collect($res)->filter(function($item){
             return !empty($item);
         });
