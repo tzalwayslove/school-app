@@ -86,6 +86,9 @@ class Liushui extends YikatongLogin
             $liusui->xingming = $tr->filterXPath('//td[3]') -> count()
                 ? $tr->filterXPath('//td[3]') -> text()
                 : '';
+            $liusui->shanghu = $tr->filterXPath('//td[5]') -> count()
+                ? $tr->filterXPath('//td[5]') -> text()
+                : '';
             $liusui->price = $tr->filterXPath('//td[6]') -> count()
                 ? $tr->filterXPath('//td[6]') -> text()
                 : '';
