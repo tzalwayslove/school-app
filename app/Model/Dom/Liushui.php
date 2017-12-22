@@ -52,10 +52,15 @@ class Liushui extends YikatongLogin
         if($errDom->count()){
             throw new \Exception($errDom->text());
         }
-        sleep(200);
+        sleep(500);
 
         $res = $this->getPage('/accounthisTrjn3.action');
-        $dom = new Crawler(iconv('gbk', 'utf-8',$res));
+        $res = iconv('gbk', 'utf-8',$res);
+
+        echo $res;
+        die();
+
+        $dom = new Crawler();
 
         $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
 
