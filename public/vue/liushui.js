@@ -37,7 +37,10 @@ fabu = Vue.component('liushui', function (success, error) {
                     end_time = "20171222";
 
                     $.each(this.queryList, function(value, key){
+                        console.log('value');
                         console.log(value);
+
+                        console.log('key');
                         console.log(key);
                         if(key == $this.selected){
                             start_time = value.start_time;
