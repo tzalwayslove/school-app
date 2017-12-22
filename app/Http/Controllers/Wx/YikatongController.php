@@ -78,13 +78,10 @@ class YikatongController extends Controller
 
         try{
             $res = $liushui->getData($start_time, $end_time, $page);
-            $data = [];
-            foreach($res as $item){
-                $data[] = $item;
-            }
+            $res['data'] = $res['data']->toArray();
             return [
                 'result'=>new Result(true),
-                'liushui'=>$data
+                'liushui'=>$res
             ];
         } catch(LoginErrorException $e){
             return [
