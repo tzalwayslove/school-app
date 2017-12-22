@@ -49,7 +49,7 @@ class Liushui extends YikatongLogin
             date($format, $now)
         ];
         $data['aWeekAgo'] = [
-            date($format, $now - strtotime($N) * self::$day),
+            date($format, $now - $N * self::$day),
             date($format, $now),
         ];
         $data['ThisMonth'] = [
