@@ -558,10 +558,10 @@ table tr td{
 	max-width: 10px;
 }
 .kb-b{
-	background: -webkit-linear-gradient(#537ed6, #6a61c5); /* Safari 5.1 - 6.0 */
-	background: -o-linear-gradient(#537ed6, #6a61c5); /* Opera 11.1 - 12.0 */
-	background: -moz-linear-gradient(#537ed6, #6a61c5); /* Firefox 3.6 - 15 */
-	background: linear-gradient(#537ed6, #6a61c5); /* 标准的语法 */
+	background: -webkit-linear-gradient(#537ed6, #6a61c5); 
+	background: -o-linear-gradient(#537ed6, #6a61c5); 
+	background: -moz-linear-gradient(#537ed6, #6a61c5); 
+	background: linear-gradient(#537ed6, #6a61c5);
   }
 .kb-desc{
 	text-align: left;
