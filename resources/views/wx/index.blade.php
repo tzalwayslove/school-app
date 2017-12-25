@@ -113,6 +113,7 @@
                 if(data.success){
                     setTimeout(function(){
                         data.success = false;
+                        console.log(data.success);
                     }, 1000);        
                 }
             }
