@@ -8,12 +8,33 @@ reply = Vue.component('reply', function (success, error) {
             props: ['comment', 'niming', 'sex'],
             data(){
                 return {
-
+                    content : '',
+                    niming: 1
                 }
             },
             methods:{
                 back: function(){
-                    window.history.go(-1);
+                    router.push({
+                        path: '/tiezi',
+                    })
+                },
+                reply: function(){
+                    $this = this;
+                    sendData  = {
+                        content : this.content,
+                        comment: this.$route.params.id,
+                        niming : this.niming
+                    };
+                    axios.post('/wx/reply', sendData).then(function(res){
+                        res = res.data;
+                        if(res.result.code == 1){
+                            data.success = true;
+                            $this.back();
+                        }else{
+                            alert(res.result.message);
+                        }
+
+                    });
                 }
             },
             mounted: function(){

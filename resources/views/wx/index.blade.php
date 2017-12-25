@@ -74,7 +74,8 @@
             nav_active: 'tiezi',
             tiezi: [],
             user: '{{ $user->id }}',
-            'bar_buttom': true
+            'bar_buttom': true,
+            success:false
         };
 
         router.beforeEach((to, from, next) => {
