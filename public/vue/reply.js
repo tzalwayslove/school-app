@@ -17,9 +17,9 @@ reply = Vue.component('reply', function (success, error) {
                 }
             },
             mounted: function(){
-                console.log($route.params.id);
-                console.log($route.params.niming);
-                console.log($route.params.sex);
+                console.log(this.$route.params.id);
+                console.log(this.$route.params.niming);
+                console.log(this.$route.params.sex);
             }
         });
     });
