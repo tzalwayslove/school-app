@@ -66,7 +66,7 @@
             {path: '/wode', component: wode, name: 'wode'},
             {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}},
             {path: '/reply/:id/:niming/:sex/:articel', component: reply, name: 'reply'},
-            {path: '/reply/:articel', component: jubao, name: 'jubao'}
+            {path: '/jubao/:articel', component: jubao, name: 'jubao'}
         ];
 
         router = new VueRouter({

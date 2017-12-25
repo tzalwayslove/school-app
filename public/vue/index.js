@@ -110,7 +110,7 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     return actualTop;
                 },
                 jubao: function(item){
-                    console.log(item);
+                    
                     router.push({
                         path: '/jubao/' + item.id,
                     })
