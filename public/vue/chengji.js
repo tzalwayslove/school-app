@@ -37,6 +37,9 @@ fabu = Vue.component('chengji', function (success, error) {
             },
             methods: {
                 changePage: function () {
+                    if(this.selected == ''){
+                        return ;
+                    }
                     if (this.selected == 'all') {
                         window.location.href = '/wx/chengji_all?user=' + this.user
                     } else {
