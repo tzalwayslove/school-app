@@ -98,7 +98,9 @@
             }
             next();
             data.bar_buttom = true;
-            this.close_success();
+            setTimeout(function(){
+                data.success = false
+            }, 1000);
         });
         
         vue = new Vue({
@@ -106,9 +108,7 @@
             data: data,
             load: true,
             methods: {
-                close_success: function(){
-                    this.success = false;
-                }
+
             },
             mounted: function () {
                 
