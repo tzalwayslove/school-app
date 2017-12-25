@@ -9,7 +9,6 @@ reply = Vue.component('reply', function (success, error) {
             data(){
                 return {
                     content : '',
-                    niming:1
                 }
             },
             methods:{
