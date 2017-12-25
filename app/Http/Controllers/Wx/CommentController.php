@@ -13,21 +13,21 @@ class CommentController extends Controller
     public function index(Request $request, $id)
     {
         $data = Articel::find($id);
-        $data->load(['getComment'=> function($query){
+        $data->load(['getComment' => function ($query) {
             $query->where('show', 1)->orderBy('created_at', 'asc');
         }]);
         $data->load('user_account');
         $data->load('getComment.getUser');
-        $data->click_count ++;
+        $data->click_count++;
         $data->save();
 
         $data->_created_at = Articel::getTimeAgo($data->created_at->__toString());
-        foreach($data->getComment as $item){
+        foreach ($data->getComment as $item) {
             $item->_created_at = Articel::getTimeAgo($item->created_at->__toString());
         }
         return response([
             'result',
-            'data'=>$data
+            'data' => $data
         ]);
     }
 
@@ -35,40 +35,70 @@ class CommentController extends Controller
     {
         $articel = Articel::find($request->input('id'));
         $user = $request->input('user');
-        if(!$articel){
+        if (!$articel) {
             return response([
-                'result'=> new Result(false, '未找到该文章')
+                'result' => new Result(false, '未找到该文章')
             ]);
         }
 
         $content = $request->input('content', false);
-        if(!$content){
+        if (!$content) {
             return response([
-                'result'=> new Result(false, '评论内容不能为空!')
+                'result' => new Result(false, '评论内容不能为空!')
             ]);
         }
 
         $comment = Comment::addComment($articel, $content, $request->input('niming', false), $user);
         return response([
-            'result'=> new Result(true),
+            'result' => new Result(true),
             'comment' => $comment
         ]);
     }
+
     public function zan(Request $request)
     {
         $comment = Comment::find($request->input('id'));
-        if(!$comment){
-            return response(['result'=>new Result(false, '未找到改文章')]);
+        if (!$comment) {
+            return response(['result' => new Result(false, '未找到改文章')]);
         }
         $comment->zan += $request->input('zan');
-        $comment->zan  = $comment->zan < 0 ? 0 : $comment->zan;
+        $comment->zan = $comment->zan < 0 ? 0 : $comment->zan;
 
-        if($comment->getUser){
+        if ($comment->getUser) {
             $comment->getUser->zan += $request->input('zan');
             $comment->getUser->save();
         }
 
         $comment->save();
-        return response(['result'=>new Result(true), 'comment'=>$comment]);
+        return response(['result' => new Result(true), 'comment' => $comment]);
+    }
+
+    public function reply(Request $request)
+    {
+        $comment = Comment::find($request->input('comment'));
+        $user = session('user');
+        $content = $request->input('content');
+        $niming = $request->input('niming');
+
+        if (!$comment) {
+            return response()->json([
+                'result' => new Result(false, '未找到该评论!')
+            ]);
+        }
+        if (!$content) {
+            return response()->json([
+                'result' => new Result(false, '评论内容不能为空')
+            ]);
+        }
+
+        $com = new Comment();
+        $com->articel = $comment->articel;
+        $com->niming = $niming;
+        $com->reply = $comment->user;
+        $com->content = $content;
+        $com->save();
+        return response()->json([
+            'result' => new Result(true)
+        ]);
     }
 }
