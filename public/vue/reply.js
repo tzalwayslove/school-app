@@ -15,7 +15,7 @@ reply = Vue.component('reply', function (success, error) {
             methods:{
                 back: function(){
                     router.push({
-                        path: '/tiezi',
+                        path: '/pinglun/' + this.$route.params.id,
                     })
                 },
                 reply: function(){
