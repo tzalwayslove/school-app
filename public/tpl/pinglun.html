@@ -21,7 +21,8 @@
         <div
                 v-for="(item, index) in list"
                 :key="item.id">
-            <img
+                {{item.get_user}}
+            <!-- <img
                     :src="item.niming != 1 ? item.get_user.avatar : '/public/wx/img/m-touxiang.png'"
                     class="hfbox-img"/>
             <p class="hfbox-tl">
@@ -51,7 +52,7 @@
                     <template v-if="item.getReply.niming == 1 && item.getReply.get_user.sex != 1">
                         某同学·女
                     </template>
-            </span>{{item.content}}</p>
+            </span>{{item.content}}</p> -->
         </div>
     </div>
     <div class="hf-input">
