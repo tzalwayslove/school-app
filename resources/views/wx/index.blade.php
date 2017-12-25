@@ -114,7 +114,9 @@
                 }
             },
             mounted: function () {
+                console.log(data.success);
                 if(data.success){
+
                     this.show_success_fun();
                 }
             }
