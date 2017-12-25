@@ -17,9 +17,6 @@ reply = Vue.component('reply', function (success, error) {
                 }
             },
             mounted: function(){
-                console.log('sex' + this.sex);
-                console.log('niming' + this.niming);
-                console.log('comment' + this.comment);
 
                 console.log($attrs);
             }
