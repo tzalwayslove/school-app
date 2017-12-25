@@ -10,9 +10,11 @@ use App\Http\Controllers\Controller;
 
 class CommentController extends Controller
 {
-    public function index(Request $request, $id)
+    public function index(Request $request)
     {
-        $data = Articel::find($id);
+        $data = Articel::find($request->input('id'));
+
+
         $data->load(['getComment' => function ($query) {
             $query->where('show', 1)->orderBy('created_at', 'asc');
         }]);
