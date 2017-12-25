@@ -43,7 +43,7 @@
     <div class="mui-content">
         {{-- route main --}}
         <router-view></router-view>
-        <div id="toast" style="display: none;" v-show="success">
+        <div id="toast" style="display: none;" v-show="show_success">
             <div class="weui-mask_transparent"></div>
             <div class="weui-toast">
                 <i class="weui-icon-success-no-circle weui-icon_toast"></i>
@@ -85,7 +85,8 @@
             tiezi: [],
             user: '{{ $user->id }}',
             'bar_buttom': true,
-            success:false
+            success:false,
+            show_success: false
         };
 
         router.beforeEach((to, from, next) => {
@@ -105,16 +106,16 @@
             data: data,
             load: true,
             methods: {
-                onClick: function(){
-                    console.log(2222222222);
+                show_success_fun:function(){
+                    this.show_success = true;
+                    setTimeout(function(){
+                        data.show_success = false;
+                    }, 1000);
                 }
             },
             mounted: function () {
                 if(data.success){
-                    setTimeout(function(){
-                        data.success = false;
-                        console.log(data.success);
-                    }, 1000);        
+                    this.show_success_fun();
                 }
             }
         }).$mount('#app');
