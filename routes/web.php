@@ -78,6 +78,7 @@ Route::group([
     Route::post('/articel_zan', 'ArticelController@zan');
     Route::post('/comment_zan', 'CommentController@zan');
     Route::post('/addComment', 'CommentController@addComment');
+    Route::post('/reply', 'CommentController@reply');
 
     Route::get('/chengji', function (\Illuminate\Http\Request $request) {
         return view('wx.chengji.index')->withUser($request->input('user'));
