@@ -17,9 +17,9 @@ reply = Vue.component('reply', function (success, error) {
                 }
             },
             mounted: function(){
-                console.log(this.sex);
-                console.log(this.niming);
-                console.log(this.comment);
+                console.log('sex' + this.sex);
+                console.log('niming' + this.niming);
+                console.log('comment' + this.comment);
             }
         });
     });
