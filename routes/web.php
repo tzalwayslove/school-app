@@ -79,7 +79,7 @@ Route::group([
     Route::post('/comment_zan', 'CommentController@zan');
     Route::post('/addComment', 'CommentController@addComment');
     Route::post('/reply', 'CommentController@reply');
-    Route::post('/jubao', 'JubaoController@jubao');
+    Route::post('/jubao', 'CommentController@jubao');
 
     Route::get('/chengji', function (\Illuminate\Http\Request $request) {
         return view('wx.chengji.index')->withUser($request->input('user'));
