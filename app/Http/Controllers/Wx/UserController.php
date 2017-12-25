@@ -274,6 +274,9 @@ class UserController extends Controller
         }
 
         $chengji = new Chengji($user->account, $user->password);
-        return $chengji->getOption();
+        return response()->json([
+            'result'=>new Result(true),
+            'options'=>$chengji->getOption()
+        ]);
     }
 }

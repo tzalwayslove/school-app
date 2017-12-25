@@ -12,7 +12,8 @@ fabu = Vue.component('chengji', function (success, error) {
                     chengji:[],
                     jige:[],
                     bujige:[],
-                    page: 'newest'
+                    page: 'newest',
+                    options:[]
                 }
             },
             computed: {
@@ -46,6 +47,14 @@ fabu = Vue.component('chengji', function (success, error) {
             mounted: function(){
                 $this = this;
 
+                oxios.get("/wx/getChengjiOptions?user="+this.user).then(function(res){
+                    res = res.data;
+                    if(res.result.code == 1){
+                        $this.options = res.options;
+                    }else{
+                        alert('请求数据失败，请重试！');
+                    }
+                });
                 axios.get("/api/chengji?user="+this.user).then(function(res){
                     $this.jiazai = false;
                     if(res.data.result.code == 0){
@@ -60,6 +69,7 @@ fabu = Vue.component('chengji', function (success, error) {
                         });
                     }
                 });
+
             }
         });
     });
