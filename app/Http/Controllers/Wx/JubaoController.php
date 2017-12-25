@@ -10,13 +10,13 @@ use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CommentController extends Controller
+class JubaoController extends Controller
 {
 
     public function addJubao(Request $request)
     {
         $articel = Articel::find($request->input('id'));
-        $user = $request->input('user');
+        $user = session('user');
         if (!$articel) {
             return response([
                 'result' => new Result(false, '未找到该文章')
@@ -30,10 +30,9 @@ class CommentController extends Controller
             ]);
         }
 
-//        $comment = Comment::addComment($articel, $content, $request->input('niming', false), $user);
         $jubao = new Jubao();
         $jubao->content = $content;
-        $jubao->user = $user;
+        $jubao->user = $user->id;
         $jubao->articel = $articel->id;
         $jubao->save();
         return response([
