@@ -25,7 +25,7 @@ class CommentController extends Controller
         $data->click_count++;
         $data->save();
         foreach($data->getComment as $comment){
-            $comment->getUser = User::where($comment->user)->first();
+            $comment->getUser = User::whereKey($comment->user)->first();
         }
         $data->_created_at = Articel::getTimeAgo($data->created_at->__toString());
         foreach ($data->getComment as $item) {
