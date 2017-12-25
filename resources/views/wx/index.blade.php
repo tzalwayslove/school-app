@@ -105,7 +105,7 @@
             data: data,
             load: true,
             methods: {
-                close_success: functino(){
+                close_success: function(){
                     this.success = false;
                 }
             },
