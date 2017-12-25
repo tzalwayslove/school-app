@@ -41,6 +41,7 @@ reply = Vue.component('reply', function (success, error) {
                 console.log(this.$route.params.id);
                 console.log(this.$route.params.niming);
                 console.log(this.$route.params.sex);
+                this.niming = $route.params.niming;
             }
         });
     });
