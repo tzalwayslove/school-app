@@ -63,10 +63,11 @@ fabu = Vue.component('chengji', function (success, error) {
                 }
             },
 
+
             mounted: function () {
                 $this = this;
 
-                oxios.get("/wx/getChengjiOptions?user=" + this.user).then(function (res) {
+                axios.get("/wx/getChengjiOptions?user=" + this.user).then(function (res) {
                     res = res.data;
                     if (res.result.code == 1) {
                         $this.options = res.options;
