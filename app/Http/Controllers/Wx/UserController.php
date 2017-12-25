@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     //当前成绩
-    public function nowChengji(Request $request)
+    public function chengji(Request $request)
     {
         $user = User::find($request->input('user'));
-
+        $xueqi = $request->input('xueqi', false);
         if (!$user) {
             return response([
                 'result' => new Result(false, '未找到该用户@' . $request->input('user'))
@@ -31,7 +31,7 @@ class UserController extends Controller
         $password = $user->password;
         try {
             $chengji = new Chengji($login_name, $password);
-            $res = $chengji->getChengji();
+            $res = $chengji->getChengji($xueqi);
 
             $this->getJidian($res);
             $data = [];

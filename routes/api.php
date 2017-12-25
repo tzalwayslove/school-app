@@ -57,7 +57,7 @@ Route::any('api/test', function(){
     dd($_POST);
 });
 
-Route::get('chengji', 'Wx\UserController@nowChengji');
+Route::get('chengji', 'Wx\UserController@chengji');
 Route::get('chengji_all', 'Wx\UserController@all');
 
 Route::get('kecheng', 'Wx\UserController@kecheng');
