@@ -41,9 +41,16 @@
             </p>
             <p class="hf-box-main" @click="reply(item)">
                 <span style="color:#3cc4b6" v-if="item.reply">
-                    
-                回复@
-
+                    回复@
+                    <template v-if="item.getReply.niming != 1">
+                        {{item.getReply.get_user.nick_name}}<br>
+                    </template>
+                    <template v-if="item.getReply.niming == 1 && item.getReply.get_user.sex == 1">
+                        某同学·男
+                    </template>
+                    <template v-if="item.getReply.niming == 1 && item.getReply.get_user.sex != 1">
+                        某同学·女
+                    </template>
             </span>{{item.content}}</p>
         </div>
     </div>
