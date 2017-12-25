@@ -98,6 +98,14 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     reply(item){
                         console.log('click');
                         console.log(item);
+
+                        id = item.id;
+                        niming = item.niming;
+                        sex = item.get_user.sex;
+                        router.push({
+                            path: '/reply/' + id + '/' + niming + '/' + sex,
+                        })
+
                     },
                 },
                 mounted: function () {

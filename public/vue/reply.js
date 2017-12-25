@@ -5,7 +5,7 @@ fabu = Vue.component('reply', function (success, error) {
     axios.get("/public/tpl/reply.html").then(function (res) {
         success({
             template: res.data,
-            props: ['comment'],
+            props: ['comment', 'niming', 'sex'],
             data(){
                 return {
 
