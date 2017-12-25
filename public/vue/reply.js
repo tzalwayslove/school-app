@@ -20,6 +20,8 @@ reply = Vue.component('reply', function (success, error) {
                 console.log('sex' + this.sex);
                 console.log('niming' + this.niming);
                 console.log('comment' + this.comment);
+
+                console.log($attrs);
             }
         });
     });
