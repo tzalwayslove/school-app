@@ -39,7 +39,7 @@
                     <img :src="!!!item.zanLog ? '/public/wx/img/smile-face.png' :'/public/wx/img/smile-face-g.png'" id="heart" class="sm-f-img">
                 </a>
             </p>
-            <p class="hf-box-main">{{item.content}}</p>
+            <p class="hf-box-main" @click="reply(item)">{{item.content}}</p>
         </div>
     </div>
     <div class="hf-input">

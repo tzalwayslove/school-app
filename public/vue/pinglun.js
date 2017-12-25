@@ -94,7 +94,11 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     hide_input(){
                         this.jiahao = true;
                         this.pinglun_input = false;
-                    }
+                    },
+                    reply(item){
+                        console.log('click');
+                        console.log(item);
+                    },
                 },
                 mounted: function () {
                    this.getData();
