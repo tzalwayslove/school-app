@@ -25,25 +25,48 @@ class Chengji extends Login
         '期末成绩比例'=>'qimochengjibili',
         '总成绩'=>'zongchengji'
     ];
+
     /**
      * 获取最新成绩
      * @return mixed|null
      */
-    public function getChengji()
+    public function getChengji($xueqi=false)
     {
         $list = [];
-        $get_search_page = $this->getPage($this->get_search_url);
 
-        $this->crawler = new Crawler($get_search_page->__toString());
+        if(!$xueqi){
+            //未指定学期
+            $get_search_page = $this->getPage($this->get_search_url);
+            $this->crawler = new Crawler($get_search_page->__toString());
 
+            $chengjiList = $this->crawler->filterXPath('//select[@id="kksj"]//option')->each(function (Crawler $node, $k) use ($list) {
 
-        $chengjiList = $this->crawler->filterXPath('//select[@id="kksj"]//option')->each(function (Crawler $node, $k) use ($list) {
+                if ($k == 0 || $this->nowChengji) {
+                    return null;
+                }
 
-            if ($k == 0 || $this->nowChengji) {
+                $xueqi = $node->attr('value');
+
+                $res = $this->postData(self::$search_url, [
+                    'kksj' => $xueqi
+                ]);
+
+                if(strpos($res,'评教未完成，不能查询成绩！')){
+                    throw new NoPingjiaoException('评教未完成，不能查询成绩！');
+                }
+
+                $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
+
+                if ($data->isNotEmpty()) {
+                    $this->nowChengji = true;
+                    return $data;
+                }
+
                 return null;
-            }
-            $xueqi = $node->attr('value');
 
+            });
+        }else{
+            //指定学期
             $res = $this->postData(self::$search_url, [
                 'kksj' => $xueqi
             ]);
@@ -53,15 +76,10 @@ class Chengji extends Login
             }
 
             $data = $this->getData((new Crawler($res->__toString()))->filterXPath('//table[@id="dataList"]'));
+            $chengjiList[] = $data;
+        }
 
-            if ($data->isNotEmpty()) {
-                $this->nowChengji = true;
-                return $data;
-            }
 
-            return null;
-
-        });
         $res = collect($chengjiList)->filter(function ($v) {
             return !is_null($v);
         });
@@ -94,8 +112,6 @@ class Chengji extends Login
 
         return $data;
     }
-
-
 
     public function getData(Crawler $tableNode)
     {
