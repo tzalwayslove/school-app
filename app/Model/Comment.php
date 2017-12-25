@@ -46,8 +46,8 @@ class Comment extends Model
     /**
      * 获取回复的用户
      */
-    public function getReplyUser()
+    public function getReply()
     {
-        return $this->belongsTo(User::class, 'reply', 'id');
+        return $this->belongsTo(self::class, 'reply', 'id');
     }
 }
