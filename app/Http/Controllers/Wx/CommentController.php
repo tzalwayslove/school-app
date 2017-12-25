@@ -28,7 +28,7 @@ class CommentController extends Controller
         $data->save();
 
         foreach($data->getComment as $comment){
-            $comment->get_reply = Comment::where('reply', $comment->reply)->with('getUser')->first();
+            $comment->get_reply = Comment::where('id', $comment->reply)->with('getUser')->first();
         }
 
         $data->_created_at = Articel::getTimeAgo($data->created_at->__toString());
