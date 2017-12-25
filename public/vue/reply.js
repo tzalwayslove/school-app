@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/11/30.
  */
-fabu = Vue.component('reply', function (success, error) {
+reply = Vue.component('reply', function (success, error) {
     axios.get("/public/tpl/reply.html").then(function (res) {
         success({
             template: res.data,
