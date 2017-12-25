@@ -39,7 +39,7 @@ reply = Vue.component('reply', function (success, error) {
             mounted: function(){
                 console.log(this.$route.params.id);
                 console.log(this.$route.params.niming);
-                this.niming = $route.params.niming;
+                this.niming = this.$route.params.niming;
             }
         });
     });
