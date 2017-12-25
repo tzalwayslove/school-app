@@ -73,7 +73,7 @@ Route::group([
     });
 
     Route::get('/articel', 'ArticelController@index');
-    Route::get('/comment/{id}', 'CommentController@index');
+    Route::get('/comment', 'CommentController@index');
     Route::post('/articel', 'ArticelController@store');
     Route::post('/articel_zan', 'ArticelController@zan');
     Route::post('/comment_zan', 'CommentController@zan');
