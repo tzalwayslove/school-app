@@ -25,7 +25,7 @@ reply = Vue.component('reply', function (success, error) {
                         comment: this.$route.params.id,
                         niming : this.niming
                     };
-                    axios.post('/wx/reply', sendData).then(function(res){
+                    axios.post('/wx/reply?user='+data.user, sendData).then(function(res){
                         res = res.data;
                         if(res.result.code == 1){
                             data.success = true;
