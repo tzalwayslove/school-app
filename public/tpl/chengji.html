@@ -1,7 +1,8 @@
 <div class="mui-content-padded">
-    <select name="" id="change" class="select-change-page" @change="changePage" v-model="page">
+    <select name="" id="change" class="select-change-page" @change="changePage" v-model="selected">
         <option selected disabled>这里可以选择其他学期^_^</option>
         <option :value="option" v-for="option in options">{{option}}</option>
+        <option value="all">所有</option>
     </select>
     <div class="ts-fen">
         <p class="ts-fen-p">你当前学期平均学分绩点（GPA）</p>
