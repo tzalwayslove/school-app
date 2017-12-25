@@ -8,7 +8,7 @@
             <label class="nm-lab2">匿名</label>
         </div>
         </p>
-        <textarea rows="5" maxlength="150" v-model="content" :placeholder="$route.params.sex == 1? '回复@某同学·男':'回复@某同学·女'"></textarea>
+        <textarea rows="5" maxlength="150" v-model="content" placeholder="回复"></textarea>
         <p class="fb-sub">
             <button class="fb-btn" @click="back">取消</button>
             <button @click="reply">发布</button>
