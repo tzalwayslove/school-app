@@ -23,7 +23,7 @@ reply = Vue.component('reply', function (success, error) {
                     sendData  = {
                         content : this.content,
                         comment: this.$route.params.id,
-                        niming : this.niming
+                        niming : this.niming_prop
                     };
                     axios.post('/wx/reply?user='+data.user, sendData).then(function(res){
                         res = res.data;
