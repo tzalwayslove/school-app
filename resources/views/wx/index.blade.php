@@ -43,7 +43,7 @@
     <div class="mui-content">
         {{-- route main --}}
         <router-view></router-view>
-        <div id="toast" style="display: none;" v-show="show_success">
+        <div id="toast" style="display: none;" v-show="success">
             <div class="weui-mask_transparent"></div>
             <div class="weui-toast">
                 <i class="weui-icon-success-no-circle weui-icon_toast"></i>
