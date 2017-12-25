@@ -106,6 +106,7 @@
             load: true,
             methods: {
                 close_success: function(){
+                    console.log(1111111);
                     this.success = false;
                 }
             },
