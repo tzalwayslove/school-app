@@ -14,23 +14,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="chengji.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chengji.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/chengji.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+            <state relative-caret-position="459">
+              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chengji.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chengji.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tpl/chengji.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
               <folding>
-                <marker date="1514164329462" expanded="false" signature="431:465" ph="..." />
+                <marker date="1514164608712" expanded="false" signature="438:472" ph="..." />
               </folding>
             </state>
           </provider>
@@ -48,8 +48,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tpl/chengji.html" />
         <option value="$PROJECT_DIR$/vue/chengji.js" />
+        <option value="$PROJECT_DIR$/tpl/chengji.html" />
       </list>
     </option>
   </component>
@@ -137,12 +137,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514163569071</updated>
-      <workItem from="1514163572557" duration="856000" />
+      <workItem from="1514163572557" duration="1034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="856000" />
+    <option name="totallyTimeSpent" value="1034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -177,21 +177,21 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tpl/chengji.html">
+    <entry file="file://$PROJECT_DIR$/vue/chengji.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding>
-            <marker date="1514164329462" expanded="false" signature="431:465" ph="..." />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/chengji.js">
+    <entry file="file://$PROJECT_DIR$/tpl/chengji.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="34">
+          <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
+          <folding>
+            <marker date="1514164608712" expanded="false" signature="438:472" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
