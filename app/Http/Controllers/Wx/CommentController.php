@@ -14,12 +14,10 @@ class CommentController extends Controller
     {
         $data = Articel::find($request->input('id'));
 
-        $data->load(['getComment' => function ($query) {
+        $data->load(['getComment.getUser' => function ($query) {
             $query->where('show', 1)->orderBy('created_at', 'asc');
         }]);
 
-        $data->load('user_account');
-        $data->load('getComment.getUser');
         $data->load('getComment.getReply.getUser');
         $data->click_count++;
         $data->save();
