@@ -15,6 +15,11 @@ reply = Vue.component('reply', function (success, error) {
                 back: function(){
                     window.history.go(-1);
                 }
+            },
+            mounted: function(){
+                console.log(this.sex);
+                console.log(this.niming);
+                console.log(this.comment);
             }
         });
     });
