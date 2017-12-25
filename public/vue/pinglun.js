@@ -33,9 +33,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         axios.get('wx/comment/?user='+data.user + '&id='+id).then(function(res){
                             $this.articelData = res.data.data;
                             $this.list = res.data.data.get_comment;
-                            if($this.list.length == 0){
-
-                            }
+                            console.log($this.list);
 
                         });
                     },
@@ -111,6 +109,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                 mounted: function () {
                    this.getData();
                    data.bar_buttom = false;
+
                 }
             }
         );
