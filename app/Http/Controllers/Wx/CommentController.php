@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Wx;
 use App\Lib\Result;
 use App\Model\Articel;
 use App\Model\Comment;
+use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -19,11 +20,13 @@ class CommentController extends Controller
         }]);
 
         $data->load('user_account');
-        $data->load('getComment.getUser');
+
         $data->load('getComment.getReply.getUser');
         $data->click_count++;
         $data->save();
-
+        foreach($data->getComment as $comment){
+            $comment->getUser = User::where($comment->user);
+        }
         $data->_created_at = Articel::getTimeAgo($data->created_at->__toString());
         foreach ($data->getComment as $item) {
             $item->_created_at = Articel::getTimeAgo($item->created_at->__toString());
