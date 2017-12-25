@@ -39,7 +39,12 @@
                     <img :src="!!!item.zanLog ? '/public/wx/img/smile-face.png' :'/public/wx/img/smile-face-g.png'" id="heart" class="sm-f-img">
                 </a>
             </p>
-            <p class="hf-box-main" @click="reply(item)"><span style="color:#3cc4b6" v-if="item.reply">回复@{{item.reply}}</span>{{item.content}}</p>
+            <p class="hf-box-main" @click="reply(item)">
+                <span style="color:#3cc4b6" v-if="item.reply">
+                    
+                回复@
+
+            </span>{{item.content}}</p>
         </div>
     </div>
     <div class="hf-input">

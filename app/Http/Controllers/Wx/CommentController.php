@@ -20,6 +20,7 @@ class CommentController extends Controller
 
         $data->load('user_account');
         $data->load('getComment.getUser');
+        $data->load('getComment.getReplyUser');
         $data->click_count++;
         $data->save();
 
@@ -97,7 +98,7 @@ class CommentController extends Controller
         $com = new Comment();
         $com->articel = $comment->articel;
         $com->niming = $niming;
-        $com->reply = $comment->user;
+        $com->reply = $comment->id;
         $com->content = $content;
         $com->user = $user->id;
         $com->zan = 0;
