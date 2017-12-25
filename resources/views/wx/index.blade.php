@@ -51,7 +51,7 @@
 <script src="{{ asset('public/vue/wode.js') }}"></script>
 <script src="{{ asset('public/vue/pinglun.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
-
+<script src="{{ asset('public/vue/reply.js') }}"></script>
 <script>
     $(function () {
         axios.defaults.baseURL = 'http://school.sz25.net';
@@ -62,7 +62,8 @@
             {path: '/tiezi', component: tiezi, name: 'tiezi'},
             {path: '/fabu', component: fabu, name: 'fabu'},
             {path: '/wode', component: wode, name: 'wode'},
-            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
+            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}},
+            {path: '/reply/:id', component: reply, name: 'reply', props: {comment: 0}}
         ];
 
         router = new VueRouter({
