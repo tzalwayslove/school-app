@@ -29,7 +29,8 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     getData:function(){
                         let id =this.$route.params.id;
                         let $this =this;
-                        axios.get('wx/comment/?user='+data.user + '&id='+ id).then(function(res){
+
+                        axios.get('wx/comment/?user='+data.user + '&id='+id).then(function(res){
                             $this.articelData = res.data.data;
                             $this.list = res.data.data.get_comment;
                             if($this.list.length == 0){
@@ -103,9 +104,8 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         niming = item.niming;
                         sex = item.get_user.sex;
                         router.push({
-                            path: '/reply/' + id + '/' + niming + '/' + sex,
+                            path: '/reply/' + id + '/' + niming + '/' + sex + '/'+ item.articel,
                         })
-
                     },
                 },
                 mounted: function () {
