@@ -86,7 +86,6 @@
             user: '{{ $user->id }}',
             'bar_buttom': true,
             success:false,
-            show_success: false
         };
 
         router.beforeEach((to, from, next) => {
@@ -106,19 +105,12 @@
             data: data,
             load: true,
             methods: {
-                show_success_fun:function(){
-                    this.show_success = true;
-                    setTimeout(function(){
-                        data.show_success = false;
-                    }, 1000);
+                close_success: functino(){
+                    this.success = false;
                 }
             },
             mounted: function () {
-                console.log(data.success);
-                if(data.success){
-
-                    this.show_success_fun();
-                }
+                this.close_success();
             }
         }).$mount('#app');
     });
