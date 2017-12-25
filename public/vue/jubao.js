@@ -20,7 +20,7 @@ jubao = Vue.component('jubao', function (success, error) {
                 send: function(){
                     $this = this;
                     sendData  = {
-                        articel : this.$route.params.articel;
+                        articel : this.$route.params.articel,
                         content:content
                     };
                     axios.post('/wx/jubao?user='+data.user, sendData).then(function(res){
