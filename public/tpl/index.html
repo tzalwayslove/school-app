@@ -31,6 +31,7 @@
                     </p>
                     <p class="yj-box-main" @click="getComment(item)">{{item.content}}</p>
                     <div style="width: 92%; margin-left:4%; height: 1px;background: #ddd;"></div>
+                    
                     <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin:20px 20px 10px;" @click="jubao(item)"/>
                     <div style="float: right; margin:5px 20px 0 ;">
                         <img :src="!!!item.zanLog ? '/public/wx/img/icon-heart.png':'/public/wx/img/icon-heart-h.png'" class="imgicon" @click="setZan(item)"/>
