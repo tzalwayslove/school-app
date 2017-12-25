@@ -111,7 +111,7 @@
             },
             mounted: function () {
                 if(data.success){
-                    setInterval(function(){
+                    setTimeout(function(){
                         data.success = false;
                     }, 1000);        
                 }

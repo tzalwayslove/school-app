@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017/11/30.
  */
+
 tiezi = Vue.component('tiezi', function (success, error) {
     axios.get("/public/tpl/index.html").then(function (res) {
         success({
