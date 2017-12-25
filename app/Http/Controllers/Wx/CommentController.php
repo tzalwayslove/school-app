@@ -20,16 +20,16 @@ class CommentController extends Controller
         }]);
 
         $data->load('user_account');
-        $data->load('getComment.getReply');
+
         $data->load('getComment.getReply.getUser');
         $data->load('getComment.getUser');
 
         $data->click_count++;
         $data->save();
 
-        /*foreach($data->getComment as $comment){
-            $comment->get_user = User::whereKey($comment->user)->first();
-        }*/
+        foreach($data->getComment as $comment){
+            $comment->get_reply = Comment::where('reply', $comment->reply)->with('getUser')->first();
+        }
 
         $data->_created_at = Articel::getTimeAgo($data->created_at->__toString());
         foreach ($data->getComment as $item) {
