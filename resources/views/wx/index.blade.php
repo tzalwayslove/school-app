@@ -43,6 +43,13 @@
     <div class="mui-content">
         {{-- route main --}}
         <router-view></router-view>
+        <div id="toast" style="display: none;" v-show="success">
+            <div class="weui-mask_transparent"></div>
+            <div class="weui-toast">
+                <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+                <p class="weui-toast__content">已完成</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -92,7 +99,7 @@
             next();
             data.bar_buttom = true;
         });
-
+        
         vue = new Vue({
             router: router,
             data: data,
@@ -103,7 +110,11 @@
                 }
             },
             mounted: function () {
-
+                if(data.success){
+                    setInterval(function(){
+                        data.success = false;
+                    }, 1000);        
+                }
             }
         }).$mount('#app');
     });

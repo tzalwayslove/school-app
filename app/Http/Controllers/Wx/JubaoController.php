@@ -41,6 +41,7 @@ class JubaoController extends Controller
             $articel->show = 0;
             $articel->save();
         }
+
         return response([
             'result' => new Result(true)
         ]);
