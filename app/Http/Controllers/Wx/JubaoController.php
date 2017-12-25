@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 class JubaoController extends Controller
 {
 
-    public function addJubao(Request $request)
+    public function jubao(Request $request)
     {
         $articel = Articel::find($request->input('id'));
         $user = session('user');
