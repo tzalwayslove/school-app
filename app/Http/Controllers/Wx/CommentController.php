@@ -20,6 +20,7 @@ class CommentController extends Controller
         }]);
 
         $data->load('user_account');
+        $data->load('getComment.getReply');
         $data->load('getComment.getReply.getUser');
         $data->load('getComment.getUser');
 
