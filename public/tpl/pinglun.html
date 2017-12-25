@@ -18,10 +18,12 @@
         <p class="yj-box-main">{{articelData.content}}</p>
     </div>
     <div class="hfbox">
-        <div
+<!--         <div
                 v-for="(item, index) in list"
                 :key="item.id">
-            
+            <img
+                    :src="item.niming != 1 ? item.get_user.avatar : '/public/wx/img/m-touxiang.png'"
+                    class="hfbox-img"/>
             <p class="hfbox-tl">
                 <template v-if="item.niming != 1">
                     {{item.get_user.nick_name}}<br>
@@ -50,7 +52,7 @@
                         某同学·女
                     </template>
             </span>{{item.content}}</p>
-        </div>
+        </div> -->
     </div>
     <div class="hf-input">
         <input type="text" class="ht-inp ht-inp-t" v-model="comment" @keyup.enter="send" style="margin-bottom:10px"/>
