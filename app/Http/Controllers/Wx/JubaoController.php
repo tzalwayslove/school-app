@@ -15,8 +15,9 @@ class JubaoController extends Controller
 
     public function jubao(Request $request)
     {
-        $articel = Articel::find($request->input('id'));
+        $articel = Articel::find($request->input('articel'));
         $user = session('user');
+
         if (!$articel) {
             return response([
                 'result' => new Result(false, '未找到该文章')
