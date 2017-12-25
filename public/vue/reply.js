@@ -9,6 +9,7 @@ reply = Vue.component('reply', function (success, error) {
             data(){
                 return {
                     content : '',
+                    niming_prop: 1 
                 }
             },
             methods:{
@@ -39,7 +40,7 @@ reply = Vue.component('reply', function (success, error) {
             mounted: function(){
                 console.log(this.$route.params.id);
                 console.log(this.$route.params.niming);
-                this.niming = this.$route.params.niming;
+                this.niming_prop = this.$route.params.niming;
             }
         });
     });

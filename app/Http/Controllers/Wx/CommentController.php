@@ -85,6 +85,7 @@ class CommentController extends Controller
                 'result' => new Result(false, '未找到该评论!')
             ]);
         }
+
         if (!$content) {
             return response()->json([
                 'result' => new Result(false, '评论内容不能为空')
