@@ -42,7 +42,7 @@
             <p class="hf-box-main" @click="reply(item)">
                 <span style="color:#3cc4b6" v-if="item.reply">
                     回复@
-                    <template v-if="item.getReply.niming != 1">
+                    <template v-if="item.get_reply.niming != 1">
                         {{item.get_reply.get_user.nick_name}}<br>
                     </template>
                     <template v-if="item.get_reply.niming == 1 && item.get_reply.get_user.sex == 1">
