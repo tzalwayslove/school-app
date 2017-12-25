@@ -48,6 +48,6 @@ class Comment extends Model
      */
     public function getReply()
     {
-        return $this->belongsTo(self::class, 'reply', 'id');
+        return $this->belongsTo(Comment::class, 'reply', 'id');
     }
 }
