@@ -98,6 +98,7 @@
             }
             next();
             data.bar_buttom = true;
+            this.close_success();
         });
         
         vue = new Vue({
@@ -106,12 +107,11 @@
             load: true,
             methods: {
                 close_success: function(){
-                    console.log(1111111);
                     this.success = false;
                 }
             },
             mounted: function () {
-                this.close_success();
+                
             }
         }).$mount('#app');
     });
