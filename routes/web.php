@@ -106,6 +106,7 @@ Route::group([
 
     Route::get('/pingjiao', 'UserController@pingjiaoView');
     Route::post('/pingjiao', 'UserController@pingjiao');
+    Route::get('/getChengjiOptions', 'UserController@getChengjiOptions');
 
     Route::get('yikatong/login', 'YikatongController@login');
     Route::post('yikatong/login', 'YikatongController@doLogin');

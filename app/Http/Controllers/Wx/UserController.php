@@ -263,4 +263,17 @@ class UserController extends Controller
             'result' => new Result(true)
         ];
     }
+
+    public function getChengjiOptions(Request $request)
+    {
+        $user = User::find($request->input('user'));
+        if(!$user){
+            return response()->json([
+                'result'=>new Result(false, '请输入正确的id')
+            ]);
+        }
+
+        $chengji = new Chengji($user->account, $user->password);
+        return $chengji->getOption();
+    }
 }

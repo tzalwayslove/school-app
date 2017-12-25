@@ -91,6 +91,26 @@ class Chengji extends Login
         }
     }
 
+    public function getOption()
+    {
+        $get_search_page = $this->getPage($this->get_search_url);
+        $this->crawler = new Crawler($get_search_page->__toString());
+
+        $res = $this->crawler->filterXPath('//select[@id="kksj"]//option')->each(function(Crawler $option, $index){
+            if($index == 0){
+                return null;
+            }else{
+                return $option->text();
+            }
+        });
+        $list = [];
+        foreach($res as $option){
+            if(!is_null($option)){
+                $list[] = $option;
+            }
+        }
+        return $list;
+    }
     /**
      * 获取全部成绩
      * @return \Illuminate\Support\Collection
