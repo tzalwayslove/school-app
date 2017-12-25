@@ -36,6 +36,11 @@ class JubaoController extends Controller
         $jubao->user = $user->id;
         $jubao->articel = $articel->id;
         $jubao->save();
+
+        if(Jubao::where('articel',$articel->id )->count() >= 5 ){
+            $articel->show = 0;
+            $articel->save();
+        }
         return response([
             'result' => new Result(true)
         ]);
