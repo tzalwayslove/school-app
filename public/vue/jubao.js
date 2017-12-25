@@ -3,7 +3,6 @@
  */
 jubao = Vue.component('jubao', function (success, error) {
     axios.get("/public/tpl/jubao.html").then(function (res) {
-        console.log(11111111);
         success({
             template: res.data,
             props: ['articel'],
