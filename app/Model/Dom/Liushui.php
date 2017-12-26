@@ -46,11 +46,9 @@ class Liushui extends YikatongLogin
 
         $yue = new Crawler($yue->__toString());
 
-        $neiwens = $yue->filterXPath('//td[@class="neiwen"][47]')->each(function(Crawler $neiwen, $index){
-            echo $index. ' '. $neiwen->text();
-        });
+        $yueDom = $yue->filterXPath('//td[@class="neiwen"][47]');
+        $this->yue = $yueDom->text();
 
-        die();
         $this->account = $option->attr('value');
         $this->postData('/accounthisTrjn1.action', [
             'account'=>$option->attr('value'),
