@@ -434,9 +434,10 @@ textarea{
 }
 .ts-fen-title2{
 	text-align: center;
-	margin: 10px auto;
-	font-size: 16px;
+	margin: 15px auto;
+	font-size: 17px;
 	color: #aaaaaa;
+	font-weight: bold;
 }
 .lx{
 	background-color: #dddddd;
