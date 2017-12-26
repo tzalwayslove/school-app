@@ -43,7 +43,8 @@ fabu = Vue.component('Kecheng', function (success, error) {
             },
             mounted: function(){
                 this.getData(1);
-
+                this.user_name = data.user_name;
+                this.xuehao = data.xuehao;
             }
         });
     });
