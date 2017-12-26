@@ -49,9 +49,13 @@ class UserController extends Controller
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
-        } catch (\Exception $e) {
+        } catch(LoginErrorException $e){
             return response([
-                'result' => new Result(false, $e->getMessage() /*. $e->getFile() . $e->getLine()*/)
+                'result' => new Result(false, $e->getMessage(), -2)
+            ]);
+        }catch (\Exception $e) {
+            return response([
+                'result' => new Result(false, $e->getMessage())
             ]);
         }
 
@@ -286,6 +290,7 @@ class UserController extends Controller
                 'result'=>new Result(false, '请输入正确的id')
             ]);
         }
+
         try{
             $chengji = new Chengji($user->account, $user->password);
         }catch(LoginErrorException $e){
