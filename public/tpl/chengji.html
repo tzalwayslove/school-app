@@ -5,7 +5,7 @@
         <option value="all">所有</option>
     </select>
     <div class="ts-fen">
-        <p class="ts-fen-p">你当前学期平均学分绩点（GPA）</p>
+        <p class="ts-fen-p">你当前学期的平均学分绩点（GPA）为</p>
         <p class="ts-fen-p" style="font-size: 36px;line-height: 48px;">{{ GPA }}</p>
     </div>
     <p class="ts-fen-title fw-6"> <img src="../public/wx/img/line-g.png" class="line-g" />解放区<img src="../public/wx/img/line-g.png" class="line-g" /> </p>
@@ -16,15 +16,15 @@
             <p class="ts-fen-cj-p">学分：{{ item.xuefen }}</p>
              <p class="ts-fen-cj-p">学分绩点：{{ item.jidian }}</p>
         </div>
-        <br />  <br />
-      
+        <br /> 
+      <div style="padding:20px auto;">
         <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
         <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
         <br />
         <a class="ts-fen-cj-p2">卷面分：{{ item.chengji_info.qimochengji }}</a>
         <a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
         <br />
-        <br />
+    </div>
         <a class="ts-fen-cj-p ksxz">考试性质：{{item.kechengxingzhi}}</a>
     </div>
 
