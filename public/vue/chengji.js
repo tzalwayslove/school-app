@@ -24,7 +24,7 @@ fabu = Vue.component('chengji', function (success, error) {
 
                     for (i = 0, len = this.chengji.length; i < len; ++i) {
                         this.chengji[i].xuefen = Number(this.chengji[i].xuefen);
-                        this.chengji[i].jidian = Number(this.chengji[i].xuefen);
+                        this.chengji[i].jidian = Number(this.chengji[i].jidian);
                         xuefenjidian += this.chengji[i].xuefen * this.chengji[i].jidian;
                         xuefen += this.chengji[i].xuefen;
                     }
