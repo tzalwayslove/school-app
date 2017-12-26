@@ -18,7 +18,7 @@
 <p class="bind-logo">
     <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
 </p>
-<p class="bind-logo">
+<p class="bind-title">
    遇见商大Pro
 </p>
 <div class="input-in">
@@ -29,8 +29,8 @@
 </div>
 <div style="margin:30px 15% 10px;">
     <input type="button" value="绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFFFFF;color: #3CC3B6;font-size: 20px;
-	padding:12px;" id="binding" />
-    <p style="font-size: 10px;color: #FFFFFF;text-align: center;">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
+	padding:6px 12px;" id="binding" />
+    <p style="font-size: 12px;color: #FFFFFF;text-align: center;margin-top:5px;">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
 </div>
 <div class="fix-bott">
     <p class="fix-bott-p">
