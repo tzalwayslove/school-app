@@ -17,6 +17,7 @@
             color: #FF0000;
             text-align: center;
             margin-top:13px;
+            font-weight: bold;
         }
         .info{
             font-size: 13px;
