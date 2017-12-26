@@ -19,7 +19,7 @@ class CommentController extends Controller
             $query->where('show', 1)->orderBy('created_at', 'asc');
         }]);
 
-        $data->load('user_account');
+        $data->_user_account = User::find($data->user);
 
         $data->load('getComment.getReply.getUser');
         $data->load('getComment.getUser');
