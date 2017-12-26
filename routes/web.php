@@ -95,6 +95,7 @@ Route::group([
         if(!$user->name){
             $user = (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
         }
+
         $year = substr($user->account, 0, 4);
         $str = $year. '-09-01';
         $ruxue = strtotime($str);

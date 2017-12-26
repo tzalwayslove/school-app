@@ -62,7 +62,6 @@ class YikatongController extends Controller
             ];
         }
     }
-
     /**
      * 用来选择流水日期之类的
      * @param Request $request

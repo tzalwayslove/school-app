@@ -45,7 +45,8 @@ class Liushui extends YikatongLogin
         $data['inputEndDate'] = $endTime;
         $data['pageNum'] = $page;
 
-        $res = $this->postData($url, $data, []);
+        dd($startTime);
+        $res = $this->postData($startTime != $endTime ? $url : '/accounttodayTrjn.action', $data, []);
 
         $res = iconv('gbk', 'utf-8', $res->__toString());
 
@@ -62,17 +63,21 @@ class Liushui extends YikatongLogin
 
         $pageUrl = '/accountconsubBrows.action';
         $url = '/accounthisTrjn3.action';
-        $res = $this->postData($page == 1 ? $url : $pageUrl, $data);
+
+        $postUrl =$page == 1 ? $url : $pageUrl;
+        if($startTime == $endTime){
+            $postUrl = '/accounttodatTrjnObject.action';
+        }
+        $res = $this->postData($postUrl, $data);
         $res = iconv('gbk', 'utf-8',$res);
 
         $dom = new Crawler($res);
-
         $table = $dom->filterXPath('//table[@class="dangrichaxun"]');
-
 
         if(!$table->count()){
             throw new TableNotFoundException('获取数据失败！');
         }
+
         $trs = $table->filterXPath('//tr');
         if(!$trs->count()){
             return collect([]);
