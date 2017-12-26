@@ -343,9 +343,9 @@ textarea{
 	max-height: 125px;
 }
 .kb-time-img-r{
-	margin: 20px;
+	margin: 20px 0;
 	max-height: 105px;
-	float: right;
+	float: left;
 }
 /*transcript样式表*/
 .gtg-img{
