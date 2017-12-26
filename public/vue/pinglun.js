@@ -11,7 +11,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         data : {},
                         list: [],
                         articelData : {
-                            user_account:{
+                            _user_account:{
                                 avatar:'/public/wx/img/m-touxiang.png',
                                 nick_name: '',
                                 sex: '1'
