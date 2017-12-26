@@ -6,7 +6,7 @@ fabu = Vue.component('Chengjiall', function (success, error) {
         success({
 
             template: res.data,
-            props: ['user'],
+            props: ['user', 'user_name', 'account'],
 
             data(){
                 return {

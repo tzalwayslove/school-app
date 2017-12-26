@@ -96,13 +96,12 @@ Route::group([
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find($request->input('user'));
         $info = $user->getInfo();
-
         return view('wx.kecheng.index')->withRequest($request)->withUser($user)->withInfo($info);
     });
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find($request->input('user'));
-        $user = $user->getInfo();
-        return view('wx.kaochang.index')->withUser($request->input('user'));
+        $info = $user->getInfo();
+        return view('wx.kaochang.index')->withUser($request->input('user'))->withInfo($info);
     });
 
     Route::get('/binding', function(\Illuminate\Http\Request $request){

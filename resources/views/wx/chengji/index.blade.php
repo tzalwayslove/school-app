@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="app">
-    <Chengji user="{{$user}}"/>
+    <Chengji user="{{$user}}" user_name="{{$info->name}}" account="{{$info->account}}"/>
 </div>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
