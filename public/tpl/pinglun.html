@@ -11,7 +11,7 @@
                 <span>某同学·{{ articelData._user_account.sex == 1 ? '男' : '女' }}</span>
             </template>
             <template v-if="articelData.niming != 1">
-                <span style="height: 1em;">{{ articelData._user_account.nick_name }}</span>
+                <!--<span style="height: 1em;">{{ articelData._user_account.nick_name }}</span>-->
             </template>
             <a style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{ articelData.created_at }}</a>
         </p>
@@ -41,18 +41,18 @@
                 </a>
             </p>
             <p class="hf-box-main" @click="reply(item)">
-                <!--<span style="color:#3cc4b6" v-if="item.reply">-->
-                    <!--回复@-->
-                    <!--<template v-if="item._get_reply.niming != 1">-->
-                        <!--{{item._get_reply._get_user.nick_name}}<br>-->
-                    <!--</template>-->
-                    <!--<template v-if="item._get_reply.niming == 1 && item._get_reply._get_user.sex == 1">-->
-                        <!--某同学·男-->
-                    <!--</template>-->
-                    <!--<template v-if="item._get_reply.niming == 1 && item._get_reply._get_user.sex != 1">-->
-                        <!--某同学·女-->
-                    <!--</template>-->
-            <!--</span>{{item.content}}-->
+                <span style="color:#3cc4b6" v-if="item.reply">
+                    回复@
+                    <template v-if="item._get_reply.niming != 1">
+                        {{item._get_reply._get_user.nick_name}}<br>
+                    </template>
+                    <template v-if="item._get_reply.niming == 1 && item._get_reply._get_user.sex == 1">
+                        某同学·男
+                    </template>
+                    <template v-if="item._get_reply.niming == 1 && item._get_reply._get_user.sex != 1">
+                        某同学·女
+                    </template>
+            </span>{{item.content}}
             </p>
         </div>
     </div>
