@@ -82,7 +82,7 @@ Route::group([
     Route::post('/jubao', 'JubaoController@jubao');
 
     Route::get('/chengji', function (\Illuminate\Http\Request $request) {
-        $user = \App\Model\User::find($request->input('user'));
+        $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
             $info = $user->getInfo();
         }catch(\App\Exceptions\LoginErrorException $e){
@@ -93,7 +93,7 @@ Route::group([
     });
 
     Route::get('/chengji_all', function (\Illuminate\Http\Request $request) {
-        $user = \App\Model\User::find($request->input('user'));
+        $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
             $info = $user->getInfo();
         }catch(\App\Exceptions\LoginErrorException $e){
@@ -103,7 +103,7 @@ Route::group([
     });
 
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
-        $user = \App\Model\User::find($request->input('user'));
+        $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
             $info = $user->getInfo();
         }catch(\App\Exceptions\LoginErrorException $e){
@@ -113,7 +113,7 @@ Route::group([
     });
 
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
-        $user = \App\Model\User::find($request->input('user'));
+        $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
             $info = $user->getInfo();
         }catch(\App\Exceptions\LoginErrorException $e){

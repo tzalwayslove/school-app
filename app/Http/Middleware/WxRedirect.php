@@ -34,10 +34,13 @@ class WxRedirect
         if(!$request->input('user') && !session('user')){
             die('请使用微信公众号打开网页');
         }
-        $user = User::find($request->input('user'));
+
+        $user = User::find(User::getId($request->input('user')));
+
         if(!$user){
             die('请使用微信公众号打开网页');
         }
+
         session(['user'=>$user]);
 
         return $next($request);

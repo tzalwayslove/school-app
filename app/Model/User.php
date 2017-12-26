@@ -125,4 +125,17 @@ class User extends Model
         $user->day = $day;
         return $user;
     }
+
+    public function getIdAttribute($value)
+    {
+        $str1 = mt_rand(10, 99);
+        $str2 = mt_rand(10, 99);
+        return $str1. $value. $str2;
+    }
+
+    public static function getId($id)
+    {
+        return substr($id, 2, strlen($id)-4);
+    }
+
 }
