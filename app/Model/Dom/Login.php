@@ -83,7 +83,7 @@ class Login
         $name = $table->filterXPath('//tr[4]/td[2]');
         $info = [];
         if($name->count()){
-            $info['name'] = substr($name->text(), 1);
+            $info['name'] = mb_substr($name->text(), 1);
         }
 //        48
         $idCard = $table->filterXPath('//tr[48]/td[4]');
