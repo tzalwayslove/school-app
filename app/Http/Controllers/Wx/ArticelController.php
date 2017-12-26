@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Wx;
 
 use App\Lib\Result;
 use App\Model\Articel;
+use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -15,10 +16,15 @@ class ArticelController extends Controller
         if($request->input('click_count') == 1){
             $list = Articel::with('getComment')->with('user_account')->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")->orderBy('zan', 'desc')->where('show', '1')->paginate(20);
         }else{
-            $list = Articel::with('getComment')->with('user_account')->orderBy('created_at', 'desc')->orderBy('click_count', 'desc')->where('show', '1')->paginate(20);
+            $list = Articel::with('getComment')
+                ->orderBy('created_at', 'desc')
+                ->orderBy('click_count', 'desc')
+                ->where('show', '1')
+                ->paginate(20);
         }
 
         foreach($list as $item){
+            $item->user_account = User::find(User::getId($item->user));
             $item->commentCount = count($item->getComment);
             $item->_created_at = Articel::getTimeAgo($item->created_at->__toString());
         }
