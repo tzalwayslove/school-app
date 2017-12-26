@@ -1,11 +1,11 @@
 <div class="mui-content-padded">
     <div class="yjbox" style="margin-top:50px">
-        <!--<img-->
-                <!--:src="articelData.niming == 1-->
-             <!--? articelData._user_account.sex == 1 ? '/public/wx/img/m-touxiang.png': '/public/wx/img/m-touxiang-nv.png'-->
-             <!--: articelData._user_account.avatar"-->
-                <!--style="border-radius: 50%"-->
-                <!--class="yjbox-img"/>-->
+        <img
+                :src="articelData.niming == 1
+             ? articelData._user_account.sex == 1 ? '/public/wx/img/m-touxiang.png': '/public/wx/img/m-touxiang-nv.png'
+             : articelData._user_account.avatar"
+                style="border-radius: 50%"
+                class="yjbox-img"/>
         <p class="yjbox-tl">
             <template v-if="articelData.niming == 1">
                 <span>某同学·{{ articelData._user_account.sex == 1 ? '男' : '女' }}</span>
