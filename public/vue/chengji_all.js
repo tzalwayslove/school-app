@@ -14,7 +14,9 @@ fabu = Vue.component('Chengjiall', function (success, error) {
                     chengji:[],
                     page:'all',
                     error:[
-                        color:'red'
+                        {
+                            color:'red'
+                        }
                     ]
                 }
             },
