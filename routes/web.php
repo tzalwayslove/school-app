@@ -91,6 +91,7 @@ Route::group([
 
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find($request->input('user'));
+        dd($user->name);
         if(!$user->name){
             (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
         }
