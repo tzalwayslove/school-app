@@ -19,10 +19,10 @@
     <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
 </p>
 <div class="input-in">
-    学号<input type="text" class="bind-input-style" placeholder="点击此处输入你的学号" id="account"/>
+    学号<input type="text" class="bind-input-style" placeholder="点击此处输入学号" id="account"/>
 </div>
 <div class="input-in">
-    密码<input type="text" class="bind-input-style" placeholder="点击此处输入你的教务处密码" id="password"/>
+    密码<input type="text" class="bind-input-style" placeholder="点击此处输入教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
     <input type="button" value="绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFFFFF;color: #3CC3B6;font-size: 20px;
@@ -35,7 +35,7 @@
     希望我们不只是遇见
     <img src="/public/wx/img/bind-j-r.png" class="bind-j">
 </p>
-    <p class="fix-bott-p">copyright©2018 遇见商大Pro</p>
+    <p class="fix-bott-p">Copyright © 2018 遇见商大Pro</p>
 </div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
