@@ -44,7 +44,7 @@ class Kechengbiao extends Login
             'xnxq01id' => $xnxq01id
         ];
 
-        if ($p == 'all') {
+        if ($p != 'now') {
             unset($data['zc']);
         }
         return $data;
@@ -53,8 +53,7 @@ class Kechengbiao extends Login
     public function getTable($p)
     {
         $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery($p));
-        echo $html;
-        die();
+
         $page = new Crawler($html->__toString());
         $table = $page->filterXPath('//table[@id="kbtable"]');
 
