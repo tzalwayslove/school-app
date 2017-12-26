@@ -65,7 +65,6 @@
                 if(res.result.code == 1){
                     window.location.href='/wx/bind-success/?user='+data.user;
                 }else if(res.result.code == -2){
-                    alert('绑定失败， 请检查用户名密码');
                     $('#info').html('您输入的学号或密码有误，如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位').style({color:'red'});
                 }else {
                     alert('绑定失败，请重新绑定'||res.result.message);
