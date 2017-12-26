@@ -33,7 +33,7 @@ class JubaoController extends Controller
 
         $jubao = new Jubao();
         $jubao->content = $content;
-        $jubao->user = $user->id;
+        $jubao->user = User::getId($user->id);
         $jubao->articel = $articel->id;
         $jubao->save();
 
