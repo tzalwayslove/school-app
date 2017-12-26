@@ -91,8 +91,7 @@ Route::group([
 
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find($request->input('user'));
-
-
+        $user = $user->getInfo();
 
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
