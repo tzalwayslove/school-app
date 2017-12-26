@@ -34,7 +34,10 @@
                     <a href="point-caq">
                     <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin:20px 20px 10px;"/>
                     </a>
-
+                    <div id="point-caq" class="box mui-popover mui-popover-action mui-popover-bottom">
+                            <button type="button" class="mui-btn ind-xl">举报</button>
+                            <button type="button" class="mui-btn ind-xl">取消</button>
+                    </div>
                     <div style="float: right; margin:5px 20px 0 ;">
                         <img :src="!!!item.zanLog ? '/public/wx/img/icon-heart.png':'/public/wx/img/icon-heart-h.png'" class="imgicon" @click="setZan(item)"/>
                         <p class="icon-num" @click="setZan(item)">{{item.zan || 0}}</p>
@@ -43,10 +46,6 @@
                         <img src="/public/wx/img/icon-chat.png" class="imgicon"/>
                         <p class="icon-num">{{item.commentCount || 0}}</p>
                     </div>
-                </div>
-                <div id="point-caq" class="box mui-popover mui-popover-action mui-popover-bottom">
-                        <button type="button" class="mui-btn ind-xl">举报</button>
-                        <button type="button" class="mui-btn ind-xl">取消</button>
                 </div>
             </div>
         </div>
