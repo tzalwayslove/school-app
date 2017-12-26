@@ -46,6 +46,7 @@ class Liushui extends YikatongLogin
         $data['pageNum'] = $page;
 
         dd($startTime);
+
         $res = $this->postData($startTime != $endTime ? $url : '/accounttodayTrjn.action', $data, []);
 
         $res = iconv('gbk', 'utf-8', $res->__toString());
