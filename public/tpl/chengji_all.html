@@ -30,13 +30,13 @@
                 v-for="(item, key) in chengji">
                 <div class="tableh">
                     <div class="table-id">
-                        <p class="tableh-t">{{ key }}&nbsp;</p>
+                        <p class="tableh-t">{{ key +1 }}&nbsp;</p>
                     </div>
                     <div class="table-name">
                         <p class="tableh-t">{{ item.kecengmingceng }}</p>
                     </div>
                     <div class="table-grade">
-                        <p class="tableh-t" :style="item.jidian == 0 ? error : ''">{{ item.chengji }}·{{ item.jidian }}</p>
+                        <p class="tableh-t" :style="item.jidian == 0 ? error : ''">{{ item.chengji }}</p>
                     </div>
                     <div class="table-fractions">
                         <p class="tableh-t">{{ item.xuefen }}</p>
@@ -51,7 +51,6 @@
     <p style="font-size: 11px;">注：学生的平均学分绩点（Gread Point Average，即GPA）
         等于该学生修读全部课程所得学分绩点之和除以该学生同期修读的学分数。</p>
     <img src="/public/wx/img/guanxi.png" style="max-width: 100%;">
-
     <div id="loadingToast" v-show="jiazai">
         <div class="weui-mask_transparent"></div>
         <div class="weui-toast">
