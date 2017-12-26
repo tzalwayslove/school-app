@@ -630,6 +630,10 @@ table tr td{
 	margin: 15px 0;
 	color: #fff;
 }
+.kb-desc2{
+	text-align: left;
+	color: #fff;
+}
 .line-g{
 	margin:5px 10px;
 	width:80px;
