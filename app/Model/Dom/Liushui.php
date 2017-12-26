@@ -40,6 +40,7 @@ class Liushui extends YikatongLogin
             throw new noAccountException('没有一卡通账号!');
         }
 
+
         $str = $this->getPage('/pages/common/loginstudent.action');
         $yue = iconv('gbk', 'utf-8', $str);
         echo $yue;
