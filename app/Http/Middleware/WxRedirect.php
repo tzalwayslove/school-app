@@ -35,12 +35,12 @@ class WxRedirect
             die('请使用微信公众号打开网页');
         }
 
-        echo User::getId($request->input('user'));
         $user = User::find(User::getId($request->input('user')));
 
         if(!$user){
             die('请使用微信公众号打开网页');
         }
+
         session(['user'=>$user]);
 
         return $next($request);
