@@ -30,9 +30,10 @@ fabu = Vue.component('chengji', function (success, error) {
                         if(!this.inArray(chengji , this.chengji[i].kechengbianhao)){
                             chengji.push(this.chengji[i].kechengbianhao);
                             xuefen += this.chengji[i].xuefen;
-                            console.log(this.chengji[i].kechengmingceng + this.chengji[i].xuefen);
+                            console.log(this.chengji[i].xuefen);
                         }
                     }
+
                     console.log(xuefenjidian);
                     console.log(xuefen);
                     return xuefen > 0
