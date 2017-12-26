@@ -37,7 +37,7 @@
 <div class="input-in">
     <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
 </div>
-<div>
+<div class="input-in">
 {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="" id="capt">
 {{--    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt" height="20px">--}}
