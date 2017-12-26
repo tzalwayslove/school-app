@@ -92,15 +92,7 @@ Route::group([
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find($request->input('user'));
 
-        if(!$user->name){
-            $user = (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
-        }
 
-        $year = substr($user->account, 0, 4);
-        $str = $year. '-09-01';
-        $ruxue = strtotime($str);
-        $day = ceil((time() - $ruxue)/ (60 * 60 *24));
-        $user->day = $day;
 
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });

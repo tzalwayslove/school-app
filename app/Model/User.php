@@ -110,4 +110,19 @@ class User extends Model
         return $user;
     }
 
+    public function getInfo()
+    {
+        if(!$this->name){
+            $user = (new \App\Model\Dom\Login($this->account, $this->password))->getInfo();
+        }else{
+            $user = $this;
+        }
+
+        $year = substr($user->account, 0, 4);
+        $str = $year. '-09-01';
+        $ruxue = strtotime($str);
+        $day = ceil((time() - $ruxue)/ (60 * 60 *24));
+        $this->day = $day;
+        return $user;
+    }
 }
