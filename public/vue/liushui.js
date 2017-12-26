@@ -13,7 +13,8 @@ fabu = Vue.component('liushui', function (success, error) {
                     queryList:[],
                     nextPage:false,
                     page: 1,
-                    selected:"threeDaysAgo"
+                    selected:"threeDaysAgo",
+                    price:''
                 }
             },
             computed: {
@@ -61,6 +62,7 @@ fabu = Vue.component('liushui', function (success, error) {
                             alert('您的登录凭证已过期，请重新登录一卡通');
                             window.location='/wx/yikatong/reLogin?user='+$this.user;
                         }else if(res.data.result.code == 1){
+                            $this.price = res.data.price;
                             if(cover == 0){
                                 $this.liushui = res.data.liushui.data;
                             }else{

@@ -97,7 +97,8 @@ class YikatongController extends Controller
             $res['data'] = $data;
             return [
                 'result'=>new Result(true),
-                'liushui'=>$res
+                'liushui'=>$res,
+                'price'=>$liushui->price,
             ];
 
         } catch(LoginErrorException $e){
