@@ -262,6 +262,7 @@ class UserController extends Controller
         $user->account = $request->input('account');
         $user->password = $request->input('password');
         $user->save();
+
         try{
             $user->getInfo();
         }catch(LoginErrorException $e){
