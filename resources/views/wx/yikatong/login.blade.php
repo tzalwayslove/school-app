@@ -40,7 +40,7 @@
 <p style="text-align:center;">
 {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="" id="capt">
-{{--    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt" height="20px">--}} 
+{{--    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt" height="30px">--}} 
 </p>
 <br>
 <div class="input-in">
