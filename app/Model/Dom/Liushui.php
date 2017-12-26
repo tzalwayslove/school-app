@@ -19,6 +19,7 @@ class Liushui extends YikatongLogin
     public static $day = 86400;
     public static $week = 604800;
     public $account = '';
+    public $price = 0; //余额
 
     public function __construct($user_name, $password)
     {
@@ -38,12 +39,17 @@ class Liushui extends YikatongLogin
         if(!$option->count()){
             throw new noAccountException('没有一卡通账号!');
         }
+
+        $yue = $this->getPage('/pages/common/loginstudent.action');
+        dd($yue->__toString());
+
         $this->account = $option->attr('value');
         $this->postData('/accounthisTrjn1.action', [
             'account'=>$option->attr('value'),
             'inputObject'=>'all',
             'Submit'=>'(unable to decode value)'
         ]);
+
 
     }
 
