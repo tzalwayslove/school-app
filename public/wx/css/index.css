@@ -530,7 +530,9 @@ textarea{
 	margin:40px 0 10px;
 }
 .input-in{
-	text-align: center;
+	text-align: left;
+	padding-left: 15px;
+	font-weight: bold;
 	background: rgba(255, 255, 255, .2);
 	border-radius: 20px;
 	margin: 10px 15% 30px;
@@ -545,7 +547,7 @@ textarea{
 }
 .fix-bott{
 	width: 100%;
-	margin-top:22%;
+	margin-top:38%;
 }
 .fix-bott-p{
 	margin-top: 20px;
@@ -559,6 +561,7 @@ textarea{
 	line-height: 25px;
 }
 input.bind-input-style{
+	font-size: 14px;
 	background:rgba(255, 255, 255, .0);
 	border:none;
 	margin: 0;
@@ -636,5 +639,6 @@ p.weui-toast__content{
 	background: url(../img/gtw.png) no-repeat scroll 98% center transparent;	
 }
 .bind-j{
-	
+	width:25%;
+	margin:5px;
 }
