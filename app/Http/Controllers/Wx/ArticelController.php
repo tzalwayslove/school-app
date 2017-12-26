@@ -24,10 +24,12 @@ class ArticelController extends Controller
         }
 
         foreach($list as $item){
+            dd($item->user);
             $item->user_account = User::find(User::getId($item->user));
             $item->commentCount = count($item->getComment);
             $item->_created_at = Articel::getTimeAgo($item->created_at->__toString());
         }
+
         return response(['result'=>new Result(true), 'list'=> $list]);
     }
 
