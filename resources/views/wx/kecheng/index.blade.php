@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{$user->name}}查课表@遇见商大Pro</title>
+    <title>查课表@遇见商大Pro</title>
     <script src="/public/wx/js/mui.min.js"></script>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
