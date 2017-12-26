@@ -338,11 +338,12 @@ textarea{
 	padding: 4px;
 }
 .kb-time-img-l{
+	margin: 10px auto ;
 	text-align: right;
 	max-height: 125px;
 }
 .kb-time-img-r{
-	margin: 20px;
+	margin: 20px 0;
 	width: 100px;
 	float: right;
 }
