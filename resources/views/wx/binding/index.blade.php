@@ -18,6 +18,9 @@
 <p class="bind-logo">
     <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
 </p>
+<p class="bind-logo">
+   遇见商大Pro
+</p>
 <div class="input-in">
     学号<input type="text" class="bind-input-style" placeholder="点击此处输入学号" id="account"/>
 </div>
