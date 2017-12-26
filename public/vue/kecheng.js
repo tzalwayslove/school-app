@@ -5,15 +5,13 @@ fabu = Vue.component('Kecheng', function (success, error) {
     axios.get("/public/tpl/kecheng.html").then(function (res) {
         success({
             template: res.data,
-            props: ['user', 'all'],
+            props: ['user', 'all', 'user_name', 'xuehao'],
             data(){
                 return {
                     jiazai:true,
                     table:{},
                     desc: '',
                     page: 'all',
-                    user_name:'',
-                    xuehao:''
                 }
             },
             methods:{
