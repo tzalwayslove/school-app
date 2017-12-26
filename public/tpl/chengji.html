@@ -1,6 +1,6 @@
 <div class="mui-content-padded">
     <select name="" id="change" class="select-change-page" @change="changePage" v-model="selected">
-        <option value="" selected>点击此处可选择相应学期，当前为最新成绩。</option>
+        <option value="" selected>点击此处可选择相应学期，当前为最新成绩成绩</option>
         <option :value="option" v-for="option in options">{{option}}</option>
         <option value="all">所有</option>
     </select>
@@ -45,6 +45,7 @@
         <br />
     </div>
         <a class="ts-fen-cj-p ksxz lx-c">考试性质：{{ item.kaoshixingzhi }}</a>
+
     </div>
     <div id="loadingToast" v-show="jiazai">
         <div class="weui-mask_transparent"></div>
