@@ -613,3 +613,9 @@ table tr td{
 p.weui-toast__content{
 	color: #FFF;
 }
+.mui-content-padded select{
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background: url(../img/gt.png) no-repeat scroll 98% center transparent;	
+}
