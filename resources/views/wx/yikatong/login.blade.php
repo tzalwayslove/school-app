@@ -39,6 +39,7 @@
 //        $('#load').hide();
 //    });
     $('#capt')[0].onreadystatechange = function () {
+        console.log(11111);
         capt = $('#capt')[0];
         if (capt.readyState == "complete" || capt.readyState == "loaded") {
             $('#load').hide();
