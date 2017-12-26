@@ -26,29 +26,33 @@ class Kechengbiao extends Login
     }
 
     /**
-     * @param bool $f false 获取当前周， true获取所有
+     * @param bool $p false 获取当前周， true获取所有
      * @return array
      */
-    public function getSearchQuery($f = true)
+    public function getSearchQuery($p)
     {
         $html = $this->getPage($this->searchQueryUrl);
         $searchPage = new Crawler($html->__toString());
-        $xnxq01id = $searchPage->filterXPath('//select[@id="xnxq01id"]/option[2]')->text();
+        if($p == 'next'){
+            $xnxq01id = $searchPage->filterXPath('//select[@id="xnxq01id"]/option[1]')->text();
+        }else{
+            $xnxq01id = $searchPage->filterXPath('//select[@id="xnxq01id"]/option[2]')->text();
+        }
 
         $data = [
             'zc'=> $this->weekNum,
             'xnxq01id' => $xnxq01id
         ];
 
-        if ($f) {
+        if ($p == 'all') {
             unset($data['zc']);
         }
         return $data;
     }
 
-    public function getTable($now = true)
+    public function getTable($p)
     {
-        $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery($now));
+        $html = $this->postData($this->searchQueryUrl, $this->getSearchQuery($p));
 
         $page = new Crawler($html->__toString());
         $table = $page->filterXPath('//table[@id="kbtable"]');

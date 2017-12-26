@@ -128,9 +128,10 @@ class UserController extends Controller
 
         $loginName = $user->account;
         $password = $user->password;
+
         try {
             $kecheng = new Kechengbiao($loginName, $password);
-            $data = $kecheng->getTable($request->input('all', 0) == 1);
+            $data = $kecheng->getTable($request->input('page'));
         } catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
