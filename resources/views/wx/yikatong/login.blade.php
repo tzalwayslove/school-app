@@ -32,10 +32,10 @@
 <form method="post" id="form">
 
 <div class="input-in">
-   一卡通账号 <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" value="{{ $user->account or ""}}">
+   一卡通账号 <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" style="width:60%" value="{{ $user->account or ""}}">
 </div>
 <div class="input-in">
-   一卡通密码 <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
+   一卡通密码 <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" style="width:60%" value="{{ $user->yikatong_password or ""}}">
 </div>
 <p style="text-align:center;">
 {{ csrf_field() }}
