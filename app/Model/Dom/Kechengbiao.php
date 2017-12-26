@@ -38,8 +38,7 @@ class Kechengbiao extends Login
         }else{
             $xnxq01id = $searchPage->filterXPath('//select[@id="xnxq01id"]/option[2]')->text();
         }
-        echo $xnxq01id;
-        die();
+
         $data = [
             'zc'=> $this->weekNum,
             'xnxq01id' => $xnxq01id
@@ -48,6 +47,7 @@ class Kechengbiao extends Login
         if ($p != 'now') {
             unset($data['zc']);
         }
+
         return $data;
     }
 
