@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="id" content="{{ $userId }}">
-    <title>绑定教务处账号@遇见商大Pro</title>
+    <title>绑定账号@遇见商大Pro</title>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
     <style>
@@ -21,16 +21,20 @@
 <div class="input-in">
     学号<input type="text" class="bind-input-style" placeholder="点击此处输入你的学号" id="account"/>
 </div>
-<div class="input-in2">
+<div class="input-in">
     密码<input type="text" class="bind-input-style" placeholder="点击此处输入你的教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
-    <input type="button" value="确认绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFFFFF;color: #3CC3B6;font-size: 18px;
+    <input type="button" value="绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFFFFF;color: #3CC3B6;font-size: 20px;
 	padding:12px;" id="binding" />
     <p style="font-size: 10px;color: #FFFFFF;text-align: center;">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
 </div>
 <div class="fix-bott">
-    <p class="fix-bott-p">希望我们不只是遇见</p>
+    <p class="fix-bott-p">
+    <img src="/public/wx/img/bind-j-l.png" class="bind-j">
+    希望我们不只是遇见
+    <img src="/public/wx/img/bind-j-r.png" class="bind-j">
+</p>
     <p class="fix-bott-p">copyright©2018 遇见商大Pro</p>
 </div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
