@@ -339,13 +339,13 @@ textarea{
 }
 .kb-time-img-l{
 	margin: 10px;
-	text-align: right;
+	text-align: left;
 	max-height: 125px;
 }
 .kb-time-img-r{
 	margin: 20px;
 	max-height: 105px;
-	float: left;
+	float: right;
 }
 /*transcript样式表*/
 .gtg-img{
