@@ -27,9 +27,11 @@ class Liushui extends YikatongLogin
         $res = iconv('gbk', 'utf-8', $res);
         $dom = new Crawler($res);
         $option = $dom->filterXPath('//select[@id="account"]/option[1]');
+        dd($option->text());
         if(!$option->count()){
             throw new noAccountException('没有一卡通账号!');
         }
+
         $this->postData('/accounthisTrjn1.action', [
             'account'=>$option->attr('value'),
             'inputObject'=>'all',
@@ -45,7 +47,6 @@ class Liushui extends YikatongLogin
         $data['inputEndDate'] = $endTime;
         $data['pageNum'] = $page;
 
-        dd($startTime);
 
         $res = $this->postData($startTime != $endTime ? $url : '/accounttodayTrjn.action', $data, []);
 
