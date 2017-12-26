@@ -12,6 +12,9 @@
         body{
             background: #3cc4b6;
         }
+        .error{
+            color: #F00;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +68,7 @@
                 if(res.result.code == 1){
                     window.location.href='/wx/bind-success/?user='+data.user;
                 }else if(res.result.code == -2){
-                    $('#info').html('您输入的学号或密码有误，如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位').style({color:'red'});
+                    $('#info').html('您输入的学号或密码有误，如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位').addClass('error');
                 }else {
                     alert('绑定失败，请重新绑定'||res.result.message);
                 }
