@@ -57,7 +57,7 @@ fabu = Vue.component('chengji', function (success, error) {
                         }
                     }
                     return false;
-                }
+                },
                 getData: function () {
                     $this = this;
                     axios.get("/api/chengji?user=" + this.user + '&xueqi='+this.selected).then(function (res) {
