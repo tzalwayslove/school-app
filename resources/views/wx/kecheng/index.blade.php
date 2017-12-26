@@ -12,7 +12,7 @@
 </head>
 <body>
 <div id="app">
-    <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}" user_name="{{ $user->name }}" xuehao="{{ $user->xuehao }}"/>
+    <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}" user_name="{{ trim($user->name, '&nbsp;') }}" xuehao="{{ $user->account }}"/>
 </div>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
