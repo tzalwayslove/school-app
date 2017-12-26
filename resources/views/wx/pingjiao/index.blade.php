@@ -29,13 +29,13 @@
             $('#loadingToast').hide();
             if(res.result.code == 1){
                 alert('评教成功');
-                window.location.href = '/?user=12#/wode'
+                window.location.href = '/?user={{$userId}}#/wode'
             }else{
                 alert(res.result.message || '评教失败!');
                 if(res.result.message == '用户名或密码为空， 请绑定正确的账户'){
-                    window.location.href = '/wx/binding/?user=12'
+                    window.location.href = '/wx/binding/?user={{$userId}}'
                 }else{
-                    window.location.href = '/?user=12#/wode'
+                    window.location.href = '/?user={{$userId}}#/wode'
                 }
             }
         });
