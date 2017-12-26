@@ -1,6 +1,6 @@
 <div>
     <p class="xingming_xuehao">姓名：{{user_name}} 学号：{{account}}</p>
-    <p>如果你的信息有误， 请重新进行绑定</p>
+    <p class="xingming_xuehao">如果你的信息有误， 请重新进行绑定</p>
     <template v-for="(item, key) in kaochang">
     <div :class="item.finish ? 'kb-info' : 'kb-info-ing'">
         <p :class="item.finish ? 'kb-info-name' : 'kb-info-name-ing'">{{ item.name }}<a :style="item.finish ? itemStyleFinish : itemStyleUnFinish">考场:{{ item.kaochang }}</a></p>
