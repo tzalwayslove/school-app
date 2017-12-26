@@ -118,7 +118,7 @@ class Chengji extends Login
 
         $options = [];
 
-        for(;$year < $now; ++$year ){
+        for(;$year < $now +1; ++$year ){
             $options[] = $year . '-' . ($year +1) . '-1';
             $options[] = $year . '-' . ($year +1) . '-2';
         }
