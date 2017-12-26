@@ -337,9 +337,12 @@ textarea{
 	font-size: 12px;
 	padding: 4px;
 }
+.ct-m{
+	height: 145px;
+}
 .kb-time-img-l{
 	margin: 10px;
-	text-align: left;
+	float: left;
 	max-height: 125px;
 }
 .kb-time-img-r{
