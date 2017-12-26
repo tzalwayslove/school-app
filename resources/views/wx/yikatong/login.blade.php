@@ -38,7 +38,7 @@
         $('#load').hide();
     });
     setTimeout(function(){
-        if($('#load').is(':show')){
+        if(!$('#load').is(':hidden')){
             $('#load').hide();
             alert('验证码加载失败了， 无法登陆， 请联系管理员');
         }
