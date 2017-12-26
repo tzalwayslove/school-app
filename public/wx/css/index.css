@@ -523,13 +523,13 @@ textarea{
 /*binding样式表*/
 .bind-logo{
 	text-align: center;
-	margin: 20px auto;
+	margin: 20px auto 10px;
 }
 .bind-title{
 	text-align: center;
 	color: #fff;
 	font-size: 24px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	font-weight: bold;
 }
 .bind-logo-img{
