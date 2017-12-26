@@ -6,8 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>一卡通登录</title>
+    <style>
+        #load{
+            position: absolute;
+            top:0;
+            right:0;
+        }
+    </style>
 </head>
+
 <body>
 
 <form method="post" id="form">
@@ -18,12 +27,14 @@
     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code">
     <button id="login" type="button">登录</button>
 </form>
+<div id="load">正在加载</div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
 
 <script>
     $('#capt').load(function(){
         console.log(111);
+        $('#load').hide();
     });
     $(function(){
         $('#login').on('click', function(){
