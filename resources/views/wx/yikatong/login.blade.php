@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <link href="/public/wx/css/mui.css" rel="stylesheet"/>
+    <link href="/public/wx/css/index.css" rel="stylesheet"/>
     <title>一卡通登录</title>
     <style>
         #load{
@@ -34,7 +35,7 @@
     <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" value="{{ $user->account or ""}}">
 </div>
 <div class="input-in">
-    <input type="text" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
+    <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
 </div>
 {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="" id="capt">
