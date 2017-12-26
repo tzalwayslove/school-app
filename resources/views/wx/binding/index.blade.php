@@ -13,7 +13,10 @@
             background: #3cc4b6;
         }
         .error{
-            color: #F00;
+            font-size: 13px;
+            color: #FF0000;
+            text-align: center;
+            margin-top:13px;
         }
         .info{
             font-size: 13px;
@@ -70,12 +73,12 @@
                 user:$('meta[name="id"]').attr('content')
             };
             $.postData('/wx/binding', data, function(res){
-                console.log(res);
                 if(res.result.code == 1){
                     window.location.href='/wx/bind-success/?user='+data.user;
                 }else if(res.result.code == -2){
                     $('#info')
                         .html('您输入的学号或密码有误，如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位')
+                        .removeClass('info')
                         .addClass('error');
                 }else {
                     alert('绑定失败，请重新绑定'||res.result.message);
