@@ -38,7 +38,7 @@
     学号<input type="text" class="bind-input-style" placeholder="点击此处输入学号" id="account"/>
 </div>
 <div class="input-in">
-    密码<input type="text" class="bind-input-style" placeholder="点击此处输入教务处密码" id="password"/>
+    密码<input type="password" class="bind-input-style" placeholder="点击此处输入教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
     <button class="m-btn-bal" id="binding" >绑&nbsp; 定</button>
