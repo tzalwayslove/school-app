@@ -17,7 +17,7 @@ class ArticelController extends Controller
             $list = Articel::with('getComment')
                 ->with('user_account')
                 ->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")
-                ->orderBy('zan', 'desc')
+                ->orderByRaw('`zan`+`click_count` desc')
                 ->where('show', '1')
                 ->paginate(20);
         }else{
