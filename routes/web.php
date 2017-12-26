@@ -83,7 +83,12 @@ Route::group([
 
     Route::get('/chengji', function (\Illuminate\Http\Request $request) {
         $user = \App\Model\User::find($request->input('user'));
-        $info = $user->getInfo();
+        try{
+            $info = $user->getInfo();
+        }catch(\App\Exceptions\LoginErrorException $e){
+            return redirect('wx/binding?user='.$request->input('user'));
+        }
+
         return view('wx.chengji.index')->withUser($request->input('user'))->withInfo($info);
     });
 
