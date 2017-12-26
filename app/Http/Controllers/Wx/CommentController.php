@@ -21,7 +21,7 @@ class CommentController extends Controller
 
         $data->_user_account = User::find($data->user);
 
-        $data->load('getComment.getReply.getUser');
+//        $data->load('getComment.getReply.getUser');
 //        $data->load('getComment.getUser');
 
         $data->click_count++;
@@ -30,6 +30,9 @@ class CommentController extends Controller
         foreach($data->getComment as $comment){
             $comment->get_reply = Comment::where('id', $comment->reply)->with('getUser')->first();
             $comment->_get_user = User::find($comment->user);
+            if($comment->reply){
+                $comment->_reply_user = User::find($comment->reply);
+            }
         }
 
         $data->_created_at = Articel::getTimeAgo($data->created_at->__toString());
