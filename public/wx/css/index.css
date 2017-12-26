@@ -415,12 +415,13 @@ textarea{
 }
 .ts-fen-cj{
 	float: right;
-	margin-right: 5px;
-	/*margin-top: -20px;*/
+	margin-right: 12px;
+	margin-top: -11px;
 }
 .ts-fen-cj-p{
 	font-size: 13px;
 	color: #FFFFFF;
+	margin-bottom: 2px;
 	text-shadow: 0px -1px 1px #28897f;
 }
 .ts-fen-cj-p2{
