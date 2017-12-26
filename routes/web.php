@@ -96,7 +96,12 @@ Route::group([
             $user = (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
         }
         $year = substr($user->account, 0, 4);
-
+        $str = $year. '-09-01';
+        $ruxue = strtotime($str);
+        dd(time() - $ruxue);
+        $day = ceil(time() -$ruxue/ 60* 60 *24);
+        $user->day = $day;
+        dd($day);
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
