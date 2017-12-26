@@ -33,7 +33,7 @@ class ArticelController extends Controller
         foreach($list as $item){
             $item->commentCount = count($item->getComment);
             $item->_created_at = Articel::getTimeAgo($item->created_at->__toString());
-            dd(1);
+            dd(User::find($item->user));
             $item->user_account = 1;//User::find($item->user);
         }
 
