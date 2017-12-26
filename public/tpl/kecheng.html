@@ -2,14 +2,14 @@
     <div style="padding:10px;">
     <a class="kb-desc">姓名：曲凌坤</a> &nbsp;<a class="kb-desc">学号：2014026723</a>
     </div>
-    <div style="padding:20px 10px 10px">
+    <div id="kc-select" style="padding:20px 10px 10px">
         <select name="" id="change" class="select-change-page" @change="changePage" v-model="page">
             <img src="/public/wx/img/gtb.png" class="kc-select" />
-            <option value="all">全部</option>
-            <option value="now">当前</option>
+            <option value="all">你的最新课表，点击此处可显示当前周课表</option>
+            <option value="now">仅显示当前周课表</option>
         </select>
     </div>
-    <div class="kc-m-tit">哈尔滨商业大学课程表@遇见商大</div>
+  
     <div style="width:100%;">
         <table border="1" bordercolor="#fff" style="font-size:7px !important;width:100%;" class="kecheng-table">
             <tr >
@@ -30,7 +30,10 @@
                     <template v-for="(td, index) in tr">
                         <td width="12.5%" height="28" align="center" valign="top">
                             <div v-for="(kecheng, key) in td" style="margin:0;padding:0;">
-                                {{kecheng.name}}<br>-{{kecheng.week}}-<br>{{kecheng.teacher}}<br>{{kecheng.jiaoshi}}
+                                {{kecheng.name}}<br>
+                                -{{kecheng.week}}-<br>
+                                {{kecheng.teacher}}<br>
+                                {{kecheng.jiaoshi}}
                                 <template v-if="td.length > 1 && key+1 != td.length">
                                     <hr>
                                 </template>
