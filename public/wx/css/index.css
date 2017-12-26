@@ -627,6 +627,7 @@ table tr td{
   }
 .kb-desc{
 	text-align: left;
+	margin: 5px 0;
 	color: #fff;
 }
 .line-g{
