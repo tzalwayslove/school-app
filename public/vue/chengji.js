@@ -53,10 +53,13 @@ fabu = Vue.component('chengji', function (success, error) {
                         if (res.data.result.code == 0) {
                             alert(res.data.result.message || '获取失败!');
                         } else {
+                            console.log(res.data.chengji);
+
                             $this.chengji = res.data.chengji;
                             $this.jige = $this.chengji.filter(function (item) {
                                 return item.chengji >= 60 && item.chengji.indexOf('不及格') == -1;
                             });
+
                             console.log($this.jige);
                             $this.bujige = $this.chengji.filter(function (item) {
                                 return item.chengji < 60;
