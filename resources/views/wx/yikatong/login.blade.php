@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
-    <title>一卡通登录</title>
+    <title>一卡通查询@遇见商大Pro</title>
     <style>
         #load{
             position: absolute;
@@ -32,10 +32,10 @@
 <form method="post" id="form">
 
 <div class="input-in">
-    <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" value="{{ $user->account or ""}}">
+   一卡通账号 <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" style="width:60%" value="{{ $user->account or ""}}">
 </div>
 <div class="input-in">
-    <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
+   一卡通密码 <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" style="width:60%" value="{{ $user->yikatong_password or ""}}">
 </div>
 <p style="text-align:center;">
 {{ csrf_field() }}
@@ -49,6 +49,16 @@
     <button id="login" type="button" class="m-btn-bal">点此获取你的一卡通信息</button>
 </div>
 </form>
+
+<div class="fix-bott" style="margin-top:10%;">
+    <p class="fix-bott-p">
+    <img src="/public/wx/img/bind-j-l.png" class="bind-j">
+    希望我们不只是遇见
+    <img src="/public/wx/img/bind-j-r.png" class="bind-j">
+</p>
+    <p class="fix-bott-p">Copyright © 2018 遇见商大Pro</p>
+</div>
+
 <div id="load">正在加载</div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>

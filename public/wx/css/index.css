@@ -340,7 +340,7 @@ textarea{
 .ct-m{
 	text-align: center;
 	margin: 10px 20px;
-	margin-top: 50px ;
+	
 }
 .kb-time-img-l{
 	max-height: 125px;
@@ -588,6 +588,7 @@ input.bind-input-style{
 	font-size: 16px;
 	padding:10px 12px;
 }
+
 .nm-lab2{
 	color: #FFFFFF;
 }
