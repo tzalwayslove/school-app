@@ -176,7 +176,6 @@ textarea:-ms-input-placeholder
 .sm-f{
 	float: right;
 	color: #AAAAAA;
-	margin-top: -20px;
 }
 .sm-f-img{
 	float: right;
@@ -578,5 +577,5 @@ table tr td{
 	font-weight: 600px !important;
 }
 .ind-xl{
-	
+
 }
