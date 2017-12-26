@@ -617,8 +617,5 @@ p.weui-toast__content{
 	appearance:none;
 	-moz-appearance:none;
 	-webkit-appearance:none;
-	background: url(../img/gtg.png) no-repeat scroll 96% center transparent;
-	
-	padding-right: 18px;
-	
+	background: url(../img/gtg.png) no-repeat scroll 99% center transparent;	
 }
