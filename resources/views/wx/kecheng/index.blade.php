@@ -12,7 +12,8 @@
 </head>
 <body>
 <div id="app">
-    <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}"/>
+
+    <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}" user_name="{{$user->name}}" xuehao="{{ $user->account }}"/>
 </div>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
 <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
@@ -31,8 +32,6 @@
     data = {
         nav_active: 'tiezi',
         tiezi:[],
-        user_name:'北冥有鱼，其名为鲲。',
-        xuehao:'学号'
     };
 
     vue = new Vue({
