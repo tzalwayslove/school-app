@@ -26,6 +26,7 @@ class CommentController extends Controller
         $data->_user_account = User::find($data->user);
         foreach($data->getComment as $comment){
             $comment->_get_reply = Comment::where('id', $comment->reply)->with('getUser')->first();
+            $comment->_get_reply->_get_user = User::find($comment->_get_reply->user);
             $comment->_get_user = User::find($comment->user);
         }
 
