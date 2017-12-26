@@ -666,3 +666,6 @@ p.weui-toast__content{
 	margin:5px;
 	min-height: 1px;
 }
+.mui-table-view-cell > a:not(.mui-btn){
+	font-size: 15px;
+}
