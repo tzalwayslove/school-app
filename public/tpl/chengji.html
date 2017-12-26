@@ -17,7 +17,7 @@
              <p class="ts-fen-cj-p">学分绩点：{{ item.jidian }}</p>
         </div>
         <br /> 
-      <div class="ts-fen-m">
+      <div class="ts-fen-m" >
         <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
         <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
         <br />
@@ -33,15 +33,16 @@
         <a class="ts-fen-mtit2 lx-c">{{item.kecengmingceng}}</a><a class="ts-fen-mtit2 lx-c">总分：{{item.chengji}}</a>
         <div class="ts-fen-cj">
             <p class="ts-fen-cj-p lx-c">学分：{{ item.xuefen }}</p>
-            <p class="ts-fen-cj-p lx-c">绩点：{{ item.jidian }}</p>
+            <p class="ts-fen-cj-p lx-c">学分绩点：{{ item.jidian }}</p>
         </div>
         <br />
-        <br />
+        <div class="ts-fen-m">
         <a class="ts-fen-cj-p2 lx-c">平时分：{{item.chengji_info.pingshichengji}}</a>
         <a class="ts-fen-cj-p2 lx-c">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
         <br />
         <a class="ts-fen-cj-p2 lx-c">卷面分：80</a><a class="ts-fen-cj-p2 lx-c">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
         <a class="ts-fen-cj-p ksxz lx-c">考试性质：{{ item.kaoshixingzhi }}</a>
+    </div>
     </div>
     <div id="loadingToast" v-show="jiazai">
         <div class="weui-mask_transparent"></div>
