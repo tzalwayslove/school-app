@@ -77,7 +77,7 @@
                     window.location.href='/wx/bind-success/?user='+data.user;
                 }else if(res.result.code == -2){
                     $('#info')
-                        .html('您输入的学号或密码有误，如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位')
+                        .html('您输入的学号或密码有误<br><span style="color: #FFF">如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位</span>')
                         .removeClass('info')
                         .addClass('error');
                 }else {
