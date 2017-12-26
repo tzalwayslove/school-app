@@ -29,10 +29,11 @@ class ArticelController extends Controller
                 ->where('show', '1')
                 ->paginate(20);
         }
-        dd(DB::getQueryLog());
+//        dd(DB::getQueryLog());
         foreach($list as $item){
             $item->commentCount = count($item->getComment);
             $item->_created_at = Articel::getTimeAgo($item->created_at->__toString());
+            $item->user_account = User::find($item->user);
         }
 
         return response(['result'=>new Result(true), 'list'=> $list]);
