@@ -60,6 +60,7 @@ class CommentController extends Controller
         }
 
         $comment = Comment::addComment($articel, $content, $request->input('niming', false), $user);
+        dd($comment);
         return response([
             'result' => new Result(true),
             'comment' => $comment
