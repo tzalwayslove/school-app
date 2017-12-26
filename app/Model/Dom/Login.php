@@ -10,6 +10,7 @@ namespace App\Model\Dom;
 
 
 use App\Exceptions\LoginErrorException;
+use App\Model\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\TransferStats;
@@ -69,6 +70,32 @@ class Login
         }
     }
 
+    public function getInfo()
+    {
+        $url = '/xsd/grxx/xsxx?Ves632DSdyV=NEW_XSD_XJCJ';
+        $res = $this->getPage($url);
+        $dom = new Crawler($res->__toString());
+        $table = $dom->filterXPath('//table[@id="xjkpTable"]');
+        if(!$table->count()){
+            return false;
+        }
+
+        $name = $table->filterXPath('//tr[4]/td[2]');
+        $info = [];
+        if($name->count()){
+            $info['name'] = $name->text();
+        }
+//        48
+        $idCard = $table->filterXPath('//tr[48]/td[4]');
+        if($idCard->count()){
+            $info['id_card'] = $idCard->text();
+            $info['yikatong_password'] = substr($info['id_card'], -6);
+        }
+
+        User::where('account', $this->account)->update($info);
+
+        return true;
+    }
     public function getPage($url)
     {
         $res = $this->client->request('get', $this->pre . $url, [

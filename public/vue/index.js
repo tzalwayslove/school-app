@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017/11/30.
  */
+
 tiezi = Vue.component('tiezi', function (success, error) {
     axios.get("/public/tpl/index.html").then(function (res) {
         success({
@@ -108,6 +109,12 @@ tiezi = Vue.component('tiezi', function (success, error) {
                     }
 
                     return actualTop;
+                },
+                jubao: function(item){
+                    
+                    router.push({
+                        path: '/jubao/' + item.id,
+                    })
                 }
             },
             mounted (){

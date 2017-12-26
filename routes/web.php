@@ -73,11 +73,13 @@ Route::group([
     });
 
     Route::get('/articel', 'ArticelController@index');
-    Route::get('/comment/{id}', 'CommentController@index');
+    Route::get('/comment', 'CommentController@index');
     Route::post('/articel', 'ArticelController@store');
     Route::post('/articel_zan', 'ArticelController@zan');
     Route::post('/comment_zan', 'CommentController@zan');
     Route::post('/addComment', 'CommentController@addComment');
+    Route::post('/reply', 'CommentController@reply');
+    Route::post('/jubao', 'JubaoController@jubao');
 
     Route::get('/chengji', function (\Illuminate\Http\Request $request) {
         return view('wx.chengji.index')->withUser($request->input('user'));
@@ -106,10 +108,12 @@ Route::group([
 
     Route::get('/pingjiao', 'UserController@pingjiaoView');
     Route::post('/pingjiao', 'UserController@pingjiao');
+    Route::get('/getChengjiOptions', 'UserController@getChengjiOptions');
 
     Route::get('yikatong/login', 'YikatongController@login');
     Route::post('yikatong/login', 'YikatongController@doLogin');
     Route::get('yikatong/queryList', 'YikatongController@queryList');
+
     Route::group([
         'middleware'=>['yikatong'],
         'prefix'=>'yikatong',

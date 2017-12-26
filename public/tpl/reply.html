@@ -1,0 +1,17 @@
+<div id="tabbar2" class="mui-control-content" style="display: block">
+    <div id="" class="box2">
+        <p class="fb-title">回复评论
+        <div style="float: right; margin-top: -30PX;margin-right: 10px;">
+            <div class=" mui-checkbox mui-right">
+            <input name="checkbox" value="Item 1" type="checkbox" style="right: 30px;top: -2px;" v-model="niming_prop">
+        </div>
+            <label class="nm-lab2">匿名</label>
+        </div>
+        </p>
+        <textarea rows="5" maxlength="150" v-model="content" placeholder="回复"></textarea>
+        <p class="fb-sub">
+            <button class="fb-btn" @click="back">取消</button>
+            <button @click="reply">发布</button>
+        </p>
+    </div>
+</div>

@@ -21,7 +21,7 @@
         <div
                 v-for="(item, index) in list"
                 :key="item.id">
-            <img
+             <img
                     :src="item.niming != 1 ? item.get_user.avatar : '/public/wx/img/m-touxiang.png'"
                     class="hfbox-img"/>
             <p class="hfbox-tl">
@@ -31,7 +31,7 @@
                 <template v-if="item.niming == 1">
                     某同学·男
                 </template>
-                <a style="font-size: 12px;margin-right: 5px;color: #a7a7a7;">
+             <a style="font-size: 12px;margin-right: 5px;color: #a7a7a7;">
                     {{ item._created_at }}
                 </a>
                 <a class="sm-f" @click="setZan(item)">
@@ -39,7 +39,20 @@
                     <img :src="!!!item.zanLog ? '/public/wx/img/smile-face.png' :'/public/wx/img/smile-face-g.png'" id="heart" class="sm-f-img">
                 </a>
             </p>
-            <p class="hf-box-main">{{item.content}}</p>
+            <p class="hf-box-main" @click="reply(item)">
+                <span style="color:#3cc4b6" v-if="item.reply">
+                    回复@
+                    <template v-if="item.get_reply.niming != 1">
+                        {{item.get_reply.get_user.nick_name}}<br>
+                    </template>
+                    <template v-if="item.get_reply.niming == 1 && item.get_reply.get_user.sex == 1">
+                        某同学·男
+                    </template>
+                    <template v-if="item.get_reply.niming == 1 && item.get_reply.get_user.sex != 1">
+                        某同学·女
+                    </template>
+            </span>{{item.content}}</p>
+            </p>
         </div>
     </div>
     <div class="hf-input">

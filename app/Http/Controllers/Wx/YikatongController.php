@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Wx;
 
 use App\Exceptions\LoginErrorException;
+use App\Exceptions\noAccountException;
 use App\Lib\Liushui;
 use App\Lib\Result;
 use App\Model\Dom\YikatongLogin;
@@ -15,7 +16,12 @@ class YikatongController extends Controller
 
     public function login(Request $request)
     {
-        return view('wx.yikatong.login', compact('request'));
+        $user = session('user');
+        if(!$user->yikatong_password){
+            $loginUser = new \App\Model\Dom\Login($user->account, $user->password);
+            $loginUser->getInfo();
+        }
+        return view('wx.yikatong.login', compact('request', 'user'));
     }
 
     public function doLogin(Request $request)
@@ -33,6 +39,10 @@ class YikatongController extends Controller
 
         $v = Validator::make($request->all(), $rules, $message);
         $v->validate();
+
+        $user = session('user');
+        $user->yikatong_password = $request->input('password');
+        $user->save();
 
         $code = $request->input('code');
         $user_name = $request->input('user_name');
@@ -78,6 +88,7 @@ class YikatongController extends Controller
 
         try{
             $res = $liushui->getData($start_time, $end_time, $page);
+
             $data = [];
             foreach($res['data'] as $item){
                 $data[] = $item;
@@ -88,9 +99,14 @@ class YikatongController extends Controller
                 'result'=>new Result(true),
                 'liushui'=>$res
             ];
+
         } catch(LoginErrorException $e){
             return [
                 'result'=>new Result(false, $e->getMessage(), -2)
+            ];
+        } catch(noAccountException $e){
+            return [
+                'result'=>new Result(false, '登录过期，请重新登录', -2)
             ];
         }catch(\Exception $e){
             return [

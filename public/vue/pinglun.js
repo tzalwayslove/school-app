@@ -29,12 +29,11 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     getData:function(){
                         let id =this.$route.params.id;
                         let $this =this;
-                        axios.get('wx/comment/'+ id + '/?user='+data.user).then(function(res){
+
+                        axios.get('wx/comment/?user='+data.user + '&id='+id).then(function(res){
                             $this.articelData = res.data.data;
                             $this.list = res.data.data.get_comment;
-                            if($this.list.length == 0){
-
-                            }
+                            console.log($this.list);
 
                         });
                     },
@@ -94,11 +93,23 @@ pinglun = Vue.component('pinglun', function (success, error) {
                     hide_input(){
                         this.jiahao = true;
                         this.pinglun_input = false;
-                    }
+                    },
+                    reply(item){
+                        console.log('click');
+                        console.log(item);
+
+                        id = item.id;
+                        niming = item.niming;
+                        sex = item.get_user.sex;
+                        router.push({
+                            path: '/reply/' + id + '/' + niming + '/' + sex + '/'+ item.articel,
+                        })
+                    },
                 },
                 mounted: function () {
                    this.getData();
                    data.bar_buttom = false;
+
                 }
             }
         );

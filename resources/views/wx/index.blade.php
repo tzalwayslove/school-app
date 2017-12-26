@@ -43,6 +43,13 @@
     <div class="mui-content">
         {{-- route main --}}
         <router-view></router-view>
+        <div id="toast" style="display: none;" v-show="success">
+            <div class="weui-mask_transparent"></div>
+            <div class="weui-toast">
+                <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+                <p class="weui-toast__content">已完成</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -51,6 +58,8 @@
 <script src="{{ asset('public/vue/wode.js') }}"></script>
 <script src="{{ asset('public/vue/pinglun.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
+<script src="{{ asset('public/vue/reply.js') }}"></script>
+<script src="{{ asset('public/vue/jubao.js') }}"></script>
 
 <script>
     $(function () {
@@ -62,7 +71,9 @@
             {path: '/tiezi', component: tiezi, name: 'tiezi'},
             {path: '/fabu', component: fabu, name: 'fabu'},
             {path: '/wode', component: wode, name: 'wode'},
-            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}}
+            {path: '/pinglun/:id', component: pinglun, name: 'pinglun', props: {articel: 0}},
+            {path: '/reply/:id/:niming/:sex/:articel', component: reply, name: 'reply'},
+            {path: '/jubao/:articel', component: jubao, name: 'jubao'}
         ];
 
         router = new VueRouter({
@@ -73,7 +84,8 @@
             nav_active: 'tiezi',
             tiezi: [],
             user: '{{ $user->id }}',
-            'bar_buttom': true
+            'bar_buttom': true,
+            success:false,
         };
 
         router.beforeEach((to, from, next) => {
@@ -86,19 +98,20 @@
             }
             next();
             data.bar_buttom = true;
+            setTimeout(function(){
+                data.success = false
+            }, 1000);
         });
-
+        
         vue = new Vue({
             router: router,
             data: data,
             load: true,
             methods: {
-                onClick: function(){
-                    console.log(2222222222);
-                }
+
             },
             mounted: function () {
-
+                
             }
         }).$mount('#app');
     });

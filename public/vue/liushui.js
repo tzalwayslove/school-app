@@ -13,31 +13,46 @@ fabu = Vue.component('liushui', function (success, error) {
                     queryList:[],
                     nextPage:false,
                     page: 1,
-                    start_time:'',
-                    end_time:'',
-                    seachKey:'threeDaysAgo'
+                    selected:"threeDaysAgo"
                 }
             },
             computed: {
 
             },
-
             methods:{
                 next: function(){
-                    ++this.page;
-                    this.getData(0);
+                    this.page++;
+                    this.getData(1);
                 },
                 changeData:function(){
                     this.page = 1;
-                    console.log(this.seachKey);
-                    this.getData()
+                    this.getData(0)
                 },
-                getData:function(cover = 1){
+
+                getData:function(cover){
                     $this =this;
                     this.jiazai = true;
+                    ago = new Date();
+                    timestamp = ago.getTime() / 1000;
+                    timestamp  = timestamp - 60 * 60 * 24 * 3; //3天
+                    ago.setTime(timestamp * 1000);
+                    now = new Date();
+                    agoMonth = ago.getMonth()+ 1;
+                    nowMounth = now.getMonth() +1 ;
+
+                    start_time = "" + ago.getFullYear() + agoMonth +ago.getDate();
+                    end_time = "" + now.getFullYear() + nowMounth +now.getDate();
+
+                    $.each(this.queryList, function(key, value){
+                        if(key == $this.selected){
+                            start_time = value.start_time;
+                            end_time = value.end_time
+                        }
+                    });
+
                     axios.post('wx/yikatong/liushui?user=' + this.user, {
-                        start_time:'19991130',
-                        end_time:'20171222',
+                        start_time:start_time,
+                        end_time:end_time,
                         page:this.page
                     }).then(function(res){
                         $this.jiazai = false;
@@ -46,7 +61,7 @@ fabu = Vue.component('liushui', function (success, error) {
                             alert('您的登录凭证已过期，请重新登录一卡通');
                             window.location='/wx/yikatong/reLogin?user='+$this.user;
                         }else if(res.data.result.code == 1){
-                            if(cover == 1){
+                            if(cover == 0){
                                 $this.liushui = res.data.liushui.data;
                             }else{
                                 $this.liushui = $this.liushui.concat(res.data.liushui.data)
@@ -65,7 +80,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     $this.jiazai = false;
                     $this.queryList =res.data;
                 });
-                this.getData(1);
+                this.getData(0);
             }
         });
     });

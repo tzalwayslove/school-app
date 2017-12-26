@@ -61,7 +61,9 @@ class Liushui extends YikatongLogin
             throw new \Exception($errDom->text());
         }
 
-        $res = $this->postData('/accountconsubBrows.action', $data);
+        $pageUrl = '/accountconsubBrows.action';
+        $url = '/accounthisTrjn3.action';
+        $res = $this->postData($page == 1 ? $url : $pageUrl, $data);
         $res = iconv('gbk', 'utf-8',$res);
 
         $dom = new Crawler($res);
@@ -164,11 +166,11 @@ class Liushui extends YikatongLogin
             'end_time' =>date($format, mktime(0, 0,0, date('m')-3, 1) -1),
             'name' =>date('m月', mktime(0,0,0, date('m')-4, 1))
         ];
-        $data['all']=[
+        /*$data['all']=[
             'start_time'=>date($format, mktime(0,0,0,0,0,0)),
             'end_time' =>date($format, $now),
             'name' =>'所有'
-        ];
+        ];*/
         return $data;
     }
 
