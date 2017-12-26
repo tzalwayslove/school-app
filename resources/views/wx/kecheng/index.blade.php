@@ -12,7 +12,6 @@
 </head>
 <body>
 <div id="app">
-
     <Kecheng user="{{$request->input('user')}}" all="{{$request->input('all')}}" user_name="{{$user->name}}" xuehao="{{ $user->account }}" day="{{ $user->day }}"/>
 </div>
 <script src="{{ asset('public/vendors/weui/zepto.min.js') }}"></script>
