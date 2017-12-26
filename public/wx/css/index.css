@@ -619,6 +619,7 @@ table tr td{
 	background: -o-linear-gradient(#537ed6, #6a61c5); 
 	background: -moz-linear-gradient(#537ed6, #6a61c5); 
 	background: linear-gradient(#537ed6, #6a61c5);
+	margin-bottom: -10px;
   }
 .kb-desc{
 	text-align: left;
