@@ -42,7 +42,6 @@
     <img src="{{ url('/wx/yikatongCode') }}" alt="" id="capt">
 {{--    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt" height="30px">--}} 
 </p>
-<br>
 <div class="input-in">
      <input type="number" name="code" placeholder="按图示输入验证码" maxlength="2" id="code" class="bind-input-style" >
 </div>
