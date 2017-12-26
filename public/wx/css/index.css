@@ -338,14 +338,13 @@ textarea{
 	padding: 4px;
 }
 .kb-time-img-l{
+	text-align: right;
 	max-height: 125px;
-
 }
 .kb-time-img-r{
-	margin: 20px 25px;
+	margin: 20px;
 	width: 100px;
 	float: right;
-
 }
 /*transcript样式表*/
 .gtg-img{
