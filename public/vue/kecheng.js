@@ -12,8 +12,8 @@ fabu = Vue.component('Kecheng', function (success, error) {
                     table:{},
                     desc: '',
                     page: 'all',
-                    user_name:data.user_name,
-                    xuehao:data.xuehao
+                    user_name:'',
+                    xuehao:''
                 }
             },
             methods:{
@@ -42,7 +42,8 @@ fabu = Vue.component('Kecheng', function (success, error) {
                 }
             },
             mounted: function(){
-                this.getData(1)
+                this.getData(1);
+
             }
         });
     });
