@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="id" content="{{ $userId }}">
-    <title>遇见-绑定账号</title>
+    <title>绑定教务处账号@遇见商大Pro</title>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
     <style>
@@ -25,7 +25,8 @@
     密码:<input type="text" class="bind-input-style" placeholder="请输入教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
-    <input type="button" value="确认绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 20px;margin: 0;background: #FFFFFF;color: #3CC3B6;" id="binding" />
+    <input type="button" value="确认绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFFFFF;color: #3CC3B6;font-size: 18px;
+	padding:12px;" id="binding" />
     <p style="font-size: 10px;color: #FFFFFF;text-align: center;">您尚未绑定，请先进行绑定开启你的教务旅程</p>
 </div>
 <div class="fix-bott">
