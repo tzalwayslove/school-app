@@ -122,7 +122,7 @@ class User extends Model
         $str = $year. '-09-01';
         $ruxue = strtotime($str);
         $day = ceil((time() - $ruxue)/ (60 * 60 *24));
-        $this->day = $day;
+        $user->day = $day;
         return $user;
     }
 }
