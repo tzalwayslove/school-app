@@ -260,7 +260,7 @@ class UserController extends Controller
         $user = User::find(session('user')->id);
 
         $user->binding($request->input('account'), $request->input('password'));
-        dd($user);
+
         try{
             $user->getInfo();
         }catch(LoginErrorException $e){
