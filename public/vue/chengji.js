@@ -33,6 +33,7 @@ fabu = Vue.component('chengji', function (success, error) {
                             console.log(this.chengji[i].xuefen);
                         }
                     }
+
                     console.log(xuefenjidian);
                     console.log(xuefen);
                     return xuefen > 0
