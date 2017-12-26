@@ -523,7 +523,7 @@ textarea{
 /*binding样式表*/
 .bind-logo{
 	text-align: center;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 .bind-logo-img{
 	max-height: 150px;
@@ -565,7 +565,9 @@ input.bind-input-style{
 	background:rgba(255, 255, 255, .0);
 	border:none;
 	margin: 0;
-	width: 70%;
+	width: 75%;
+	font-weight:normal;
+
 }
 
 .nm-lab2{
