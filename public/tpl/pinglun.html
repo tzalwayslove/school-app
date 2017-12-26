@@ -21,7 +21,7 @@
         <div
                 v-for="(item, index) in list"
                 :key="item.id">
-             <img
+            <img
                     :src="item.niming != 1 ? item._get_user.avatar : '/public/wx/img/m-touxiang.png'"
                     class="hfbox-img"/>
             <p class="hfbox-tl">
@@ -31,12 +31,13 @@
                 <template v-if="item.niming == 1">
                     某同学·男
                 </template>
-             <a style="font-size: 12px;margin-right: 5px;color: #a7a7a7;">
+                <a style="font-size: 12px;margin-right: 5px;color: #a7a7a7;">
                     {{ item._created_at }}
                 </a>
                 <a class="sm-f" @click="setZan(item)">
                     <span class="sm-f-num">{{ item.zan }}</span>
-                    <img :src="!!!item.zanLog ? '/public/wx/img/smile-face.png' :'/public/wx/img/smile-face-g.png'" id="heart" class="sm-f-img">
+                    <img :src="!!!item.zanLog ? '/public/wx/img/smile-face.png' : '/public/wx/img/smile-face-g.png'"
+                         id="heart" class="sm-f-img">
                 </a>
             </p>
             <p class="hf-box-main" @click="reply(item)">
@@ -51,7 +52,7 @@
                     <template v-if="item._get_reply.niming == 1 && item._get_reply._get_user.sex != 1">
                         某同学·女
                     </template>
-            </span>{{item.content}}</p>
+            </span>{{item.content}}
             </p>
         </div>
     </div>

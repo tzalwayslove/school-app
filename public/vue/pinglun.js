@@ -100,7 +100,7 @@ pinglun = Vue.component('pinglun', function (success, error) {
 
                         id = item.id;
                         niming = item.niming;
-                        sex = item.get_user.sex;
+                        sex = item._get_user.sex;
                         router.push({
                             path: '/reply/' + id + '/' + niming + '/' + sex + '/'+ item.articel,
                         })
