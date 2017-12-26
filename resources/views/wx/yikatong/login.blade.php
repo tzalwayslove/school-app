@@ -22,7 +22,7 @@
 <form method="post" id="form">
     {{ csrf_field() }}
     {{--<img src="{{ url('/wx/yikatongCode') }}" alt="" id="capt">--}}
-    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt">
+    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt" height="20px">
 
     <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" value="{{ $user->account or ""}}">
     <input type="text" name="password" placeholder="密码" id="password" disabled="disabled" value="{{ $user->yikatong_password or ""}}">
