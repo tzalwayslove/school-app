@@ -13,36 +13,21 @@
             position: absolute;
             top:0;
             right:0;
-            background: #3cc4b6;
         }
-
-        
-
     </style>
 </head>
 
 <body>
-<p class="bind-logo">
-    <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
-</p>
-<p class="bind-title">
-   遇见商大Pro
-</p>
 
 <form method="post" id="form">
-
-<div class="input-in">
-    <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" value="{{ $user->account or ""}}">
-</div>
-<div class="input-in">
-    <input type="text" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
-</div>
-{{ csrf_field() }}
+    {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="" id="capt">
 {{--    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt" height="20px">--}}
 
-     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code">
-    <button id="login" type="button" class="m-btn-bal">登 录</button>
+    <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" value="{{ $user->account or ""}}">
+    <input type="text" name="password" placeholder="密码" id="password" disabled="disabled" value="{{ $user->yikatong_password or ""}}">
+    <input type="number" name="code" placeholder="验证码" maxlength="2" id="code">
+    <button id="login" type="button">登 录</button>
 </form>
 <div id="load">正在加载</div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
