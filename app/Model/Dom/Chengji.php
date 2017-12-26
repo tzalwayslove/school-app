@@ -8,6 +8,7 @@
 
 namespace App\Model\Dom;
 use App\Exceptions\NoPingjiaoException;
+use App\Model\User;
 use Symfony\Component\DomCrawler\Crawler;
 
 class Chengji extends Login
@@ -93,7 +94,7 @@ class Chengji extends Login
 
     public function getOption()
     {
-        $get_search_page = $this->getPage($this->get_search_url);
+        /*$get_search_page = $this->getPage($this->get_search_url);
         $this->crawler = new Crawler($get_search_page->__toString());
 
         $res = $this->crawler->filterXPath('//select[@id="kksj"]//option')->each(function(Crawler $option, $index){
@@ -109,9 +110,20 @@ class Chengji extends Login
             if(!is_null($option)){
                 $list[] = $option;
             }
+        }*/
+
+        $account = $this->account;
+        $year = intval(substr($account, 0, 4));
+        $now = intval(date('Y'));
+
+        $options = [];
+
+        for(;$year < $now; ++$year ){
+            $options[] = $year . '-' . ($year +1) . '-1';
+            $options[] = $year . '-' . ($year +1) . '-2';
         }
 
-        return $list;
+        return $options;
     }
     /**
      * 获取全部成绩
