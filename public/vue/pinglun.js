@@ -62,7 +62,6 @@ pinglun = Vue.component('pinglun', function (success, error) {
                         axios.post('wx/addComment', {
                             id: articel_id,
                             content: this.comment,
-                            user: vue.user,
                             niming:niming,
                             user:data.user
                         }).then(function(res){

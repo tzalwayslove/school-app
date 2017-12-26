@@ -53,6 +53,7 @@ class CommentController extends Controller
         }
 
         $content = $request->input('content', false);
+
         if (!$content) {
             return response([
                 'result' => new Result(false, '评论内容不能为空!')
@@ -60,7 +61,7 @@ class CommentController extends Controller
         }
 
         $comment = Comment::addComment($articel, $content, $request->input('niming', false), $user);
-        dd($comment);
+
         return response([
             'result' => new Result(true),
             'comment' => $comment
