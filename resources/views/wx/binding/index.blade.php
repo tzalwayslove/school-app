@@ -29,7 +29,7 @@
 </div>
 <div style="margin:30px 15% 10px;">
     <button class="m-btn-bal" id="binding" >绑&nbsp; 定</button>
-    <p style="font-size: 13px;color: #FFFFFF;text-align: center;margin-top:13px;">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
+    <p style="font-size: 13px;color: #FFFFFF;text-align: center;margin-top:13px;" id="info">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
 </div>
 <div class="fix-bott">
     <p class="fix-bott-p">
@@ -53,7 +53,7 @@
             account = $('#account').val();
             password = $('#password').val();
             if(account == '' || password == ''){
-                alert('您输入的学号或密码有误，如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位');
+                alert('用户名或密码不能为空');
             }
             data = {
                 account:account,
@@ -66,6 +66,7 @@
                     window.location.href='/wx/bind-success/?user='+data.user;
                 }else if(res.result.code == -2){
                     alert('绑定失败， 请检查用户名密码');
+                    $('#info').html('您输入的学号或密码有误，如忘记密码，请在公众号内回复忘记密码，重置教务处密码至身份证后六位').style({color:'red'});
                 }else {
                     alert('绑定失败，请重新绑定'||res.result.message);
                 }
