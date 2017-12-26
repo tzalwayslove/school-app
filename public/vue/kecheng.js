@@ -11,7 +11,7 @@ fabu = Vue.component('Kecheng', function (success, error) {
                     jiazai:true,
                     table:{},
                     desc: '',
-                    page: 'now',
+                    page: 'all',
                 }
             },
             methods:{
