@@ -43,11 +43,14 @@ class Liushui extends YikatongLogin
 
         $str = $this->getPage('/accountcardUser.action');
         $yue = $str;
-        echo $yue;
-        die();
+
         $yue = new Crawler($yue);
 
+        $neiwens = $yue->filterXPath('//td[@class="neiwen"]')->each(function(Crawler $neiwen, $index){
+            echo $index. ' '. $neiwen->text();
+        });
 
+        die();
         $this->account = $option->attr('value');
         $this->postData('/accounthisTrjn1.action', [
             'account'=>$option->attr('value'),
