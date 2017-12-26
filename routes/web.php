@@ -101,7 +101,7 @@ Route::group([
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find($request->input('user'));
         $info = $user->getInfo();
-        dd($info);
+
         return view('wx.kaochang.index')->withUser($request->input('user'))->withInfo($info);
     });
 
