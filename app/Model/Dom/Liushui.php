@@ -42,8 +42,8 @@ class Liushui extends YikatongLogin
 
         $str = $this->getPage('/pages/common/loginstudent.action');
         $yue = iconv('gbk', 'utf-8', $str);
-        echo $yue;
-        die();
+//        echo $yue;
+
         $this->account = $option->attr('value');
         $this->postData('/accounthisTrjn1.action', [
             'account'=>$option->attr('value'),
