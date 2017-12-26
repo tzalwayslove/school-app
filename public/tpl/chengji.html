@@ -1,6 +1,6 @@
 <div class="mui-content-padded">
     <select name="" id="change" class="select-change-page" @change="changePage" v-model="selected">
-        <option value="" selected>点击此处可选择相应学期，当前为最新考试成绩。</option>
+        <option value="" selected>点击此处可选择相应学期，当前为最新成绩。</option>
         <option :value="option" v-for="option in options">{{option}}</option>
         <option value="all">所有</option>
     </select>
@@ -17,7 +17,7 @@
              <p class="ts-fen-cj-p">学分绩点：{{ item.jidian }}</p>
         </div>
         <br />
-        <!-- <br /> -->
+        <br />
         <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
         <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
         <br />
