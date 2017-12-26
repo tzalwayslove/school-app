@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
-    <title>一卡通登录</title>
+    <title>一卡通查询@遇见商大Pro</title>
     <style>
         #load{
             position: absolute;
@@ -32,10 +32,10 @@
 <form method="post" id="form">
 
 <div class="input-in">
-    <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" value="{{ $user->account or ""}}">
+   一卡通账号 <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" class="bind-input-style" value="{{ $user->account or ""}}">
 </div>
 <div class="input-in">
-    <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
+   一卡通密码 <input type="password" name="password" placeholder="密码" id="password" disabled="disabled" class="bind-input-style" value="{{ $user->yikatong_password or ""}}">
 </div>
 <p style="text-align:center;">
 {{ csrf_field() }}
