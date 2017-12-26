@@ -111,7 +111,7 @@ class CommentController extends Controller
         $com->niming = $niming;
         $com->reply = $comment->id;
         $com->content = $content;
-        $com->user = $user->id;
+        $com->user = User::getId($user->id);
         $com->zan = 0;
 
         $com->save();
