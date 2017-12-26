@@ -259,8 +259,9 @@ class UserController extends Controller
 
         $user = User::find(session('user')->id);
 
-        $user->binding($request->input('account'), $request->input('password'));
-
+        $user->account = $request->input('account');
+        $user->password = $request->input('password');
+        $user->save();
         try{
             $user->getInfo();
         }catch(LoginErrorException $e){
