@@ -12,12 +12,11 @@
         #load{
             position: absolute;
             top:0;
-            right:0;
+            right:0;          
+        }
+        body{
             background: #3cc4b6;
         }
-
-        
-
     </style>
 </head>
 
