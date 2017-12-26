@@ -545,7 +545,7 @@ textarea{
 }
 .fix-bott{
 	width: 100%;
-	margin-top:18%;
+	margin-top:22%;
 }
 .fix-bott-p{
 	margin-top: 20px;
@@ -562,7 +562,7 @@ input.bind-input-style{
 	background:rgba(255, 255, 255, .0);
 	border:none;
 	margin: 0;
-	width: 65%;
+	width: 70%;
 }
 
 .nm-lab2{
@@ -634,4 +634,7 @@ p.weui-toast__content{
 	-moz-appearance:none;
 	-webkit-appearance:none;
 	background: url(../img/gtw.png) no-repeat scroll 98% center transparent;	
+}
+.bind-j{
+	
 }
