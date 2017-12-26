@@ -531,7 +531,14 @@ textarea{
 }
 .input-in{
 	text-align: center;
-	border: 1px solid #FFFFFF;
+	background: rgba(255, 255, 255, .2);
+	border-radius: 20px;
+	margin: 10px 15% 30px;
+	color: #FFFFFF;
+}
+.input-in2{
+	text-align: center;
+	background: rgba(255, 255, 255, .5);
 	border-radius: 20px;
 	margin: 10px 15% 30px;
 	color: #FFFFFF;
@@ -557,12 +564,7 @@ input.bind-input-style{
 	margin: 0;
 	width: 65%;
 }
-input.bind-input-style2{
-	background:rgba(255, 255, 255, .0);
-	border:none;
-	margin: 0;
-	width: 65%;
-}
+
 .nm-lab2{
 	color: #FFFFFF;
 }
