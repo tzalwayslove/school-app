@@ -29,7 +29,6 @@ class ArticelController extends Controller
                 ->where('show', '1')
                 ->paginate(20);
         }
-//        dd(DB::getQueryLog());
 
         foreach($list as $item){
             $item-> commentCount = count($item->getComment);
