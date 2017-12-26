@@ -83,8 +83,8 @@ Route::group([
 
     Route::get('/chengji', function (\Illuminate\Http\Request $request) {
         $user = \App\Model\User::find($request->input('user'));
-        $user = $user->getInfo();
-        return view('wx.chengji.index')->withUser($request->input('user'));
+        $info = $user->getInfo();
+        return view('wx.chengji.index')->withUser($request->input('user'))->withInfo($info);
     });
 
     Route::get('/chengji_all', function (\Illuminate\Http\Request $request) {
