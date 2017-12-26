@@ -21,15 +21,22 @@ fabu = Vue.component('chengji', function (success, error) {
                 GPA: function () {
                     xuefenjidian = 0;
                     xuefen = 0;
-
+                    chengji = [];
+                    console.log('-----------------------');
                     for (i = 0, len = this.chengji.length; i < len; ++i) {
                         this.chengji[i].xuefen = Number(this.chengji[i].xuefen);
                         this.chengji[i].jidian = Number(this.chengji[i].jidian);
-
                         xuefenjidian += this.chengji[i].xuefen * this.chengji[i].jidian;
-                        xuefen += this.chengji[i].xuefen;
-                    }
 
+                        if(!this.inArray(chengji , this.chengji[i].kechengbianhao)){
+                            chengji.push(this.chengji[i].kechengbianhao);
+                            xuefen += this.chengji[i].xuefen;
+                            console.log(this.chengji[i].xuefen + ": " + this.chengji[i].kecengmingceng);
+                        }
+                    }
+                    console.log(xuefen);
+
+                    console.log(xuefenjidian);
                     return xuefen > 0
                         ? (xuefenjidian / xuefen).toFixed(2)
                         : 0;
@@ -47,6 +54,14 @@ fabu = Vue.component('chengji', function (success, error) {
                         this.getData();
                     }
                 },
+                inArray: function(arr, item){
+                    for (var i = 0, len = arr.length; i < len; ++i) {
+                        if(item == arr[i]){
+                            return true;
+                        }
+                    }
+                    return false;
+                },
                 getData: function () {
                     $this = this;
                     axios.get("/api/chengji?user=" + this.user + '&xueqi='+this.selected).then(function (res) {
@@ -58,7 +73,7 @@ fabu = Vue.component('chengji', function (success, error) {
 
                             $this.chengji = res.data.chengji;
                             $this.jige = $this.chengji.filter(function (item) {
-                                return item.chengji >= 60 && item.chengji.indexOf('不及格') == -1;
+                                return item.chengji >= 60 || item.chengji.indexOf('不及格') == -1;
                             });
 
                             $this.bujige = $this.chengji.filter(function (item) {
