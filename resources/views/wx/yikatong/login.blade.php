@@ -34,10 +34,18 @@
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
 
 <script>
-    $('#capt').load(function(){
-        console.log(111);
-        $('#load').hide();
-    });
+//    $('#capt').load(function(){
+//        console.log(111);
+//        $('#load').hide();
+//    });
+    $('#capt')[0].onreadystatechange = function () {
+        capt = $('#capt')[0];
+        if (capt.readyState == "complete" || capt.readyState == "loaded") {
+            $('#load').hide();
+        }else{
+            console.log(capt.readyState);
+        }
+    };
     $(function(){
         $('#login').on('click', function(){
             data = {
