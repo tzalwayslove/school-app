@@ -25,9 +25,10 @@ class Liushui extends YikatongLogin
         $res = $this->getPage('/accounthisTrjn.action');
 
         $res = iconv('gbk', 'utf-8', $res);
+        dd($res);
         $dom = new Crawler($res);
         $option = $dom->filterXPath('//select[@id="account"]/option[1]');
-        dd($option->text());
+
         if(!$option->count()){
             throw new noAccountException('没有一卡通账号!');
         }
