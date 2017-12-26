@@ -46,7 +46,7 @@ class Liushui extends YikatongLogin
 
         $yue = new Crawler($yue->__toString());
 
-        $neiwens = $yue->filterXPath('//td[@class="neiwen"]')->each(function(Crawler $neiwen, $index){
+        $neiwens = $yue->filterXPath('//td[@class="neiwen"][46]')->each(function(Crawler $neiwen, $index){
             echo $index. ' '. $neiwen->text();
         });
 
