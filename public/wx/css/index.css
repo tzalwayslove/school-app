@@ -620,8 +620,9 @@ p.weui-toast__content{
 	background: url(../img/gta.png) no-repeat scroll 98% center transparent;	
 }
 #kc-select select{
+	color: #fff;
 	appearance:none;
 	-moz-appearance:none;
 	-webkit-appearance:none;
-	background: url(../img/gta.png) no-repeat scroll 98% center transparent;	
+	background: url(../img/gt.png) no-repeat scroll 98% center transparent;	
 }
