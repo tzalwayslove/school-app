@@ -525,7 +525,7 @@ textarea{
 	text-align: center;
 	margin: 20px auto;
 }
-.lind-title{
+.bind-title{
 	text-align: center;
 	color: #fff;
 	font-size: 18px;
@@ -538,7 +538,7 @@ textarea{
 }
 .input-in{
 	text-align: left;
-	padding-left: 15px;
+	padding-left: 20px;
 	font-weight: bold;
 	background: rgba(255, 255, 255, .2);
 	border-radius: 20px;
