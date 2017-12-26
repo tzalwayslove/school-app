@@ -380,7 +380,7 @@ textarea{
 	background: #32b9b2;
 	border-radius: 3px;
 	padding-top: 10px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 	box-shadow: 0 3px 3px 0 #ddd;
 }
 .ts-fen-p{
@@ -409,7 +409,7 @@ textarea{
 	background: #32b9b2;
 	border-radius: 3px;
 	padding-top: 20px;
-	padding-bottom: 15px;
+	padding-bottom: 18px;
 	margin-bottom: 18px;
 	box-shadow: 0 3px 3px 0 #ddd;
 }
