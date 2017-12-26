@@ -34,19 +34,15 @@
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
 
 <script>
-//    $('#capt').load(function(){
-//        console.log(111);
-//        $('#load').hide();
-//    });
-    $('#capt')[0].onreadystatechange = function () {
-        console.log(11111);
-        capt = $('#capt')[0];
-        if (capt.readyState == "complete" || capt.readyState == "loaded") {
+    $('#capt').load(function(){
+        $('#load').hide();
+    });
+    setTimeout(function(){
+        if($('#load').is(':show')){
             $('#load').hide();
-        }else{
-            console.log(capt.readyState);
+            alert('验证码加载失败了， 无法登陆， 请联系管理员');
         }
-    };
+    }, 5000);
     $(function(){
         $('#login').on('click', function(){
             data = {
