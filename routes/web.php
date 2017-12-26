@@ -96,6 +96,7 @@ Route::group([
             $user = (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
         }
         $year = substr($user->account, 0, 4);
+        $ruxue = strtotime($year. '-09-01');
 
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
