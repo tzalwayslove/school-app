@@ -29,6 +29,7 @@ class CommentController extends Controller
             if($comment->_get_reply){
                 $comment->_get_reply->_get_user = User::find($comment->_get_reply->user);
             }
+
             $comment->_get_user = User::find($comment->user);
         }
 
@@ -60,7 +61,7 @@ class CommentController extends Controller
             ]);
         }
 
-        $comment = Comment::addComment($articel, $content, $request->input('niming', false), $user);
+        $comment = Comment::addComment($articel, $content, $request->input('niming', false), User::getId($user));
 
         return response([
             'result' => new Result(true),
