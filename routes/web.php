@@ -100,7 +100,7 @@ Route::group([
         $ruxue = strtotime($str);
         $day = ceil((time() - $ruxue)/ (60 * 60 *24));
         $user->day = $day;
-        dd($day);
+
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
