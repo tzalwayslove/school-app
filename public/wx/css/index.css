@@ -552,13 +552,13 @@ textarea{
 	line-height: 25px;
 }
 input.bind-input-style{
-	background:rgba(255, 255, 255, .2);
+	background:rgba(255, 255, 255, .0);
 	border:none;
 	margin: 0;
 	width: 65%;
 }
 input.bind-input-style2{
-	background:rgba(255, 255, 255, .4);
+	background:rgba(255, 255, 255, .0);
 	border:none;
 	margin: 0;
 	width: 65%;
