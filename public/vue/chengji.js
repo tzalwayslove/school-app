@@ -51,7 +51,7 @@ fabu = Vue.component('chengji', function (success, error) {
                     }
                 },
                 inArray: function(arr, item){
-                    for (var i = 0, var len = arr.length; i < len; ++i) {
+                    for (var i = 0, len = arr.length; i < len; ++i) {
                         if(item == arr[i]){
                             return true;
                         }
