@@ -42,7 +42,7 @@ class Liushui extends YikatongLogin
 
 
         $str = $this->getPage('/accountcardUser.action');
-        $yue = iconv('gbk', 'utf-8', $str);
+        $yue = new Crawler(iconv('gbk', 'utf-8//IGNORE', $str));
         echo $yue;
         die();
 
