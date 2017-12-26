@@ -184,13 +184,14 @@ class UserController extends Controller
 
     public function pingjiaoView(Request $request)
     {
-        $userId = User::getId($request->input('user'));
+        $userId = $request->input('user');
         return view('wx.pingjiao.index', compact('userId'));
     }
     //一键评教
     public function pingjiao(Request $request)
     {
         try {
+
             $user = User::find(User::getId($request->input('user')));
 
             if (!$user) {
