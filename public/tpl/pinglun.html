@@ -22,11 +22,11 @@
                 v-for="(item, index) in list"
                 :key="item.id">
              <img
-                    :src="item.niming != 1 ? item.get_user.avatar : '/public/wx/img/m-touxiang.png'"
+                    :src="item.niming != 1 ? item._get_user.avatar : '/public/wx/img/m-touxiang.png'"
                     class="hfbox-img"/>
             <p class="hfbox-tl">
                 <template v-if="item.niming != 1">
-                    {{item.get_user.nick_name}}<br>
+                    {{item._get_user.nick_name}}<br>
                 </template>
                 <template v-if="item.niming == 1">
                     某同学·男
@@ -43,12 +43,12 @@
                 <span style="color:#3cc4b6" v-if="item.reply">
                     回复@
                     <template v-if="item.get_reply.niming != 1">
-                        {{item.get_reply.get_user.nick_name}}<br>
+                        {{item.get_reply._get_user.nick_name}}<br>
                     </template>
-                    <template v-if="item.get_reply.niming == 1 && item.get_reply.get_user.sex == 1">
+                    <template v-if="item.get_reply.niming == 1 && item.get_reply._get_user.sex == 1">
                         某同学·男
                     </template>
-                    <template v-if="item.get_reply.niming == 1 && item.get_reply.get_user.sex != 1">
+                    <template v-if="item.get_reply.niming == 1 && item.get_reply._get_user.sex != 1">
                         某同学·女
                     </template>
             </span>{{item.content}}</p>
