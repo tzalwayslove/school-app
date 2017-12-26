@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>遇见-绑定成功</title>
+    <title>绑定成功@遇见商大Pro</title>
     <link href="/public/wx/css/mui.css" rel="stylesheet"/>
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
 
@@ -11,6 +11,9 @@
         body{
             background: #3cc4b6;
             text-align: center;
+        }
+        h2{
+            font-weight:bold;
         }
     </style>
 </head>
@@ -27,12 +30,13 @@
     </div>
 </div>
 
-<div class="fix-bott">
-<p class="fix-bott-p">
+<div class="fix-bott" style="margin-top:"30%">
+<p class="fix-bott-p" >
 <img src="/public/wx/img/bind-j-l.png" class="bind-j">
 希望我们不只是遇见
 <img src="/public/wx/img/bind-j-r.png" class="bind-j">
 </p>
+<p class="fix-bott-p">Copyright © 2018 遇见商大Pro</p>
 </div>
 </body>
 </html>
