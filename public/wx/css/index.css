@@ -523,13 +523,13 @@ textarea{
 /*binding样式表*/
 .bind-logo{
 	text-align: center;
-	margin: 20px auto;
+	margin: 5px auto 20px;
 }
 .bind-title{
 	text-align: center;
 	color: #fff;
-	font-size: 18px;
-	margin: 10px;
+	font-size: 26px;
+	margin:10px auto 20px;
 	font-weight: bold;
 }
 .bind-logo-img{
@@ -650,4 +650,5 @@ p.weui-toast__content{
 .bind-j{
 	width:25%;
 	margin:5px;
+	min-height: 1px;
 }

@@ -19,8 +19,8 @@
     <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
 </p>
 <div style="margin-top: 30px;">
-    <h2>恭喜你已绑定成功！</h2>
-    <h2>正式开启你的教务旅程</h2>
+    <h2>恭喜你已成功绑定！</h2>
+    <h2>正式开启你的教务旅程~</h2>
     <div style="margin-top: 30px;">
         <p class="huifu">在公众号内回复 课表 成绩 考场 等关键词 </p>
         <p class="huifu"> 即可实时获取你的教务处信息</p>
@@ -28,8 +28,11 @@
 </div>
 
 <div class="fix-bott">
-    <p class="fix-bott-p" style="font-size: 12px;margin-bottom: 20px;">希望我们不只是遇见</p>
-    <p class="fix-bott-p" style="font-size: 10px;margin-bottom: 15px;">copyright©   {{date('Y')}} 遇见商大</p>
+<p class="fix-bott-p">
+<img src="/public/wx/img/bind-j-l.png" class="bind-j">
+希望我们不只是遇见
+<img src="/public/wx/img/bind-j-r.png" class="bind-j">
+</p>
 </div>
 </body>
 </html>
