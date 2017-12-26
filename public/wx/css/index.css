@@ -176,7 +176,6 @@ textarea:-ms-input-placeholder
 .sm-f{
 	float: right;
 	color: #AAAAAA;
-	margin-top: -20px;
 }
 .sm-f-img{
 	float: right;
@@ -381,25 +380,46 @@ textarea{
 	background: #32b9b2;
 	border-radius: 3px;
 	padding-top: 10px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 	box-shadow: 0 3px 3px 0 #ddd;
 }
 .ts-fen-p{
 	color: #FFFFFF;
-	font-size: 16px;
+	font-size: 18px;
 	margin: 10px;
 	text-align: center;
+	font-weight: bold;
+	text-shadow: 0px -1px 1px #28897f;
+}
+.ts-fen-p-2{
+	color: #FFFFFF;
+	font-size: 18px;
+	margin: 10px;
+	text-align: center;
+	text-shadow: 0px -1px 1px #28897f;
+}
+.ts-fen-m{
+	margin: 5px 0;
 }
 .ts-fen-title{
 	text-align: center;
-	margin: 10px auto;
-	font-size: 16px;
+	margin: 15px auto;
+	font-size: 17px;
 	color: #32b9b2;
+	font-weight: bold;
 	
 }
 .ts-fen-mtit{
 	color: #FFFFFF;
 	font-size: 18px;
+	font-weight: bold;
+	margin: 5px 0 5px 10px;
+	text-shadow: 0px -1px 1px #28897f;
+}
+.ts-fen-mtit2{
+	color: #aaaaaa;
+	font-size: 18px;
+	font-weight: bold;
 	margin: 5px 0 5px 10px;
 }
 .ts-fen-jf{
@@ -407,41 +427,47 @@ textarea{
 	background: #32b9b2;
 	border-radius: 3px;
 	padding-top: 20px;
-	padding-bottom: 15px;
-	margin-bottom: 10px;
+	padding-bottom: 12px;
+	margin-bottom: 22px;
 	box-shadow: 0 3px 3px 0 #ddd;
 }
 .ts-fen-cj{
 	float: right;
-	margin-right: 5px;
-	/*margin-top: -20px;*/
+	margin-right: 12px;
+	margin-top: -11px;
 }
 .ts-fen-cj-p{
-	font-size: 13px;
+	font-size: 10px;
 	color: #FFFFFF;
-
+	margin-bottom: 2px;
+	text-shadow: 0px -1px 1px #28897f;
+	
 }
 .ts-fen-cj-p2{
-	font-size: 14px;
+	font-size: 13px;
 	color: #FFFFFF;
 	margin-left: 10px;
+	text-shadow: 0px -1px 1px #28897f;
 }
 .ksxz{
 	/* float: right; */
 	margin-left: 10px;
+	font-size: 12px;
 	margin-top: 10px;
 }
 .ts-fen-title2{
 	text-align: center;
-	margin: 10px auto;
-	font-size: 16px;
+	margin: 15px auto;
+	font-size: 17px;
 	color: #aaaaaa;
+	font-weight: bold;
 }
 .lx{
 	background-color: #dddddd;
 }
 .lx-c{
 	color: #AAAAAA;
+	text-shadow: none;
 }
 /*gradepoint样式表*/
 .tableh{
@@ -476,7 +502,7 @@ textarea{
 	width: 20%;
 }
 .tableh-t{
-	font-size: 12px;
+	font-size: 13px;
 	color: #FFFFFF;
 }
 .ts-list{
@@ -571,9 +597,16 @@ table tr td{
 	color: #fff;
 }
 .line-g{
-	margin-bottom: 6px;
-	width:60px;
+	margin:5px 10px;
+	width:80px;
 }
 .fw-6{
 	font-weight: 600px !important;
+}
+.ind-xl{
+	width: 100%;
+	background: #f1f1f1;
+}
+.mui-content-padded a{
+	text-decoration: none;
 }

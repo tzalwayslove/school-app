@@ -31,6 +31,7 @@
                     </p>
                     <p class="yj-box-main" @click="getComment(item)">{{item.content}}</p>
                     <div style="width: 92%; margin-left:4%; height: 1px;background: #ddd;"></div>
+
                     <a href="point-caq">
                         <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin:20px 20px 10px;"/>
                     </a>
@@ -44,13 +45,20 @@
                         <p class="icon-num">{{item.commentCount || 0}}</p>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <div id="point-caq" class="box mui-popover mui-popover-action mui-popover-bottom">
                         <button type="button" class="mui-btn">举报</button>
                         <button type="button" class="mui-btn">取消</button>
                 </div>
+=======
+>>>>>>> 9b95db2be64ac8a958f8389be2e8cdc7d71f7fd8
             </div>
         </div>
+    </div>
+    <div id="point-caq" class="box mui-popover mui-popover-action mui-popover-bottom">
+            <button type="button" class="mui-btn ind-xl">举报</button>
+            <button type="button" class="mui-btn ind-xl">取消</button>
     </div>
     <div id="loadingToast" v-show="load">
         <div class="weui-mask_transparent"></div>
