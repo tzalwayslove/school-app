@@ -30,7 +30,7 @@
 <div style="margin:30px 15% 10px;">
     <button style="width: 100%; text-align:center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFF;color: #3CC3B6;font-size: 18px;
 	padding:6px 12px;" id="binding" >绑&nbsp; 定</button>
-    <p style="font-size: 12px;color: #FFFFFF;text-align: center;margin-top:10px;">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
+    <p style="font-size: 13px;color: #FFFFFF;text-align: center;margin-top:13px;">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
 </div>
 <div class="fix-bott">
     <p class="fix-bott-p">
