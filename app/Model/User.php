@@ -135,7 +135,7 @@ class User extends Model
 
     public static function getId($id)
     {
-        return substr($id, 2, strlen($id)-2);
+        return substr($id, 2, strlen($id)-4);
     }
 
 }
