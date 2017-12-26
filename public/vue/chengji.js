@@ -21,13 +21,16 @@ fabu = Vue.component('chengji', function (success, error) {
                 GPA: function () {
                     xuefenjidian = 0;
                     xuefen = 0;
-
+                    chengji = [];
                     for (i = 0, len = this.chengji.length; i < len; ++i) {
                         this.chengji[i].xuefen = Number(this.chengji[i].xuefen);
                         this.chengji[i].jidian = Number(this.chengji[i].jidian);
-
                         xuefenjidian += this.chengji[i].xuefen * this.chengji[i].jidian;
-                        xuefen += this.chengji[i].xuefen;
+
+                        if(!this.inArray(chengji , this.chengji[i].kechengbianhao)){
+                            chengji.push(this.chengji[i].kechengbianhao);
+                            xuefen += this.chengji[i].xuefen;
+                        }
                     }
 
                     return xuefen > 0
@@ -47,6 +50,14 @@ fabu = Vue.component('chengji', function (success, error) {
                         this.getData();
                     }
                 },
+                inArray: function(arr, item){
+                    for (var i = 0, var len = arr.length; i < len; ++i) {
+                        if(item == arr[i]){
+                            return true;
+                        }
+                    }
+                    return false;
+                }
                 getData: function () {
                     $this = this;
                     axios.get("/api/chengji?user=" + this.user + '&xueqi='+this.selected).then(function (res) {
