@@ -44,9 +44,9 @@
 </p>
 <br>
 <div class="input-in">
-     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code" class="bind-input-style" style="width:50%;">
+     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code" class="bind-input-style" >
 </div>
-    <button id="login" type="button" class="m-btn-bal">登 录</button>
+    <button id="login" type="button" class="m-btn-bal" style="margin:10px 15% 30px">登 录</button>
 </form>
 <div id="load">正在加载</div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
