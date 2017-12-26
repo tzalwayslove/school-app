@@ -49,6 +49,16 @@
     <button id="login" type="button" class="m-btn-bal">点此获取你的一卡通信息</button>
 </div>
 </form>
+
+<div class="fix-bott" style="margin-top:10%;">
+    <p class="fix-bott-p">
+    <img src="/public/wx/img/bind-j-l.png" class="bind-j">
+    希望我们不只是遇见
+    <img src="/public/wx/img/bind-j-r.png" class="bind-j">
+</p>
+    <p class="fix-bott-p">Copyright © 2018 遇见商大Pro</p>
+</div>
+
 <div id="load">正在加载</div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
