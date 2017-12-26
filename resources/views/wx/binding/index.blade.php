@@ -64,9 +64,10 @@
             $.postData('/wx/binding', data, function(res){
                 console.log(res);
                 if(res.result.code == 1){
-                    //跳转
-//                    window.location.href='/wx/bind-success/?user='+data.user;
-                }else{
+                    window.location.href='/wx/bind-success/?user='+data.user;
+                }else if(res.result.code == -2){
+                    alert('绑定失败， 请检查用户名密码');
+                }else {
                     alert('绑定失败，请重新绑定'||res.result.message);
                 }
             });
