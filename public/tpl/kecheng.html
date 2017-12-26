@@ -1,6 +1,7 @@
 <div class="kb-b">
     <div style="padding:10px;">
-    <a class="kb-desc">姓名：{{ user_name.trim() }}</a> &nbsp;<a class="kb-desc">学号：{{ xuehao }}</a> <a class="kb-desc">来到学校第{{ day }}天</a>
+    <a class="kb-desc">姓名：{{ user_name.trim() }}</a> &nbsp;<a class="kb-desc">学号：{{ xuehao }}</a><br>
+     <a class="kb-desc">小可爱今天是你来到商大的第{{ day }}天，加油哇~</a>
     </div>
     <div id="kc-select" style="padding:20px 10px 10px">
         <select name="" id="change" class="select-change-page" @change="changePage" v-model="page">
@@ -50,9 +51,6 @@
             </tr>
         </table>
     </div>
-
-
-  
     <div class="ct-m">
         <a>	<img src="/public/wx/img/kb-time.png" class="kb-time-img-l" /></a>
         <a> <img src="/public/wx/img/qrcode.png" class="kb-time-img-r" /></a>
