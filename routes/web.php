@@ -98,6 +98,7 @@ Route::group([
         $info = $user->getInfo();
         return view('wx.kecheng.index')->withRequest($request)->withUser($user)->withInfo($info);
     });
+
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find($request->input('user'));
         $info = $user->getInfo();
