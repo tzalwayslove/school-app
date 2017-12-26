@@ -259,6 +259,9 @@ class UserController extends Controller
 
         $user = User::find(session('user')->id);
 
+        $user->name = '';
+        $user->id_card = '';
+        $user->yikatong_password = '';
         $user->account = $request->input('account');
         $user->password = $request->input('password');
         $user->save();
