@@ -191,7 +191,6 @@ class UserController extends Controller
     public function pingjiao(Request $request)
     {
         try {
-
             $user = User::find(User::getId($request->input('user')));
 
             if (!$user) {

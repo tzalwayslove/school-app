@@ -28,7 +28,7 @@
         }, function (res) {
             $('#loadingToast').hide();
             if(res.result.code == 1){
-                alert('评教成功');
+                alert('你已成功评教');
                 window.location.href = '/?user={{$userId}}#/wode'
             }else{
                 alert(res.result.message || '评教失败!');

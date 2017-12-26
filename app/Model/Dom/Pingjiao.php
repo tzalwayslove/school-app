@@ -32,8 +32,8 @@ class Pingjiao extends Login
 
         $res = $this->postData(Chengji::$search_url, $query);
 
-        if(!strpos($res,'评教未完成，不能查询成绩！')){
-            throw new PingjiaoCompleteException('已经评教了！');
+        if(!strpos($res,'评教未完成，不能查询成绩')){
+            throw new PingjiaoCompleteException('你已成功评教');
         }
 
     }
