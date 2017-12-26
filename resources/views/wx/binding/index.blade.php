@@ -19,10 +19,10 @@
     <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
 </p>
 <div class="input-in">
-    学号:<input type="text" class="bind-input-style" placeholder="请输入你的学号" id="account"/>
+    学号:<input type="text" class="bind-input-style2" placeholder="请输入你的学号" id="account"/>
 </div>
 <div class="input-in">
-    密码:<input type="text" class="bind-input-style" placeholder="请输入教务处密码" id="password"/>
+    密码:<input type="text" class="bind-input-style2" placeholder="请输入教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
     <input type="button" value="确认绑定" style="width: 100%; text-align: center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFFFFF;color: #3CC3B6;font-size: 18px;
