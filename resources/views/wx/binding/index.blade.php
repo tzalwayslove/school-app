@@ -28,8 +28,8 @@
     密码<input type="text" class="bind-input-style" placeholder="点击此处输入教务处密码" id="password"/>
 </div>
 <div style="margin:30px 15% 10px;">
-    <input type="button" value="绑定" style="width: 100%; text-align:center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFF;color: #3CC3B6;font-size: 18px;
-	padding:6px 12px;" id="binding" />
+    <button style="width: 100%; text-align:center;border: 1px solid #FFFFFF;border-radius: 30px;margin: 0;background: #FFF;color: #3CC3B6;font-size: 18px;
+	padding:6px 12px;" id="binding" >绑&nbsp; 定</button>
     <p style="font-size: 12px;color: #FFFFFF;text-align: center;margin-top:5px;">您尚未绑定，请先进行绑定即可开启你的教务旅程</p>
 </div>
 <div class="fix-bott">

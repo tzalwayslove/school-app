@@ -528,8 +528,8 @@ textarea{
 .bind-title{
 	text-align: center;
 	color: #fff;
-	font-size: 18px;
-	margin: 10px;
+	font-size: 24px;
+	margin-bottom: 10px;
 	font-weight: bold;
 }
 .bind-logo-img{
@@ -650,4 +650,5 @@ p.weui-toast__content{
 .bind-j{
 	width:25%;
 	margin:5px;
+	min-height: 1px;
 }
