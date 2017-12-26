@@ -31,6 +31,8 @@
     data = {
         nav_active: 'tiezi',
         tiezi:[],
+        user_name:'北冥有鱼，其名为鲲。',
+        xuehao:'学号'
     };
 
     vue = new Vue({
