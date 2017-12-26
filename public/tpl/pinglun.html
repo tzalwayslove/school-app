@@ -8,14 +8,14 @@
                 <!--class="yjbox-img"/>-->
         <p class="yjbox-tl">
             <template v-if="articelData.niming == 1">
-                <span>某同学·{{articelData._user_account.sex == 1 ? '男' : '女'}}</span>
+                <span>某同学·{{ articelData._user_account.sex == 1 ? '男' : '女' }}</span>
             </template>
             <template v-if="articelData.niming != 1">
                 <span style="height: 1em;">{{ articelData._user_account.nick_name }}</span>
             </template>
             <a style="float: right;font-size: 12px;margin-right: 5px;color: #a7a7a7;">{{ articelData.created_at }}</a>
         </p>
-        <p class="yj-box-main">{{articelData.content}}</p>
+        <p class="yj-box-main">{{ articelData.content }}</p>
     </div>
     <div class="hfbox">
         <div
