@@ -96,7 +96,7 @@ class Login
 
         User::where('account', $this->account)->update($info);
 
-        return $info;
+        return User::whereAccount($this->account)->first();
     }
     public function getPage($url)
     {

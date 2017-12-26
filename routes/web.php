@@ -93,7 +93,7 @@ Route::group([
         $user = \App\Model\User::find($request->input('user'));
 
         if(!$user->name){
-            (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
+            $user = (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
         }
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
