@@ -97,7 +97,7 @@ Route::group([
         }
         $year = substr($user->account, 0, 4);
         $ruxue = strtotime($year. '-09-01');
-        $day = ceil($ruxue-time() / 60* 60 *24);
+        $day = ceil(time() -$ruxue/ 60* 60 *24);
         $user->day = $day;
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
