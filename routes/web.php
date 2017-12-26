@@ -95,6 +95,8 @@ Route::group([
         if(!$user->name){
             $user = (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
         }
+        $year = substr($user->account, 0, 4);
+
         return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
