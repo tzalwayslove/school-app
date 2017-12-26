@@ -103,12 +103,14 @@ class Chengji extends Login
                 return $option->text();
             }
         });
+
         $list = [];
         foreach($res as $option){
             if(!is_null($option)){
                 $list[] = $option;
             }
         }
+
         return $list;
     }
     /**

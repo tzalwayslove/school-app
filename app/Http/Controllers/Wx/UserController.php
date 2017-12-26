@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Wx;
 
+use App\Exceptions\LoginErrorException;
 use App\Exceptions\userNotFountException;
 use App\Lib\Result;
 use App\Model\Dom\Chengji;
@@ -258,7 +259,20 @@ class UserController extends Controller
 
         $user = User::find(session('user')->id);
 
-        $user->binding($request->input('account'), $request->input('password'));
+        $user->name = '';
+        $user->id_card = '';
+        $user->yikatong_password = '';
+        $user->account = $request->input('account');
+        $user->password = $request->input('password');
+        $user->save();
+
+        try{
+            $user->getInfo();
+        }catch(LoginErrorException $e){
+            return [
+                'result' => new Result(false, '用户名或密码错误', -2)
+            ];
+        }
         return [
             'result' => new Result(true)
         ];

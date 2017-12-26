@@ -61,9 +61,10 @@
                 user:$('meta[name="id"]').attr('content')
             };
             $.postData('/wx/binding', data, function(res){
+                console.log(res);
                 if(res.result.code == 1){
                     //跳转
-                    window.location.href='/wx/bind-success/?user='+data.user;
+//                    window.location.href='/wx/bind-success/?user='+data.user;
                 }else{
                     alert('绑定失败，请重新绑定'||res.result.message);
                 }
