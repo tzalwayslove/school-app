@@ -22,7 +22,6 @@ class Liushui extends YikatongLogin
     public function __construct($user_name, $password)
     {
         parent::__construct($user_name, $password);
-        $url = '/accounthisTrjn.action';
         $res = $this->getPage('/accounthisTrjn.action');
 
         $res = iconv('gbk', 'utf-8', $res);
@@ -151,21 +150,25 @@ class Liushui extends YikatongLogin
             'end_time' =>date($format, mktime(0,0,0,date('m'), 1) -1),
             'name'=>'上月'
         ];
+
         $data['twoMonthsAgo'] = [
             'start_time'=>date($format, mktime(0,0,0, date('m')-2, 1)),
             'end_time' =>date($format, mktime(0,0,0, date('m')-1, 1)-1),
             'name' =>date('m月', mktime(0,0,0, date('m')-2, 1))
         ];
+
         $data['threeMonthAgo']= [
             'start_time'=>date($format, mktime(0,0,0, date('m')-3, 1)),
             'end_time' =>date($format, mktime(0,0,0, date('m')-2, 1)-1),
             'name' =>date('m月', mktime(0,0,0, date('m')-3, 1))
         ];
+
         $data['foreMonthAgo'] = [
             'start_time'=>date($format, mktime(0,0,0, date('m')-4, 1)),
             'end_time' =>date($format, mktime(0, 0,0, date('m')-3, 1) -1),
             'name' =>date('m月', mktime(0,0,0, date('m')-4, 1))
         ];
+
         $data['now']=[
             'start_time'=>date($format, $now),
             'end_time' =>date($format, $now),
