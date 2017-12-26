@@ -97,6 +97,7 @@ Route::group([
         }
         $year = substr($user->account, 0, 4);
         $ruxue = strtotime($year. '-09-01');
+        dd($ruxue);
         $day = ceil(time() -$ruxue/ 60* 60 *24);
         $user->day = $day;
         dd($day);
