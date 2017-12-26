@@ -391,7 +391,7 @@ textarea{
 }
 .ts-fen-title{
 	text-align: center;
-	margin: 10px auto;
+	margin: 13px auto;
 	font-size: 17px;
 	color: #32b9b2;
 	font-weight: 600px !important;
@@ -408,7 +408,7 @@ textarea{
 	border-radius: 3px;
 	padding-top: 20px;
 	padding-bottom: 15px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	box-shadow: 0 3px 3px 0 #ddd;
 }
 .ts-fen-cj{
