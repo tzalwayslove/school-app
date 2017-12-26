@@ -57,6 +57,7 @@ fabu = Vue.component('chengji', function (success, error) {
                             $this.jige = $this.chengji.filter(function (item) {
                                 return item.chengji >= 60 && item.chengji.indexOf('不及格') == -1;
                             });
+                            console.log($this.jige);
                             $this.bujige = $this.chengji.filter(function (item) {
                                 return item.chengji < 60;
                             });
