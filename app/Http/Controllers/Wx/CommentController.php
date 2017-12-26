@@ -30,9 +30,6 @@ class CommentController extends Controller
         foreach($data->getComment as $comment){
             $comment->get_reply = Comment::where('id', $comment->reply)->with('getUser')->first();
             $comment->_get_user = User::find($comment->user);
-            if($comment->reply){
-                $comment->_reply_user = User::find($comment->reply);
-            }
         }
 
         $data->_created_at = Articel::getTimeAgo($data->created_at->__toString());
