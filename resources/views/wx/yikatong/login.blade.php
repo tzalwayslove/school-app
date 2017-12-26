@@ -27,7 +27,7 @@
     <input type="text" name="user_name" placeholder="用户名" id="user_name" disabled="disabled" value="{{ $user->account or ""}}">
     <input type="text" name="password" placeholder="密码" id="password" disabled="disabled" value="{{ $user->yikatong_password or ""}}">
     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code">
-    <button id="login" type="button">登录</button>
+    <button id="login" type="button">登 录</button>
 </form>
 <div id="load">正在加载</div>
 <script src="{{ asset('/public/vendors/jquery/dist/jquery.js') }}"></script>
