@@ -90,7 +90,11 @@ Route::group([
     });
 
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
-        return view('wx.kecheng.index')->withRequest($request);
+        $user = \App\Model\User::find($request->input('user'));
+        if(!$user->name){
+            (new \App\Model\Dom\Login($user->account, $user->password))->getInfo();
+        }
+        return view('wx.kecheng.index')->withRequest($request)->withUser($user);
     });
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
         return view('wx.kaochang.index')->withUser($request->input('user'));
