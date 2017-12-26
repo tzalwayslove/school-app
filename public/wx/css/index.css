@@ -337,18 +337,14 @@ textarea{
 	font-size: 12px;
 	padding: 4px;
 }
-.ct-m{
-	text-align: center;
-	margin: 10px 20px;
-	
-}
 .kb-time-img-l{
 	max-height: 125px;
 
 }
 .kb-time-img-r{
-	margin: 20px 0;
-	max-width: 85px;
+	margin: 20px 25px;
+	width: 100px;
+	float: right;
 
 }
 /*transcript样式表*/
