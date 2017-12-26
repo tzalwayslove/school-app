@@ -44,10 +44,10 @@
 </p>
 <br>
 <div class="input-in">
-     <input type="number" name="code" placeholder="验证码" maxlength="2" id="code" class="bind-input-style" >
+     <input type="number" name="code" placeholder="按图示输入验证码" maxlength="2" id="code" class="bind-input-style" >
 </div>
 <div style="margin:10px 15% 30px">
-    <button id="login" type="button" class="m-btn-bal">登 录</button>
+    <button id="login" type="button" class="m-btn-bal">点此获取你的一卡通信息</button>
 </div>
 </form>
 <div id="load">正在加载</div>
