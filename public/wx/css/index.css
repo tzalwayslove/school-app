@@ -149,7 +149,7 @@ textarea:-ms-input-placeholder
 	width: 100%;
 	margin-top: 20px;
 	margin-bottom: 50px;
-	box-shadow: 5px -2px 3px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 6px 5px 10px 0 rgba(0, 0, 0, 0.19);
 	font-size: 14px;
 	color: #000000;
 	font-weight: 300;
