@@ -14,7 +14,12 @@ class ArticelController extends Controller
     public function index(Request $request)
     {
         if($request->input('click_count') == 1){
-            $list = Articel::with('getComment')->with('user_account')->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")->orderBy('zan', 'desc')->where('show', '1')->paginate(20);
+            $list = Articel::with('getComment')
+                ->with('user_account')
+                ->orderByRaw("DATE_FORMAT(created_at, '%Y-%m-%d') desc")
+                ->orderBy('zan', 'desc')
+                ->where('show', '1')
+                ->paginate(20);
         }else{
             $list = Articel::with('getComment')
                 ->with('user_account')
@@ -23,6 +28,7 @@ class ArticelController extends Controller
                 ->where('show', '1')
                 ->paginate(20);
         }
+        dd($list);
         foreach($list as $item){
             $item->commentCount = count($item->getComment);
             $item->_created_at = Articel::getTimeAgo($item->created_at->__toString());
