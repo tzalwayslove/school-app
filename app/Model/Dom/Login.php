@@ -88,6 +88,7 @@ class Login
         }
 //        48
         $idCard = $table->filterXPath('//tr[48]/td[4]');
+
         if($idCard->count()){
             $info['id_card'] = $idCard->text();
             $info['yikatong_password'] = substr($info['id_card'], -6);
@@ -95,7 +96,7 @@ class Login
 
         User::where('account', $this->account)->update($info);
 
-        return true;
+        return $info;
     }
     public function getPage($url)
     {
