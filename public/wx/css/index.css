@@ -391,6 +391,13 @@ textarea{
 	font-weight: bold;
 	text-shadow: 0px -1px 1px #28897f;
 }
+.ts-fen-p-2{
+	color: #FFFFFF;
+	font-size: 18px;
+	margin: 10px;
+	text-align: center;
+	text-shadow: 0px -1px 1px #28897f;
+}
 .ts-fen-title{
 	text-align: center;
 	margin: 15px auto;
