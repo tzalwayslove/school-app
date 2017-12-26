@@ -22,6 +22,7 @@ fabu = Vue.component('chengji', function (success, error) {
                     xuefenjidian = 0;
                     xuefen = 0;
                     chengji = [];
+                    console.log('-----------------------');
                     for (i = 0, len = this.chengji.length; i < len; ++i) {
                         this.chengji[i].xuefen = Number(this.chengji[i].xuefen);
                         this.chengji[i].jidian = Number(this.chengji[i].jidian);
@@ -30,6 +31,7 @@ fabu = Vue.component('chengji', function (success, error) {
                         if(!this.inArray(chengji , this.chengji[i].kechengbianhao)){
                             chengji.push(this.chengji[i].kechengbianhao);
                             xuefen += this.chengji[i].xuefen;
+                            console.log(this.chengji[i].xuefen);
                         }
                     }
                     console.log(xuefen);
