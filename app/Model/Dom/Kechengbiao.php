@@ -44,7 +44,7 @@ class Kechengbiao extends Login
             'xnxq01id' => $xnxq01id
         ];
 
-        if ($p == 'all') {
+        if ($p != 'now') {
             unset($data['zc']);
         }
         return $data;
