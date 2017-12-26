@@ -149,7 +149,7 @@ textarea:-ms-input-placeholder
 	width: 100%;
 	margin-top: 20px;
 	margin-bottom: 50px;
-	box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
 	font-size: 14px;
 	color: #000000;
 	font-weight: 300;
@@ -343,13 +343,13 @@ textarea{
 }
 .kb-time-img-l{
 	margin: 10px;
-	float: left;
+	
 	max-height: 125px;
 }
 .kb-time-img-r{
 	margin: 20px 0;
 	max-height: 105px;
-	float: left;
+	
 }
 /*transcript样式表*/
 .gtg-img{
