@@ -286,8 +286,11 @@ class UserController extends Controller
                 'result'=>new Result(false, '请输入正确的id')
             ]);
         }
-
-        $chengji = new Chengji($user->account, $user->password);
+        try{
+            $chengji = new Chengji($user->account, $user->password);
+        }catch(LoginErrorException $e){
+            return redirect('wx/binding?user='.$user->id);
+        }
         return response()->json([
             'result'=>new Result(true),
             'options'=>$chengji->getOption()

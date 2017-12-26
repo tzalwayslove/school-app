@@ -111,6 +111,7 @@ class Chengji extends Login
                 $list[] = $option;
             }
         }*/
+
         $account = $this->account;
         $year = intval(substr($account, 0, 4));
         $now = intval(date('Y'));
