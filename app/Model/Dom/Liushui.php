@@ -25,8 +25,13 @@ class Liushui extends YikatongLogin
         $res = $this->getPage('/accounthisTrjn.action');
 
         $res = iconv('gbk', 'utf-8', $res);
-        dd($res);
         $dom = new Crawler($res);
+        $error = $dom->filterXPath('//p[@class="biaotou"]');
+
+        if($error->count()){
+            throw new LoginErrorException($error->text());
+        }
+
         $option = $dom->filterXPath('//select[@id="account"]/option[1]');
 
         if(!$option->count()){
