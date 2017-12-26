@@ -40,6 +40,7 @@
     setTimeout(function(){
         if(!$('#load').is(':hidden')){
             $('#load').hide();
+            $('#capt').attr('src', '/public/images/capt-not-found.png');
             alert('验证码加载失败了， 无法登陆， 请联系管理员');
         }
     }, 5000);
