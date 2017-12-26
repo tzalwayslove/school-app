@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>遇见</title>
+    <title>HUCinfo - 匿名社区</title>
     {{--<script src="{{ asset('public/wx/js/mui.min.js') }}"></script>--}}
     <script src="{{ asset('public/vendors/vue/vue.js') }}"></script>
     <script src="{{ asset('public/vendors/vue/vue-router.js') }}"></script>
