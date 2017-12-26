@@ -29,7 +29,6 @@ fabu = Vue.component('chengji', function (success, error) {
                         xuefen += this.chengji[i].xuefen;
                     }
 
-
                     return xuefen > 0
                         ? (xuefenjidian / xuefen).toFixed(2)
                         : 0;
@@ -56,7 +55,7 @@ fabu = Vue.component('chengji', function (success, error) {
                         } else {
                             $this.chengji = res.data.chengji;
                             $this.jige = $this.chengji.filter(function (item) {
-                                return item.chengji >= 60 || item.chengji.indexOf('不及格') == -1;
+                                return item.chengji >= 60 && item.chengji.indexOf('不及格') == -1;
                             });
                             $this.bujige = $this.chengji.filter(function (item) {
                                 return item.chengji < 60;
