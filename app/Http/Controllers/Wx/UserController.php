@@ -262,7 +262,7 @@ class UserController extends Controller
         $v = Validator::make($request->all(), $rules, $message);
         $v->validate();
 
-        $user = User::find(session('user')->id);
+        $user = User::find(User::getId(session('user')->id));
 
         $user->name = '';
         $user->id_card = '';
