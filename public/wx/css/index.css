@@ -392,7 +392,7 @@ textarea{
 .ts-fen-title{
 	text-align: center;
 	margin: 10px auto;
-	font-size: 16px;
+	font-size: 17px;
 	color: #32b9b2;
 	font-weight: 600px !important;
 	
@@ -572,7 +572,7 @@ table tr td{
 }
 .line-g{
 	margin:5px 6px;
-	width:70px;
+	width:80px;
 }
 .fw-6{
 	font-weight: 600px !important;
