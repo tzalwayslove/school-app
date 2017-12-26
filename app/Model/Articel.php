@@ -37,7 +37,7 @@ class Articel extends Model
         $articel->content = $content;
         $articel->cate = $cate;
         $articel->niming = $niming ? 1 : 0;
-        $articel->user = $user->id;
+        $articel->user = User::getId($user->id);
         $articel->save();
     }
 

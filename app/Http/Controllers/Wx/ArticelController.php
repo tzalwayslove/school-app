@@ -13,7 +13,6 @@ class ArticelController extends Controller
 {
     public function index(Request $request)
     {
-        DB::enableQueryLog();
         if($request->input('click_count') == 1){
             $list = Articel::with('getComment')
                 ->with('user_account')
@@ -43,7 +42,6 @@ class ArticelController extends Controller
     {
         $title = $request->input('title', false);
         $content = $request->input('content', false);
-        $user = $request->input('user');
 
         if(!$content){
             return response(['result'=>new Result(false, '内容必须填写')]);
