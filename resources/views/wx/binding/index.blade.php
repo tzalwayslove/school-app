@@ -19,7 +19,7 @@
     <img src="/public/wx/img/yj-m-logo.png" class="bind-logo-img" />
 </p>
 <div class="input-in">
-    学号:<input type="text" class="bind-input-style2" placeholder="请输入你的学号" id="account"/>
+    学号:<input type="text" class="bind-input-style" placeholder="请输入你的学号" id="account"/>
 </div>
 <div class="input-in">
     密码:<input type="text" class="bind-input-style2" placeholder="请输入教务处密码" id="password"/>

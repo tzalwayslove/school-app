@@ -551,18 +551,17 @@ textarea{
 	font-size: 16px;
 	line-height: 25px;
 }
-input.bind-input-style.bind-input-style{
+input.bind-input-style{
 	background-color:#32b9b2;
 	border:none;
 	margin: 0;
 	width: 65%;
 }
-input.bind-input-style.bind-input-style2{
-	background-color:#3cc4b6;
+input.bind-input-style2{
+	background-color:#32b9b2;
 	border:none;
 	margin: 0;
 	width: 65%;
-
 }
 .nm-lab2{
 	color: #FFFFFF;
