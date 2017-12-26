@@ -388,6 +388,7 @@ textarea{
 	font-size: 18px;
 	margin: 10px;
 	text-align: center;
+	font-weight: bold;
 	text-shadow: 0px -1px 1px #28897f;
 }
 .ts-fen-title{
