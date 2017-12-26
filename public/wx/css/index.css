@@ -423,6 +423,7 @@ textarea{
 	color: #FFFFFF;
 	margin-bottom: 2px;
 	text-shadow: 0px -1px 1px #28897f;
+	font-weight: bold;
 }
 .ts-fen-cj-p2{
 	font-size: 13px;
