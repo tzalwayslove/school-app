@@ -40,9 +40,10 @@ class Liushui extends YikatongLogin
             throw new noAccountException('没有一卡通账号!');
         }
 
-        $yue = $this->getPage('/pages/common/loginstudent.action');
-        dd($yue->__toString());
-
+        $str = $this->getPage('/pages/common/loginstudent.action');
+        $yue = iconv('gbk', 'utf-8', $str);
+        echo $yue;
+        die();
         $this->account = $option->attr('value');
         $this->postData('/accounthisTrjn1.action', [
             'account'=>$option->attr('value'),
