@@ -1,7 +1,7 @@
 <div class="mui-content-padded">
     <p class="xingming_xuehao">姓名:{{user_name}} 学号:{{account}}</p>
     <select name="" id="change" class="select-change-page" @change="changePage" v-model="selected">
-        <option value="" selected>当前为最新考试成绩(2017-2018-1),点此可选择相应学期</option>
+            <option value="" selected>当前为最新考试成绩(2017-2018-1),点此可选择相应学期</option>
         <option value="all">你的全部考试成绩</option>
         <option :value="option" v-for="option in options">{{option}}</option>
     </select>
@@ -26,7 +26,7 @@
         <a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
         <br /> -->
         <div >
-            <p>该成绩平时分占比为0</p>
+            <p class="ts-fen-cj-p3">该成绩平时分占比为0</p>
         </div>
     </div>
         <a class="ts-fen-cj-p ksxz">考试性质：{{item.kechengxingzhi}} - {{ item.kechengshuxing }} - {{ item.kaoshixingzhi }}</a>
