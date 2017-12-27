@@ -58,6 +58,7 @@
 <script src="{{ asset('public/vue/wode.js') }}"></script>
 <script src="{{ asset('public/vue/pinglun.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
+<script src="{{ asset('public/vendors/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('public/vue/reply.js') }}"></script>
 <script src="{{ asset('public/vue/jubao.js') }}"></script>
 
