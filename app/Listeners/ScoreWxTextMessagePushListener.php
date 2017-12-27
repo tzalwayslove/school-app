@@ -38,7 +38,9 @@ class ScoreWxTextMessagePushListener
         $wechatConfig = include 'wechatConfig.php';
         $app = new Application($wechatConfig);
 
-        $message = new Text('Hello world!');
+        $message = new Text([
+            'content'=>'Hello world!'
+        ]);
         $result = $app->customer_service->message($message)->to($user->open_id)->send();
 
         dd($result);
