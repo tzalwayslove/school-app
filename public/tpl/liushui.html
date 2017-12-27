@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="select">
-                <select name="" id="change" class="form-control" @change="changeData" v-model="selected">
+                <select name="" id="change" class="form-control select-change-page" @change="changeData" v-model="selected">
                     <option v-for="(value, key) in queryList" :value="key">{{ value.name }}</option>
                 </select>
             </div>
@@ -24,11 +24,11 @@
                     </tr>
                     <tr>
                         <td>{{ item.type }}</td>
-                        <td class="text-right">{{ item.xingming }}</td>
+                        <td style="text-align:right">{{ item.xingming }}</td>
                     </tr>
                     <tr>
                         <td>{{ item.shanghu }} {{ item.price }}</td>
-                        <td class="text-right">余额 ： <span class="text-danger" style="font-size: 20px;">¥{{ item.yue }}</span></td>
+                        <td style="text-align:right">当前余额 ： <span class="text-danger" style="font-size: 20px;">¥{{ item.yue }}</span></td>
                     </tr>
                 </table>
             </div>
