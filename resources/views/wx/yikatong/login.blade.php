@@ -69,7 +69,6 @@
 
     $('#capt').load(function(){
         $('#load').hide();
-
     });
 
     setTimeout(function(){
