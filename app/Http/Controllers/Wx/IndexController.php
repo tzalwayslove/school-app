@@ -83,6 +83,7 @@ class IndexController extends Controller
 
                                 return '匿名社区： <a href="' . url('/?user='.$user->id.'#/tiezi') . '">匿名社区</a>';
                             } else {
+                                Log::log($message->FromUserName.':: '. $message);
                                 try {
                                     $res = User::bind($message->FromUserName, $message);
                                     return $res;
