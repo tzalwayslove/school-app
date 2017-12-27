@@ -40,12 +40,13 @@ class score_push extends Command
      */
     public function handle()
     {
-        if (flock('score_push', LOCK_EX | LOCK_NB)) {
+        $t1 = microtime(true);
+        $offset = $this->argument('offset');
+        $limit = $this->argument('limit');
 
+        $f = fopen('score_push'.$limit.$offset.'.lock', 'w');
 
-            $t1 = microtime(true);
-            $offset = $this->argument('offset');
-            $limit = $this->argument('limit');
+        if (flock($f, LOCK_EX | LOCK_NB)) {
 
             $users = User::offset($offset)->limit($limit)->get();
 
