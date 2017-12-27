@@ -274,6 +274,7 @@ class UserController extends Controller
         try{
             $user->getInfo();
             session(null);
+            session(['cookie_jar'=>null]);
         }catch(LoginErrorException $e){
             return [
                 'result' => new Result(false, '用户名或密码错误', -2)
