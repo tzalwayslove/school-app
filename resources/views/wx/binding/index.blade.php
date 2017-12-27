@@ -56,8 +56,10 @@
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
 <script>
     $(function(){
+
         $('input').on('focus', function(){
-            $('.fix-bott').hide()
+            $('.fix-bott').hide();
+            $('#info').removeClass('error').addClass('info').html('您尚未绑定，请先进行绑定即可开启你的教务旅程');
         });
         $('input').on('blur', function(){
             $('.fix-bott').show()
