@@ -18,7 +18,17 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="item" v-for="(item, index) in liushui">
-                {{ item.created_at }} {{ item.xingming }} {{ item.type }} {{ item.shanghu }}{{ item.price }} -余额- ： {{ item.yue }}
+                <table class="table">
+                    <tr>
+                        <td>{{ item.created_at }}</td>
+                        <td>{{ item.xingming }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ item.type }}</td>
+                        <td>{{ item.shanghu }} {{ item.price }} 余额 ： {{ item.yue }}</td>
+                    </tr>
+                </table>
+
             </div>
         </div>
     </div>
