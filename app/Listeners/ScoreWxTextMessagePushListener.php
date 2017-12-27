@@ -42,7 +42,7 @@ class ScoreWxTextMessagePushListener
             'content'=>'Hello world!'
         ]);
 
-//        $result = $app->customer_service->message($message)->to($user->open_id)->send();
-//        dd($result);
+        $result = $app->customer_service->message($message)->to($user->open_id)->send();
+
     }
 }
