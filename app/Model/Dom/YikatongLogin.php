@@ -28,8 +28,13 @@ class YikatongLogin
         $this->passwrod = $password;
 
         if(session('isLogin') && session('cookie_jar')){
-            $jar = unserialize(session('cookie_jar')) ? unserialize(session('cookie_jar')) : session('cookie_jar');
-            $jar = $jar ? $jar : new CookieJar();
+            if(is_string(session('cookie_jar'))){
+                $jar = unserialize(session('cookie_jar'));
+            }else if( is_object(session('cookie_jar'))){
+                $jar = session('cookie_jar');
+            }else{
+                $jar = new CookieJar();
+            }
         }else{
             $jar = new CookieJar();
         }
