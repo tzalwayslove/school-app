@@ -269,8 +269,8 @@ class UserController extends Controller
         $user->yikatong_password = '';
         $user->account = $request->input('account');
         $user->password = $request->input('password');
-        $user->save();
 
+        $user->save();
         try{
             $user->getInfo();
         }catch(LoginErrorException $e){
