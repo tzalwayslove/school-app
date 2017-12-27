@@ -53,6 +53,7 @@ class score_push extends Command
                     // 推送成绩
                     event(new ScoreWxTextMessagePush($user, $list));
                     $user->score_md5 = $md5;
+                    dd($user);
                     $user->save();
                 }
             }catch(\Exception $e){
