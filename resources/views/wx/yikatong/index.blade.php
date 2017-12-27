@@ -17,7 +17,7 @@
             border-left-color: #aa6708;
         }
         .select{
-            padding-top: 20px;
+            padding: 20px 0;
         }
         .button-wrap{
             padding: 20px 0
