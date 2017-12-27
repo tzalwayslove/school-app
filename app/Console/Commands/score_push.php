@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Events\ScoreWxTextMessagePush;
 use App\Model\Dom\Chengji;
 use App\Model\User;
 use Illuminate\Console\Command;
@@ -40,13 +41,26 @@ class score_push extends Command
     public function handle()
     {
         $users = User::all();
-        $send = [];
         foreach($users as $user){
             try{
-
+                if(!$user->account || !$user->password){
+                    continue;
+                }
+                $chengji = new Chengji($user->account, $user->password);
+                $list = $chengji->getChengji();
+                $md5 = json_encode($list, JSON_UNESCAPED_UNICODE);
+                if($user->score_md5 != $md5){
+                    //推送成绩
+                    event(new ScoreWxTextMessagePush($user, $list));
+                    $user->score_md5 = $md5;
+                    $user->save();
+                }
             }catch(\Exception $e){
-
+                continue;
             }
+        }
+        if(!empty($send)){
+
         }
 
     }

@@ -23,25 +23,6 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
-     /*$kaochang = new \App\Model\Dom\Kaochang('201637025002', 'liuxuemin123');
-     $kaochang->getQueryData();*/
-     /*$chengji = new \App\Model\Dom\Chengji('201723045019', 'smyqueen980818');
-     $chengji->getChengji();*/
-
-     /*$pingjiao = new \App\Model\Dom\Pingjiao('201723045019', 'smyqueen980818');
-     $pingjiao->pingjiao();*/
-
-     /*$chengji = new \App\Model\Dom\Chengji('201637025002', 'liuxuemin123');
-     $res = $chengji->getChengji();
-     dd($res);*/
-//     $renxing = new \App\Model\Dom\RenxingLogin('rxwudanqian', 'wudanqian');
-//    $renxing->dingdan();
-
-//    $user = \App\Model\User::where('open_id', 'ocDq7wTnH5dh9n09aNxRV0jrc05c')->first();
-//    return view('wx.binding.index');
-
-    $yikatong = \App\Model\Dom\Liushui::getSelectDate();
-    dd($yikatong);
 
 });
 Route::group([
@@ -91,7 +72,6 @@ Route::group([
 
         return view('wx.chengji.index')->withUser($request->input('user'))->withInfo($info);
     });
-
     Route::get('/chengji_all', function (\Illuminate\Http\Request $request) {
         $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
@@ -101,7 +81,6 @@ Route::group([
         }
         return view('wx.chengji_all.index')->withUser($request->input('user'))->withInfo($info);
     });
-
     Route::get('/kecheng', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
@@ -111,7 +90,6 @@ Route::group([
         }
         return view('wx.kecheng.index')->withRequest($request)->withUser($user)->withInfo($info);
     });
-
     Route::get('/kaochang', function(\Illuminate\Http\Request $request){
         $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
@@ -122,12 +100,10 @@ Route::group([
 
         return view('wx.kaochang.index')->withUser($request->input('user'))->withInfo($info);
     });
-
     Route::get('/binding', function(\Illuminate\Http\Request $request){
         $userId = $request->input('user');
         return view('wx.binding.index', compact('userId'));
     });
-
     Route::post('/binding', 'UserController@binding');
     Route::get('/bind-success', function(){
         return view('wx.binding.success');
@@ -149,8 +125,6 @@ Route::group([
         Route::post('liushui', 'YikatongController@getData');
         Route::get('reLogin', 'YikatongController@reLogin');
     });
-
-
 });
 
 Route::get('/wx/yikatongCode', function(){
