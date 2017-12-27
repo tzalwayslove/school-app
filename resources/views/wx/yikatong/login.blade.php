@@ -63,12 +63,13 @@
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
 
 <script>
+    $('#load').on('click', function(){
+        $('#load').attr('src', $('#load').attr('src') + Math.random());
+    });
+
     $('#capt').load(function(){
         $('#load').hide();
-        $('#load').on('click', function(){
-            console.log(11111);
-            $('#load').attr('src', $('#load').attr('src') + Math.random());
-        });
+
     });
 
     setTimeout(function(){
