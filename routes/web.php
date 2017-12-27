@@ -200,7 +200,8 @@ Route::get('wx_menu', function(){
                 ],
             ],
         ],*/
-    $menu->add($buttons);
+    $res = $menu->add($buttons);
+    dd($res);
 });
 Auth::routes();
 
