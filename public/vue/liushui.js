@@ -79,7 +79,6 @@ fabu = Vue.component('liushui', function (success, error) {
                 this.jiazai = true;
                 $this = this;
                 axios.get('/wx/yikatong/queryList?user=' + this.user).then(function(res){
-                    $this.jiazai = false;
                     $this.queryList =res.data;
                 });
                 this.getData(0);
