@@ -43,8 +43,6 @@ class IndexController extends Controller
                             break;
                         case 'text':
                             if (strpos($message->Content, '绑定') !== false) {
-                                /*User::createInit($message->FromUserName);
-                                return '请输入您的学号:';*/
                                 $user = User::storeUser($message->FromUserName);
                                 return '点击<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                             } else if (strpos($message->Content, '考场') !== false) {
