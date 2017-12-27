@@ -87,7 +87,7 @@ class IndexController extends Controller
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id. '&time='.time()) . '">‘绑定’</a>进行绑定操作。';
                                 }
                                 return '<a href="' . url('/wx/yikatong/login?user=' . $user->id) . '">‘一卡通’</a>';
                             }else {
