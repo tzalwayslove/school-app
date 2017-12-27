@@ -50,7 +50,7 @@ class score_push extends Command
                 $list = $chengji->getChengji();
                 $md5 = json_encode($list, JSON_UNESCAPED_UNICODE);
                 if($user->score_md5 != $md5){
-                    //推送成绩
+                    // 推送成绩
                     event(new ScoreWxTextMessagePush($user, $list));
                     $user->score_md5 = $md5;
                     $user->save();

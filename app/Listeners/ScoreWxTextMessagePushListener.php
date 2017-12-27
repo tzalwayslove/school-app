@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Events\ScoreWxTextMessagePush;
 use EasyWeChat\Foundation\Application;
+use EasyWeChat\Message\Text;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -37,5 +38,9 @@ class ScoreWxTextMessagePushListener
         $wechatConfig = include 'wechatConfig.php';
         $app = new Application($wechatConfig);
 
+        $message = new Text('Hello world!');
+        $result = $app->customer_service->message($message)->to($user->open_id)->send();
+
+        dd($result);
     }
 }
