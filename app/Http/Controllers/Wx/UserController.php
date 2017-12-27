@@ -273,6 +273,7 @@ class UserController extends Controller
         $user->save();
         try{
             $user->getInfo();
+            session(['user'=>null]);
         }catch(LoginErrorException $e){
             return [
                 'result' => new Result(false, '用户名或密码错误', -2)
