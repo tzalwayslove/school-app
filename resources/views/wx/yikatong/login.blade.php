@@ -65,7 +65,9 @@
 <script>
     $('#capt').load(function(){
         $('#load').hide();
-        $('#load').attr('href', $('#load').attr('href') + Math.random());
+        $('#load').on('click', function(){
+            $('#load').attr('href', $('#load').attr('href') + Math.random());
+        });
     });
 
     setTimeout(function(){
