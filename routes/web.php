@@ -32,6 +32,7 @@ Route::get('test', function(){
     ]);
 
     dd($app->customer_service);
+
     $result = $app->customer_service->message($message)->to('olIXMw6TGnalYlQ8yWCSv76dMnnM')->send();
     dd($result);
 });
