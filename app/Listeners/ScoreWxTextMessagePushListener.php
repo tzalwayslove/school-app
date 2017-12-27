@@ -42,7 +42,7 @@ class ScoreWxTextMessagePushListener
             'content'=>'<a href="' . url('/wx/chengji?user=' . $user->id) . '">您有新的成绩信息， 请点击查看</a>'
         ]);
 
-        $app->staff->message($message)->to('olIXMw6TGnalYlQ8yWCSv76dMnnM')->send();
+        $app->staff->message($message)->to($user->open_id)->send();
 
     }
 }
