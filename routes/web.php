@@ -140,7 +140,7 @@ Route::get('/wx/yikatongCode', function(){
 
 Route::get('wx_menu', function(){
     $option = require 'wechatConfig.php';
-
+    dd($option);
     $app = new Application($option);
     $menu = $app->menu;
     $buttons = [
