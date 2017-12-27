@@ -30,7 +30,7 @@ Route::get('test', function(){
 
 
     $message = new Text([
-        'content'=>'Hello world!'
+        'content'=>'<a href="http://www.baidu.com">Hello Baidu.com</a>'
     ]);
     $result = $app->staff->message($message)->to('olIXMw6TGnalYlQ8yWCSv76dMnnM')->send();
 

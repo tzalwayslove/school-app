@@ -39,10 +39,10 @@ class ScoreWxTextMessagePushListener
         $app = new Application($wechatConfig);
 
         $message = new Text([
-            'content'=>'Hello world!'
+            'content'=>'<a href="http://www.baidu.com">Hello Baidu.com</a>'
         ]);
 
-        $result = $app->customer_service->message($message)->to($user->open_id)->send();
+        $app->staff->message($message)->to('olIXMw6TGnalYlQ8yWCSv76dMnnM')->send();
 
     }
 }
