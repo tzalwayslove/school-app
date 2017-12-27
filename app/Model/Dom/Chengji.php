@@ -25,7 +25,8 @@ class Chengji extends Login
         '期末成绩'=>'qimochengji',
         '期末成绩比例'=>'qimochengjibili',
         '总成绩'=>'zongchengji',
-        '期末卷成绩'=>'qimochengji'
+        '期末卷成绩'=>'qimochengji',
+        '期末卷成绩比例'=>'qimochengjibili'
     ];
 
     /**
