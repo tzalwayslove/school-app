@@ -19,15 +19,17 @@
         </div>
         <br /> 
       <div class="ts-fen-m" >
-        <!-- <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
-        <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
-        <br />
-        <a class="ts-fen-cj-p2">卷面分：{{ item.chengji_info.qimochengji }}</a>
-        <a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
-        <br /> -->
-        
-            <p class="ts-fen-cj-p3">该成绩平时分占比为0。</p>
-        
+          <template v-if="item.jidian != 0">
+               <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
+                      <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
+                      <br />
+                      <a class="ts-fen-cj-p2">卷面分：{{ item.chengji_info.qimochengji }}</a>
+                      <a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
+                      <br />
+          </template>
+          <template v-if="item.jidian == 0">
+              <p class="ts-fen-cj-p3">该成绩平时分占比为0。</p>
+          </template>
     </div>
         <a class="ts-fen-cj-p ksxz">考试性质：{{item.kechengxingzhi}} - {{ item.kechengshuxing }} - {{ item.kaoshixingzhi }}</a>
     </div>
