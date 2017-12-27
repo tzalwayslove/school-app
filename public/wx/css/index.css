@@ -234,8 +234,8 @@ textarea{
 	width: 100%;;
 	float: left;
 	text-align: center;
-	background-image: url(../img/bg-wode.png);
-
+	background-image: url(/public/images/bg3.png);
+	background-size: 100%;
 }
 .box2-t a{
 	color: #FFFFFF;
@@ -675,4 +675,7 @@ p.weui-toast__content{
 }
 .mui-table-view-cell > a:not(.mui-btn){
 	font-size: 15px;
+}
+.xingming_xuehao{
+	/*padding-left: 10px;*/
 }

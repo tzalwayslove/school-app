@@ -1,7 +1,7 @@
 <div class="mui-content-padded">
-    <p class="xingming_xuehao">姓名：{{user_name}} 学号：{{account}}</p>
+    <p class="xingming_xuehao">姓名:{{user_name}} 学号:{{account}}</p>
     <select name="" id="change" class="select-change-page" @change="changePage" v-model="selected">
-        <option value="" selected>点击此处可选择相应学期，当前为最新考试成绩</option>
+        <option value="" selected>当前为最新考试成绩(2017-2018-1),点此可选择相应学期</option>
         <option value="all">你的全部考试成绩</option>
         <option :value="option" v-for="option in options">{{option}}</option>
     </select>

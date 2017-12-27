@@ -91,7 +91,7 @@ class UserController extends Controller
         $login_name = $user->account;
         $password = $user->password;
 
-        try {
+
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->all();
             $data = [];
@@ -104,7 +104,7 @@ class UserController extends Controller
                 'result' => new Result($res),
                 'chengji' => $data
             ]);
-        } catch (RequestException $e) {
+        try {} catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
@@ -262,17 +262,18 @@ class UserController extends Controller
         $v = Validator::make($request->all(), $rules, $message);
         $v->validate();
 
-        $user = User::find(session('user')->id);
+        $user = User::find(User::getId(session('user')->id));
 
         $user->name = '';
         $user->id_card = '';
         $user->yikatong_password = '';
         $user->account = $request->input('account');
         $user->password = $request->input('password');
-        $user->save();
 
+        $user->save();
         try{
             $user->getInfo();
+            session(['user'=>null]);
         }catch(LoginErrorException $e){
             return [
                 'result' => new Result(false, '用户名或密码错误', -2)
