@@ -43,9 +43,8 @@ class score_push extends Command
         $t1 = microtime(true);
         $offset = $this->argument('offset');
         $limit = $this->argument('limit');
-        dd($offset, $limit);
 
-        $users = User::offset(10)->limit(5)->get();
+        $users = User::offset($offset)->limit($limit)->get();
 
         foreach($users as $user){
             try{
