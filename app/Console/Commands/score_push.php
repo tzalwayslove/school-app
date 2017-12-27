@@ -46,6 +46,7 @@ class score_push extends Command
 
         $users = User::offset($offset)->limit($limit)->get();
 
+        dd($users->count());
         foreach($users as $user){
             try{
                 if(!$user->account || !$user->password){
