@@ -39,7 +39,7 @@ class ScoreWxTextMessagePushListener
         $app = new Application($wechatConfig);
 
         $message = new Text([
-            'content'=>'<a href="' . url('/wx/chengji?user=' . $user->id) . '">您有新的成绩信息， 请点击查看</a>'
+            'content'=>'<a href="http://www.hucinfo.com/wx/chengji?user=' . $user->id . '">您有新的成绩信息， 请点击查看</a>'
         ]);
 
         $app->staff->message($message)->to($user->open_id)->send();
