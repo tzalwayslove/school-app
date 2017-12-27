@@ -54,7 +54,7 @@ class YikatongController extends Controller
 
             return [
                 'result'=>new Result(true),
-                'target'=>session('target')
+                'target'=>session('target') ? session('target') : url('/yikatong/liushui?user='. $request->input('user'))
             ];
         }catch(LoginErrorException $e){
             return [
