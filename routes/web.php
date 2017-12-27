@@ -77,7 +77,7 @@ Route::group([
         try{
             $info = $user->getInfo();
         }catch(\App\Exceptions\LoginErrorException $e){
-            return redirect('wx/binding?user='.$request->input('user'));
+            return redirect('wx/binding?user='.$request->input('user'). '&error=用户名或密码错误');
         }
         return view('wx.chengji_all.index')->withUser($request->input('user'))->withInfo($info);
     });
@@ -86,7 +86,7 @@ Route::group([
         try{
             $info = $user->getInfo();
         }catch(\App\Exceptions\LoginErrorException $e){
-            return redirect('wx/binding?user='.$request->input('user'));
+            return redirect('wx/binding?user='.$request->input('user'). '&error=用户名或密码错误');
         }
         return view('wx.kecheng.index')->withRequest($request)->withUser($user)->withInfo($info);
     });
@@ -94,7 +94,7 @@ Route::group([
         $user = \App\Model\User::find(\App\Model\User::getId($request->input('user')));
         try{
             $info = $user->getInfo();
-        }catch(\App\Exceptions\LoginErrorException $e){
+        } catch (\App\Exceptions\LoginErrorException $e){
             return redirect('wx/binding?user='.$request->input('user'));
         }
 

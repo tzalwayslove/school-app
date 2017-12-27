@@ -43,8 +43,10 @@ class IndexController extends Controller
                             break;
                         case 'text':
                             if (strpos($message->Content, '绑定') !== false) {
-                                User::createInit($message->FromUserName);
-                                return '请输入您的学号:';
+                                /*User::createInit($message->FromUserName);
+                                return '请输入您的学号:';*/
+                                $user = User::storeUser($message->FromUserName);
+                                return '点击<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                             } else if (strpos($message->Content, '考场') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
@@ -83,13 +85,13 @@ class IndexController extends Controller
 
                                 return '匿名社区： <a href="' . url('/?user='.$user->id.'#/tiezi') . '">匿名社区</a>';
                             } else {
-                                Log::log($message->FromUserName.':: '. $message);
-                                try {
-                                    $res = User::bind($message->FromUserName, $message);
-                                    return $res;
-                                } catch (userNotFountException $e) {
-                                    return '输入绑定即可进入绑定流程';
-                                }
+//                                try {
+//                                    $res = User::bind($message->FromUserName, $message);
+//                                    return $res;
+//                                } catch (userNotFountException $e) {
+//                                    return '输入绑定即可进入绑定流程';
+//                                }
+                                return '输入绑定， 进行绑定操作';
                             }
                             break;
                         case 'image':
