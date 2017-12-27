@@ -91,7 +91,7 @@ class UserController extends Controller
         $login_name = $user->account;
         $password = $user->password;
 
-        try {
+
             $chengji = new Chengji($login_name, $password);
             $res = $chengji->all();
             $data = [];
@@ -104,7 +104,7 @@ class UserController extends Controller
                 'result' => new Result($res),
                 'chengji' => $data
             ]);
-        } catch (RequestException $e) {
+        try {} catch (RequestException $e) {
             return response([
                 'result' => new Result(false, '请求校原网络超时或传输失败')
             ]);
