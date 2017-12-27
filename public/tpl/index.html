@@ -32,7 +32,7 @@
                     <p class="yj-box-main" @click="getComment(item)">{{item.content}}</p>
                     <div style="width: 92%; margin-left:4%; height: 1px;background: #ddd;"></div>
 
-                    <a href="#point-caq">
+                    <a href="javascript:;" id='show-actions' class="weui-btn weui-btn_primary">
                         <img src="/public/wx/img/icon-point.png" class="imgicon" style="margin:20px 20px 10px;"/>
                     </a>
 
@@ -60,3 +60,19 @@
         </div>
     </div>
 </div>
+<script>
+        $(document).on("click", "#show-actions", function() {
+          $.actions({
+  
+            actions: [
+              {
+                text: "举报",
+                className: "color-primary",
+                onClick: function() {
+                  $.alert("举报成功");
+                }
+              },
+            ]
+          });
+        });
+      </script>
