@@ -612,6 +612,11 @@ table tr td{
 	text-align: center;
 	line-height: 1.42;
 }
+.table tr td{
+	width: 12.5%;
+	text-align: left;
+	line-height: 1.42;
+}
 .kc-m-tit{
 	text-align: center;
 	font-size: 18px;
