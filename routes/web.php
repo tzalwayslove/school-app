@@ -27,8 +27,6 @@ Route::get('test', function(){
     $wechatConfig = include 'wechatConfig.php';
     $app = new Application($wechatConfig);
 
-
-
     $message = new Text([
         'content'=>'<a href="http://www.baidu.com">Hello Baidu.com</a>'
     ]);
