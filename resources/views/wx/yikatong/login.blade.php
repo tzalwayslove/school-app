@@ -69,7 +69,7 @@
     $('#capt').load(function(){
         $('#load').hide();
         $('#capt').on('click', function(){
-            $('#capt').attr('src', $('#capt').attr('src') + "?num="+Math.random());
+            $('#capt').attr('src',  "{{ url('/wx/yikatongCode') }}?num="+Math.random());
             $('#load').show();
         });
     });
