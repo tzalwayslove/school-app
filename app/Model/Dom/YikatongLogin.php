@@ -33,6 +33,8 @@ class YikatongLogin
             $jar = new CookieJar();
         }
 
+        dd($jar);
+
         $this->jar = $jar;
         $this->client = new Client();
         if(!session('isLogin')){
