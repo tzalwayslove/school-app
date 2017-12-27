@@ -40,7 +40,6 @@
 <p style="text-align:center;">
 {{ csrf_field() }}
     <img src="{{ url('/wx/yikatongCode') }}" alt="" id="capt">
-{{--    <img src="{{ url('/public/images/cropper.jpg') }}" alt="" id="capt" height="30px">--}} 
 </p>
 <div class="input-in">
      <input type="number" name="code" placeholder="按图示输入验证码" maxlength="2" id="code" class="bind-input-style" >
@@ -64,9 +63,15 @@
 <script src="{{ asset('/public/js/jquery-laravel-ajax.js') }}"></script>
 
 <script>
+    $('#capt').on('click', function(){
+        $('#capt').attr('src', $('#capt').attr('src') + "?num="+Math.random());
+        $('#load').show();
+    });
+
     $('#capt').load(function(){
         $('#load').hide();
     });
+
     setTimeout(function(){
         if(!$('#load').is(':hidden')){
             $('#load').hide();
