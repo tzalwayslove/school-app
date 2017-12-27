@@ -66,7 +66,8 @@
     $('#capt').load(function(){
         $('#load').hide();
         $('#load').on('click', function(){
-            $('#load').attr('href', $('#load').attr('href') + Math.random());
+            console.log(11111);
+            $('#load').attr('src', $('#load').attr('src') + Math.random());
         });
     });
 
