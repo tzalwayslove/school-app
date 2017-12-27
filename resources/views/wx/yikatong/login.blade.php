@@ -56,7 +56,6 @@
     <img src="/public/wx/img/bind-j-r.png" class="bind-j">
 </p>
     <p class="fix-bott-p">Copyright © 2018 遇见商大Pro</p>
-    <p>{{ url('/wx/yikatongCode') }}</p>
 </div>
 
 <div id="load">正在加载</div>
