@@ -27,13 +27,13 @@ Route::get('test', function(){
     $wechatConfig = include 'wechatConfig.php';
     $app = new Application($wechatConfig);
 
+
+
     $message = new Text([
         'content'=>'Hello world!'
     ]);
-    dd(1);
-    dd($app->customer_service);
+    $result = $app->staff->message($message)->to('olIXMw6TGnalYlQ8yWCSv76dMnnM')->send();
 
-    $result = $app->customer_service->message($message)->to('olIXMw6TGnalYlQ8yWCSv76dMnnM')->send();
     dd($result);
 });
 Route::group([
