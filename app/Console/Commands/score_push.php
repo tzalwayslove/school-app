@@ -14,14 +14,14 @@ class score_push extends Command
      *
      * @var string
      */
-    protected $signature = 'score:push';
+    protected $signature = 'score:push {limit} {offset}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '用来推送成绩';
+    protected $description = '用来推送成绩, 参数1 limit 参数2 offset';
 
     /**
      * Create a new command instance.
@@ -41,7 +41,12 @@ class score_push extends Command
     public function handle()
     {
         $t1 = microtime(true);
-        $users = User::all();
+        $offset = $this->argument('offset');
+        $limit = $this->argument('limit');
+        dd($offset, $limit);
+
+        $users = User::offset(10)->limit(5)->get();
+
         foreach($users as $user){
             try{
                 if(!$user->account || !$user->password){
