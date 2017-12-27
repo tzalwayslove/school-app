@@ -28,7 +28,7 @@ class ScoreWxTextMessagePushListener
      */
     public function handle(ScoreWxTextMessagePush $event)
     {
-        
+
         $user = $event->user;
         $list = $event->list;
 
@@ -36,7 +36,7 @@ class ScoreWxTextMessagePushListener
             return;
         }
 
-        $wechatConfig = include 'wechatConfig.php';
+        $wechatConfig = include '/www/school/wechatConfig.php';
         $app = new Application($wechatConfig);
 
         $message = new Text([
