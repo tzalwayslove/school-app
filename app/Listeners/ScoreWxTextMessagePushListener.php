@@ -35,7 +35,7 @@ class ScoreWxTextMessagePushListener
             return;
         }
 
-        dd($user);
+        dd($user->open_id);
         $wechatConfig = include 'wechatConfig.php';
         $app = new Application($wechatConfig);
 
