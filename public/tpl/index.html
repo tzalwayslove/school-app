@@ -25,7 +25,7 @@
                         <span>某同学·{{item._user_account.sex == 1 ?'男':'女'}}</span>
                         </template>
                         <template v-if="item.niming != 1">
-                            <span style="height: 16px;font-size:16px;">111{{ item._user_account.nick_name}}</span>
+                            <span style="height: 16px;font-size:16px;">{{ item._user_account.nick_name}}</span>
                         </template>
                         <a style="float: right;font-size: 16px;margin-right: 10px;color: #a7a7a7;">{{item._created_at}}</a>
                     </p>
