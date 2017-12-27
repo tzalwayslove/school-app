@@ -28,6 +28,7 @@ class ScoreWxTextMessagePushListener
      */
     public function handle(ScoreWxTextMessagePush $event)
     {
+        
         $user = $event->user;
         $list = $event->list;
 

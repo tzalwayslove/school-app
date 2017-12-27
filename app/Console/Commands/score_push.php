@@ -14,14 +14,14 @@ class score_push extends Command
      *
      * @var string
      */
-    protected $signature = 'score:push';
+    protected $signature = 'score:push {limit=1000} {offset=0}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = '用来推送成绩';
+    protected $description = '用来推送成绩, 参数1 limit 参数2 offset';
 
     /**
      * Create a new command instance.
@@ -40,7 +40,13 @@ class score_push extends Command
      */
     public function handle()
     {
-        $users = User::all();
+        $t1 = microtime(true);
+        $offset = $this->argument('offset');
+        $limit = $this->argument('limit');
+
+        $users = User::offset($offset)->limit($limit)->get();
+
+        dd($users);
         foreach($users as $user){
             try{
                 if(!$user->account || !$user->password){
@@ -60,9 +66,9 @@ class score_push extends Command
                 continue;
             }
         }
-        if(!empty($send)){
-
-        }
-
+        $t2 = microtime(true);
+        echo '耗时'.round($t2-$t1,3).'秒<br>';
+        echo 'Now memory_get_usage: ' . memory_get_usage() / 1000 . "Kb\n";
+        return 1;
     }
 }
