@@ -40,6 +40,7 @@ class score_push extends Command
      */
     public function handle()
     {
+        $t1 = microtime(true);
         $users = User::all();
         foreach($users as $user){
             try{
@@ -60,9 +61,9 @@ class score_push extends Command
                 continue;
             }
         }
-        if(!empty($send)){
-
-        }
+        $t2 = microtime(true);
+        echo '耗时'.round($t2-$t1,3).'秒<br>';
+        echo 'Now memory_get_usage: ' . memory_get_usage() . "\n";
 
     }
 }
