@@ -14,7 +14,7 @@ class score_push extends Command
      *
      * @var string
      */
-    protected $signature = 'score:push {limit} {offset}';
+    protected $signature = 'score:push {limit=1000} {offset=0}';
 
     /**
      * The console command description.
