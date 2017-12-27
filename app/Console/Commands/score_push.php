@@ -40,33 +40,39 @@ class score_push extends Command
      */
     public function handle()
     {
-        $t1 = microtime(true);
-        $offset = $this->argument('offset');
-        $limit = $this->argument('limit');
+        if (flock('score_push', LOCK_EX | LOCK_NB)) {
 
-        $users = User::offset($offset)->limit($limit)->get();
 
-        foreach($users as $user){
-            try{
-                if(!$user->account || !$user->password){
+            $t1 = microtime(true);
+            $offset = $this->argument('offset');
+            $limit = $this->argument('limit');
+
+            $users = User::offset($offset)->limit($limit)->get();
+
+            foreach ($users as $user) {
+                try {
+                    if (!$user->account || !$user->password) {
+                        continue;
+                    }
+                    $chengji = new Chengji($user->account, $user->password);
+                    $list = $chengji->getChengji();
+                    $md5 = md5(json_encode($list, JSON_UNESCAPED_UNICODE));
+                    if ($user->score_md5 != $md5) {
+                        // 推送成绩
+                        event(new ScoreWxTextMessagePush($user, $list));
+                        $user->score_md5 = $md5;
+                        $user->save();
+                    }
+                } catch (\Exception $e) {
                     continue;
                 }
-                $chengji = new Chengji($user->account, $user->password);
-                $list = $chengji->getChengji();
-                $md5 = md5(json_encode($list, JSON_UNESCAPED_UNICODE));
-                if($user->score_md5 != $md5){
-                    // 推送成绩
-                    event(new ScoreWxTextMessagePush($user, $list));
-                    $user->score_md5 = $md5;
-                    $user->save();
-                }
-            }catch(\Exception $e){
-                continue;
             }
+            $t2 = microtime(true);
+            echo '耗时' . round($t2 - $t1, 3) . '秒<br>';
+            echo 'Now memory_get_usage: ' . memory_get_usage() / 1000 . "Kb\n";
+            return 0;
+        }else{
+            return 1;
         }
-        $t2 = microtime(true);
-        echo '耗时'.round($t2-$t1,3).'秒<br>';
-        echo 'Now memory_get_usage: ' . memory_get_usage() / 1000 . "Kb\n";
-        return 1;
     }
 }
