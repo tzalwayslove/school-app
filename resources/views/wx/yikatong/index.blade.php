@@ -14,7 +14,7 @@
             border: 1px solid #eee;
             border-left-width: 5px;
             border-radius: 3px;
-            border-left-color: #aa6708;
+            border-left-color: #359c30;
         }
         .select{
             padding: 20px 0;
