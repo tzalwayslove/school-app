@@ -48,7 +48,7 @@ class score_push extends Command
                 }
                 $chengji = new Chengji($user->account, $user->password);
                 $list = $chengji->getChengji();
-                $md5 = json_encode($list, JSON_UNESCAPED_UNICODE);
+                $md5 = md5(json_encode($list, JSON_UNESCAPED_UNICODE));
                 if($user->score_md5 != $md5){
                     // 推送成绩
                     event(new ScoreWxTextMessagePush($user, $list));
