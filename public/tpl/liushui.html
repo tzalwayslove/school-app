@@ -29,7 +29,9 @@
                         <td class="text-right">余额 ： <span class="text-danger">{{ item.yue }}</span></td>
                     </tr>
                 </table>
-
+            </div>
+            <div class="item" v-if="liushui.length<1">
+                <p>暂无消费信息</p>
             </div>
         </div>
     </div>
