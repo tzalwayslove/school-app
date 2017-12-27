@@ -57,7 +57,7 @@ class score_push extends Command
                     $user->save();
                 }
             }catch(\Exception $e){
-                dd($e->getMessage());
+                dd($e->getMessage(). 'file:'. $e->getFile(). ' line:'.$e->getLine());
                 continue;
             }
         }
