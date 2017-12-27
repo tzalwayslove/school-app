@@ -1,5 +1,6 @@
 <?php
 use EasyWeChat\Foundation\Application;
+use EasyWeChat\Message\Text;
 
 Route::get('/', function () {
     $user = session('user');
@@ -23,7 +24,14 @@ Route::post('code', 'Admin\CodeController@gettable');
 Route::put('code', 'Admin\CodeController@settable');
 
 Route::get('test', function(){
+    $wechatConfig = include 'wechatConfig.php';
+    $app = new Application($wechatConfig);
 
+    $message = new Text([
+        'content'=>'Hello world!'
+    ]);
+
+    $result = $app->customer_service->message($message)->to('olIXMw6TGnalYlQ8yWCSv76dMnnM')->send();
 });
 Route::group([
     'prefix'=>'admin',
