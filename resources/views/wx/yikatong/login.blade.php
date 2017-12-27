@@ -64,7 +64,7 @@
 
 <script>
     $('#capt').on('click', function(){
-        $('#capt').attr('src', $('#capt').attr('src') + Math.random());
+        $('#capt').attr('src', $('#capt').attr('src') + "?num="+Math.random());
     });
 
     $('#capt').load(function(){
