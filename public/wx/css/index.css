@@ -235,6 +235,7 @@ textarea{
 	float: left;
 	text-align: center;
 	background-image: url(/public/images/bg3.png);
+	background-repeat:no-repeat;
 	background-size: 100%;
 }
 .box2-t a{
@@ -269,6 +270,7 @@ textarea{
 	float: left;
 	width: 100%;
 	height:350px;
+	margin-bottom: 40px;
 }
 .headtop{
 	background: #3cc4b6;

@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>遇见 @ 一卡通流水</title>
+    <title>一卡通查询@遇见商大Pro</title>
     <link rel="stylesheet" href="/public/vendors/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/public/vendors/weui/weui.css">
+    <link href="/public/wx/css/index.css" rel="stylesheet"/>
     <style>
         .item{
-            padding: 20px;
+            padding: 10px 10px 0;
             margin: 20px 0;
             border: 1px solid #eee;
             border-left-width: 5px;
             border-radius: 3px;
-            border-left-color: #359c30;
+            border-left-color: #3cc4b6;
         }
         .select{
             padding: 20px 0;
