@@ -35,6 +35,7 @@ class ScoreWxTextMessagePushListener
             return;
         }
 
+        dd($user);
         $wechatConfig = include 'wechatConfig.php';
         $app = new Application($wechatConfig);
 
@@ -43,6 +44,5 @@ class ScoreWxTextMessagePushListener
         ]);
         $result = $app->customer_service->message($message)->to($user->open_id)->send();
 
-        dd($result);
     }
 }
