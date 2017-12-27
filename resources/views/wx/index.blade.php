@@ -64,7 +64,7 @@
 <script>
     $(function () {
         axios.defaults.baseURL = 'http://www.sucinfo.com';
-//        axios.defaults.baseURL = 'http://www.school.dy';
+//        axios.defaults.baseURL = '';
 //        axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
 
         const routes = [
