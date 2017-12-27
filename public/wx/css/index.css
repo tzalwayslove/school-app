@@ -236,7 +236,7 @@ textarea{
 	text-align: center;
 	background-image: url(/public/images/bg3.png);
 	background-repeat:no-repeat;
-	background-size: 100%;
+	background-size:cover;
 }
 .box2-t a{
 	color: #FFFFFF;
