@@ -20,11 +20,11 @@
             <div class="item" v-for="(item, index) in liushui">
                 <table class="table">
                     <tr>
-                        <td>{{ item.created_at }}</td>
-                        <td>{{ item.xingming }}</td>
+                        <td colspan="3">{{ item.created_at }}</td>
                     </tr>
                     <tr>
                         <td>{{ item.type }}</td>
+                        <td>{{ item.xingming }}</td>
                         <td>{{ item.shanghu }} {{ item.price }} 余额 ： {{ item.yue }}</td>
                     </tr>
                 </table>
