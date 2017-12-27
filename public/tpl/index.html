@@ -48,10 +48,6 @@
             </div>
         </div>
     </div>
-    <div id="point-caq" class="box mui-popover mui-popover-action mui-popover-bottom">
-            <button type="button" class="mui-btn ind-xl">举报</button>
-            <button type="button" class="mui-btn ind-xl">取消</button>
-    </div>
     <div id="loadingToast" v-show="load">
         <div class="weui-mask_transparent"></div>
         <div class="weui-toast">
@@ -60,26 +56,3 @@
         </div>
     </div>
 </div>
-<script>
-        $(function() {
-          FastClick.attach(document.body);
-        });
-      </script>
-      <script src="js/jquery-weui.js"></script>
-      
-          <script>
-            $(document).on("click", "#show-actions", function() {
-              $.actions({
-      
-                actions: [
-                  {
-                    text: "举报",
-                    className: "color-primary",
-                    onClick: function() {
-                      $.alert("举报成功");
-                    }
-                  },
-                ]
-              });
-            });
-          </script>

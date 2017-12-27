@@ -15,6 +15,7 @@
     <link href="{{ asset('public/wx/css/mui.css') }}" rel="stylesheet"/>
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/vendors/weui/jquery-weui.css') }}">
 </head>
 <body>
 
@@ -58,9 +59,28 @@
 <script src="{{ asset('public/vue/wode.js') }}"></script>
 <script src="{{ asset('public/vue/pinglun.js') }}"></script>
 <script src="{{ asset('public/vendors/weui/weui.min.js') }}"></script>
+<script src="{{ asset('public/vendors/jquery/dist/jquery.js') }}"></script>
+<script src="{{ asset('public/vendors/weui/jquery-weui.js') }}"></script>
 <script src="{{ asset('public/vue/reply.js') }}"></script>
 <script src="{{ asset('public/vue/jubao.js') }}"></script>
 
+      
+          <script>
+            $(document).on("click", "#show-actions", function() {
+              $.actions({
+      
+                actions: [
+                  {
+                    text: "举报",
+                    className: "color-primary",
+                    onClick: function() {
+                      $.alert("举报成功");
+                    }
+                  },
+                ]
+              });
+            });
+          </script>
 <script>
     $(function () {
         axios.defaults.baseURL = 'http://www.hucinfo.com';
