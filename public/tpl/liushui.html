@@ -1,9 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <select name="" id="change" class="form-control" @change="changeData" v-model="selected">
-                <option v-for="(value, key) in queryList" :value="key">{{ value.name }}</option>
-            </select>
+            <div class="select">
+                <select name="" id="change" class="form-control" @change="changeData" v-model="selected">
+                    <option v-for="(value, key) in queryList" :value="key">{{ value.name }}</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="row">
