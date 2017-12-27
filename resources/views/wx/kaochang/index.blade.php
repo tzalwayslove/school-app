@@ -24,7 +24,7 @@
 
 <script type="text/javascript">
     $(function () {
-        axios.defaults.baseURL = 'http://school.sz25.net';
+        axios.defaults.baseURL = 'http://www.sucinfo.com';
         axios.defaults.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
     });
 </script>
