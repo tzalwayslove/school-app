@@ -84,7 +84,9 @@ class IndexController extends Controller
                                 }
 
                                 return '匿名社区： <a href="' . url('/?user='.$user->id.'#/tiezi') . '">匿名社区</a>';
-                            } else {
+                            } else if($message->Content == '忘记密码'){
+                                return '<a href="http://jwgld.hrbcu.edu.cn/framework/enteraccount.jsp">忘记密码</a>';
+                            }else {
 //                                try {
 //                                    $res = User::bind($message->FromUserName, $message);
 //                                    return $res;
