@@ -17,6 +17,15 @@
             border-radius: 3px;
             border-left-color: #3cc4b6;
         }
+        .item1{
+            padding: 10px 10px 0;
+            margin: 20px 0;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-radius: 3px;
+            border-left-color: #3cc4b6;
+            font-size: 16px;
+        }
         .select{
             padding: 20px 0;
         }
