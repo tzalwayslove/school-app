@@ -11,9 +11,11 @@ fabu = Vue.component('kaochang', function (success, error) {
                     jiazai:true,
                     kaochang:{},
                     itemStyleFinish : {
-                        'float': 'right',
-                        'margin-right': '6px',
-                        'color': '#8f8f94'
+                        position: "absolute";
+                        right: "0";
+                        margin-right: "6px";
+                        top: "7px";
+                        color: "rgb(143, 143, 148)";
                     },
                     itemStyleUnFinish : {
                         'float': 'right',
