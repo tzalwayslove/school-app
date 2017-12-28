@@ -7,6 +7,7 @@ use App\Exceptions\noAccountException;
 use App\Lib\Liushui;
 use App\Lib\Result;
 use App\Model\Dom\YikatongLogin;
+use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -68,11 +69,20 @@ class YikatongController extends Controller
      */
     public function index(Request $request)
     {
-        return view('wx.yikatong.index', compact('request'));
+        $user = User::find(\App\Model\User::getId($request->input('user')));
+
+        try{
+            $info = $user->getInfo();
+        } catch (\App\Exceptions\LoginErrorException $e){
+            return redirect('wx/binding?user='.$request->input('user'));
+        }
+
+        return view('wx.yikatong.index', compact('request', 'info'));
     }
 
     public function queryList(Request $request)
     {
+
         return \App\Model\Dom\Liushui::getSelectDate();
     }
     public function getData(Request $request)

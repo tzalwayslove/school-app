@@ -44,7 +44,7 @@
 
 <body>
 <div id="app">
-    <Liushui user="{{$request->input('user')}}"></Liushui>
+    <Liushui user="{{$request->input('user')}}" user_name="{{$info->name}}" account="{{$info->account}}"></Liushui>
 </div>
 <script src="/public/vendors/jquery/dist/jquery.js"></script>
 <script src="/public/vendors/bootstrap/dist/js/bootstrap.js"></script>
