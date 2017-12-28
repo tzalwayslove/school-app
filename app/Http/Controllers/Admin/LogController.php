@@ -15,8 +15,9 @@ class LogController extends Controller
      * @return  \Illuminate\Http\Response
      */
     protected $validateRoule = [
-                                                            'data'=> 'required|max:100',
-                                                                                                ];
+        'data' => 'required|max:100',
+    ];
+
     public function index()
     {
         $list = \App\Model\Log::paginate(100);
@@ -30,13 +31,13 @@ class LogController extends Controller
      */
     public function create()
     {
-                                                                                                                                    return view('admin.log.create' );
+        return view('admin.log.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
+     * @param    \Illuminate\Http\Request $request
      * @return  \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,7 +54,7 @@ class LogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,20 +65,20 @@ class LogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $data = \App\Model\Log::findOrFail($id);
-                                                                                                                                    return view('admin.log.edit', compact('data'));
+        return view('admin.log.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param    \Illuminate\Http\Request  $request
-     * @param    int  $id
+     * @param    \Illuminate\Http\Request $request
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -94,7 +95,7 @@ class LogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param    int  $id
+     * @param    int $id
      * @return  \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -102,7 +103,7 @@ class LogController extends Controller
         $cate = \App\Model\Log::findOrFail($id);
         $cate->delete();
         return response()->json([
-            'status'=>true
+            'status' => true
         ]);
     }
 }

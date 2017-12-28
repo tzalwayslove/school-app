@@ -47,6 +47,7 @@ Route::group([
     Route::resource('articel', 'ArticelController');
     Route::resource('comment', 'CommentController');
     Route::resource('setting', 'SettingController');
+    Route::get('wechat', 'WechatController@index');
 });
 
 Route::any('wx/login', 'Wx\Login@index');
