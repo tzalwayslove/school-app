@@ -48,7 +48,7 @@
         </div>
         <br/>
         <div class="ts-fen-m">
-            <template v-if='item.chengji_info.pingshichengji != 0 && item.chengji_info.pingshichengji != ""'>
+            <template v-if='item.chengji_info.pingshichengji'>
                 <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
                 <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
                 <br/>
@@ -56,7 +56,7 @@
                 <a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
                 <br/>
             </template>
-            <template v-if='item.chengji_info.pingshichengji == 0 || item.chengji_info.pingshichengji == ""'>
+            <template v-if='!item.chengji_info.pingshichengji'>
                 <p class="ts-fen-cj-p3">该成绩平时分占比为0。</p>
             </template>
         </div>
