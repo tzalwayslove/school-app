@@ -94,7 +94,11 @@
                     content: '<textarea class="edit_content" style="width: 550px; height: 200px">' +
                     contentText +
                     '</textarea>',
-                    area:'600px'
+                    area:'600px',
+                    btn:'确定',
+
+                }, function(){
+                    console.log(1111111111);
                 });
             })
         });
