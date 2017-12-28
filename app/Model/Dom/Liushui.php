@@ -132,7 +132,6 @@ class Liushui extends YikatongLogin
             $liusui->type = $tr->filterXPath('//td[4]') -> count()
                 ? $tr->filterXPath('//td[4]') -> text()
                 : '';
-
             return $liusui;
         });
         $nextPage = $dom->filterXPath('//a[@href="javascript:button14_Onclick();"]');
@@ -159,6 +158,12 @@ class Liushui extends YikatongLogin
         $format = 'Ymd';
         $now = time();
         $N = date('N');//今天星期几
+
+        $data['now']=[
+            'start_time'=>date($format, $now),
+            'end_time' =>date($format, $now),
+            'name' =>'这天'
+        ];
 
         $data['threeDaysAgo'] = [
             'start_time'=>date($format, $now - 3 * self::$day),
@@ -200,11 +205,7 @@ class Liushui extends YikatongLogin
             'name' =>date('m月', mktime(0,0,0, date('m')-4, 1))
         ];
 
-        $data['now']=[
-            'start_time'=>date($format, $now),
-            'end_time' =>date($format, $now),
-            'name' =>'这天'
-        ];
+
         return $data;
     }
 

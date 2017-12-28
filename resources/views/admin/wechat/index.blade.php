@@ -27,10 +27,10 @@
                                         </thead>
                                         <tbody>
                                         @foreach($list as $v)
-                                            <tr>
+                                            <tr class="list-tr">
                                                 <td>{{$v->type}}</td>
                                                 <td>{{$v->key}}</td>
-                                                <td>{{$v->content}}</td>
+                                                <td class="content-td">{{$v->content}}</td>
                                                 <td>
                                                     <button class="btn btn-info btn-xs edit">编辑</button>
                                                 </td>
@@ -86,10 +86,13 @@
         });
         @endforeach
         $('.edit').on('click', function(){
+            $tr = $(this).parents('')
             layui.use('layer', function(){
                 layer = layui.layer;
                 layer.open({
-                    content: '<textarea id="edit_content" style="width: 550px; height: 60px"></textarea>',
+                    content: '<textarea class="edit_content" style="width: 550px; height: 60px">' +
+                    '' +
+                    '</textarea>',
                     area:'600px'
                 });
             })
