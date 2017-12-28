@@ -19,7 +19,7 @@
         }
         .item1{
             padding: 10px 10px 0;
-            margin: 20px 20px 0 20px;
+            margin: 20px 0;
             border: 1px solid #eee;
             border-left-width: 5px;
             border-radius: 3px;
