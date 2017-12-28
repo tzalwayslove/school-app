@@ -45,7 +45,6 @@
                 </div>
             </div>
         </div>
-        <p id="content2">asdklfjalsdkfj</p>
     </div>
 
 @endsection
@@ -90,7 +89,7 @@
             layui.use('layer', function(){
                 layer = layui.layer;
                 layer.open({
-                    content: 'test'
+                    content: '<textarea id="edit_content" cols="30" rows="10"></textarea>'
                 });
             })
         });
