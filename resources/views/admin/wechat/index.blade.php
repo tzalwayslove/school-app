@@ -33,7 +33,7 @@
                                                 <td>{{$v->content}}</td>
                                                 <td>
                                                     <a href="{{ url('admin/user/'.$v->id.'/edit')  }}"
-                                                       class="btn btn-info btn-xs">编辑</a>
+                                                       class="btn btn-info btn-xs edit">编辑</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -85,7 +85,11 @@
             type: 'error'
         });
         @endforeach
-
+        $('.edit').on('click', function(){
+            layui.use('layer', function(){
+                
+            })
+        });
 
     });
 
