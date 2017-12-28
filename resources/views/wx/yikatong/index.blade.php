@@ -16,9 +16,10 @@
             border-left-width: 5px;
             border-radius: 3px;
             border-left-color: #3cc4b6;
+            font-size: 14px;
         }
         .item1{
-            padding: 10px 10px 0;
+            padding: 10px ;
             margin: 20px 0;
             border: 1px solid #eee;
             border-left-width: 5px;
@@ -26,6 +27,8 @@
             border-left-color:#3cc4b6;
             font-size: 16px;
             text-align: center;
+            font-weight:800;
+            color: #3cc3b6;
         }
         .select{
             padding: 20px 0;
