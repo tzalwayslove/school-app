@@ -22,6 +22,7 @@ class IndexController extends Controller
             $server = $app->server;
             try {
                 $server->setMessageHandler(function ($message) use ($server) {
+                    Log::log(json_encode($message, JSON_UNESCAPED_UNICODE));
                     switch ($message->MsgType) {
                         case 'event':
                             $user = User::whereOpenId($message->FromUserName)->first();
@@ -54,14 +55,14 @@ class IndexController extends Controller
                                     return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
                                 return sprintf(Wechat::getOne('text', '考场'), $user->id);
-                            } /*else if (strpos($message->Content, '课表') !== false || strpos($message->Content, '课程表') !== false) {
+                            } /**/else if (strpos($message->Content, '课表') !== false || strpos($message->Content, '课程表') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
                                     return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
                                 return sprintf(Wechat::getOne('text', '课表'), $user->id);
-                            }*/ else if (strpos($message->Content, '成绩') !== false) {
+                            } else if (strpos($message->Content, '成绩') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
