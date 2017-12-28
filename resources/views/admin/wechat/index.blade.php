@@ -20,6 +20,7 @@
                                         <thead>
                                         <tr>
                                             <th width="35px">类型</th>
+                                            <th width="35px">key</th>
                                             <th width="35px">值</th>
                                             <th width="75px">操作</th>
                                         </tr>
@@ -28,6 +29,7 @@
                                         @foreach($list as $v)
                                             <tr>
                                                 <td>{{$v->type}}</td>
+                                                <td>{{$v->key}}</td>
                                                 <td>{{$v->content}}</td>
                                                 <td>
                                                     <a href="{{ url('admin/user/'.$v->id.'/edit')  }}"
@@ -45,8 +47,6 @@
             </div>
         </div>
     </div>
-
-
 @endsection
 
 @push('addcss')
@@ -77,26 +77,7 @@
 <script>
     $(function () {
         $('#datatable').DataTable();
-        $('body').on('click', '.del', function (e) {
-            e.preventDefault();
-            var url = $(this).attr('href');
-            var _this = this;
-            $.ajax({
-                url: url,
-                type: 'DELETE',
-                success: function (res) {
-                    var status = res.status | 0;
-                    if (status) {
-                        $(_this).parents('tr').fadeOut(300, function () {
-                            $(this).remove();
-                        });
-                    }
-                },
-                error: function (res) {
-                    console.log(res);
-                }
-            });
-        });
+
         @foreach ($errors -> all() as $e)
         new PNotify({
             title: 'Oh No!',
@@ -104,6 +85,8 @@
             type: 'error'
         });
         @endforeach
+
+
     });
 
 
