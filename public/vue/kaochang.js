@@ -19,7 +19,8 @@ fabu = Vue.component('kaochang', function (success, error) {
                         'position':'absolute',
                         'right':'10px',
                         'color': '#FFFFFF',
-                        'top':0
+                        'top':'7px',
+                        'color':'#8f8f94',
                     },
                     itemStyleUnFinish : {
                         'float': 'right',
