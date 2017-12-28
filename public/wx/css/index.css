@@ -297,7 +297,6 @@ textarea{
 	background-color: #dddddd;
 	margin: 10px;
 	border-radius: 6px;
-	position: relative;
 
 }
 .kb-info-ing{
@@ -308,7 +307,6 @@ textarea{
 .kb-info-name{
 	font-size: 16px;
 	padding: 6px;
-	width: 240px;
 }
 .kb-info-name-ing{
 	color: #FFFFFF;
