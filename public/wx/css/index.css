@@ -445,7 +445,13 @@ textarea{
 	color: #FFFFFF;
 	margin-bottom: 2px;
 	text-shadow: 0px -1px 1px #28897f;
-	
+}
+.ts-fen-cj-pp{
+	font-size: 10px;
+	color: #FFFFFF;
+	margin-bottom: 2px;
+	text-shadow: 0px -1px 1px #28897f;
+	margin-top: 12px;
 }
 .ts-fen-cj-p2{
 	font-size: 13px;
