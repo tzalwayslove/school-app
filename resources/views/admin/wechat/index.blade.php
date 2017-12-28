@@ -89,7 +89,7 @@
             layui.use('layer', function(){
                 layer = layui.layer;
                 layer.open({
-                    content: '<textarea id="edit_content" cols="10" rows="30"></textarea>'
+                    content: '<textarea id="edit_content" cols="60" rows="10"></textarea>'
                 });
             })
         });
