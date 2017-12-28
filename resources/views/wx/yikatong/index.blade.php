@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/public/vendors/weui/weui.css">
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
     <style>
-        p{
+        .divp{
             font-size: 14px;
             margin-top: 0;
             margin-bottom: 10px;
@@ -27,7 +27,6 @@
         }
         .item1{
             padding: 10px ;
-            margin: 20px 0;
             border: 1px solid #eee;
             border-left-width: 5px;
             border-radius: 3px;

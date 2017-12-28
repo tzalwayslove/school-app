@@ -5,9 +5,9 @@
         <div class="col-xs-6">学号:{{account}}</div>
     </div>
 
-    <div class="row">
+    <div class="row divp">
         <div class="col-xs-12">
-            <p class="xingming_xuehao"></p>
+            <div class="xingming_xuehao"></div>
             <div class="select">
                 <select name="" id="change" class="select-change-page form-control" @change="changeData" v-model="selected">
                     <option v-for="(value, key) in queryList" :value="key">{{ value.name }}</option>
