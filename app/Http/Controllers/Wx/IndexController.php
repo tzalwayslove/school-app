@@ -53,7 +53,7 @@ class IndexController extends Controller
                                     $user = User::storeUser($message->FromUserName);
                                     return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
-                                Log::log(sprintf(Wechat::getOne('text', '考场'), $user->id));
+                                Log::log(Wechat::getOne('default', '没有绑定的回复'));
                                 return sprintf(Wechat::getOne('text', '考场'), $user->id);
                             } else if (strpos($message->Content, '课表') !== false || strpos($message->Content, '课程表') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
