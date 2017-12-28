@@ -11,11 +11,11 @@ kaochang = Vue.component('kaochang', function (success, error) {
                     jiazai:true,
                     kaochang:{},
                     itemStyleFinish : {
-                        position: "absolute";
-                        right: "0";
-                        "margin-right": "6px";
-                        top: "7px";
-                        color: "rgb(143, 143, 148)";
+                        position: "absolute",
+                        right: "0",
+                        "margin-right": "6px",
+                        top: "7px",
+                        color: "rgb(143, 143, 148)"
                     },
                     itemStyleUnFinish : {
                         'float': 'right',
