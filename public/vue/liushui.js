@@ -13,7 +13,7 @@ fabu = Vue.component('liushui', function (success, error) {
                     queryList:[],
                     nextPage:false,
                     page: 1,
-                    selected:"threeDaysAgo",
+                    selected:"now",
                     price:''
                 }
             },
