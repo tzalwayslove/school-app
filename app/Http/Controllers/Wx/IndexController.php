@@ -6,6 +6,7 @@ use App\Exceptions\userNotFountException;
 use App\Lib\Chengji;
 use App\Model\Log;
 use App\Model\User;
+use App\Model\Wechat;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,66 +31,70 @@ class IndexController extends Controller
                             }
                             switch ($message->EventKey) {
                                 case '最新成绩':
-                                    return '<a href="' . url('/wx/chengji?user=' . $user->id) . '">最新成绩</a> ';
+                                    return sprintf(Wechat::getOne('event', '最新成绩'), $user->id);
                                 case "全部成绩":
-                                    return '<a href="' . url('/wx/chengji_all?user=' . $user->id) . '">全部成绩</a>';
+                                    return sprintf(Wechat::getOne('event', '全部成绩'), $user->id);
                                 case '本周课程表':
-                                    return '<a href="' . url('/wx/kecheng?user=' . $user->id . '&all=0') . '">本周课表</a>';
+                                    return sprintf(Wechat::getOne('event', '本周课程表'), $user->id);
                                 case '全部课程表':
-                                    return '<a href="' . url('/wx/kecheng?user=' . $user->id . '&all=1') . '">全部课程表</a>';
+                                    return sprintf(Wechat::getOne('event', '全部课程表'), $user->id);
                                 case '考场':
-                                    return '<a href="' . url('/wx/kaochang?user=' . $user->id) . '">考场</a>';
+                                    return sprintf(Wechat::getOne('event', '考场'), $user->id);
                             }
                             break;
                         case 'text':
                             if (strpos($message->Content, '绑定') !== false) {
                                 $user = User::storeUser($message->FromUserName);
-                                return '点击<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+//                                return '点击<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                return sprintf(Wechat::getOne('text', '绑定'), $user->id);
                             } else if (strpos($message->Content, '考场') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+//                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
-                                return '考场： <a href="' . url('/wx/kaochang?user=' . $user->id) . '">考场</a>';
+                                return sprintf(Wechat::getOne('text', '考场'), $user->id);
                             } else if (strpos($message->Content, '课表') !== false || strpos($message->Content, '课程表') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
-                                return '课程表： <a href="' . url('/wx/kecheng?user=' . $user->id . '&all=0') . '">课程表</a>';
+                                return sprintf(Wechat::getOne('text', '课表'), $user->id);
                             } else if (strpos($message->Content, '成绩') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
-                                return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
+//                                return '成绩： <a href="' . url('/wx/chengji?user=' . $user->id) . '">成绩</a>';
+                                return sprintf(Wechat::getOne('text', '成绩'), $user->id);
                             } else if (strpos($message->Content, '评教') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
 
-                                return '一键评教： <a href="' . url('/wx/pingjiao?user=' . $user->id) . '">一键评教</a>';
+                                return sprintf(Wechat::getOne('text', '一键评教'), $user->id);
                             }else if (strpos($message->Content, '社区') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
+                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
-                                return '匿名社区： <a href="' . url('/?user='.$user->id.'#/tiezi') . '">匿名社区</a>';
+                                return sprintf(Wechat::getOne('text', '社区'), $user->id);
+
                             } else if($message->Content == '忘记密码'){
-                                return '<a href="http://jwgld.hrbcu.edu.cn/framework/enteraccount.jsp">忘记密码</a>';
+                                return sprintf(Wechat::getOne('text', '忘记密码'));
                             } else if($message->Content == '一卡通'){
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id. '&time='.time()) . '">‘绑定’</a>进行绑定操作。';
+                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
-                                return '<a href="' . url('/wx/yikatong/login?user=' . $user->id) . '">‘一卡通’</a>';
+                                return sprintf(Wechat::getOne('text', '一卡通'));
                             }else {
 //                                try {
 //                                    $res = User::bind($message->FromUserName, $message);
