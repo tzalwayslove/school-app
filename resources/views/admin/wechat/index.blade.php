@@ -34,6 +34,7 @@
                                                 <td>
                                                     <button class="btn btn-info btn-xs edit">编辑</button>
                                                 </td>
+
                                             </tr>
                                         @endforeach
                                         </tbody>
