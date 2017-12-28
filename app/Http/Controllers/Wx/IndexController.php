@@ -83,7 +83,7 @@ class IndexController extends Controller
                                     return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
 
-                                return sprintf(Wechat::getOne('text', '一键评教'), $user->id);
+                                return sprintf(Wechat::getOne('text', '评教'), $user->id);
                             }else if (strpos($message->Content, '社区') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
