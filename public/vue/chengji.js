@@ -67,6 +67,7 @@ fabu = Vue.component('chengji', function (success, error) {
                         } else {
                             $this.chengji = res.data.chengji;
                             console.log($this.chengji);
+
                             $this.jige = $this.chengji.filter(function (item) {
                                 return Number(item.jidian) != 0;
                             });
