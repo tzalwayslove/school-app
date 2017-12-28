@@ -15,9 +15,9 @@ class Wechat extends Model
 
     public static function getOne($type, $key)
     {
-        $wechat = self::whereType($type)->where('key', $key)->first();
+        $wechat = self::where('type', $type)->where('key', $key)->first();
 
-        return isset($wechat->value)
+        return isset($wechat->content)
             ? $wechat->content
             : null;
     }
