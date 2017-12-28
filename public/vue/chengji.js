@@ -30,7 +30,6 @@ fabu = Vue.component('chengji', function (success, error) {
                         if(!this.inArray(chengji , this.chengji[i].kechengbianhao)){
                             chengji.push(this.chengji[i].kechengbianhao);
                             xuefen += this.chengji[i].xuefen;
-                            console.log(this.chengji[i].xuefen);
                         }
                     }
 
@@ -67,7 +66,9 @@ fabu = Vue.component('chengji', function (success, error) {
                             alert(res.data.result.message || '获取失败!');
                         } else {
                             $this.chengji = res.data.chengji;
+
                             $this.jige = $this.chengji.filter(function (item) {
+                                console.log(item.chengji_info.pingshichengji);
                                 return Number(item.jidian) != 0;
                             });
 
