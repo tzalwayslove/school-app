@@ -31,9 +31,8 @@
                                                 <td>{{$v->type}}</td>
                                                 <td>{{$v->content}}</td>
                                                 <td>
-                                                    <a href="{{ url('admin/user/'.$v->id.'/edit')  }}" class="btn btn-info btn-xs">编辑</a>
-                                                    <a href="{{ url('admin/user', ['id'=>$v->id])  }}"
-                                                       class="btn btn-danger btn-xs del">删除</a>
+                                                    <a href="{{ url('admin/user/'.$v->id.'/edit')  }}"
+                                                       class="btn btn-info btn-xs">编辑</a>
                                                 </td>
                                             </tr>
                                         @endforeach
