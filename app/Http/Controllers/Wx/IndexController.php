@@ -98,9 +98,9 @@ class IndexController extends Controller
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
+                                    return sprintf(Wechat::getOne('default', '没有绑定的回复'));
                                 }
-                                return sprintf(Wechat::getOne('text', '一卡通'));
+                                return sprintf(Wechat::getOne('text', '一卡通') , $user->id);
                             }else {
 //                                try {
 //                                    $res = User::bind($message->FromUserName, $message);
