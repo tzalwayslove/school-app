@@ -19,6 +19,6 @@ class Wechat extends Model
 
         return isset($wechat->content)
             ? $wechat->content
-            : null;
+            : '';
     }
 }
