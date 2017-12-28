@@ -23,7 +23,7 @@
             border: 1px solid #eee;
             border-left-width: 5px;
             border-radius: 3px;
-            border: 1px solid #3cc4b6;
+            border-color:#3cc4b6;
             font-size: 16px;
             text-align: center;
         }
