@@ -86,12 +86,13 @@
         });
         @endforeach
         $('.edit').on('click', function(){
-            $tr = $(this).parents('')
+            $tr = $(this).parents('.list-tr');
+            contentText = $tr.find('.content-td').html();
             layui.use('layer', function(){
                 layer = layui.layer;
                 layer.open({
                     content: '<textarea class="edit_content" style="width: 550px; height: 60px">' +
-                    '' +
+                    contentText +
                     '</textarea>',
                     area:'600px'
                 });
