@@ -23,6 +23,9 @@
         .button-wrap{
             padding: 20px 0
         }
+        .text-dangernew{
+            color: #3cc4b6;
+        }
     </style>
 </head>
 
