@@ -26,8 +26,8 @@ class IndexController extends Controller
                     if(Redis::get($message->MsgId)){
                         return "";
                     }
-
                     Redis::set($message->MsgId, 1);
+
                     switch ($message->MsgType) {
                         case 'event':
                             $user = User::whereOpenId($message->FromUserName)->first();
@@ -107,7 +107,7 @@ class IndexController extends Controller
 //                                } catch (userNotFountException $e) {
 //                                    return '输入绑定即可进入绑定流程';
 //                                }
-                                return '输入绑定， 进行绑定操作';
+                                return '';
                             }
                             break;
                         case 'image':
