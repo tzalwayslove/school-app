@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="/public/vendors/weui/weui.css">
     <link href="/public/wx/css/index.css" rel="stylesheet"/>
     <style>
+        p{
+            font-size: 14px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #8f8f94;
+
+        }
         .item{
             padding: 10px 10px 0;
             margin: 20px 0;
