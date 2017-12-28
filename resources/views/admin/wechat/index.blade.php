@@ -95,11 +95,10 @@
                     contentText +
                     '</textarea>',
                     area:'600px',
-                    btn:'确定',
-
-                }, function(){
-                    console.log(1111111111);
-                    return false;
+                    yes:function(index){
+                        console.log(index);
+                        console.log(1111111);
+                    }
                 });
             })
         });
