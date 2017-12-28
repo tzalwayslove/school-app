@@ -17,6 +17,16 @@
             border-radius: 3px;
             border-left-color: #3cc4b6;
         }
+        .item1{
+            padding: 10px 10px 0;
+            margin: 20px 0 0 20px;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-radius: 3px;
+            border-color:#3cc4b6;
+            font-size: 16px;
+            text-align: center;
+        }
         .select{
             padding: 20px 0;
         }

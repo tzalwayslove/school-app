@@ -434,11 +434,15 @@ textarea{
 	padding-bottom: 12px;
 	margin-bottom: 22px;
 	box-shadow: 0 3px 3px 0 #ddd;
+	position: relative;
 }
 .ts-fen-cj{
-	float: right;
-	margin-right: 12px;
-	margin-top: -11px;
+	/*float: right;*/
+	/*margin-right: 12px;*/
+	/*margin-top: -11px;*/
+	position: absolute;
+	top: 43px;
+	right: 10px;
 }
 .ts-fen-cj-p{
 	font-size: 10px;
