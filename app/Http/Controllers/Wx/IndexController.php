@@ -31,7 +31,7 @@ class IndexController extends Controller
                             }
                             switch ($message->EventKey) {
                                 case '最新成绩':
-                                    Log::log(sprintf(Wechat::getOne('event', '最新成绩'), $user->id));
+
                                     return sprintf(Wechat::getOne('event', '最新成绩'), $user->id);
                                 case "全部成绩":
                                     return sprintf(Wechat::getOne('event', '全部成绩'), $user->id);
@@ -51,6 +51,7 @@ class IndexController extends Controller
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
+                                    Log::log(sprintf(Wechat::getOne('event', '考场'), $user->id));
                                     return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
                                 return sprintf(Wechat::getOne('text', '考场'), $user->id);
