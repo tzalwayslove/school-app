@@ -66,14 +66,12 @@ fabu = Vue.component('chengji', function (success, error) {
                             alert(res.data.result.message || '获取失败!');
                         } else {
                             $this.chengji = res.data.chengji;
-
+                            console.log($this.chengji);
                             $this.jige = $this.chengji.filter(function (item) {
-
                                 return Number(item.jidian) != 0;
                             });
 
                             $this.bujige = $this.chengji.filter(function (item) {
-                                console.log(item.chengji_info.pingshichengji);
                                 return Number(item.jidian ) == 0;
                             });
                         }
