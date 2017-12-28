@@ -95,7 +95,8 @@
                     contentText +
                     '</textarea>',
                     area:'600px',
-                    yes:function(){
+                    yes:function(index){
+                        console.log(index);
                         console.log(1111111);
                     }
                 });
