@@ -19,7 +19,6 @@
                                            style="vertical-align: middle; margin-bottom: 0;">
                                         <thead>
                                         <tr>
-                                            <th width="35px">id</th>
                                             <th width="35px">类型</th>
                                             <th width="35px">值</th>
                                             <th width="75px">操作</th>
