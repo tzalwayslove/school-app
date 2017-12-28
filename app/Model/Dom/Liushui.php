@@ -162,29 +162,29 @@ class Liushui extends YikatongLogin
         $data['now']=[
             'start_time'=>date($format, $now),
             'end_time' =>date($format, $now),
-            'name' =>'这天'
+            'name' =>'今天的一卡通余额及消费明细'
         ];
 
         $data['threeDaysAgo'] = [
             'start_time'=>date($format, $now - 3 * self::$day),
             'end_time' =>date($format, $now),
-            'name'=>'三天前'
+            'name'=>'三天内的一卡通消费明细'
         ];
         $data['aWeekAgo'] = [
             'start_time'=>date($format, $now - ($N - 1) * self::$day),
             'end_time' =>date($format, $now),
-            'name'=>'这周'
+            'name'=>'本周的一卡通消费明细'
         ];
         $data['ThisMonth'] = [
             'start_time'=>date($format, mktime(0,0,0, date('m'), 1)),
             'end_time' =>date($format, strtotime(date('Y-m-t'))),
-            'name'=>'本月'
+            'name'=>'本月的一卡通消费明细'
         ];
 
         $data['lastMonth'] = [
             'start_time'=>date($format, mktime(0,0,0, date('m')-1, 1)),
             'end_time' =>date($format, mktime(0,0,0,date('m'), 1) -1),
-            'name'=>'上月'
+            'name'=>'上月的一卡通消费明细'
         ];
 
         $data['twoMonthsAgo'] = [

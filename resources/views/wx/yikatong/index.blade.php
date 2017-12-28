@@ -12,7 +12,7 @@
         .divp{
             font-size: 14px;
             margin-top: 0;
-            margin-bottom: 10px;
+
             color: #8f8f94;
 
         }
@@ -37,7 +37,7 @@
             color: #3cc3b6;
         }
         .select{
-            padding-bottom:10px;
+            margin-bottom:10px;
         }
         .button-wrap{
             padding: 20px 0
