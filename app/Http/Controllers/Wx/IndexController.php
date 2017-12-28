@@ -31,6 +31,7 @@ class IndexController extends Controller
                             }
                             switch ($message->EventKey) {
                                 case '最新成绩':
+                                    Log::log(sprintf(Wechat::getOne('event', '最新成绩'), $user->id));
                                     return sprintf(Wechat::getOne('event', '最新成绩'), $user->id);
                                 case "全部成绩":
                                     return sprintf(Wechat::getOne('event', '全部成绩'), $user->id);
@@ -45,13 +46,11 @@ class IndexController extends Controller
                         case 'text':
                             if (strpos($message->Content, '绑定') !== false) {
                                 $user = User::storeUser($message->FromUserName);
-//                                return '点击<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                 return sprintf(Wechat::getOne('text', '绑定'), $user->id);
                             } else if (strpos($message->Content, '考场') !== false) {
                                 $user = User::whereOpenId($message->FromUserName)->first();
                                 if (!$user) {
                                     $user = User::storeUser($message->FromUserName);
-//                                    return '您还没有绑定过账号!请输入<a href="' . url('wx/binding/?user=' . $user->id) . '">‘绑定’</a>进行绑定操作。';
                                     return sprintf(Wechat::getOne('default', '没有绑定的回复'), $user->id);
                                 }
                                 return sprintf(Wechat::getOne('text', '考场'), $user->id);
