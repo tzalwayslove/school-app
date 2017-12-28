@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/11/30.
  */
-fabu = Vue.component('kaochang', function (success, error) {
+kaochang = Vue.component('kaochang', function (success, error) {
     axios.get("/public/tpl/kaochang.html").then(function (res) {
         success({
             template: res.data,
