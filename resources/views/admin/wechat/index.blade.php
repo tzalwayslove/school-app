@@ -34,7 +34,6 @@
                                                 <td>
                                                     <button class="btn btn-info btn-xs edit">编辑</button>
                                                 </td>
-
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -46,8 +45,9 @@
                 </div>
             </div>
         </div>
+        <p id="content2">asdklfjalsdkfj</p>
     </div>
-    <p id="content2">asdklfjalsdkfj</p>
+
 @endsection
 
 @push('addcss')
