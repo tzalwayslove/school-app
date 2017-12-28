@@ -26,7 +26,8 @@ class IndexController extends Controller
                     if(Redis::get($message->MsgId)){
                         return "";
                     }
-                    Redis::set($message->MsgId, 1);
+
+                    Redis::SETEX($message->MsgId, 10, 1);
 
                     switch ($message->MsgType) {
                         case 'event':
