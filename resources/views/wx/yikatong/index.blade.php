@@ -37,7 +37,7 @@
             color: #3cc3b6;
         }
         .select{
-            padding: 20px 0;
+            padding-bottom:10px;
         }
         .button-wrap{
             padding: 20px 0
