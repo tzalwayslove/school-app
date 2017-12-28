@@ -5,7 +5,7 @@ fabu = Vue.component('liushui', function (success, error) {
     axios.get("/public/tpl/liushui.html").then(function (res) {
         success({
             template: res.data,
-            props: ['user'],
+            props: ['user', 'user_name', 'account'],
             data(){
                 return {
                     jiazai:true,
