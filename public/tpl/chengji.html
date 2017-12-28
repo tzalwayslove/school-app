@@ -1,7 +1,7 @@
 <div class="mui-content-padded">
     <p class="xingming_xuehao">姓名:{{user_name}} 学号:{{account}}</p>
     <select name="" id="change" class="select-change-page" @change="changePage" v-model="selected">
-            <option value="" selected>当前为最新考试成绩(2017-2018-1),点此可选择相应学期</option>
+        <option value="" selected>当前为最新考试成绩(2017-2018-1),点此可选择相应学期</option>
         <option value="all">你的全部考试成绩</option>
         <option :value="option" v-for="option in options">{{option}}</option>
     </select>
@@ -9,48 +9,52 @@
         <p class="ts-fen-p">你当前学期的平均学分绩点（GPA）</p>
         <p class="ts-fen-p-2" style="font-size: 32px;line-height: 48px;">{{ GPA }}</p>
     </div>
-    <p class="ts-fen-title fw-6"> <img src="../public/wx/img/line-g.png" class="line-g" />解放区<img src="../public/wx/img/line-g.png" class="line-g" /> </p>
+    <p class="ts-fen-title fw-6"><img src="../public/wx/img/line-g.png" class="line-g"/>解放区<img
+            src="../public/wx/img/line-g.png" class="line-g"/></p>
 
     <div class="ts-fen-jf" v-for="(item, key) in jige">
         <a class="ts-fen-mtit ">{{item.kecengmingceng}}</a><a class="ts-fen-mtit">总分：{{item.chengji}}</a>
         <div class="ts-fen-cj">
             <p class="ts-fen-cj-p">学分：{{ item.xuefen }}</p>
-             <p class="ts-fen-cj-p">学分绩点：{{ item.jidian * item.xuefen }}</p>
+            <p class="ts-fen-cj-p">学分绩点：{{ item.jidian * item.xuefen }}</p>
         </div>
-        <br /> 
-      <div class="ts-fen-m" >
-          <template v-if="item.chengji_info.pingshichengji != 0 && item.chengji_info.pingshichengji != ''">
-               <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
-                      <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
-                      <br />
-                      <a class="ts-fen-cj-p2">卷面分：{{ item.chengji_info.qimochengji }}</a>
-                      <a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
-                      <br />
-          </template>
-          <template v-if="item.chengji_info.pingshichengji == 0 || item.chengji_info.pingshichengji == ''">
-              <p class="ts-fen-cj-p3">该成绩平时分占比为0。</p>
-          </template>
-    </div>
-        <a class="ts-fen-cj-p ksxz">考试性质：{{item.kechengxingzhi}} - {{ item.kechengshuxing }} - {{ item.kaoshixingzhi }}</a>
+        <br/>
+        <div class="ts-fen-m">
+            <template v-if="item.chengji_info.pingshichengji != 0 && item.chengji_info.pingshichengji != ''">
+                <a class="ts-fen-cj-p2">平时分：{{item.chengji_info.pingshichengji}}</a>
+                <a class="ts-fen-cj-p2">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
+                <br/>
+                <a class="ts-fen-cj-p2">卷面分：{{ item.chengji_info.qimochengji }}</a>
+                <a class="ts-fen-cj-p2">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
+                <br/>
+            </template>
+            <template v-if="item.chengji_info.pingshichengji == 0 || item.chengji_info.pingshichengji.trim == ''">
+                <p class="ts-fen-cj-p3">该成绩平时分占比为0。</p>
+            </template>
+        </div>
+        <a class="ts-fen-cj-p ksxz">考试性质：{{item.kechengxingzhi}} - {{ item.kechengshuxing }} - {{ item.kaoshixingzhi
+            }}</a>
     </div>
 
-    <p class="ts-fen-title2"><img src="../public/wx/img/line-a.png" class="line-g" />沦陷区<img src="../public/wx/img/line-a.png" class="line-g" /></p>
-    <div class="ts-fen-jf lx"  v-for="(item, key) in bujige">
+    <p class="ts-fen-title2"><img src="../public/wx/img/line-a.png" class="line-g"/>沦陷区<img
+            src="../public/wx/img/line-a.png" class="line-g"/></p>
+    <div class="ts-fen-jf lx" v-for="(item, key) in bujige">
         <a class="ts-fen-mtit2 lx-c">{{item.kecengmingceng}}</a><a class="ts-fen-mtit2 lx-c">总分：{{item.chengji}}</a>
         <div class="ts-fen-cj">
             <p class="ts-fen-cj-p lx-c">学分：{{ item.xuefen }}</p>
             <p class="ts-fen-cj-p lx-c">学分绩点：{{ item.jidian }}</p>
         </div>
-        <br />
+        <br/>
         <div class="ts-fen-m">
-        <a class="ts-fen-cj-p2 lx-c">平时分：{{item.chengji_info.pingshichengji}}</a>
-        <a class="ts-fen-cj-p2 lx-c">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
-        <br />
-        <a class="ts-fen-cj-p2 lx-c">卷面分：{{ item.chengji_info.qimochengji }}</a>
-        <a class="ts-fen-cj-p2 lx-c">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
-        <br />
-    </div>
-        <a class="ts-fen-cj-p ksxz lx-c">考试性质：{{item.kechengxingzhi}} - {{ item.kechengshuxing }} - {{ item.kaoshixingzhi }}</a>
+            <a class="ts-fen-cj-p2 lx-c">平时分：{{item.chengji_info.pingshichengji}}</a>
+            <a class="ts-fen-cj-p2 lx-c">平时成绩比例：{{item.chengji_info.pingshichengjibili}}</a>
+            <br/>
+            <a class="ts-fen-cj-p2 lx-c">卷面分：{{ item.chengji_info.qimochengji }}</a>
+            <a class="ts-fen-cj-p2 lx-c">期末成绩比例：{{item.chengji_info.qimochengjibili}}</a>
+            <br/>
+        </div>
+        <a class="ts-fen-cj-p ksxz lx-c">考试性质：{{item.kechengxingzhi}} - {{ item.kechengshuxing }} - {{
+            item.kaoshixingzhi }}</a>
 
     </div>
     <div id="loadingToast" v-show="jiazai">
