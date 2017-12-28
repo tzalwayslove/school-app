@@ -15,6 +15,12 @@ fabu = Vue.component('kaochang', function (success, error) {
                         'margin-right': '6px',
                         'color': '#8f8f94'
                     },
+                    itemStyleFinishh : {
+                        'position':'absolute',
+                        'right':'10px',
+                        'color': '#FFFFFF'
+
+                    },
                     itemStyleUnFinish : {
                         'float': 'right',
                         'margin-right': '6px',
