@@ -10,6 +10,7 @@ use App\Model\Wechat;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
 
 class IndexController extends Controller
 {
@@ -22,7 +23,11 @@ class IndexController extends Controller
             $server = $app->server;
             try {
                 $server->setMessageHandler(function ($message) use ($server) {
-                    Log::log(json_encode($message, JSON_UNESCAPED_UNICODE));
+                    if(Redis::get($message->MsgId)){
+                        return "";
+                    }
+
+                    Redis::set($message->MsgId, 1);
                     switch ($message->MsgType) {
                         case 'event':
                             $user = User::whereOpenId($message->FromUserName)->first();
