@@ -16,12 +16,13 @@
     <link href="{{ asset('public/wx/css/index.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/weui.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/weui/jquery-weui.css') }}">
+
 </head>
 <body>
 
 <div id="app">
     <nav class="mui-bar mui-bar-tab" style="background-color: #ffffff;" v-show="bar_buttom">
-         {{--route link block--}}
+        {{--route link block--}}
         <router-link
                 :class="['mui-tab-item', nav_active == 'tiezi' ? 'mui-active' : '']"
                 to="/tiezi">
@@ -64,23 +65,22 @@
 <script src="{{ asset('public/vue/reply.js') }}"></script>
 <script src="{{ asset('public/vue/jubao.js') }}"></script>
 
-      
-          <script>
-            $(document).on("click", "#show-actions", function() {
-              $.actions({
-      
-                actions: [
-                  {
+
+<script>
+    $(document).on("click", "#show-actions", function () {
+        $.actions({
+            actions: [
+                {
                     text: "举报",
                     className: "color-primary",
-                    onClick: function() {
-                      $.alert("举报成功");
+                    onClick: function () {
+                        $.alert("举报成功");
                     }
-                  },
-                ]
-              });
-            });
-          </script>
+                },
+            ]
+        });
+    });
+</script>
 <script>
     $(function () {
         axios.defaults.baseURL = 'http://www.hucinfo.com';
@@ -105,7 +105,7 @@
             tiezi: [],
             user: '{{ $user->id }}',
             'bar_buttom': true,
-            success:false,
+            success: false,
         };
 
         router.beforeEach((to, from, next) => {
@@ -118,20 +118,18 @@
             }
             next();
             data.bar_buttom = true;
-            setTimeout(function(){
+            setTimeout(function () {
                 data.success = false
             }, 1000);
         });
-        
+
         vue = new Vue({
             router: router,
             data: data,
             load: true,
-            methods: {
-
-            },
+            methods: {},
             mounted: function () {
-                
+
             }
         }).$mount('#app');
     });
