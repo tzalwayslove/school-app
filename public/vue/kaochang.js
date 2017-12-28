@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/11/30.
  */
-kaochang = Vue.component('kaochang', function (success, error) {
+fabu = Vue.component('kaochang', function (success, error) {
     axios.get("/public/tpl/kaochang.html").then(function (res) {
         success({
             template: res.data,
@@ -11,11 +11,9 @@ kaochang = Vue.component('kaochang', function (success, error) {
                     jiazai:true,
                     kaochang:{},
                     itemStyleFinish : {
-                        position: "absolute",
-                        right: "0",
-                        "margin-right": "6px",
-                        top: "7px",
-                        color: "rgb(143, 143, 148)"
+                        'float': 'right',
+                        'margin-right': '6px',
+                        'color': '#8f8f94'
                     },
                     itemStyleUnFinish : {
                         'float': 'right',
