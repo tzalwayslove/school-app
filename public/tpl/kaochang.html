@@ -3,8 +3,12 @@
     <p class="xingming_xuehao"  style="padding-left: 10px">如果你的信息有误， 请重新进行绑定</p>
     <template v-for="(item, key) in kaochang">
     <div :class="item.finish ? 'kb-info' : 'kb-info-ing'">
-        <p :class="item.finish ? 'kb-info-name' : 'kb-info-name-ing'">{{ item.name }}<a :style="item.finish ? itemStyleFinishh : itemStyleUnFinish">考场:{{ item.kaochang }}</a></p>
-        <p :class="item.finish ? 'kb-info-detail' : 'kb-info-detail-ing'">时间：{{ item.shijian }}<a :style="item.finish ? itemStyleFinish : itemStyleUnFinish">座位号:{{ item.zuoweihao }}</a></p>
+        <p :class="item.finish ? 'kb-info-name' : 'kb-info-name-ing'">{{ item.name }}
+            <a :style="item.finish ? itemStyleFinishh : itemStyleUnFinish">考22场:{{ item.kaochang }}</a>
+        </p>
+        <p :class="item.finish ? 'kb-info-detail' : 'kb-info-detail-ing'">时间：{{ item.shijian }}
+            <a :style="item.finish ? itemStyleFinish : itemStyleUnFinish">座位号:{{ item.zuoweihao }}</a>
+        </p>
         <img src="/public/wx/img/wancheng.png" class="wc" v-show="item.finish"/>
     </div>
     </template>
