@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+    <p id="content2">asdklfjalsdkfj</p>
 @endsection
 
 @push('addcss')
@@ -87,7 +88,11 @@
         @endforeach
         $('.edit').on('click', function(){
             layui.use('layer', function(){
-                
+                layer = layui.layer;
+                layer.open({
+                    type:4,
+                    content:['呢日用', '#content2']
+                });
             })
         });
 
