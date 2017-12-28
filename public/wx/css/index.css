@@ -115,10 +115,10 @@ textarea:-ms-input-placeholder
 	color: #000000;
 }
 .hf-box-main{
-	padding: 10px;
+	padding: 10px 0 10px 40px;
 	color: #000000;
 	letter-spacing: 1px;
-	font-size: 12px;
+	font-size: 14px;
 	border-bottom:1px solid #ddd ;
 	margin: 0 10px 20px 10px;
 
