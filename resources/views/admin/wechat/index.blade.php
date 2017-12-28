@@ -32,8 +32,7 @@
                                                 <td>{{$v->key}}</td>
                                                 <td>{{$v->content}}</td>
                                                 <td>
-                                                    <a href="{{ url('admin/user/'.$v->id.'/edit')  }}"
-                                                       class="btn btn-info btn-xs edit">编辑</a>
+                                                    <button class="btn btn-info btn-xs edit">编辑</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -46,8 +45,9 @@
                 </div>
             </div>
         </div>
+        <p id="content2">asdklfjalsdkfj</p>
     </div>
-    <p id="content2">asdklfjalsdkfj</p>
+
 @endsection
 
 @push('addcss')
