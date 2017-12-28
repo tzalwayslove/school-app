@@ -303,11 +303,12 @@ textarea{
 	background-color: #3cc3b6;
 	margin: 10px;
 	border-radius: 6px;
-
+	position: relative;
 }
 .kb-info-name{
 	font-size: 16px;
 	padding: 6px;
+	width: 240px;
 }
 .kb-info-name-ing{
 	color: #FFFFFF;
