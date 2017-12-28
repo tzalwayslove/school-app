@@ -308,6 +308,7 @@ textarea{
 .kb-info-name{
 	font-size: 16px;
 	padding: 6px;
+	width: 240px;
 }
 .kb-info-name-ing{
 	color: #FFFFFF;
